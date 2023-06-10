@@ -1,0 +1,258 @@
+input{
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-bottom: 1px solid #14248a;
+    padding-left: 10px;
+}
+
+.veja{
+    background-color: #FF5B00;
+    border-radius: 15px;
+    width: 100%;
+    height: 160px;
+    color: #ffffff;   
+    padding-top: 15px; 
+    margin: 40px 0px;
+}
+
+.veja>#text-veja{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.icon-veja{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    align-content: space-between;
+    text-align: center;
+    margin: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#veja-atleta, #veja-clubes, #veja-esportes{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo-times{
+    font-size: 30px;
+    color: #14248a;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.titulo-times>h6{
+    font-weight: 300;
+}
+
+.box-clube1, .box-clube2, .box-clube3{
+    width: 100%;
+    height: 110px;
+    border-radius: 15px;
+    background-color: #FF5B00;
+    margin-bottom: 20px;
+    padding: 12px;
+}
+
+.oeste, .osasco, .pinheiros{
+    width: 99px;
+    margin-right: 15px;
+    border-radius:10px;
+}
+
+#text-oeste, #text-osasco, #text-pinheiros{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 550;
+}
+
+#cidade-barueri, #cidade-osasco, #cidade-pinheiros{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#i-bolafut1, #i-bolavolei2, #i-bolavolei3, #i-bolafut3, #i-bolabasq3, #i-bolarugbi3{
+    width: 28px;
+}
+
+#i-mais3{
+    width: 20px;
+}
+
+.linha1, .linha2, .linha3 {
+    width: fit-content;
+    padding-right: 2px;
+}
+
+.linha3{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    row-gap: 5px;
+}
+
+.linha-sports1, .linha-sports2, .linha-sports3 {
+    display: flex;
+    column-gap: 5px;
+    width: fit-content;
+    align-items: center;
+    padding-right: 2px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.text-clube1, .text-clube2, .text-clube3{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 18px;
+}
+
+.box-clube3, .box-clube2, .box-clube1{
+    width: calc(100% - 25px);
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.titulo-atletas{
+    font-size: 30px;
+    color: #14248a;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.titulo-atletas>h6{
+    font-weight: 300;
+}
+
+.box-atleta1, .box-atleta2, .box-atleta3{
+    width: 100%;
+    height: 110px;
+    border-radius: 15px;
+    background-color: #FF5B00;
+    margin-bottom: 20px;
+    padding: 12px;
+}
+
+.joao, .victor, .juliana{
+    width: 99px;
+    margin-right: 15px;
+    border-radius:10px;
+}
+
+#text-joao, #text-victor, #text-juliana{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 550;
+}
+
+#cidade-barueri, #cidade-osasco, #cidade-pinheiros{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#i-atletismo, #i-bolavolei2, #i-bolafut3{
+    width: 28px;
+}
+
+.linha3, .linha2, .linha1{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    row-gap: 5px;
+    color: #14248a;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+
+.text-atleta1, .text-atleta2, .text-atleta3{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 18px;
+}
+
+.box-atleta3, .box-atleta2, .box-atleta1{
+    width: calc(100% - 25px);
+    display: flex;
+    flex-direction: row;
+}
+
+aside{
+    width: 100%;
+    height: 371px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+}
+
+.box-plano{
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#i-plano{
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+#ass-destaque{
+    color: #ff5b00;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+#topicos{
+    color: #333333;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+#preco-plano{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    color: #ff5b00;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#mes{
+    font-size: 12px;
+}
+
+#btn-assinar{
+    width: 70%;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #14248a;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 10px;
+}

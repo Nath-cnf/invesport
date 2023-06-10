@@ -1,0 +1,115 @@
+main {
+    margin: 15px 25px 15px 25px;
+}
+
+input{
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-bottom: 1px solid #14248a;
+    padding-left: 10px;
+}
+
+.cabecalho{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 0px 25px;
+    max-width: 100%;
+    height: 60px;
+}
+
+.logo-invesport{
+    width: 150px;
+    object-fit: cover;
+}
+
+#i-menu, #i-user{
+    color: #14248a;
+    font-size: 32px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#i-clube{
+    width: 85px;
+    height: 85px;
+}
+
+.container{
+    background-color: #fb5600;
+    width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-pClubes{
+    background-color: #14248a;
+    border-radius: 15%;
+    padding: 10px;
+    width: 155px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    
+}
+
+#clube_1{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    
+}
+
+.selo{
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    float: right;
+}
+
+.ver-perfil{
+    border: none;
+    border-radius: 15%;
+    background-color: #fb5600;
+    width: 70%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    font-size: medium;
+    text-align: center;
+}
+
+.nome-perfil{
+    position: relative;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.nome-lugar{
+    position: relative;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}

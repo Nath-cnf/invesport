@@ -1,0 +1,317 @@
+#banner-home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+    max-height: 100vh;
+    background-image: url("../assets/home/background-laranja.jpeg"); 
+    background-size: 100vw 100vh;
+}
+
+.banner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 20px 40px;
+    border-radius: 10px;
+    background-color: white;
+    color: #333;
+    margin: 50vh 25px 50px 25px;
+}
+
+.boneco{
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    width: 270px;
+    height: 270px;
+    transform: translate(-50%, -100%);
+}
+
+.texto-banner{
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-cadastro-home{
+    width: 60%;
+    height: 6vh;
+    background-color: #ff5b00;
+    border-radius: 30px;
+    border: none;
+}
+
+.btn-cadastro-home > a{
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+#conheca{
+    font-size: 30px;
+    color: #333333;
+    display: block;
+    text-align: center;
+    font-family: "Poppins Bold", "Poppins", "Poppins", sans-serif;
+    margin: 25px;
+}
+
+#inve{
+    color:#14248a;
+}
+
+#sport{
+    color:#FF5B00;
+}
+
+.somos{
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 15px 0px 25px 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 25px;
+}
+
+.title-somos{
+    font-family: "Poppins SemiBold", "Poppins", "Poppins", sans-serif;
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.text-somos{
+    color: #333333;
+    font-size: 12px;
+    line-height: 19px;
+}
+
+#logo-somos{
+    width: 102px;
+    height: 105px;
+    margin-right: 5px;
+}
+
+.encontre{
+    color: #333333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.doacao, .agenda, .perfil, .assinatura{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-start;
+    gap: 15px 25px;
+    padding: 25px ;
+}
+
+.agenda, .assinatura{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.doacao, .perfil{
+    background-color: #ffffff;
+}
+
+.agenda, .assinatura{
+    background-color: #ff5b00;
+}
+
+.i-doacao, .i-calendario-user, .i-foto, .i-plano{
+    width: 150px;
+    height: 150px;
+}
+
+.title-doacao, .title-perfil{
+    font-size: 1.5rem;
+    color: #333333;
+}  
+
+.title-agenda, .title-assinatura{
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.box-cadastrar-se{
+    width: calc(100vw-25px);
+    height: 160px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+    margin: 25px;
+}
+
+#faca-parte{
+    color: #333333;
+    font-size: 22px;
+}
+
+#text-cadastrar{
+    color: #333333;
+    font-size: 16px;
+    margin: 15px;
+    padding: 0 10px;
+}
+
+#inve2{
+    color: #14248a;
+    font-size: 22px;
+}
+
+#sport2{
+    color: #ff5b00;
+    font-size: 22px;
+}
+
+#botao-cadastrar-ja{
+    width: 90%;
+    height: 50px;
+    background-color: #FF5B00;
+    border: 1px solid #FF5B00;
+    border-radius: 8px;
+}
+
+#botao-cadastrar-ja>a{
+    color: #ffffff;
+    font-size: 21px;
+    text-decoration-line: none;
+}
+
+aside{
+    width: calc(100vw-25px);
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+
+.veja{
+    background-color: #FF5B00;
+    border-radius: 15px;
+    width: calc(100vw-25px);
+    height: 160px;
+    color: #ffffff;   
+    padding-top: 15px; 
+    margin: 40px 25px;
+}
+
+.veja>#text-veja{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.icon-veja{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    align-content: space-between;
+    text-align: center;
+    margin: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#veja-atleta, #veja-clubes, #veja-sobre{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.filtro-sobre{
+    width: 75px;
+    height: 75px;
+}
+
+.ver-sobre{
+    background-color: #14248a;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.ver-sobre, .ver-clubes, .ver-atleta{
+    margin-bottom: 5px;
+}
+
+.box-plano{
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+}
+
+#i-plano{
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+#ass-destaque{
+    color: #ff5b00;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+#topicos{
+    color: #333333;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+#preco-plano{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    color: #ff5b00;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#mes{
+    font-size: 12px;
+}
+
+#btn-assinar{
+    width: 70%;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #14248a;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/*@media screen and (min-width: 480px) and ( max-width: 1720px){
+    #banner-home {
+        background-image: url("");
+        max-width: 200vw;
+        max-height: 200vh;
+    }
+
+}

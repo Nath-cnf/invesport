@@ -1,0 +1,159 @@
+.pic-perfil{   
+    padding-top: 60px;
+    position: relative;
+    width: 100vw;
+    height: 210px;
+    background-color: #ffffff;
+}
+
+.capa-perfil{
+    width: 100vw;
+    height: 140px;
+}
+
+.foto-perfil{
+    z-index: 4;
+    position: absolute;
+    top: 7em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 100%;
+    width: 9em;
+    height: 9em;
+}
+
+.titulo-perfil{
+    text-align: center;
+    color: #333333;
+} 
+
+.redes-sociais{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    font-size: 2rem;
+    padding-bottom: 15px;
+    gap: 10px;
+}
+
+.bio{
+    width: calc( 100vw - 50px);
+    background-color: #ffffff;
+    margin: 0 25px;
+}
+
+.text-cidade, .text-clube, .text-esporte{
+    font-size: 16px;
+    font-weight: normal;
+    color: #333333;
+}
+
+.t-cidade, .t-clube, .t-esporte{
+    font-size: 18px;
+    color: #333333;
+    font-family: "Popins SemiBold", "Popins", sans-serif;
+}
+
+.cidade, .clube, .esporte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.info-bio{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.b-doar {
+    width: 38vw;
+    height: 2.3rem;
+    border-radius: 10px;
+    border: 1px solid #ff5b00;
+    background-color: #ff5b00;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.b-doar>a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.button-bio{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.ls-animated{
+    width: 95%;
+    height: 8px;
+    border: 1px solid #ff5b00;
+    background-color: #ff5b00;
+    border-radius: 50px;
+}
+
+.info-meta{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 9vh;
+    border-radius: 10px;
+    border: 1px solid #ff5b00;
+    gap: 5px;
+}
+
+.box-meta{
+    width: calc( 100vw - 50px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.linha-bio{
+    margin-top: 30px;
+    border: 2px solid #ff5b00
+}
+
+.secao-perfil{
+    width: calc( 100vw - 50px);
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    margin: 10px 25px;
+}
+
+.t-publicacoes, .t-sobre, .t-doacoes, .t-metas{
+    text-decoration: none;
+    color:#333333;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.feed{
+    width: 100%;
+}
+
+.interacao-post{
+    font-size: 1.6em;
+    color: #030e4f;
+    margin: 3px 25px;
+}
+
+.legenda{
+    font-size: 14px;
+    color: #333333;
+    text-align: justify;
+}

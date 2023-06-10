@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="css/perfil-atleta.css">
+    <title>INVESPORT</title>
+</head>
+
+<%- include('../templates/head.ejs') %>
+
+<body>
+    <%- include('../templates/header.ejs') %>
+
+        <main>
+            <section>
+                <div class="pic-perfil">
+                    <img src="imgs/perfil/bannerperfil.jpeg" class="capa-perfil">
+                    <img src="imgs/perfil/perfil-victor.jpeg" class="foto-perfil">
+                </div>
+                <h2 class="titulo-perfil">Victor Rocha</h2>
+                <div class="redes-sociais">
+                    <i class='bx bxl-facebook-square' style='color:#ff540b'></i>
+                    <i class='bx bxl-instagram' style='color:#ff540b'></i>
+                </div>
+            </section>
+            <section class="bio">
+                <div class="info-bio">
+                    <span class="cidade">
+                        <h4 class="text-cidade">Sub-20</h4>
+                        <h3 class="t-cidade">Categoria</h3>
+                    </span>
+                    <span class="clube">
+                        <h4 class="text-clube">Guaratinguetá</h4>
+                        <h3 class="t-clube">Clube</h3>
+                    </span>
+                    <span class="esporte">
+                        <h4 class="text-esporte">Futebol</h4>
+                        <h3 class="t-esporte">Esporte</h3>
+                    </span>
+                </div>
+                <div class="button-bio">
+                    <button class="b-doar"><a href="#">Doar</a></button>
+                </div>
+
+                <div class="info-meta">
+                    <p class="desc-meta">Passagem para o Campeonato </p>
+                    <div class="ls-animated"></div>
+                    <p class="valor">R$694,73 - R$1,000</p>
+                </div>
+            </section>
+            <hr class="linha-bio">
+            <section>
+                <div class="secao-perfil">
+                    <a class="t-publicacoes" href="#">Publicações</a>
+                    <a class="t-sobre" href="#">Sobre</a>
+                    <a class="t-doacoes" href="#">Doações</a>
+                    <a class="t-metas" href="#">Metas</a>
+                </div>
+                <div>
+                    <img src="imgs/perfil/feed-victor3.jpeg" alt="" class="feed">
+                    <div class="interacao-post">
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded-dots'></i>
+                        <p class="legenda">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                            bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. </p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <%- include('../templates/rodape.ejs') %>
+</body>
+
+</html>

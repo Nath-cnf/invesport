@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../../public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/global.css">  
+    <title>InveSport</title>
+</head>
+<%- include('../templates/head.ejs') %>
+
+<body>
+    <%- include('../templates/header.ejs') %>
+
+        <main>
+            <section id="banner-home">
+                <div class="banner">
+                    <img src="../../public/assets/home/boneco-azul.png" class="boneco">
+                    <span class="texto-banner">AJUDE O ESPORTE NO BRASIL, DOE PELO INVESPORT</span>
+                    <button class="btn-cadastro-home"><a href="feed-atleta.ejs">DOAR</a></button>
+                </div>
+            </section>
+
+            <h2 id="conheca">Conheça o <span id="inve">Inve</span><span id="sport">Sport</span></h2>
+            <div class="somos">
+                <img src="../../public/assets/logo/128px.png" id="logo-somos">
+                <div class="text-somos">
+                    <h4 class="title-somos">O que somos?</h4>
+                    <p class="p-somos">O InveSport é um site que busca trazer mais investimento, visibilidade e
+                        incentivo ao esporte de nível nacional, tanto para atletas quanto para clubes, que buscam melhor
+                        condição para prática e ajuda financeira. </p>
+                </div>
+            </div>
+
+            <section>
+                <h2 class="encontre">Aqui no InveSport você tem</h2>
+                <div class="box-funcionalidades">
+
+                    <div class="doacao">
+                        <img src="../../public/assets/home/dinheiro-doacao.png" class="i-doacao">
+                        <h4 class="title-doacao">Doação para clubes e atletas</h4>
+                    </div>
+
+                    <div class="agenda">
+                        <img src="../../public/assets/home/agenda.png" class="i-calendario-user">
+                        <h4 class="title-agenda">Gerenciador de tarefas</h4>
+                    </div>
+
+                    <div class="perfil">
+                        <img src="../../public/assets/home/feed.png" class="i-foto">
+                        <h4 class="title-perfil">Comunidade de atetlas e clubes</h4>
+                    </div>
+
+                    <div class="assinatura">
+                        <img src="../../public/assets/home/planos.png" class="i-plano">
+                        <h4 class="title-assinatura">Assinatura para destaque</h4>
+                    </div>
+
+                </div>
+            </section>
+            <div class="box-cadastrar-se">
+                <h4 id="faca-parte">Faça parte do <span id="inve2">Inve</span><span id="sport2">Sport</span></h4>
+                <p id="text-cadastrar">Gostou? Clique no botão abaixo, cadastre-se gratuitamente e aproveite</p>
+                <button id="botao-cadastrar-ja"><a href="cadastro_atleta">CADASTRA-SE JÁ</a></button>
+            </div>
+
+            <aside id="publicidade">
+                <img src="../../public/assets/anuncio.jfif">
+            </aside>
+
+            <div class="veja">
+                <span id="text-veja">Veja</span>
+                <div class="icon-veja">
+                    <div id="veja-atleta">
+                        <a href=""><img src="../../public/assets/home/atleta-circulo.png" class="filtro-atleta"></a>
+                        <span id="text-atltetas">Atletas</span>
+                    </div>
+                    <div id="veja-clubes">
+                        <a href=""><img src="../../public/assets/home/time-circulo.png" class="filtro-clube"></a>
+                        <span>Clubes</span>
+                    </div>
+                    <div id="veja-sobre">
+                        <a href="" class="ver-sobre"><img src="../../public/assets/home/sobre-icon.png" class="filtro-sobre"></a>
+                        <span>Sobre</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-plano">
+                <img src="../../public/assets/home/plano-256px.png" id="i-plano">
+                <h3 id="ass-destaque">Assinatura Destaque</h3>
+                <ul id="topicos">
+                    <li>Selo destaque</li>
+                    <li>Maior visibilidade</li>
+                    <li>Publicações com até 10 fotos</li>
+                </ul>
+                <span id="preco-plano">R$9,90<h6 id="mes">/mês</h6></span>
+                <button href="" id="btn-assinar">ASSINAR</button>
+            </div>
+        </main>
+
+        <%- include('../templates/rodape.ejs') %>
+</body>
+
+</html>

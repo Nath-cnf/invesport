@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="../../public/css/assinatura.css">
+    <link rel="stylesheet" href="../../public/css/global.css">
+    <title>Assinatura premium</title>
+</head>
+
+<%- include('../templates/head.ejs') %>
+
+<body>
+    <%- include('../templates/header.ejs') %>
+
+        <main>
+            <img src="imgs/assinatura/fundo-assi.jpeg" class="fundo">
+            <div id="div-principal">
+                <span class="titulo-principal">
+                    <h1 class="t-assine">Assine o plano Destaque</h1>
+                    <p class="texto-principal">Seu perfil com mais destaque para os apoiadores</p>
+                </span>
+            </div>
+
+            <h2 class="titulo-assinatura">Assinatura Destaque</h2>
+
+            <div class="container-selo">
+                <h3 class="titulo-selo">Selo de <span class="destaque">destaque</span></h3>
+                <img src="imgs/assinatura/check.png" class="selo">
+                <p class="texto-selo">Chame a atenção dos apoiadores através do selo. Destaque-se entre os usuários.</p>
+            </div>
+
+            <div class="container-doacao">
+                <h3 class="titulo-doacao">Maiores chances de ser <span class="apoia">apoiado</span></h3>
+                <img src="imgs/assinatura/doacoes.png" class="doacao">
+                <p class="texto-doacao">Vire assinante do plano e tenha maiores chances de receber doações dos
+                    apoiadores.</p>
+            </div>
+
+            <div class="container-metas">
+                <h3 class="titulo-metas">Adicione mais <span class="metas">metas</span></h3>
+                <img src="imgs/assinatura/subindo-metas.png" class="metas">
+                <p class="texto-metas">Não fique limitado a uma meta no seu perfil. Alcance mais objetivos com a ajuda
+                    dos apoiadores!</p>
+            </div>
+
+            <div class="container-assine">
+                <span class="box-assinar">
+                    <p class="titulo-assine">Assine por apenas</p>
+                    <span class="preco">R$9,90<h4 class="mes">/mês</h4></span>
+                    <button class="assinar">ASSINAR</button>
+                </span>
+            </div>
+
+        </main>
+
+        <%- include('../templates/rodape.ejs') %>
+</body>
+
+</html>

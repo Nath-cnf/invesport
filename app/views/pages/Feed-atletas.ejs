@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/feed-atleta.css">
+    <title>InveSport</title>
+</head>
+
+<%- include('../templates/head.ejs') %>
+
+<body>
+    <%- include('../templates/header.ejs') %>
+
+        <main>
+            <div class="barra-pesquisa">
+                <a href="#" class="link-lupa"><i class='bx bx-search' id="lupa"></i></a>
+                <input type="search" placeholder="Pesquise aqui" class="pesquisa">
+            </div>
+            <h2 class="novos-perfis">Conheça novos perfis</h2>
+            <h4 class="apoie">Apoie o esporte brasileiro!</h4>
+
+            <section id="atletas">
+                <div class="altetas-direita">
+                    <a href="Perfis_Atletas" class="btn-atletas">
+                        <img src="imgs/icones/atleta-circulo-laranja.png" class="icone-atleta">
+                        <h3 class="titulo-atletas">Atletas</h3>
+                    </a>
+
+                    <div class="usuario">
+                        <img src="imgs/atleta_1.jpg" class="foto-atleta">
+                        <span class="linha-nome">
+                            <h4 class="nome-atleta">João Victor</h4>
+                            <img src="imgs/selo_invesport.png" class="selo">
+                        </span>
+                        <h4 class="cidade">Barueri-SP</h4>
+                        <a href="perfilatleta" class="ver-perfil">Ver perfil</a>
+                    </div>
+
+                    <div class="usuario">
+                        <img src="imgs/atleta_2.jpg" class="foto-atleta">
+                        <span class="linha-nome">
+                            <h4 class="nome-atleta">Fabrio Santos</h4>
+                            <img src="imgs/selo_invesport.png" class="selo">
+                        </span>
+                        <h4 class="cidade">Osasco-SP</h4>
+                        <a href="perfilatleta" class="ver-perfil">Ver perfil</a>
+                    </div>
+
+                    <div class="usuario">
+                        <img src="imgs/atleta_3.jpg" class="foto-atleta">
+                        <span class="linha-nome">
+                            <h4 class="nome-atleta">Jéssica Mendes</h4>
+                            <img src="imgs/selo_invesport.png" class="selo">
+                        </span>
+                        <h4 class="cidade">Rio de Janeiro-RJ</h4>
+                        <a href="perfilatleta" class="ver-perfil">Ver perfil</a>
+                    </div>
+
+                    <div class="usuario">
+                        <img src="imgs/atleta_4.png" class="foto-atleta">
+                        <h4 class="nome-atleta">João Henrique</h4>
+                        <h4 class="cidade">Barueri-SP</h4>
+                        <a href="perfilatleta" class="ver-perfil">Ver perfil</a>
+                    </div>
+                </div>
+
+                <div class="altetas-esquerda">
+                    <a href="Perfis_clubes" class="btn-clubes">
+                        <img src="imgs/icones/time-circulo.png" class="icone-clubes">
+                        <h3 class="titulo-clubes">Clubes</h3>
+                    </a>
+
+                    <div class="usuario">
+                        <img src="imgs/atleta_1.jpg" class="foto-atleta">
+                        <span class="linha-nome">
+                            <h4 class="nome-atleta">João Victor</h4>
+                            <img src="imgs/selo_invesport.png" class="selo">
+                        </span>
+                        <h4 class="cidade">Barueri-SP</h4>
+                        <a href="perfilatleta" class="ver-perfil">Ver perfil</a>
+                    </div>
+
+                    <div class="usuario">
+                        <img src="imgs/atleta_2.jpg" class="foto-atleta">
+                        <span class="linha-nome">
+                            <h4 class="nome-atleta">Fabrio Santos</h4>
+                            <img src="imgs/selo_invesport.png" class="selo">
+                        </span>
+                        <h4 class="cidade">Osasco-SP</h4>
+                        <a href="perfilatleta" class="ver-perfil">Ver perfil</a>
+                    </div>
+
+                    <div class="usuario">
+                        <img src="imgs/atleta_3.jpg" class="foto-atleta">
+                        <span class="linha-nome">
+                            <h4 class="nome-atleta">Jéssica Mendes</h4>
+                            <img src="imgs/selo_invesport.png" class="selo">
+                        </span>
+                        <h4 class="cidade">Rio de Janeiro-RJ</h4>
+                        <a href="perfilatleta" class="ver-perfil">Ver perfil</a>
+                    </div>
+
+                    <div class="usuario">
+                        <img src="imgs/atleta_4.png" class="foto-atleta">
+                        <h4 class="nome-atleta">João Henrique</h4>
+                        <h4 class="cidade">Barueri-SP</h4>
+                        <a href="perfilatleta" class="ver-perfil">Ver perfil</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <%- include('../templates/rodape.ejs') %>
+</body>
+
+</html>
