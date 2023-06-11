@@ -1,4 +1,4 @@
-class perfilAtletaTControllerRead {
+class perfilAtletaControllerRead {
     getPage(req, res) {
         res.render("pages/perfil-atleta.ejs")
     }
