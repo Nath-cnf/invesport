@@ -13,6 +13,8 @@ const createAtletaControllerCreate = require("../controllers/info-pages/cadastro
 const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
 const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
 
+const autenticacaoMiddleware = require("../middleware/autenticacaoMiddleware");
+
 // * Info pages
 
 router.get("/", homeControllerRead.getPage);
@@ -31,7 +33,9 @@ router.post("/login-atleta", loginAtletaControllerCreate.authenticateAtleta);
 
 router.get("/cadastro-atleta", cadastroAtletaControllerRead.getPage);
 
-router.post("/cadastro-atleta", CadastroAtletaControllerCreate.createAtleta);
+router.post("/cadastro-atleta",
+autenticacaoMiddleware.criptografarSenha,
+CadastroAtletaControllerCreate.createAtleta);
 
 // * Login clube
 

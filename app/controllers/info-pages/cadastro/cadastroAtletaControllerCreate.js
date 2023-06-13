@@ -9,12 +9,13 @@ class CadastroAtletaControllerCreate {
             cnpj_clube,
             cidade,
             estado,
-            email,
-            celular,
-            senha
+            email
         } = req.body;
+        const senha = req.senhaCriptografada;
 
-        await prisma.user.create({
+        console.log(senha)
+
+        await prisma.usuario.create({
             data: {
                 nome,
                 esporte,
@@ -23,7 +24,6 @@ class CadastroAtletaControllerCreate {
                 cidade,
                 estado,
                 email,
-                celular,
                 senha
             }
         })
