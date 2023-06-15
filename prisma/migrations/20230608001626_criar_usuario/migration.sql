@@ -8,7 +8,6 @@ CREATE TABLE `User` (
     `cidade` VARCHAR(191) NOT NULL,
     `estado` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
-    `celular` VARCHAR(191) NOT NULL,
     `senha` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`id`)
