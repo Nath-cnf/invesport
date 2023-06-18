@@ -10,20 +10,19 @@ datasource db {
 model Usuario {
     id         String    @id @default(uuid())
     nome       String
-    esporte    String
+    id_esporte Int
     categoria  String
     cnpj_clube String
     cidade     String
     estado     String
     email      String @unique
     senha      String
+
+    esporte Esporte @relation(fields: [id_esporte], references: [id])
 }
 
 model Esporte {
-    futebol           String @unique
-    volei             String
-    basquete          String
-    tenis             String
-    futebol_americano String
-    rugbi             String
+    id                Int    @id @default(autoincrement())
+    nome              String    @unique
+    usuarios Usuario[]
 }
