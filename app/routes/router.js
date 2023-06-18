@@ -29,6 +29,7 @@ router.get("/feed-atleta", feedAtletaControllerRead.getPage);
 
 router.get("/feed-clube", feedClubeControllerRead.getPage);
 
+
 // * Login atleta
 
 router.get("/login-atleta", loginAtletaControllerRead.getPage);

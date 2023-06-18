@@ -18,3 +18,12 @@ model Usuario {
     email      String @unique
     senha      String
 }
+
+model Esporte {
+    futebol           String @unique
+    volei             String
+    basquete          String
+    tenis             String
+    futebol_americano String
+    rugbi             String
+}
