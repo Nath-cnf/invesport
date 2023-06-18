@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="stylesheet" href="feed-clube.css">
+    <link rel="stylesheet" href="css/feed-clube.css">
     <title>Invesport | Feed</title>
 </head>
 
@@ -11,53 +11,104 @@
 <body>
     <%- include('../templates/header.ejs') %>
 
-        <main>
+    <main>
+        <div class="barra-pesquisa">
+            <a href="#" class="link-lupa"><i class='bx bx-search' id="lupa"></i></a>
             <input type="search" placeholder="Pesquise aqui" class="pesquisa">
-            <h2 class="novo-perfil">Conheça novos perfis</h2>
-            <div class="container">
-                <img src="assets/icon_clube.png" id="i-clube">
-            </div> <br>
-            <h2 class="t-clubes">Clubes</h2> <br>
+        </div>
+        <h2 class="novos-perfis">Conheça novos perfis</h2>
+        <h4 class="apoie">Apoie o esporte brasileiro!</h4>
 
-            <div class="box-pClubes">
-                <img src="assets/ofc.png" id="clube_1">
-                <img src="assets/selo_invesport.jpeg" class="selo">
-                <a href="">
-                    <h4 class="nome-perfil">O.F.C.</h4>
-                </a> <br>
-                <h4 class="nome-lugar">Osasco-SP</h4>
-                <button class="ver-perfil">Ver perfil</button>
+        <section id="atletas">
+            <div class="altetas-direita">
+                <a href="Perfis_Atletas" class="btn-atletas">
+                    <img src="assets/atleta-circulo-laranja.png" class="icone-atleta">
+                    <h3 class="titulo-atletas">Atletas</h3>
+                </a>
+
+                <div class="usuario">
+                    <img src="assets/atletas/atleta_1.jpg" class="foto-clube">
+                    <span class="linha-clube">
+                        <h4 class="nome-clube">Oeste F.C.</h4>
+                        <img src="assets/selo_invesport.png" class="selo">
+                    </span>
+                    <h4 class="cidade">Osasco-SP</h4>
+                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                </div>
+
+                <div class="usuario">
+                    <img src="assets/atletas/atleta_2.jpg" class="foto-clube">
+                    <span class="linha-clube">
+                        <h4 class="nome-clube">Barueri V.C.</h4>
+                        <img src="assets/selo_invesport.png" class="selo">
+                    </span>
+                    <h4 class="cidade">Barueri-SP</h4>
+                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                </div>
+
+                <div class="usuario">
+                    <img src="assets/times/Fluminense.jpg" class="foto-clube">
+                    <span class="linha-clube">
+                        <h4 class="nome-clube">Fluminense</h4>
+                        <img src="assets/selo_invesport.png" class="selo">
+                    </span>
+                    <h4 class="cidade">Rio de Janeiro-RJ</h4>
+                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                </div>
+
+                <div class="usuario">
+                    <img src="assets/atleta_4.png" class="foto-clube">
+                    <h4 class="nome-clube">Atlético Mineiro</h4>
+                    <h4 class="cidade">Belo Horizonte-MG</h4>
+                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                </div>
             </div>
 
-            <div class="box-pClubes">
-                <img src="assets/Fluminense.jpg" id="clube_1">
-                <img src="assets/selo_invesport.jpeg" class="selo">
-                <a href="">
-                    <h4 class="nome-perfil">Fluminense</h4>
-                </a> <br>
-                <h4 class="nome-lugar">Rio de Janeiro-RJ</h4>
-                <button class="ver-perfil">Ver perfil</button>
-            </div>
+            <div class="atletas-esquerda">
+                <a href="feed-clube" class="btn-clubes">
+                    <img src="assets/time-circulo.png" class="icone-clubes">
+                    <h3 class="titulo-clubes">Clubes</h3>
+                </a>
 
-            <div class="box-pClubes">
-                <img src="assets/logo_BVC.png" id="clube_1">
-                <img src="assets/selo_invesport.jpeg" class="selo">
-                <a href="">
-                    <h4 class="nome-perfil">Volleyball Club</h4>
-                </a> <br>
-                <h4 class="nome-lugar">Barueri-SP</h4>
-                <button class="ver-perfil">Ver perfil</button>
-            </div>
+                <div class="usuario">
+                    <img src="assets/atletas/atleta_1.jpg" class="foto-clube">
+                    <span class="linha-clube">
+                        <h4 class="nome-clube">Oeste F.C.</h4>
+                        <img src="assets/selo_invesport.png" class="selo">
+                    </span>
+                    <h4 class="cidade">Osasco-SP</h4>
+                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                </div>
 
-            <div class="box-pClubes">
-                <img src="assets/CAM.jpg" id="clube_1">
-                <a href="">
-                    <h4 class="nome-perfil">Atlético Mineiro</h4>
-                </a> <br>
-                <h4 class="nome-lugar">Belo Horizonte-MG</h4>
-                <button class="ver-perfil">Ver perfil</button>
-            </div>
-        </main>
+                <div class="usuario">
+                    <img src="assets/atletas/atleta_2.jpg" class="foto-clube">
+                    <span class="linha-clube">
+                        <h4 class="nome-clube">Barueri V.C.</h4>
+                        <img src="assets/selo_invesport.png" class="selo">
+                    </span>
+                    <h4 class="cidade">Barueri-SP</h4>
+                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                </div>
+
+                <div class="usuario">
+                    <img src="assets/times/Fluminense.jpg" class="foto-clube">
+                    <span class="linha-clube">
+                        <h4 class="nome-clube">Fluminense</h4>
+                        <img src="assets/selo_invesport.png" class="selo">
+                    </span>
+                    <h4 class="cidade">Rio de Janeiro-RJ</h4>
+                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                </div>
+
+                <div class="usuario">
+                    <img src="assets/atleta_4.png" class="foto-clube">
+                    <h4 class="nome-clube">Atlético Mineiro</h4>
+                    <h4 class="cidade">Belo Horizonte-MG</h4>
+                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                </div>
+        </section>
+
+    </main>
 
         <%- include('../templates/rodape.ejs') %>
 </body>
