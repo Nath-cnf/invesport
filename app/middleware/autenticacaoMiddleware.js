@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-require("dotenv").config
 
 class Autenticacao {
         async criptografarSenha(req, res, next) {
@@ -19,6 +18,6 @@ class Autenticacao {
         }
 }
 
-const autenticacaoMiddleware =  new Autenticacao()
+const autenticacaoMiddleware = new Autenticacao()
 
 module.exports = autenticacaoMiddleware

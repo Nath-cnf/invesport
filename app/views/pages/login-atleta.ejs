@@ -22,11 +22,11 @@
             </div>
 
             <div class="container-input">
-                <form class="formulario">
+                <form class="formulario" method="post" action="/login-atleta">
                     <span class="campos-form">
                         <label class="titulo-cpf">E-mail<p class="asteristico">*</p></label>
                         <div class="cpf">
-                            <input type="cpf" placeholder="Insira seu e-mail" class="campo-cpf">
+                            <input type="cpf" placeholder="Insira seu e-mail" name="email" class="campo-cpf">
                             <span class="bottom"></span>
                             <span class="right"></span>
                             <span class="top"></span>
@@ -34,7 +34,7 @@
                         </div>
                         <label class="titulo-senha">Senha<p class="asteristico">*</p></label>
                         <div class="senha">
-                            <input type="password" placeholder="Insira sua senha" class="campo-senha">
+                            <input type="password" placeholder="Insira sua senha" name="senha" class="campo-senha">
                             <span class="bottom"></span>
                             <span class="right"></span>
                             <span class="top"></span>
@@ -43,7 +43,7 @@
                     </span>
 
                     <div class="entrar">
-                        <button type="submit" id="entrar"><a href="home-cadastrada" id="entrar">ENTRAR</a></button>
+                        <button type="submit" id="entrar">ENTRAR</button>
                        <!--<span class="ou">Ou entre com</span>
                     </div>
                     <div class="btn-entrar">

@@ -8,9 +8,9 @@ datasource db {
 }
 
 model Usuario {
-    id         String    @id @default(uuid())
+    id         String @id @default(uuid())
     nome       String
-    id_esporte Int
+    id_esporte String
     categoria  String
     cnpj_clube String
     cidade     String
@@ -22,7 +22,7 @@ model Usuario {
 }
 
 model Esporte {
-    id                Int    @id @default(autoincrement())
-    nome              String    @unique
+    id       String    @id @default(uuid())
+    nome     String    @unique
     usuarios Usuario[]
 }

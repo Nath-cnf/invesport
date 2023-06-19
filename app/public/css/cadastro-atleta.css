@@ -81,6 +81,10 @@ input {
     border: none;
     transition: background-color 0.5s ease-in-out;
 }
+
+.esporte option {
+    text-transform: capitalize;
+}
   
 .campo-nome:focus,
 .campo-esporte:focus,

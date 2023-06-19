@@ -18,7 +18,7 @@ class CadastroAtletaControllerCreate {
         await prisma.usuario.create({
             data: {
                 nome,
-                esporte,
+                id_esporte: esporte,
                 categoria,
                 cnpj_clube,
                 cidade,

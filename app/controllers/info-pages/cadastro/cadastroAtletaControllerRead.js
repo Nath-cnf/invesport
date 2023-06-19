@@ -6,15 +6,14 @@ class CadastroAtletaControllerRead {
     }
     async getPage(req, res) {
         const esportes = await this.getEsportes()
-        console.log(esportes)
-        res.render("pages/cadastro-atleta.ejs")
+        res.render("pages/cadastro-atleta.ejs", {
+          data: {
+            esportes
+          }
+        })
     }
     async getEsportes(){
-      const esportes = await prisma.esporte.findMany({
-        orderBy:{
-            id:"asc"
-        }
-      })
+      const esportes = await prisma.esporte.findMany()
       return esportes
     }
 }

@@ -37,7 +37,13 @@
 
                     <label class="titulo-esporte">Esporte<p class="asteristico">*</p></label>
                     <div class="esporte">
-                        <input type="text" placeholder="Insira seu esporte" class="campo-esporte" name="esporte">
+                        <select name="esporte" id="esporte">
+                            <option selected disabled>Insira seu esporte</option>
+                            <% data.esportes.forEach(esporte => { %>
+                                    <option value="<%- esporte.id %>"><%- esporte.nome %></option>
+                            <% }) %>
+                            <option value="outro" id="outro">outro</option>
+                        </select>
                         <span class="bottom"></span>
                         <span class="right"></span>
                         <span class="top"></span>
