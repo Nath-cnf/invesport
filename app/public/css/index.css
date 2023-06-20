@@ -24,10 +24,10 @@
 
 .boneco{
     position: absolute;
-    top: 32%;
+    top: 35%;
     left: 50%;
-    width: 270px;
-    height: 270px;
+    width: 285px;
+    height: 285px;
     transform: translate(-50%, -100%);
 }
 
