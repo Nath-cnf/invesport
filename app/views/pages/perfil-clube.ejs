@@ -9,7 +9,41 @@
 <%- include('../templates/head.ejs') %>
 
 <body>
-    <%- include('../templates/header.ejs') %>
+    <header>
+        <nav class="cabecalho">
+            <button class="btn-menu" data-menu-btn><i class='bx bx-menu' id="i-menu"></i></button>
+            <div class="mobile-menu" data-menu>
+                <ul>  
+                    <div class="itens">
+                        <li class="nav-item"><a href="feed-Atleta" class="nav-link">Agenda</a></li>
+                    </div>
+                    <hr>
+                    <div class="itens">
+                        <li class="nav-item"><a href="feed-atletas" class="nav-link">Clubes e Altetas</a></li>
+                    </div>
+                    <hr>
+                    <div class="itens">
+                        <li class="nav-item"><a href="home-cadastrada" class="nav-link">Como fazer uma doação</a></li>
+                    </div>
+                    <hr>
+                    <div class="itens">
+                        <li class="nav-item"><a href="assinatura" class="nav-link">Assinaturas</a></li>
+                    </div>
+                    <hr>
+                    <div class="itens">
+                        <li class="nav-item"><a href="duvidas-frequentes" class="nav-link">Fale conosco</a></li>
+                    </div>
+                    <hr>
+                    <div class="btn-login-menu">
+                        <a href="login-atleta"><button class="login-menu">Entrar</button></a>
+                        <a href="cadastro-atleta"><button class="cadastro-menu">Cadastrar-se</button></a>
+                    </div>
+                </ul>
+            </div>
+            <a href="/home-cadastrada"><img src="assets/logo/logo-horizontal.png" class="logo-invesport" ></a>
+            <a href="login-atleta"><i class='bx bx-user-circle' id="i-user"></i></a>
+        </nav>    
+    </header>
 
         <main>
             <section>

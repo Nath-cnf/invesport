@@ -10,6 +10,7 @@ const feedClubeControllerRead = require("../controllers/info-pages/feedClubeCont
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
 const cadastroAtletaControllerRead = require("../controllers/info-pages/cadastro/cadastroAtletaControllerRead");
+const cadastroClubeControllerRead = require('../controllers/info-pages/cadastro/cadastroClubeControllerRead')
 const createAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
 
 const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
@@ -47,5 +48,9 @@ CadastroAtletaControllerCreate.createAtleta);
 // * Login clube
 
 router.get("/login-clube", loginClubeControllerRead.getPage);
+
+//* Cadastro clube
+
+router.get("/cadastro-clube", cadastroClubeControllerRead.getPage);
 
 module.exports = router;

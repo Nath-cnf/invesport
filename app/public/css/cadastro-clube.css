@@ -77,142 +77,16 @@ input {
     transition: background-color 0.5s ease-in-out;
 }
   
-.campo-nome:focus,
-.campo-cnpj:focus,
-.campo-site:focus,
-.campo-cidade:focus,
-.campo-estado:focus,
-.campo-email:focus,
-.campo-celular:focus,
-.campo-senha:focus,
-.campo-repita:focus {
+.campo:focus {
     outline: none;
 }
-  
-.campo-nome::placeholder,
-.campo-cnpj::placeholder,
-.campo-site::placeholder,
-.campo-cidade::placeholder,
-.campo-estado::placeholder,
-.campo-email::placeholder,
-.campo-celular::placeholder,
-.campo-senha::placeholder,
-.campo-repita::placeholder {
+
+.campo::placeholder {
     color: #333333;
     padding: 10px;
 }
-  
-.nome>span,
-.cnpj>span,
-.site>span,
-.cidade>span,
-.estado>span,
-.email>span,
-.celular>span, 
-.senha>span,
-.repita>span  {
-    position: absolute;
-    background-color: #ff5b00;
-    transition: transform 0.5s ease;
-}
 
-.bottom,
-.top {
-    height: 1px;
-    left: 0;
-    right: 0;
-    transform: scaleX(0);
-}
-  
-.left,
-.right {
-    width: 1px;
-    top: 0;
-    bottom: 0;
-    transform: scaleY(0);
-  }
-  
-.bottom {
-    bottom: 0;
-    transform-origin: bottom right;
-  }
-  
-.campo-nome:focus ~ .bottom,
-.campo-cnpj:focus ~ .bottom,
-.campo-site:focus ~ .bottom,
-.campo-cidade:focus ~ .bottom,
-.campo-estado:focus ~ .bottom,
-.campo-email:focus ~ .bottom,
-.campo-celular:focus ~ .bottom,
-.campo-senha:focus ~ .bottom,
-.campo-repita:focus ~ .bottom {
-    transform-origin: bottom left;
-    transform: scaleX(1);
-  }
-  
-.right {
-    right: 0;
-    transform-origin: top right;
-  }
-  
-  .campo-nome:focus ~ .right,
-  .campo-cnpj:focus ~ .right,
-  .campo-site:focus ~ .right,
-  .campo-cidade:focus ~ .right,
-  .campo-estado:focus ~ .right,
-  .campo-email:focus ~ .right,
-  .campo-celular:focus ~ .right,
-  .campo-senha:focus ~ .right,
-  .campo-repita:focus ~ .right {
-    transform-origin: bottom right;
-    transform: scaleY(1);
-  }
-  
-.top {
-    top: 0;
-    transform-origin: top left;
-}
-  
-.campo-nome:focus ~ .top,
-.campo-cnpj:focus ~ .top,
-.campo-site:focus ~ .top,
-.campo-cidade:focus ~ .top,
-.campo-estado:focus ~ .top,
-.campo-email:focus ~ .top,
-.campo-celular:focus ~ .top,
-.campo-senha:focus ~ .top,
-.campo-repita:focus ~ .top {
-    transform-origin: top right;
-    transform: scaleX(1);
-}
-  
-.left {
-    left: 0;
-    transform-origin: bottom left;
-}
-  
-.campo-nome:focus ~ .left,
-.campo-cnpj:focus ~ .left,
-.campo-site:focus ~ .left,
-.campo-cidade:focus ~ .left,
-.campo-estado:focus ~ .left,
-.campo-email:focus ~ .left,
-.campo-celular:focus ~ .left,
-.campo-senha:focus ~ .left,
-.campo-repita:focus ~ .left {
-    transform-origin: top left;
-    transform: scaleY(1);
-}
-
-.titulo-nome,
-.titulo-cnpj,
-.titulo-site,
-.titulo-cidade,
-.titulo-estado,
-.titulo-email,
-.titulo-celular,
-.titulo-senha,
-.titulo-repita {
+.titulo {
     display: flex;
     flex-direction: row;
     text-align: left;
