@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 1212;
 
 app.use(express.static("app/public"));
 
@@ -13,6 +12,6 @@ app.use(express.urlencoded({extended: true}));
 var rotas = require("./app/routes/router");
 app.use("/", rotas);
 
-app.listen(port, () => {
-    console.log(`Servidor ouvindo na porta http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Servidor ouvindo na porta http://localhost:${process.env.PORT}`);
 });
