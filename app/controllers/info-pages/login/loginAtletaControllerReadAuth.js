@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const prisma = require("../../../../server/database/prismaClient");
+const jwt = require("jsonwebtoken");
 
 class LoginAtletaController {
     async authenticateAtleta(req, res){
@@ -21,11 +22,15 @@ class LoginAtletaController {
 
         bcrypt.compare(senha, user.senha).then((auth) => {
             if (auth) {
-                res.redirect("/perfil-atleta")
+                const token = jwt.sign({userId: user.id}, process.env.SECRET)
+
+                req.session.token = token;
+
+                return res.redirect("/perfil-atleta")
             }
 
             console.log("Senhas não batem")
-            res.render("pages/login-atleta.ejs")
+            return es.redirect("/login-atleta")
         })
     }
 }

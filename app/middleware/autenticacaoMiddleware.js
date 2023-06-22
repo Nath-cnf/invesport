@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken");
 
 class Autenticacao {
         async criptografarSenha(req, res, next) {
@@ -10,10 +11,27 @@ class Autenticacao {
 
                 req.senhaCriptografada = hash;
 
-                next();
+                return next();
             } catch (erro) {
                 console.log(erro);
                 return res.render("pages/cadastro-atleta.ejs");
+            }
+        }
+
+        validateToken(req, res, next) {
+            const token = req.session.token;
+
+            if (!token) {
+                return res.redirect("/login-atleta");
+            }
+
+            try {
+                jwt.verify(token, process.env.SECRET);
+
+                return next();
+            } catch (erro) {
+                console.log(erro)
+                return res.render("pages/login-atleta.ejs");
             }
         }
 }

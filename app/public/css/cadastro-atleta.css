@@ -78,7 +78,17 @@ input {
     font-size: inherit;
     font-family: inherit;
     background-color: #ffffff;
-    border: 1px;
+    border: 2px solid #162181;
+    border-radius: 8px;
+}
+
+.erro {
+    border-color: red;
+}
+
+.mensagem-erro {
+    font-size: .9rem;
+    color: red;
 }
 
 .esporte option {
