@@ -9,6 +9,7 @@ const validationMiddlewareRules = {
         .isString()
         .withMessage("Selecione um esporte!"),
         body("cnpj_clube")
+        .optional()
         .isString()
         .isLength({min: 18, max: 18})
         .withMessage("Insira um CNPJ válido, no padrão: XXXXXXXXXXXXXXXXXX"),

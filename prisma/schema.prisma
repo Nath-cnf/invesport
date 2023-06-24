@@ -12,7 +12,7 @@ model Usuario {
     nome       String
     id_esporte String
     categoria  String
-    cnpj_clube String
+    cnpj_clube String?
     cidade     String
     estado     String
     email      String @unique
