@@ -11,7 +11,6 @@ model Usuario {
     id         String @id @default(uuid())
     nome       String
     id_esporte String
-    categoria  String
     cnpj_clube String?
     cidade     String
     estado     String

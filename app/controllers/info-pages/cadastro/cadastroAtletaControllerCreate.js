@@ -5,7 +5,6 @@ class CadastroAtletaControllerCreate {
         const {
             nome,
             esporte,
-            categoria,
             cnpj_clube,
             cidade,
             estado,
@@ -19,7 +18,6 @@ class CadastroAtletaControllerCreate {
             data: {
                 nome,
                 id_esporte: esporte,
-                categoria,
                 cnpj_clube,
                 cidade,
                 estado,

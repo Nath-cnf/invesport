@@ -3,7 +3,6 @@ CREATE TABLE `Usuario` (
     `id` VARCHAR(191) NOT NULL,
     `nome` VARCHAR(191) NOT NULL,
     `id_esporte` VARCHAR(191) NOT NULL,
-    `categoria` VARCHAR(191) NOT NULL,
     `cnpj_clube` VARCHAR(191) NOT NULL,
     `cidade` VARCHAR(191) NOT NULL,
     `estado` VARCHAR(191) NOT NULL,

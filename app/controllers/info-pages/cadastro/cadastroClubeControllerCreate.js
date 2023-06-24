@@ -9,7 +9,6 @@ class CadastroClubeControllerCreate {
             cidade,
             estado,
             email,
-            celular,
             senha
         } = req.body;
 
@@ -21,7 +20,6 @@ class CadastroClubeControllerCreate {
                 cidade,
                 estado,
                 email,
-                celular,
                 senha
             }
         })
