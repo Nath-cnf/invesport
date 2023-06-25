@@ -4,8 +4,7 @@ var router = express.Router();
 const homeControllerRead = require("../controllers/info-pages/homeControllerRead");
 const trabalheConoscoControllerRead = require("../controllers/info-pages/rodape/trabalheConoscoControllerRead");
 const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
-const feedAtletaControllerRead = require("../controllers/info-pages/feedAtletaControllerRead");
-const feedClubeControllerRead = require("../controllers/info-pages/feedClubeControllerRead");
+const feedControllerRead = require("../controllers/info-pages/feedControllerRead");
 const assinaturaControllerRead = require("../controllers/info-pages/assinaturaControllerRead");
 const duvidasFrequentesControllerRead = require("../controllers/info-pages/rodape/duvidasFrequentesControllerRead");
 
@@ -32,12 +31,9 @@ router.get("/perfil-atleta",
 autenticacaoMiddleware.validateToken,
 perfilAtletaControllerRead.getPage);
 
-router.get("/feed-atleta", feedAtletaControllerRead.getPage);
-
-router.get("/feed-clube", feedClubeControllerRead.getPage);
-
 router.get("/assinatura", assinaturaControllerRead.getPage);
 
+router.get("/feed", feedControllerRead.getPage);
 
 // * Login atleta
 

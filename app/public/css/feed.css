@@ -76,8 +76,8 @@ h2 {
     margin: 15px 0px;
 }
 
-.titulo-atletas{
-    border-bottom: 2px solid var(--laranja);
+.titulo{
+    border-bottom: 3px solid var(--laranja);
 }
 
 .usuario{
