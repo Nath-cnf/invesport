@@ -2,11 +2,10 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="stylesheet" href="css/feed-clube.css">
+    <%- include('../templates/head.ejs/') %>
+    <link rel="stylesheet" href="/css/feed-clube.css">
     <title>Invesport | Feed</title>
 </head>
-
-<%- include('../templates/head.ejs/') %>
 
 <body>
     <%- include('../templates/header.ejs') %>
@@ -21,19 +20,19 @@
 
         <section id="atletas">
             <div class="altetas-direita">
-                <a href="Perfis_Atletas" class="btn-atletas">
-                    <img src="assets/atleta-circulo-laranja.png" class="icone-atleta">
+                <a href="/feed-atleta" class="btn-atletas">
+                    <img src="/assets/home/atleta-circulo.png" class="icone-atleta">
                     <h3 class="titulo-atletas">Atletas</h3>
                 </a>
 
                 <div class="usuario">
-                    <img src="assets/atletas/atleta_1.jpg" class="foto-clube">
+                    <img src="/assets/atletas/atleta_1.jpg" class="foto-clube">
                     <span class="linha-clube">
                         <h4 class="nome-clube">Oeste F.C.</h4>
-                        <img src="assets/selo_invesport.png" class="selo">
+                        <img src="/assets/selo_invesport.png" class="selo">
                     </span>
                     <h4 class="cidade">Osasco-SP</h4>
-                    <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
+                    <a href="/perfil-atleta" class="ver-perfil">Ver perfil</a>
                 </div>
 
                 <div class="usuario">
@@ -57,7 +56,7 @@
                 </div>
 
                 <div class="usuario">
-                    <img src="assets/atleta_4.png" class="foto-clube">
+                    <img src="/assets/atleta_4.png" class="foto-clube">
                     <h4 class="nome-clube">Atlético Mineiro</h4>
                     <h4 class="cidade">Belo Horizonte-MG</h4>
                     <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
@@ -66,7 +65,7 @@
 
             <div class="atletas-esquerda">
                 <a href="feed-clube" class="btn-clubes">
-                    <img src="assets/time-circulo.png" class="icone-clubes">
+                    <img src="/assets/home/time-circulo.png" class="icone-clubes">
                     <h3 class="titulo-clubes">Clubes</h3>
                 </a>
 

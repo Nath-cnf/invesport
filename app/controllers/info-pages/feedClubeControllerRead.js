@@ -1,6 +1,6 @@
 class feedClubeControllerRead {
     getPage(req, res) {
-        res.render("pages/feed-clube.ejs")
+        res.render("pages/Feed-clube.ejs")
     }
 }
 
