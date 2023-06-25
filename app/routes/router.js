@@ -6,6 +6,8 @@ const trabalheConoscoControllerRead = require("../controllers/info-pages/rodape/
 const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
 const feedAtletaControllerRead = require("../controllers/info-pages/feedAtletaControllerRead");
 const feedClubeControllerRead = require("../controllers/info-pages/feedClubeControllerRead");
+const assinaturaControllerRead = require("../controllers/info-pages/assinaturaControllerRead");
+const duvidasFrequentesControllerRead = require("../controllers/info-pages/rodape/duvidasFrequentesControllerRead");
 
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
@@ -34,6 +36,8 @@ router.get("/feed-atleta", feedAtletaControllerRead.getPage);
 
 router.get("/feed-clube", feedClubeControllerRead.getPage);
 
+router.get("/assinatura", assinaturaControllerRead.getPage);
+
 
 // * Login atleta
 
@@ -58,5 +62,9 @@ router.get("/login-clube", loginClubeControllerRead.getPage);
 //* Cadastro clube
 
 router.get("/cadastro-clube", cadastroClubeControllerRead.getPage);
+
+//* Rodape
+
+router.get("/fale-conosco", duvidasFrequentesControllerRead.getPage);
 
 module.exports = router;
