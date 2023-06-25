@@ -1,6 +1,6 @@
 class feedAtletaControllerRead {
     getPage(req, res) {
-        res.render("pages/feed-atletas.ejs")
+        res.render("pages/Feed-atletas.ejs")
     }
 }
 
