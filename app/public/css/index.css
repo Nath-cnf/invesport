@@ -197,7 +197,6 @@
 aside{
     width: calc(100vw-25px);
     height: 400px;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
