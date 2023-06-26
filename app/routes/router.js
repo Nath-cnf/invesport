@@ -2,12 +2,14 @@ var express = require("express");
 var router = express.Router();
 
 const homeControllerRead = require("../controllers/info-pages/homeControllerRead");
+const homeCadastradaControllerRead = require("../controllers/info-pages/homeCadastradaControllerRead");
+
 const trabalheConoscoControllerRead = require("../controllers/info-pages/rodape/trabalheConoscoControllerRead");
 const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
-const feedAtletaControllerRead = require("../controllers/info-pages/feedAtletaControllerRead");
-const feedClubeControllerRead = require("../controllers/info-pages/feedClubeControllerRead");
+const feedControllerRead = require("../controllers/info-pages/feedControllerRead");
 const assinaturaControllerRead = require("../controllers/info-pages/assinaturaControllerRead");
 const duvidasFrequentesControllerRead = require("../controllers/info-pages/rodape/duvidasFrequentesControllerRead");
+
 
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
@@ -26,18 +28,17 @@ const autenticacaoFormMiddleware = require("../middleware/autenticacaoFormsMiddl
 
 router.get("/", homeControllerRead.getPage);
 
+router.get("/home", homeCadastradaControllerRead.getPage);
+
 router.get("/trabalhe-conosco", trabalheConoscoControllerRead.getPage);
 
 router.get("/perfil-atleta",
 autenticacaoMiddleware.validateToken,
 perfilAtletaControllerRead.getPage);
 
-router.get("/feed-atleta", feedAtletaControllerRead.getPage);
-
-router.get("/feed-clube", feedClubeControllerRead.getPage);
-
 router.get("/assinatura", assinaturaControllerRead.getPage);
 
+router.get("/feed", feedControllerRead.getPage);
 
 // * Login atleta
 

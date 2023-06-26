@@ -76,8 +76,8 @@ h2 {
     margin: 15px 0px;
 }
 
-.titulo-atletas{
-    border-bottom: 2px solid var(--laranja);
+.titulo{
+    border-bottom: 3px solid var(--laranja);
 }
 
 .usuario{
@@ -119,6 +119,10 @@ h2 {
 
 .nome-atleta{
     margin-bottom: 5px;
+    white-space: nowrap; 
+    width: 95px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .ver-perfil{

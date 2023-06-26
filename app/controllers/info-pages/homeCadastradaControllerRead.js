@@ -1,9 +1,9 @@
-class HomeCadastradaControllerRead {
+class homeCadastradaControllerRead {
     getPage(req, res) {
         res.render("pages/home-cadastrada.ejs")
     }
 }
 
-const HomeCadatradaController = new HomeCadastradaControllerRead();
+const homeCadatradaController = new homeCadastradaControllerRead();
 
-module.exports = HomeCadastradaController;
+module.exports = homeCadatradaController;
