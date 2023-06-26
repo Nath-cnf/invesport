@@ -196,11 +196,10 @@
 
 aside{
     width: calc(100vw-25px);
-    height: 400px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 25px;
 }
 
 .veja{
