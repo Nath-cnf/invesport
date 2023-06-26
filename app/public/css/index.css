@@ -194,14 +194,13 @@
     text-decoration-line: none;
 }
 
-aside{
+.anuncio-mondiad{
     width: calc(100vw-25px);
-    height: 400px;
-    overflow: hidden;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 25px;
+    background-color: #ff5b00;
 }
 
 .veja{
