@@ -194,7 +194,7 @@
     text-decoration-line: none;
 }
 
-aside{
+.anuncio-mondiad{
     width: calc(100vw-25px);
     height: auto;
     display: flex;
