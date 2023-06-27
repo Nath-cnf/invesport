@@ -12,64 +12,10 @@ html , body {
 
 header {
     position: fixed;
-    top: 0;
     background-color: #ffffff;
     height: 60px;
-    width: 100% ;
+    width: 100vw;
     z-index: 6;
-}
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 25px;
-    max-width: 100%;
-    height: 60px;
-}
-
-.btn-menu{
-    border: none;
-    cursor: pointer;
-}
-
-.mobile-menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    padding: 5px 0;
-    transform: translateX(-100%);
-    transition: transform 400ms ease;
-    background: #030e4f;
-}
-
-.mobile-menu.show {
-    transform: translateX(0);
-}
-
-.itens{
-    font-size: 15px;
-    width: 100vw;
-    padding: 10px 0px;  
-}
-
-ul{
-    margin: 0 25px;
-    display: flex;
-    flex-direction: column;
-    text-align:left;
-    justify-content: space-between;
-}
-
-.itens a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-li{
-    list-style-type: none;
 }
 
 .logo-invesport{
@@ -77,53 +23,12 @@ li{
     object-fit: cover;
 }
 
-#i-menu, #i-user{
-    color: #ff5b00;
-    font-size: 32px;
-    background-color: #ffffff;
+.itens a{
+    text-decoration: none;
 }
 
-hr{
-    border: 1px solid #ffffff;
-}
-
-.btn-login-menu{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 25px;
-}
-
-.login-menu{
-    width: 42vw;
-    height: 9vh;
-    background-color: #ffffff;
-    color: #030e4f;
-    font-size: 1.3rem;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
-
-.cadastro-menu{
-    width: 42vw;
-    height: 9vh;
-    background-color: #ff5b00;
-    color: #ffffff;
-    font-size: 1.3rem;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-}
-
-.login-menu:hover{
-    background-color: #ffffff;
-    color: #ff5b00; 
-    border-bottom: 3px solid #ff5b00;
-}
-
-.cadastro-menu:hover{
-    border-bottom: 3px solid #ffffff;
+li{
+    list-style-type: none;
 }
 
 footer {
@@ -169,4 +74,177 @@ footer {
 .politica{
     align-self: center;
     margin-top: 15px;
+}
+
+/* Mobile e Tablet*/
+@media screen and (max-width: 1023px){
+    
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 25px;
+        max-width: 100%;
+        height: 60px;
+    }
+
+    .btn-menu{
+        border: none;
+        cursor: pointer;
+    }
+    
+    .mobile-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        padding: 5px 0;
+        transform: translateX(-100%);
+        transition: transform 400ms ease;
+        background: #030e4f;
+    }
+    
+    .mobile-menu.show {
+        transform: translateX(0);
+    }
+    
+    .itens{
+        font-size: 15px;
+        width: 100vw;
+        padding: 10px 0px;  
+    }
+    
+    ul{
+        margin: 0 25px;
+        display: flex;
+        flex-direction: column;
+        text-align:left;
+        justify-content: space-between;
+    }
+    
+    .itens a {
+        color: #ffffff;
+    }
+    
+    #i-menu, #i-user{
+        color: #ff5b00;
+        font-size: 32px;
+        background-color: #ffffff;
+    }
+    
+    hr{
+        border: 1px solid #ffffff;
+    }
+    
+    .btn-login-menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 25px;
+    }
+    
+    .login-menu{
+        width: 42vw;
+        height: 9vh;
+        background-color: #ffffff;
+        color: #030e4f;
+        font-size: 1.3rem;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .cadastro-menu{
+        width: 42vw;
+        height: 9vh;
+        background-color: #ff5b00;
+        color: #ffffff;
+        font-size: 1.3rem;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .login-menu:hover{
+        background-color: #ffffff;
+        color: #ff5b00; 
+        border-bottom: 3px solid #ff5b00;
+    }
+    
+    .cadastro-menu:hover{
+        border-bottom: 3px solid #ffffff;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    
+    #i-user, #i-menu{
+        display:none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        height: 100%;
+    }
+
+    hr{
+        display: none;
+    }
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: #333333;
+        font-size: 1em;
+        width: 100%;
+        gap: 25px;
+    }
+
+    ul>.itens :hover{
+        border-bottom: 1px solid #ff5b00;
+        color: #ff5b00;
+    }
+
+    .login-menu{
+        background-color: #ffffff;
+        border: 2px solid #ff5b00;
+        color: #ff5b00;
+        width: 85px;
+        height: 38px;
+        font-size: 1em;
+        border-radius: 8px;
+    }
+
+    .login-menu:hover{
+        font-weight: 600;
+    }
+
+    .cadastro-menu{
+        background-color: #ff5b00;
+        border: 2px solid #ff5b00;
+        color: #ffffff;
+        width: 120px;
+        height: 38px;
+        font-size: 1em;
+        border-radius: 8px;
+    }
+
+    .cadastro-menu:hover{
+        border-bottom: 1px solid #ffffff;
+        font-weight: 600;
+    }
+
+    .btn-login-menu{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+    }
 }
