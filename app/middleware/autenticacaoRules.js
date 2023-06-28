@@ -35,6 +35,16 @@ const validationMiddlewareRules = {
             minSymbols: 1
         })
         .withMessage("Sua senha deve conter 1 letra maiúscula, 1 letra minúscula, 1 número, 1 caractere especial e no mínimo 8 caracteres no total.")
+    ],
+    redefinirSenha: [
+        body("senha")
+        .isStrongPassword({
+            minLength: 8,
+            minLowercase: 1,
+            minNumbers: 1,
+            minUppercase: 1
+        })
+        .withMessage("Sua senha deve conter 1 letra maiúscula, 1 letra minúscula, 1 número, 1 caractere especial e no mínimo 8 caracteres no total.")
     ]
 }
 

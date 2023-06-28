@@ -17,7 +17,11 @@ class LoginAtletaController {
 
         if (!user) {
             console.log("Usuário não está cadastrado!")
-            return res.render("pages/login-atleta.ejs")
+            return res.render("pages/login-atleta.ejs", {
+                data: {
+                    page_name: "Invesport"
+                }
+            })
         }
 
         bcrypt.compare(senha, user.senha).then((auth) => {
@@ -30,7 +34,7 @@ class LoginAtletaController {
             }
 
             console.log("Senhas não batem")
-            return es.redirect("/login-atleta")
+            return res.redirect("pages/login-atleta.ejs")
         })
     }
 }

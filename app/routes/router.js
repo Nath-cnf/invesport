@@ -10,12 +10,15 @@ const feedControllerRead = require("../controllers/info-pages/feedControllerRead
 const assinaturaControllerRead = require("../controllers/info-pages/assinaturaControllerRead");
 const duvidasFrequentesControllerRead = require("../controllers/info-pages/rodape/duvidasFrequentesControllerRead");
 
-
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
 const cadastroAtletaControllerRead = require("../controllers/info-pages/cadastro/cadastroAtletaControllerRead");
-const cadastroClubeControllerRead = require('../controllers/info-pages/cadastro/cadastroClubeControllerRead')
-const createAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
+const cadastroClubeControllerRead = require('../controllers/info-pages/cadastro/cadastroClubeControllerRead');
+
+const redefinirSenhaMiddleware = require("../middleware/redefinirSenhaMiddleware");
+const recuperarSenhaControllerRead = require("../controllers/info-pages/redefinir-senha/recuperarSenhaControllerRead");
+const redefinirSenhaControllerRead = require("../controllers/info-pages/redefinir-senha/redefinirSenhaControllerRead");
+const redefinirSenhaControllerUpdate = require("../controllers/info-pages/redefinir-senha/redefinirSenhaControllerUpdate");
 
 const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
 const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
@@ -45,6 +48,26 @@ router.get("/feed", feedControllerRead.getPage);
 router.get("/login-atleta", loginAtletaControllerRead.getPage);
 
 router.post("/login-atleta", loginAtletaControllerReadAuth.authenticateAtleta);
+
+// * Redefinir senha
+
+router.get("/recuperar-senha",
+recuperarSenhaControllerRead.getPage);
+
+router.post("/recuperar-senha",
+recuperarSenhaControllerRead.sendRecoverEmail);
+
+router.get("/redefinir-senha/:token",
+redefinirSenhaMiddleware.validarLink,
+redefinirSenhaControllerRead.getPage);
+
+router.post("/redefinir-senha/:token",
+autenticacaoRegrasMiddleware.redefinirSenha,
+autenticacaoFormMiddleware.validarRedefinirSenha,
+redefinirSenhaMiddleware.validarLink,
+autenticacaoMiddleware.criptografarRecuperacaoSenha,
+redefinirSenhaControllerUpdate.updatePassword);
+
 
 // * Cadastro atleta
 

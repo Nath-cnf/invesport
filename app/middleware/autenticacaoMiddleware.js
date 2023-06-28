@@ -3,8 +3,9 @@ const jwt = require("jsonwebtoken");
 
 class Autenticacao {
         async criptografarSenha(req, res, next) {
+            const { senha } = req.body;
+
             try {
-                const { senha } = req.body;
                 const salt = Number(process.env.SALT_ROUNDS);
 
                 const hash = await bcrypt.hash(senha, salt);
@@ -15,6 +16,37 @@ class Autenticacao {
             } catch (erro) {
                 console.log(erro);
                 return res.render("pages/cadastro-atleta.ejs");
+            }
+        }
+
+        async criptografarRecuperacaoSenha(req, res, next) {
+            const { senha } = req.body;
+            const token = req.params.token;
+
+            try {
+                const salt = Number(process.env.SALT_ROUNDS);
+
+                const hash = await bcrypt.hash(senha, salt);
+
+                req.senhaCriptografada = hash;
+
+                return next();
+            } catch (erro) {
+                console.log(erro);
+                return res.render("pages/redefinir-senha.ejs", {
+                    data: {
+                        token_validation: "valid_token",
+                        token,
+                        input_values: {
+                            senha
+                        },
+                        erros: {
+                            sistema_erro: {
+                                msg: "Erro de sistema, tente novamente mais tarde!"
+                            }
+                        }
+                    }
+                });
             }
         }
 

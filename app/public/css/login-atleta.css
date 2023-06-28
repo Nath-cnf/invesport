@@ -184,6 +184,12 @@ input {
     outline: 2px solid #ff5b00;
 }
 
+.esqueceu-senha {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
 .entrar{
     display: flex;
     flex-direction: column;

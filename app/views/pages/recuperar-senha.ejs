@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/redefinir-senha.css"> 
+    <title>InveSport</title>
+    <meta name="mnd-ver" content="6dzq83tivsmksvb0iy0rg" />
+    <script async src="https://ss.mndsrv.com/native.js"></script>
+</head>
+<%- include('../templates/head.ejs') %>
+
+<body>
+    <%- include('../templates/header.ejs') %>
+
+        <main>
+            <% if (data.email_sended) { %>
+                <h1>Email enviado</h1>
+            <% } else { %>
+                <h1>Recupere sua senha</h1>
+
+                <p>Envie um email para recuperar sua senha!</p>
+
+                <form action="/recuperar-senha" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+
+                    <button type="submit">Enviar email</button>
+                </form>
+            <% } %>
+        </main>
+
+        <%- include('../templates/rodape.ejs') %>
+</body>
+
+</html>
