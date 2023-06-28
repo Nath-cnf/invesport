@@ -307,7 +307,12 @@
     .ver-sobre, .ver-clubes, .ver-atleta{
         margin-bottom: 5px;
     }
+
+    #btn-ver{
+        display: none;
+    }
 }
+
 
 @media screen and (min-width: 1024px) {
     
@@ -392,8 +397,9 @@
     .veja{
         background-color: #ffffff;
         width: calc(100% - 100px);
-        height: 400px;
+        height: 500px;
         padding: 20px 50px;
+        margin-top: 20px;
     }
 
     #text-veja{
@@ -406,20 +412,51 @@
         flex-direction: row;
         justify-content: space-between;
         gap: 20px;
+        margin: 20px 0px;
     }
     
     #veja-atleta, #veja-clubes, #veja-sobre{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         min-width: 320px;
         max-width: 25%;
         height: 375px;
         background-color: #14248a;
+        border-radius: 15px;
     }
 
     .filtro-atleta, .filtro-clube, .filtro-sobre{
         width: 160px;
         height: 160px;
+    }
+
+    #text-atletas, #text-clubes, #text-sobre{
+        color: #ffffff;
+        font-size: 26px;
+        font-weight: 600;
+
+    }
+
+    #btn-ver{
+        width: 255px;
+        height: 60px;
+        background-color: #ff5b00;
+        color: #ffffff;
+        text-align: center;
+        font-size: 22px;
+        border-radius: 10px;
+        margin-top: 30px;
+        border: none;
+    }
+
+    #btn-ver>a{
+        text-decoration: none;
+    }
+    
+    #i-plano{
+        display: none;
     }
     
 }
