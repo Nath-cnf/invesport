@@ -53,6 +53,34 @@ class FormValidation {
         
         return next();
     }
+
+    async validarRedefinirSenha(req, res, next) {
+        const erros = validationResult(req);
+
+        if (!erros.isEmpty()) {
+            const {
+                senha
+            } = req.body;
+            const token = req.params.token;
+
+            const senha_erro = erros.errors.find(erro => erro.path === "senha");
+
+            return res.render("pages/redefinir-senha.ejs", {
+                data: {
+                    token_validation: "valid_token",
+                    token,
+                    input_values: {
+                        senha
+                    },
+                    erros: {
+                        senha_erro
+                    }
+                }
+            })
+        }
+
+        return next();
+    }
 }
 
 const autenticacaoForm = new FormValidation();

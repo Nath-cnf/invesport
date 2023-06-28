@@ -8,15 +8,16 @@ datasource db {
 }
 
 model Usuario {
-    id         String @id @default(uuid())
+    id         String  @id @default(uuid())
     nome       String
     id_esporte String
     cnpj_clube String?
     cidade     String
     estado     String
-    email      String @unique
+    email      String  @unique
     senha      String
 
+    tokens  Token[]
     esporte Esporte @relation(fields: [id_esporte], references: [id])
 }
 
@@ -24,4 +25,12 @@ model Esporte {
     id       String    @id @default(uuid())
     nome     String    @unique
     usuarios Usuario[]
+}
+
+model Token {
+    id         String   @id @default(uuid())
+    email      String
+    created_at DateTime @default(now())
+
+    usuario Usuario @relation(fields: [email], references: [email])
 }

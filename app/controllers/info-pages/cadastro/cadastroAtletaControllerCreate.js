@@ -12,8 +12,6 @@ class CadastroAtletaControllerCreate {
         } = req.body;
         const senha = req.senhaCriptografada;
 
-        console.log(senha)
-
         await prisma.usuario.create({
             data: {
                 nome,
