@@ -203,56 +203,6 @@
     background-color: #ff5b00;
 }
 
-.veja{
-    background-color: #FF5B00;
-    border-radius: 15px;
-    width: calc(100vw-25px);
-    height: 160px;
-    color: #ffffff;   
-    padding-top: 15px; 
-    margin: 40px 25px;
-}
-
-.veja>#text-veja{
-    display: flex;
-    justify-content: flex-start;
-    font-size: 20px;
-    margin-left: 15px;
-}
-
-.icon-veja{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-items: center;
-    align-content: space-between;
-    text-align: center;
-    margin: 15px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-#veja-atleta, #veja-clubes, #veja-sobre{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.filtro-sobre{
-    width: 75px;
-    height: 75px;
-}
-
-.ver-sobre{
-    background-color: #14248a;
-    border-radius: 50%;
-    padding: 5px;
-}
-
-.ver-sobre, .ver-clubes, .ver-atleta{
-    margin-bottom: 5px;
-}
-
 .box-plano{
     background-color: #ffffff;
     border-radius: 25px;
@@ -306,11 +256,255 @@
     margin-bottom: 10px;
 }
 
-/*@media screen and (min-width: 480px) and ( max-width: 1720px){
-    #banner-home {
-        background-image: url("");
-        max-width: 200vw;
-        max-height: 200vh;
+@media screen and (max-width:1023px) {
+    
+    .veja{
+        background-color: #FF5B00;
+        border-radius: 15px;
+        width: calc(100vw-25px);
+        height: 160px;
+        color: #ffffff;   
+        padding-top: 15px; 
+        margin: 40px 25px;
+    }
+    
+    .veja>#text-veja{
+        display: flex;
+        justify-content: flex-start;
+        font-size: 20px;
+        margin-left: 15px;
+    }
+    
+    .icon-veja{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        justify-items: center;
+        align-content: space-between;
+        text-align: center;
+        margin: 15px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    
+    #veja-atleta, #veja-clubes, #veja-sobre{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .filtro-sobre{
+        width: 75px;
+        height: 75px;
+    }
+    
+    .ver-sobre{
+        background-color: #14248a;
+        border-radius: 50%;
+        padding: 5px;
+    }
+    
+    .ver-sobre, .ver-clubes, .ver-atleta{
+        margin-bottom: 5px;
     }
 
+    #btn-ver{
+        display: none;
+    }
+
+    .img-selo, .img-metas, .img-doacoes{
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    
+    #conheca{
+        font-size: 40px;    
+    }
+
+    .somos{
+        height: 10em;
+        margin: 50px;
+        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.35);
+    }
+
+    .title-somos{
+        font-size: 36px;
+        margin-bottom: 3%;
+    }
+
+    .p-somos{
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    #logo-somos{
+        width: 132px;
+        height: 135px;
+    }
+
+    .encontre{
+        font-size: 40px;
+        margin-bottom: 3%;
+    }
+
+    .doacao, .agenda, .perfil, .assinatura{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px 25px;
+        padding: 30px;
+        width: 25%;
+        min-height: 250px;
+    }
+
+    .box-funcionalidades{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .title-doacao, .title-perfil, .title-agenda, .title-assinatura{
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .i-doacao, .i-calendario-user, .i-foto, .i-plano{
+        width: 170px;
+        height: 170px;
+    }
+
+    .box-cadastrar-se{
+        margin: 25px 50px;
+        height: 200px;
+        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.35);
+    }
+
+    #faca-parte, #inve2, #sport2{
+        font-size: 35px;
+    }
+
+    #text-cadastrar{
+        font-size: 22px;
+    }
+
+    #botao-cadastrar-ja{
+        width: 40%;
+        height: 25%;
+    }
+
+    .veja{
+        background-color: #ffffff;
+        width: calc(100% - 100px);
+        height: 500px;
+        padding: 20px 50px;
+        margin-top: 20px;
+    }
+
+    #text-veja{
+        color: #ff5b00;
+        font-size: 32px;
+    }
+
+    .icon-veja{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 20px 0px;
+    }
+    
+    #veja-atleta, #veja-clubes, #veja-sobre{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 320px;
+        max-width: 25%;
+        height: 375px;
+        background-color: #14248a;
+        border-radius: 15px;
+    }
+
+    .filtro-atleta, .filtro-clube, .filtro-sobre{
+        width: 160px;
+        height: 160px;
+    }
+
+    #text-atletas, #text-clubes, #text-sobre{
+        color: #ffffff;
+        font-size: 26px;
+        font-weight: 600;
+
+    }
+
+    #btn-ver{
+        width: 255px;
+        height: 60px;
+        background-color: #ff5b00;
+        color: #ffffff;
+        text-align: center;
+        font-size: 22px;
+        border-radius: 10px;
+        margin-top: 30px;
+        border: none;
+    }
+
+    #btn-ver>a{
+        text-decoration: none;
+    }
+
+    .box-plano{
+        margin: 50px;
+        padding: 10px 70px;
+    }
+
+    #ass-destaque{
+        margin-top: 15px;
+    }
+    
+    #i-plano{
+        display: none;
+    }
+    
+    .img-metas, .img-doacoes{
+        width: 290px;
+        height: 280px;
+    }
+
+    .img-selo{
+        width: 360px;
+        height: 300px;
+    }
+
+    .ass-selo, .ass-metas, .ass-doacoes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 300px;
+    }
+
+    .t-selo, .t-metas, .t-doacoes{
+        color: #333333;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    #preco-plano{
+        font-size: 38px;
+        font-weight: 600;
+    }
+
+    #btn-assinar{
+        width: 265px;
+        height: 60px;
+        font-size: 20px;
+    }
 }
