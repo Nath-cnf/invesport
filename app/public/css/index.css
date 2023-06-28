@@ -311,6 +311,10 @@
     #btn-ver{
         display: none;
     }
+
+    .img-selo, .img-metas, .img-doacoes{
+        display: none;
+    }
 }
 
 
@@ -454,9 +458,53 @@
     #btn-ver>a{
         text-decoration: none;
     }
+
+    .box-plano{
+        margin: 50px;
+        padding: 10px 70px;
+    }
+
+    #ass-destaque{
+        margin-top: 15px;
+    }
     
     #i-plano{
         display: none;
     }
     
+    .img-metas, .img-doacoes{
+        width: 290px;
+        height: 280px;
+    }
+
+    .img-selo{
+        width: 360px;
+        height: 300px;
+    }
+
+    .ass-selo, .ass-metas, .ass-doacoes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 300px;
+    }
+
+    .t-selo, .t-metas, .t-doacoes{
+        color: #333333;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    #preco-plano{
+        font-size: 38px;
+        font-weight: 600;
+    }
+
+    #btn-assinar{
+        width: 265px;
+        height: 60px;
+        font-size: 20px;
+    }
 }
