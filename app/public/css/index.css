@@ -203,56 +203,6 @@
     background-color: #ff5b00;
 }
 
-.veja{
-    background-color: #FF5B00;
-    border-radius: 15px;
-    width: calc(100vw-25px);
-    height: 160px;
-    color: #ffffff;   
-    padding-top: 15px; 
-    margin: 40px 25px;
-}
-
-.veja>#text-veja{
-    display: flex;
-    justify-content: flex-start;
-    font-size: 20px;
-    margin-left: 15px;
-}
-
-.icon-veja{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-items: center;
-    align-content: space-between;
-    text-align: center;
-    margin: 15px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-#veja-atleta, #veja-clubes, #veja-sobre{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.filtro-sobre{
-    width: 75px;
-    height: 75px;
-}
-
-.ver-sobre{
-    background-color: #14248a;
-    border-radius: 50%;
-    padding: 5px;
-}
-
-.ver-sobre, .ver-clubes, .ver-atleta{
-    margin-bottom: 5px;
-}
-
 .box-plano{
     background-color: #ffffff;
     border-radius: 25px;
@@ -304,6 +254,59 @@
     color: #ffffff;
     font-size: 15px;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width:1023px) {
+    
+    .veja{
+        background-color: #FF5B00;
+        border-radius: 15px;
+        width: calc(100vw-25px);
+        height: 160px;
+        color: #ffffff;   
+        padding-top: 15px; 
+        margin: 40px 25px;
+    }
+    
+    .veja>#text-veja{
+        display: flex;
+        justify-content: flex-start;
+        font-size: 20px;
+        margin-left: 15px;
+    }
+    
+    .icon-veja{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        justify-items: center;
+        align-content: space-between;
+        text-align: center;
+        margin: 15px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    
+    #veja-atleta, #veja-clubes, #veja-sobre{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .filtro-sobre{
+        width: 75px;
+        height: 75px;
+    }
+    
+    .ver-sobre{
+        background-color: #14248a;
+        border-radius: 50%;
+        padding: 5px;
+    }
+    
+    .ver-sobre, .ver-clubes, .ver-atleta{
+        margin-bottom: 5px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -385,4 +388,38 @@
         width: 40%;
         height: 25%;
     }
+
+    .veja{
+        background-color: #ffffff;
+        width: calc(100% - 100px);
+        height: 400px;
+        padding: 20px 50px;
+    }
+
+    #text-veja{
+        color: #ff5b00;
+        font-size: 32px;
+    }
+
+    .icon-veja{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    #veja-atleta, #veja-clubes, #veja-sobre{
+        display: flex;
+        flex-direction: column;
+        min-width: 320px;
+        max-width: 25%;
+        height: 375px;
+        background-color: #14248a;
+    }
+
+    .filtro-atleta, .filtro-clube, .filtro-sobre{
+        width: 160px;
+        height: 160px;
+    }
+    
 }

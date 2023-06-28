@@ -13,6 +13,7 @@ html , body {
 header {
     position: fixed;
     background-color: #ffffff;
+    top: 0px;
     height: 60px;
     width: 100vw;
     z-index: 6;
