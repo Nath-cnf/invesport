@@ -306,3 +306,83 @@
     margin-bottom: 10px;
 }
 
+@media screen and (min-width: 1024px) {
+    
+    #conheca{
+        font-size: 40px;    
+    }
+
+    .somos{
+        height: 10em;
+        margin: 50px;
+        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.35);
+    }
+
+    .title-somos{
+        font-size: 36px;
+        margin-bottom: 3%;
+    }
+
+    .p-somos{
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    #logo-somos{
+        width: 132px;
+        height: 135px;
+    }
+
+    .encontre{
+        font-size: 40px;
+        margin-bottom: 3%;
+    }
+
+    .doacao, .agenda, .perfil, .assinatura{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px 25px;
+        padding: 30px;
+        width: 25%;
+        min-height: 250px;
+    }
+
+    .box-funcionalidades{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .title-doacao, .title-perfil, .title-agenda, .title-assinatura{
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .i-doacao, .i-calendario-user, .i-foto, .i-plano{
+        width: 170px;
+        height: 170px;
+    }
+
+    .box-cadastrar-se{
+        margin: 25px 50px;
+        height: 200px;
+        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.35);
+    }
+
+    #faca-parte, #inve2, #sport2{
+        font-size: 35px;
+    }
+
+    #text-cadastrar{
+        font-size: 22px;
+    }
+
+    #botao-cadastrar-ja{
+        width: 40%;
+        height: 25%;
+    }
+}
