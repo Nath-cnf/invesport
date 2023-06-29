@@ -66,7 +66,7 @@ class redefinirSenhaControllerUpdate {
             from: "Invesport.tcc@gmail.com",
             to: email,
             subject: "Senha alterada",
-            text: `A senha da sua conta do Invesport foi alterada`
+            html: `<img src="https://invesport-production.up.railway.app/assets/assinatura.jpg>`
         }
 
         await transporter.sendMail(mailOptions);

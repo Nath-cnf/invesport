@@ -1,6 +1,10 @@
 class homeCadastradaControllerRead {
     getPage(req, res) {
-        res.render("pages/home-cadastrada.ejs")
+        res.render("pages/home-cadastrada.ejs", {
+            data: {
+                page_name: "Invesport"
+            }
+        })
     }
 }
 

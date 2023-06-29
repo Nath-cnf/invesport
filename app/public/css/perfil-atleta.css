@@ -45,19 +45,19 @@
     margin: 0 25px;
 }
 
-.text-cidade, .text-clube, .text-esporte{
+.text-clube, .text-esporte{
     font-size: 16px;
     font-weight: normal;
     color: #333333;
 }
 
-.t-cidade, .t-clube, .t-esporte{
+.t-clube, .t-esporte{
     font-size: 18px;
     color: #333333;
     font-family: "Popins SemiBold", "Popins", sans-serif;
 }
 
-.cidade, .clube, .esporte{
+.clube, .esporte{
     display: flex;
     flex-direction: column;
     align-items: center;

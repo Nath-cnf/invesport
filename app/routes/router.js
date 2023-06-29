@@ -9,6 +9,7 @@ const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtle
 const feedControllerRead = require("../controllers/info-pages/feedControllerRead");
 const assinaturaControllerRead = require("../controllers/info-pages/assinaturaControllerRead");
 const duvidasFrequentesControllerRead = require("../controllers/info-pages/rodape/duvidasFrequentesControllerRead");
+const comoDoarControllerRead = require("../controllers/info-pages/comoDoarControllerRead");
 
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
@@ -42,6 +43,8 @@ perfilAtletaControllerRead.getPage);
 router.get("/assinatura", assinaturaControllerRead.getPage);
 
 router.get("/feed", feedControllerRead.getPage);
+
+router.get("/como-doar", comoDoarControllerRead.getPage);
 
 // * Login atleta
 

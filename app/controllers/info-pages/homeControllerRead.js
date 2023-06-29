@@ -1,6 +1,10 @@
 class HomeControllerRead {
     getPage(req, res) {
-        res.render("pages/index.ejs")
+        res.render("pages/index.ejs", {
+            data: {
+                page_name: "Invesport"
+            }
+        })
     }
 }
 

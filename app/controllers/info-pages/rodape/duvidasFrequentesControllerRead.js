@@ -1,6 +1,10 @@
 class duvidasFrequentesControllerRead {
     getPage(req, res) {
-        res.render("pages/duvidas-frequentes.ejs")
+        res.render("pages/duvidas-frequentes.ejs", {
+            data: {
+                page_name: "Invesport"
+            }
+        })
     }
 }
 
