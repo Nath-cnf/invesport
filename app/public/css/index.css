@@ -320,6 +320,21 @@
 
 @media screen and (min-width: 1024px) {
     
+    .banner{
+        font-size: 1.2em;
+        width: 28vw;
+        height: 18vh;
+    }
+
+    .boneco{
+        width: 385px;
+        height: 385px;
+    }
+    
+    .texto-banner{
+        width: 20vw;
+    }
+
     #conheca{
         font-size: 40px;    
     }
