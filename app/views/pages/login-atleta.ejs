@@ -11,54 +11,59 @@
     <%- include('../templates/header.ejs') %>
 
         <main>
-            <div class="container">
-                <img src="assets/cadastro-login/atleta-circulo.png" id="i-atleta">
-                <h2 class="t-atleta">Atleta</h2>
-            </div>
+            <div class="container-login">
+                <div class="container">
+                    <img src="assets/cadastro-login/atleta-circulo.png" class="i-atleta">
+                    <h2 class="t-atleta">Atleta</h2>
+                </div>
 
-            <div class="btn">
-                <a href="login-clube"><button id="btn-clube">Clube</button></a>
-                <a href="login-atleta"><button id="btn-atleta">Atleta</button></a>
-            </div>
+                <div class="btn">
+                    <a href="login-clube"><button id="btn-clube">Clube</button></a>
+                    <a href="login-atleta"><button id="btn-atleta">Atleta</button></a>
+                </div>
 
-            <div class="container-input">
-                <form class="formulario" method="post" action="/login-atleta">
-                    <span class="campos-form">
-                        <label class="titulo-cpf">E-mail<p class="asteristico">*</p></label>
-                        <div class="cpf">
-                            <input type="cpf" placeholder="Insira seu e-mail" name="email" class="campo-cpf">
-                            <span class="bottom"></span>
-                            <span class="right"></span>
-                            <span class="top"></span>
-                            <span class="left"></span>
+                <div class="container-input">
+                    <form class="formulario" method="post" action="/login-atleta">
+                        <span class="campos-form">
+                            <label class="titulo-cpf">E-mail<p class="asteristico">*</p></label>
+                            <div class="cpf">
+                                <input type="cpf" placeholder="Insira seu e-mail" name="email" class="campo-cpf">
+                                <span class="bottom"></span>
+                                <span class="right"></span>
+                                <span class="top"></span>
+                                <span class="left"></span>
+                            </div>
+                            <label class="titulo-senha">Senha<p class="asteristico">*</p></label>
+                            <div class="senha">
+                                <input type="password" placeholder="Insira sua senha" name="senha" class="campo-senha">
+                                <span class="bottom"></span>
+                                <span class="right"></span>
+                                <span class="top"></span>
+                                <span class="left"></span>
+                            </div>
+                        </span>
+
+                        <span class="esqueceu-senha">Esqueceu sua senha? <a href="/recuperar-senha" class="cadastre"> Redefinir senha</a></span>
+
+                        <div class="entrar">
+                            <button type="submit" id="entrar">ENTRAR</button>
+                        <!--<span class="ou">Ou entre com</span>
                         </div>
-                        <label class="titulo-senha">Senha<p class="asteristico">*</p></label>
-                        <div class="senha">
-                            <input type="password" placeholder="Insira sua senha" name="senha" class="campo-senha">
-                            <span class="bottom"></span>
-                            <span class="right"></span>
-                            <span class="top"></span>
-                            <span class="left"></span>
-                        </div>
-                    </span>
+                        <div class="btn-entrar">
+                            <button class="btn-google">
+                                <i id="icon-google" class='bx bxl-google' style='color:#ffffff'></i>
+                            </button>
+                            <button class="btn-facebook">
+                                <i id="icon-facebook" class='bx bxl-facebook' style='color:#ffffff'></i>
+                            </button>
+                        </div>-->
 
-                    <span class="esqueceu-senha">Esqueceu sua senha? <a href="/recuperar-senha" class="cadastre"> redefinir senha</a></span>
+                        <span class="cadastrar">Não possui cadastro? 
+                            <a href="cadastro-atleta" class="cadastre">Cadastre-se</a>
+                        </span>
 
-                    <div class="entrar">
-                        <button type="submit" id="entrar">ENTRAR</button>
-                       <!--<span class="ou">Ou entre com</span>
-                    </div>
-                    <div class="btn-entrar">
-                        <button class="btn-google">
-                            <i id="icon-google" class='bx bxl-google' style='color:#ffffff'></i>
-                        </button>
-                        <button class="btn-facebook">
-                            <i id="icon-facebook" class='bx bxl-facebook' style='color:#ffffff'></i>
-                        </button>
-                    </div>-->
-                    <span class="cadastrar">Não possui cadastro? <a href="cadastro-atleta"
-                            class="cadastre">Cadastre-se</a></span>
-                </form>
+                    </form>
+                </div>
             </div>
         </main>
 
