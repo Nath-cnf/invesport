@@ -32,49 +32,10 @@ li{
     list-style-type: none;
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
+footer{
     background-color: #14248a;
-    padding: 20px 15px;
+    padding: 20px 50px;
     color: #f2f2f2;
-}
-
-.footer-card {
-    padding: 10px 0;
-    border-bottom: 2px solid #f2f2f2;
-}
-
-.header-footer-card {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.header-footer-card i {
-    font-size: 2rem;
-}
-
-.accordion {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: all 400ms ease;
-}
-
-.footer-card:hover .accordion {
-    grid-template-rows: 1fr;
-}
-
-.accordion div {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    overflow: hidden;
-}
-
-.politica{
-    align-self: center;
-    margin-top: 15px;
 }
 
 /* Mobile e Tablet*/
@@ -176,6 +137,48 @@ footer {
     .cadastro-menu:hover{
         border-bottom: 3px solid #ffffff;
     }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-card {
+        padding: 10px 0;
+        border-bottom: 2px solid #f2f2f2;
+    }
+    
+    .header-footer-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .header-footer-card i {
+        font-size: 2rem;
+    }
+    
+    .accordion {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: all 400ms ease;
+    }
+    
+    .footer-card:hover .accordion {
+        grid-template-rows: 1fr;
+    }
+    
+    .accordion div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        overflow: hidden;
+    }
+    
+    .politica{
+        align-self: center;
+        margin-top: 15px;
+    }
 }
 
 @media screen and (min-width: 1024px){
@@ -249,4 +252,32 @@ footer {
         gap: 20px;
         align-items: center;
     }
+
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        height: 20vh;
+    }
+
+    .header-footer-card i {
+        display: none;
+    }
+
+    .accordion div{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .accordion{
+        margin-top: 10px;
+    }
+
+    .politica a{
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+
 }
