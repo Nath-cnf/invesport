@@ -81,7 +81,7 @@ class CadastroAtletaControllerRead {
             subject: "Recuperação de senha Finyou",
             html: `<p> Acesse o link para redefinir sua senha <a href="https://invesport-production.up.railway.app/redefinir-senha/${token}">
             Redefinir senha</a></p>
-            <img src="https://invesport-production.up.railway.app/assets/assinatura.jpg>`
+            <img src="https://invesport-production.up.railway.app/assets/assinatura.jpg">`
         }
 
         await transporter.sendMail(mailOptions);
