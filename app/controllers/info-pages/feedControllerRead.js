@@ -1,6 +1,10 @@
 class feedControllerRead {
     getPage(req, res) {
-        res.render("pages/feed.ejs")
+        res.render("pages/feed.ejs", {
+            data: {
+                page_name: "Invesport"
+            }
+        })
     }
 }
 

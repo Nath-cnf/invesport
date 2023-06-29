@@ -1,6 +1,10 @@
 class TrabalheConoscoControllerRead {
     getPage(req, res) {
-        res.render("pages/trabalhe-conosco.ejs")
+        res.render("pages/trabalhe-conosco.ejs", {
+            data: {
+                page_name: "Invesport"
+            }
+        })
     }
 }
 

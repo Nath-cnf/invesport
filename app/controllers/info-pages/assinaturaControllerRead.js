@@ -1,6 +1,10 @@
 class assinaturaControllerRead {
     getPage(req, res) {
-        res.render("pages/assinatura.ejs")
+        res.render("pages/assinatura.ejs", {
+            data: {
+                page_name: "Invesport"
+            }
+        })
     }
 }
 

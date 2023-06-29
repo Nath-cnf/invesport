@@ -2,11 +2,10 @@
 <html lang="pt-br">
 
 <head>
+    <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" href="css/trabalho_conosco.css">
-    <title>InveSport</title>
+    <title><%- data.page_name %></title>
 </head>
-
-<%- include('../templates/header.ejs')
 
 <body>
     <%- include('../templates/header.ejs') %>
@@ -24,7 +23,7 @@
                 maiores possibilidades com apoio do povo.
             </p>
             <h2>Como nos ajudar </h2>
-            <img src="assets/trabalhe_conosco/trabalhe_conosco.png" alt="">
+            <img src="/assets/trabalhe_conosco/trabalhe_conosco.png" alt="boneco-duvida">
             <p>
                 Apoie nossos atletas e clubes cadastrados doando direto na conta deles pelos qr codes adicionados em
                 seus perfis. Ou, se for atleta/clube interessado em nosso site, cadastre-se, mantenha seu perfil

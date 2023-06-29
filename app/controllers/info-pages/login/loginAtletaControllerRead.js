@@ -1,6 +1,10 @@
 class LoginAtletaControllerRead {
     getPage(req, res) {
-        res.render("pages/login-atleta.ejs")
+        res.render("pages/login-atleta.ejs", {
+            data: {
+                page_name: "Invesport"
+            }
+        })
     }
 }
 

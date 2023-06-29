@@ -4,7 +4,7 @@
 <head>
     <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" href="css/perfil-atleta.css">
-    <title>INVESPORT | Seu perfil</title>
+    <title><%- data.page_name %></title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                     </div>
                     <hr>
                     <div class="itens">
-                        <li class="nav-item"><a href="home-cadastrada" class="nav-link">Como fazer uma doação</a></li>
+                        <li class="nav-item"><a href="home-cadastrada" class="nav-link">Como doar</a></li>
                     </div>
                     <hr>
                     <div class="itens">
@@ -58,10 +58,6 @@
             </section>
             <section class="bio">
                 <div class="info-bio">
-                    <span class="cidade">
-                        <h4 class="text-cidade">Sub-20</h4>
-                        <h3 class="t-cidade">Categoria</h3>
-                    </span>
                     <span class="clube">
                         <h4 class="text-clube">Guaratinguetá</h4>
                         <h3 class="t-clube">Clube</h3>
