@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" href="/css/tarefas.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="/assets/fonts/fonts.css">
-    <title>InveSport</title>
+    <script src="/js/agenda.js" defer></script>
+    <title><%- data.page_name %></title>
 </head>
 <body>
-    <h1>Olá, [atleta/clube]</h1>
-    <span class= span>Bem vindo(a)!</span>
+  <main>
+    <%- include('../templates/header.ejs') %>
+    <div class="titulo">
+      <h1>Olá, [atleta/clube]</h1>
+      <span class= span>Bem vindo(a)!</span>
+    </div>
     <div class="container">
         <div class="todo-app">
           <h2>Tarefas</h2>
@@ -16,7 +20,7 @@
             <input type="text" id="inputbox" placeholder="Escreva sua tarefa">
             <input type="date" id="inputbox2" placeholder="Prazo da tarefa"> 
             
-            <button onclick="addTask()" id="botao">Add</button>
+            <button id="botao-add">Add</button>
           </div>
     <div id="slide">
          <!-- <div class="card" id="card">
@@ -28,6 +32,9 @@
           </ul>
         </div>
     </div>
-  <script scr="tarefa.js"></script>
+    
+
+    <%- include('../templates/rodape.ejs') %>
+  </main>
 </body>
 </html>

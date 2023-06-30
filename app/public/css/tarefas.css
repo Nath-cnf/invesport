@@ -1,9 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins', sans-serif;
-    box-sizing: border-box;
-  }
+
   h1{
     padding: 15px 30px;
   }
@@ -32,7 +27,8 @@
     margin-bottom:20px;
     text-decoration: underline 3px #ff5b00;
   }
-  button{
+  
+  #botao-add{
     border:none;
     outline:none;
     padding:16px 40px;
@@ -76,18 +72,19 @@
       overflow-x: scroll;
       width: 100%;
   }
-  #slide::-webkit-scrollbar{
-      /* background: red; */
-  }
+
   #slide::-webkit-scrollbar-button{
-      border-radius: 20px;
+      height: 20px;
   }
+
   #slide::-webkit-scrollbar-thumb{
-      border-radius: 20px;
+    height: 20px;
   }
+
   #slide::-webkit-scrollbar-track {
-      background: red;
+    height: 20px;
   }
+
   .card{
       display: flex;
       min-width: 190px;
@@ -101,6 +98,7 @@
       position:relative;
       gap: 10px;
   }
+
   .card button{
       background: none;
       color: #ffffff;

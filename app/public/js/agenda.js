@@ -1,6 +1,9 @@
 const txt1 = document.getElementById("inputbox");
 const txt2 = document.getElementById("inputbox2");
-const cardContent = document.getElementById("slide")
+const cardContent = document.getElementById("slide");
+const botaoAdd = document.getElementById("botao-add");
+
+console.log("alo");
 
 
 function addTask(){
@@ -45,3 +48,7 @@ function addTask(){
   }
   
 }
+
+botaoAdd.addEventListener("click", () =>{
+  addTask()
+})
