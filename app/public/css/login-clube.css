@@ -219,3 +219,75 @@ input {
     font: 16px;
     color: #14248a;
 }
+
+@media screen and (min-width: 1024px){
+
+    .container{
+        margin-top: 15px;
+    }
+
+    main{
+        /*background-image: url(/assets/home/background-laranja.jpeg);
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .container-login{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        height: 100%;
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .i-clube{
+        width: 90px;
+        height: 90px;
+    }
+
+    .t-clube{
+        font-size: 2em;
+    }
+
+    #btn-atleta, #btn-clube{
+        width: 150px;
+        height: 40px;
+        font-size: 1.4em;
+    }
+
+    .campo-cpf, .campo-senha{
+        border-bottom: 1px solid #ff5b00;
+        width: 100%;
+    }
+
+    .senha{
+        margin-bottom: 30px;
+    }
+
+    .esqueceu-senha {
+        font-size: 0.9em;
+    }
+
+    #entrar{
+        width: 35%;
+        height: 45px;
+        background-color: #ff5b00;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 1.2rem;
+        text-decoration: none;
+        border: none;
+    }
+
+    .cadastrar{
+        margin: 0px 0px 20px 0px;
+    }
+}

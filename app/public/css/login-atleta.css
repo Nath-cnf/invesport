@@ -9,7 +9,7 @@ main {
     margin: 25px 0px 20px 0px;
 }
 
-.t-atleta{
+.t-user{
     color: #333333;
     font-size: 25px;
     margin-top: 5px;
@@ -276,7 +276,10 @@ input {
     }
 
     main{
-        margin: 90px 50px;
+        /*background-image: url(/assets/home/background-laranja.jpeg);
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -294,20 +297,31 @@ input {
         border-radius: 10px;
     }
 
-    .i-atleta{
+    .i-user{
         width: 90px;
         height: 90px;
+        margin-top: 10px;
     }
 
-    .t-atleta{
+    .span-user{
+        background-color:#14248a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 110px;
+        height: 110px;
+    }
+
+    .t-user{
         font-size: 2em;
     }
 
-    #btn-atleta, #btn-clube{
+    /* #btn-atleta, #btn-clube{
         width: 150px;
         height: 40px;
         font-size: 1.4em;
-    }
+    } */
 
     .campo-cpf, .campo-senha{
         border-bottom: 1px solid #ff5b00;
