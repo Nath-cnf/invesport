@@ -291,11 +291,18 @@
         display: flex;
         flex-direction: column;
         text-align: center;
+        align-items: center;
+        justify-content: center;
     }
     
     .filtro-sobre{
         width: 75px;
         height: 75px;
+    }
+
+    .filtro-atleta, .filtro-clube{
+        width: 65px;
+        height: 65px;
     }
     
     .ver-sobre{
