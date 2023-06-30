@@ -188,6 +188,7 @@ input {
     display: flex;
     justify-content: center;
     gap: 5px;
+    color: #333333;
 }
 
 .entrar{
@@ -222,6 +223,7 @@ input {
     align-items: center;
 }
 
+/*
 .btn-google, .btn-facebook{
     width: 2.5rem;
     height: 2.5rem;   
@@ -243,7 +245,7 @@ input {
 #icon-google, #icon-facebook{
     font-size: 1.5rem;
     color: #ffffff;
-}
+} */
 
 .botao{
     display: flex;
@@ -256,7 +258,7 @@ input {
 .cadastrar{
     font-size: 16px;
     color: #333333;
-    margin: 25px 0px;
+    margin: 25px 0px 10px 0px;
     display: block;
     align-items: center;
     text-align: center;
@@ -265,4 +267,72 @@ input {
 .cadastre{
     font: 16px;
     color: #14248a;
+}
+
+@media screen and (min-width: 1024px){
+
+    .container{
+        margin-top: 50px;
+    }
+
+    main{
+        margin: 75px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 82vh;
+    }
+
+    .container-login{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .i-atleta{
+        width: 100px;
+        height: 100px;
+    }
+
+    .t-atleta{
+        font-size: 2em;
+    }
+
+    #btn-atleta, #btn-clube{
+        width: 150px;
+        height: 40px;
+        font-size: 1.4em;
+    }
+
+    .campo-cpf, .campo-senha{
+        border-bottom: 1px solid #ff5b00;
+        width: 100%;
+    }
+
+    .senha{
+        margin-bottom: 30px;
+    }
+
+    .esqueceu-senha {
+        font-size: 0.9em;
+    }
+
+    #entrar{
+        width: 35%;
+        height: 45px;
+        background-color: #ff5b00;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 1.2rem;
+        text-decoration: none;
+        border: none;
+    }
+
+    .cadastrar{
+        margin: 10px 0px 30px 0px;
+    }
 }
