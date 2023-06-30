@@ -272,15 +272,15 @@ input {
 @media screen and (min-width: 1024px){
 
     .container{
-        margin-top: 70px;
+        margin-top: 15px;
     }
 
     main{
-        margin: 75px 50px;
+        margin: 90px 50px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 82vh;
+        height: 80vh;
     }
 
     .container-login{
@@ -289,13 +289,14 @@ input {
         justify-content: center;
         align-items: center;
         width: 50vw;
+        height: 100%;
         background-color: #ffffff;
         border-radius: 10px;
     }
 
     .i-atleta{
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .t-atleta{
@@ -333,6 +334,6 @@ input {
     }
 
     .cadastrar{
-        margin: 10px 0px 30px 0px;
+        margin: 0px 0px 20px 0px;
     }
 }
