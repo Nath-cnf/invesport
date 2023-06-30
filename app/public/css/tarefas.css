@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  h1{
+    padding: 15px 30px;
+  }
+  .span{
+   padding: 15px 30px;
+  
+  }
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    background: none;
+    padding: 1px 10px;
+  }
+  .todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 10px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+  }
+  .todo-app h2{
+    color: black;
+    display: flex;
+    aligh-items:center;
+    margin-bottom:20px;
+    text-decoration: underline 3px #ff5b00;
+  }
+  button{
+    border:none;
+    outline:none;
+    padding:16px 40px;
+    background:#ff5b00;
+    color: #fff;
+    font-size: 16px;
+    cursor:pointer;
+    border-radius:40px;
+  }
+  .row{
+    display: flex;
+    aligh-items:center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 15px;
+    margin-bottom: 25px
+  }
+  #inputbox{
+    display: flex;
+    border: none;
+    outline:none;
+    background: transparent;
+    padding: 8px;
+    font-weight:14px;
+  }
+  #inputbox2{
+    display: flex;
+    right: 20px;
+    border: none;
+    outline:none;
+    background: transparent;
+    padding: 1px;
+    font-weight:14px;
+  }
+  
+  #slide{
+      display: flex;
+      gap: 20px;
+      max-width: 100%;
+      overflow-x: scroll;
+      width: 100%;
+  }
+  #slide::-webkit-scrollbar{
+      /* background: red; */
+  }
+  #slide::-webkit-scrollbar-button{
+      border-radius: 20px;
+  }
+  #slide::-webkit-scrollbar-thumb{
+      border-radius: 20px;
+  }
+  #slide::-webkit-scrollbar-track {
+      background: red;
+  }
+  .card{
+      display: flex;
+      min-width: 190px;
+      flex-direction: column;
+      background: #ff5b00;
+      border-radius: 14px;
+      color: #ffffff;
+      padding: 15px 15px;
+      user-select: none;
+      cursor: pointer;
+      position:relative;
+      gap: 10px;
+  }
+  .card button{
+      background: none;
+      color: #ffffff;
+      border: 1px solid white;
+      border-radius: 500px;
+      padding: 6px;
+      align-self: flex-end;
+      font-size:12px;
+      top: 10; 
+  
+  }
+  
+  .card button:hover{
+    color: lightgrey;
+  }
+  
