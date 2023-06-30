@@ -59,6 +59,7 @@ input {
     background-color: #ffffff;
     border: none;
     transition: background-color 0.5s ease-in-out;
+    padding-left: 5px;
 }
   
 .campo-cpf:focus,
@@ -258,7 +259,7 @@ input {
 .cadastrar{
     font-size: 16px;
     color: #333333;
-    margin: 25px 0px 10px 0px;
+    margin: 10px 0px;
     display: block;
     align-items: center;
     text-align: center;
@@ -267,6 +268,30 @@ input {
 .cadastre{
     font: 16px;
     color: #14248a;
+}
+
+@media screen and (max-width: 1023px){
+    
+    .i-user{
+        width: 85px;
+        height: 85px;
+        margin-top: 10px;
+    }
+
+    .span-user{
+        background-color:#14248a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 105px;
+        height: 105px;
+    }
+
+    .senha{
+        margin-bottom: 20px;
+    }
+
 }
 
 @media screen and (min-width: 1024px){
