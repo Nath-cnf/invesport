@@ -2,24 +2,85 @@
 <html lang="pt-br">
 <head>
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" href="como-doar.css">
+    <link rel="stylesheet" href="/css/como-doar.css">
     <title><%- data.page_name %></title>
 </head>
 <body>
     <%- include('../templates/header.ejs') %>
 
     <main>
-        <div>
-        <h2>
+        <div class="topo">
+        <h2 class="como-doar">
             Como posso <b>doar</b>?
-        </h2>
-        <img src="/assets/doubt.png" alt="duvida">
+        </h2> <br>
+        <img src="/assets/doubt.png" alt="duvida" class="boneco-duvida">
         </div>
 
-        <div>
-            <h3>1-Passo</h3>
-            <p>No menu, clique em "Clubes e Atletas</p>
+        <div class="branca">
+            <h3>1-Passo</h3> <br>
+            <p>No menu, clique em "Clubes e Atletas"</p> <br>
+            <span>
+                <img src="" alt="">
+            </span>
         </div>
+
+        <div class="laranja">
+            <h3>2-Passo</h3> <br>
+            <p>Ache o perfil desejado</p> <br>
+            <span>
+                <img src="" alt="">
+            </span>
+        </div>
+
+        <div class="branca">
+            <h3>3-Passo</h3> <br>
+            <p>Clique no botão "DOAR", no perfil escolhido</p> <br>
+            <span>
+                <img src="" alt="">
+            </span>
+        </div>
+
+        <div class="laranja">
+            <h3>4-Passo</h3> <br>
+            <p>Preencha o formulário</p> <br>
+            <span>
+                <img src="" alt="">
+            </span>
+        </div>
+
+        <div class="branca">
+            <h3>5-Passo</h3> <br>
+            <p>Escaneie o QR code</p> <br>
+            <span>
+                <img src="" alt="">
+            </span>
+        </div>
+
+        <div class="laranja">
+            <h3>6-Passo</h3> <br>
+            <p>Efetue o pagamento do valor desejado</p> <br>
+            <span>
+                <img src="" alt="">
+            </span>
+        </div>
+
+        <div class="branca">
+            <h3>7-Passo</h3> <br>
+            <p>Anexe o compravante no perfil escolhido</p> <br>
+            <span>
+                <img src="" alt="">
+            </span>
+        </div>
+
+        <div class="laranja">
+            <h3>8-Passo</h3> <br>
+            <p>Apoie mais sonhos</p> <br>
+            <span>
+                <img src="" alt="">
+            </span>
+        </div>
+
+        <button class="Apoie"><a href="/feed">Apoiar</a></button>
     </main>
 
     <%- include('../templates/rodape.ejs') %>

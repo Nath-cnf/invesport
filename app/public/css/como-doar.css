@@ -1,0 +1,61 @@
+main{
+    margin: 90px 0px 0px 0px;
+}
+
+.topo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.como-doar{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    color: black;
+}
+
+b{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    color: #ff5b00;
+}
+
+.boneco-duvida{
+    width: 285px;
+    height: 285px;
+}
+
+.branca{
+    padding: 5px;
+    background-color: white;
+    align-items: center;
+    text-align: center;
+}
+
+.laranja{
+    background-color: #ff5b00;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.apoie{
+    width: 60%;
+    height: 6vh;
+    background-color: #ff5b00;
+    border-radius: 30px;
+    border: none;
+}
+
+.apoie > a{
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: none;
+}
