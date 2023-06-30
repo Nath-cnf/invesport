@@ -11,15 +11,13 @@ main{
 }
 
 .como-doar{
-    display: flex;
-    flex-direction: column;
+    display: inline;
+    flex-direction: row;
     align-self: center;
     color: black;
 }
 
 b{
-    display: flex;
-    flex-direction: column;
     align-self: center;
     color: #ff5b00;
 }
@@ -30,19 +28,37 @@ b{
 }
 
 .branca{
+    display: flex;
+    flex-direction: column;
     padding: 5px;
     background-color: white;
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 .laranja{
+    display: flex;
+    flex-direction: column;
     background-color: #ff5b00;
     padding: 5px;
     align-items: center;
     text-align: center;
     color: white;
     width: 100%;
+}
+
+.imagem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dddddd;
+    border: none;
+    border-radius: 20px;
+    width: 340px;
+    height: 180px;
+    margin-bottom: 5px;
 }
 
 .apoie{
