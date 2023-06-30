@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     max-width: 100vw;
-    max-height: 100vh;
+    height: 90vh;
     background-image: url("../assets/home/background-laranja.jpeg"); 
     background-size: 100vw 100vh;
 }
@@ -262,7 +262,7 @@
         background-color: #FF5B00;
         border-radius: 15px;
         width: calc(100vw-25px);
-        height: 160px;
+        height: 180px;
         color: #ffffff;   
         padding-top: 15px; 
         margin: 40px 25px;
@@ -279,8 +279,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        justify-items: center;
-        align-content: space-between;
+        align-items: center;
         text-align: center;
         margin: 15px;
         font-size: 15px;
@@ -301,17 +300,35 @@
     }
 
     .filtro-atleta, .filtro-clube{
-        width: 65px;
-        height: 65px;
+        width: 60px;
+        height: 60px;
     }
     
-    .ver-sobre{
+    .filtro-atleta{
+        margin-top: 10px;
+    }
+
+    .ver-sobre, .ver-perfil, .ver-doacao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #14248a;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        padding: 3px;
+        margin-bottom: 5px;
+    }
+
+    .ver-sobre, .ver-perfil, .ver-doacao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         background-color: #14248a;
         border-radius: 50%;
         padding: 5px;
-    }
-    
-    .ver-sobre, .ver-clubes, .ver-atleta{
         margin-bottom: 5px;
     }
 
@@ -336,10 +353,15 @@
     .boneco{
         width: 385px;
         height: 385px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        
     }
     
     .texto-banner{
         width: 20vw;
+        margin-top: 10px;
     }
 
     #conheca{
