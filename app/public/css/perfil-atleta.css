@@ -157,3 +157,13 @@
     color: #333333;
     text-align: justify;
 }
+
+#momentos{
+    display: grid;
+
+}
+
+.fotos{
+    width: 100px;
+    height: 100px;
+}
