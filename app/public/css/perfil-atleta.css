@@ -161,3 +161,14 @@ main{
     color: #333333;
     text-align: justify;
 }
+
+.grid-portifolio{
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 3;
+}
+
+.grid-portifolio img{
+    width: 120px;
+    height: 120px;
+}
