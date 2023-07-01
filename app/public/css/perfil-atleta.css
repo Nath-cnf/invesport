@@ -162,10 +162,15 @@ main{
     text-align: justify;
 }
 
+.container-momentos{
+    margin: 15px 25px;
+}
+
 .grid-portifolio{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 .grid-portifolio img{
