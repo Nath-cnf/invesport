@@ -168,7 +168,7 @@ input {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100vw;
+        width: calc(100vw - 100px);
         height: 1400px;
        /* width: 100vw;
         height: 100vh;
