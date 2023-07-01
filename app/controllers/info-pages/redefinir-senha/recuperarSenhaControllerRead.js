@@ -78,7 +78,7 @@ class CadastroAtletaControllerRead {
         const mailOptions = {
             from: "Invesport.tcc@gmail.com",
             to: email,
-            subject: "Recuperação de senha Finyou",
+            subject: "Recuperação de senha InveSport",
             html: `<p> Acesse o link para redefinir sua senha <a href="https://invesport-production.up.railway.app/redefinir-senha/${token}">
             Redefinir senha</a></p>
             <img src="https://invesport-production.up.railway.app/assets/assinatura.jpg">`
