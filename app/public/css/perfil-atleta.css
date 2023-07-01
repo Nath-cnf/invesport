@@ -1,3 +1,7 @@
+main{
+    background-color: #ffffff;
+}
+
 .pic-perfil{   
     padding-top: 60px;
     position: relative;
@@ -158,12 +162,18 @@
     text-align: justify;
 }
 
-#momentos{
-    display: grid;
-
+.container-momentos{
+    margin: 15px 25px;
 }
 
-.fotos{
-    width: 100px;
-    height: 100px;
+.grid-portifolio{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-portifolio img{
+    width: 120px;
+    height: 120px;
 }
