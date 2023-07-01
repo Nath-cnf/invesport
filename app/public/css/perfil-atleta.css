@@ -164,6 +164,7 @@ main{
 
 .container-momentos{
     margin: 15px 25px;
+    width: calc(100vw - 50px);
 }
 
 .grid-portifolio{
