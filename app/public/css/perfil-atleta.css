@@ -164,11 +164,12 @@ main{
 
 .grid-portifolio{
     display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 3;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 .grid-portifolio img{
     width: 120px;
     height: 120px;
 }
+
