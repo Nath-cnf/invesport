@@ -168,6 +168,8 @@ input {
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100vw;
+        height: 1400px;
        /* width: 100vw;
         height: 100vh;
         background-image: url("../assets/home/background3.png"); 
