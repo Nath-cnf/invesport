@@ -1,4 +1,49 @@
 main {
-    margin: 15px 25px 15px 25px;
+    margin: 90px 0px 0px 0px;
 }
 
+.topo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre{
+    font-size: 1.8rem;
+    display: inline;
+    flex-direction: row;
+    align-self: center;
+}
+
+.inve{
+    color: #1422a7;
+}
+
+.sport{
+    color: #ff6600;
+}
+
+.apresenta{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    width: 100%;
+}
+
+.ajudar{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.como{
+    font-size: 1.8rem;
+    display: inline;
+    flex-direction: row;
+    align-self: center;
+}

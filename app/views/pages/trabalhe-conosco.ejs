@@ -3,14 +3,17 @@
 
 <head>
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" href="css/trabalho_conosco.css">
+    <link rel="stylesheet" href="/css/trabalhe-conosco.css">
     <title><%- data.page_name %></title>
 </head>
 
 <body>
     <%- include('../templates/header.ejs') %>
         <main>
-            <h1>Sobre o InveSport</h1>
+            <div class="topo">
+            <h1 class="sobre">Sobre o <b class="inve">Inve</b><b class="sport">Sport</b></h1>
+            </div>
+            <div class="apresenta">
             <p>
                 O InveSport é um website desenvolvido como trabalho de conclusão de curso do ensino médio técnico para o
                 curso de Informática para a Internet na Fundação Instituto de Educação de Barueri (FIEB). Desde o
@@ -22,7 +25,10 @@
                 O objetivo principal do InveSport é mudar essa situação e ajudar o esporte brasileiro a conquistar
                 maiores possibilidades com apoio do povo.
             </p>
-            <h2>Como nos ajudar </h2>
+            </div>
+            <div class="ajudar">
+            <h2 class="como">Como nos ajudar </h2>
+            </div>
             <img src="/assets/trabalhe_conosco/trabalhe_conosco.png" alt="boneco-duvida">
             <p>
                 Apoie nossos atletas e clubes cadastrados doando direto na conta deles pelos qr codes adicionados em

@@ -50,6 +50,7 @@
     font-size: 1rem;
     text-decoration: none;
     box-shadow: none;
+    margin: 0;
 }
 
 #conheca{
@@ -97,6 +98,11 @@
     width: 102px;
     height: 105px;
     margin-right: 5px;
+}
+
+
+.ancora{
+    text-decoration: none;
 }
 
 .encontre{
