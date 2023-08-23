@@ -353,7 +353,7 @@
     .banner{
         font-size: 1.2em;
         width: 28vw;
-        height: 13vh;
+        height: 9rem;
     }
 
     .boneco{
@@ -367,6 +367,10 @@
     .texto-banner{
         width: 20vw;
         margin-top: 10px;
+    }
+
+    .btn-cadastro-home{
+        height: 5rem;
     }
 
     #conheca{
@@ -473,8 +477,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-width: 320px;
-        max-width: 25%;
+        width: 350px;
         height: 375px;
         background-color: #14248a;
         border-radius: 15px;
