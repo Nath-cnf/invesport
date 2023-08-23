@@ -175,7 +175,7 @@ input {
         background-image: url("../assets/home/fundo-cadastrado.png"); 
         background-repeat: no-repeat;
         background-size: cover;
-        background-size: 100vw 4222px;
+        background-size: 100vw 100vh;
         margin-top: 5vh;
     }
 
