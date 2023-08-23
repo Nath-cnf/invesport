@@ -20,6 +20,7 @@ main{
 
 #div-principal{
     position: relative;
+    height: 350px;
 }
 
 .titulo-principal{
@@ -27,20 +28,6 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 80px 50px;
-}
-
-.t-assine{
-    background-color: #ffffff;
-    color: var(--azul);
-    width: 250px;
-    border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 30px;
-    font-size: 1.3em;
-    font-weight: bold;
-    text-align: center;
 }
 
 .texto-principal{
@@ -204,4 +191,79 @@ main{
     color: #ffffff;
     border-radius: 28px;
     font-size: 1.1rem;
+}
+
+
+@media screen and (max-width: 1023px){
+
+    .titulo-principal{
+        align-items: center;
+        padding: 80px 50px;
+    }
+
+    .t-assine{
+        background-color: #ffffff;
+        color: var(--azul);
+        width: 250px;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 30px;
+        font-size: 1.3em;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    .fundo{
+        height: 350px;
+    }
+
+    .titulo-principal{
+        top: 6.5rem;
+    }
+
+    .t-assine{
+        background-color: none;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.3rem;
+    }
+
+
+    .titulo-assinatura{
+        font-size: 2.5rem;
+    }
+
+    .titulo-selo,
+    .titulo-doacao,
+    .titulo-metas,
+    .titulo-assine{
+        font-size: 1.8rem;
+    }
+
+    .container-selo,
+    .container-doacao,
+    .container-metas,
+    .container-assine{
+        padding: 1rem auto;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .texto-selo,
+    .texto-doacao,
+    .texto-metas{
+        font-size: 1.3rem
+    }
+
+    .texto-selo{
+        margin-bottom: 1rem;
+    }
 }
