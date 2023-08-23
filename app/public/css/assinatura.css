@@ -66,7 +66,7 @@ main{
     margin: 0px;
 }
 
-.selo{
+.selo-img{
     width: 17rem;
     height: 17rem;
 }
@@ -237,6 +237,7 @@ main{
 
     .titulo-assinatura{
         font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
 
     .titulo-selo,
@@ -251,7 +252,7 @@ main{
     .container-metas,
     .container-assine{
         padding: 1rem auto;
-        height: 300px;
+        height: 350px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -265,5 +266,40 @@ main{
 
     .texto-selo{
         margin-bottom: 1rem;
+    }
+
+    .selo-img{
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .doacao-img{
+        width: 17rem;
+        height: 17rem;
+    }
+
+    .metas-img{
+        width: 17rem;
+        height: 17rem;
+    }
+
+    .box-assinar{
+        width: 30rem;
+        height: 18rem;
+    }
+
+    .titulo-assine{
+        font-size: 2.3rem;
+    }
+
+    .preco{
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .assinar{
+        width: 15rem;
+        height: 2.6rem;
+        font-size: 1.3rem;
     }
 }
