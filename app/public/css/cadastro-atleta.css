@@ -170,11 +170,11 @@ input {
         justify-content: center;
         width: calc(100vw - 200px);
         height: 100%;
-        padding: 200px 0px ;
+        padding: 200px 0px;
         background-image: url("../assets/home/fundo-cadastro.png"); 
         background-repeat: no-repeat;
         background-size: cover;
-        background-size: 100vw 100v5;
+        background-size: 100vw 100%;
         margin-top: 5vh;
     }
 
