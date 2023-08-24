@@ -168,15 +168,14 @@ input {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: calc(100vw - 100px);
-        height: 1400px;
         width: 100vw;
-        height: 100vh;
-        background-image: url("../assets/home/background3.png"); 
+        height: 100%;
+        padding: 100px 0px;
+        background-image: url("../assets/home/fundo-cadastro.png"); 
         background-repeat: no-repeat;
         background-size: cover;
-        background-size: 100vw 100vh;
-        margin-top: 5vh;
+        background-size: 100% 100%;
+        margin: 0px;
     }
 
     .container-cadastro{
