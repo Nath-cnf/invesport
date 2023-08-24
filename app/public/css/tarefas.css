@@ -1,24 +1,51 @@
 main{
   margin: 75px 25px 15px 0px;
+  background-color: #ffffff;
 }
 
-  h1{
-    padding: 15px 30px;
-  }
+.fundo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.titulo{
+  position: relative;
+  height: 350px;
+}
+
+.t-principal{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  padding-top: 55px;
+}
+
+.ola{
+  margin-top: 0%;
+  text-align: center;
+  font-size: 3rem;
+}
+
   .span{
-   padding: 15px 30px;
-  
+   padding-top: 40px;
+   text-align: center;
+   font-size: 1.4rem;
   }
+
   .container {
     width: 100%;
     min-height: 100vh;
-    background: none;
-    padding: 1px 10px;
   }
+
   .todo-app{
     width: 100%;
     max-width: 540px;
-    background: #fff;
+    background: #ffffff;
     margin: 10px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 10px;
@@ -45,7 +72,7 @@ main{
     display: flex;
     align-items:center;
     justify-content: space-between;
-    background: #edeef0;
+    background: #ffffff;
     border-radius: 30px;
     padding-left: 15px;
     margin-bottom: 25px
