@@ -168,7 +168,7 @@ input {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: calc(100vw - 100px);
+        width: calc(100vw - 50px);
         height: 100%;
         padding: 100px 0px;
         background-image: url("../assets/home/fundo-cadastro.png"); 
