@@ -2,27 +2,33 @@ const prisma = require("../../../../server/database/prismaClient");
 
 class CadastroAtletaControllerCreate {
     async createAtleta(req, res){
-        const {
-            nome,
-            esporte,
-            cnpj_clube,
-            cidade,
-            estado,
-            email
-        } = req.body;
-        const senha = req.senhaCriptografada;
-
-        await prisma.usuario.create({
-            data: {
+        try {
+            const {
                 nome,
-                id_esporte: esporte,
+                esporte,
                 cnpj_clube,
                 cidade,
                 estado,
-                email,
-                senha
-            }
-        })
+                email
+            } = req.body;
+            const senha = req.senhaCriptografada;
+    
+            await prisma.usuario.create({
+                data: {
+                    nome,
+                    id_esporte: esporte,
+                    cnpj_clube,
+                    cidade,
+                    estado,
+                    email,
+                    senha
+                }
+            })
+        } catch(erro){
+            console.log(erro)
+            
+            res.render
+        }
 
         res.redirect("/login-atleta");
     }
