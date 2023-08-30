@@ -2,8 +2,15 @@ const prisma = require("../../server/database/prismaClient");
 const { validationResult } = require("express-validator");
 
 class FormValidation {
+    constructor() {
+        this.validarCadastro = this.validarCadastro.bind(this);
+    }
+
     async validarCadastro(req, res, next) {
+        const { senha, confirmacao_senha } = req.body;
         const erros = validationResult(req);
+
+        this.#confirmacaoSenhaValidation(confirmacao_senha, senha, erros);
 
         if (!erros.isEmpty()) {
             const esportes = await prisma.esporte.findMany();
@@ -14,8 +21,7 @@ class FormValidation {
                 cnpj_clube,
                 cidade,
                 estado,
-                email,
-                senha
+                email
             } = req.body;
 
             const nome_erro = erros.errors.find(erro => erro.path === "nome");
@@ -25,6 +31,9 @@ class FormValidation {
             const estado_erro = erros.errors.find(erro => erro.path === "estado");
             const email_erro = erros.errors.find(erro => erro.path === "email");
             const senha_erro = erros.errors.find(erro => erro.path === "senha");
+            const confirmacao_senha_erro = erros.errors.find(erro => erro.path === "confirmacao_senha");
+
+            console.log(cnpj_clube_erro)
 
             return res.render("pages/cadastro-atleta.ejs", {
                 data: {
@@ -36,7 +45,8 @@ class FormValidation {
                         cidade,
                         estado,
                         email,
-                        senha
+                        senha,
+                        confirmacao_senha
                     },
                     erros: {
                         nome_erro,
@@ -45,7 +55,8 @@ class FormValidation {
                         cidade_erro,
                         estado_erro,
                         email_erro,
-                        senha_erro
+                        senha_erro,
+                        confirmacao_senha_erro
                     }
                 }
             })
@@ -80,6 +91,15 @@ class FormValidation {
         }
 
         return next();
+    }
+
+    #confirmacaoSenhaValidation(confirmacao_senha, senha, errors) {
+        if (confirmacao_senha !== senha) {
+            errors.errors.push({
+                msg: "As senhas devem ser iguais!",
+                path: "confirmacao_senha"
+            })
+        }
     }
 }
 

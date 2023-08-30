@@ -62,12 +62,13 @@ class Autenticacao {
 
                 return next();
             } catch (erro) {
-                console.log(erro)
+                console.log(erro);
+
                 return res.render("pages/login-atleta.ejs");
             }
         }
 }
 
-const autenticacaoMiddleware = new Autenticacao()
+const autenticacaoMiddleware = new Autenticacao();
 
 module.exports = autenticacaoMiddleware
