@@ -25,6 +25,7 @@
                     <p class="asteristico">*</p>Campo obrigatório
                 </span>
                 <form class="formulario" method="post" action="cadastro-atleta">
+                    <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
                     <span class="campos-form">
                         <label class="titulo">Nome completo<p class="asteristico">*</p></label>
                         <div class="nome">
@@ -44,7 +45,7 @@
                                         <option value="<%- esporte.id %>"><%- esporte.nome %></option>
                                 <% }) %>
                             </select>
-                            
+                            <%- data.erros && data.erros.esporte_erro ? `<span class="mensagem-erro">${data.erros.esporte_erro.msg}</span>` : "" %>
                         </div>
 
                         <label class="titulo">CNPJ do Clube</label>
@@ -107,6 +108,8 @@
                             <%- data.erros && data.erros.confirmacao_senha_erro ? `<span class="mensagem-erro">${data.erros.confirmacao_senha_erro.msg}</span>` : "" %>
                         </div>
                     </span>
+
+                    
 
                     <div class="cadastro">
                         <input type="submit" value="CADASTRAR" id="cadastrar">

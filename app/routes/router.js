@@ -8,7 +8,8 @@ const trabalheConoscoControllerRead = require("../controllers/info-pages/rodape/
 const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
 const feedControllerRead = require("../controllers/info-pages/feedControllerRead");
 const assinaturaControllerRead = require("../controllers/info-pages/assinaturaControllerRead");
-const duvidasFrequentesControllerRead = require("../controllers/info-pages/rodape/duvidasFrequentesControllerRead");
+const duvidasFrequentesControllerRead = require("../controllers/info-pages/rodape/duvidasFrequentes/duvidasFrequentesControllerRead");
+const duvidasFrequentesControllerSendEmail = require("../controllers/info-pages/rodape/duvidasFrequentes/duvidasFrequentesControllerSendEmail");
 const comoDoarControllerRead = require("../controllers/info-pages/comoDoarControllerRead");
 const tarefaControllerRead = require("../controllers/info-pages/tarefaControllerRead");
 
@@ -96,5 +97,7 @@ router.get("/cadastro-clube", cadastroClubeControllerRead.getPage);
 //* Rodape
 
 router.get("/fale-conosco", duvidasFrequentesControllerRead.getPage);
+
+router.post("/email-duvida", duvidasFrequentesControllerSendEmail.sendEmail);
 
 module.exports = router;

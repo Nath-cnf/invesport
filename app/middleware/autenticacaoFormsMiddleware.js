@@ -9,7 +9,7 @@ class FormValidation {
     async validarCadastro(req, res, next) {
         const { senha, confirmacao_senha } = req.body;
         const erros = validationResult(req);
-
+        console.log(req.body.cnpj_clube)
         this.#confirmacaoSenhaValidation(confirmacao_senha, senha, erros);
 
         if (!erros.isEmpty()) {
@@ -32,8 +32,6 @@ class FormValidation {
             const email_erro = erros.errors.find(erro => erro.path === "email");
             const senha_erro = erros.errors.find(erro => erro.path === "senha");
             const confirmacao_senha_erro = erros.errors.find(erro => erro.path === "confirmacao_senha");
-
-            console.log(cnpj_clube_erro)
 
             return res.render("pages/cadastro-atleta.ejs", {
                 data: {

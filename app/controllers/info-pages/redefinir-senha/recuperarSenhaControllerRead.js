@@ -18,6 +18,7 @@ class CadastroAtletaControllerRead {
         const {
             email
         } = req.body;
+        console.log(email)
 
         const user = await prisma.usuario.findUnique({
             where: {
