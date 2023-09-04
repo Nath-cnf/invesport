@@ -1,3 +1,6 @@
+const prisma = require("../../../../../server/database/prismaClient")
+const jwt = require("jsonwebtoken")
+
 class duvidasFrequentesControllerRead {
     async getPage(req, res) {
         const token = req.session.token

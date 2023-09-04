@@ -1,6 +1,5 @@
 const mailer = require('nodemailer')
-const prisma = require("../../../../../server/database/prismaClient")
-const jwt = require("jsonwebtoken")
+
 
 class duvidasFrequentesControllerSendEmail {
     async sendEmail(req, res) {
