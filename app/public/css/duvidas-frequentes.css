@@ -84,3 +84,8 @@ main {
     padding: 10px;
     align-self: center;
 }
+
+.mensagem-erro{
+    color: red;
+    font-size: .9rem;
+}

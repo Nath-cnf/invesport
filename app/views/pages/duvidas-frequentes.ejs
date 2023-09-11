@@ -12,6 +12,19 @@
         <main>
             <h2 class="ajuda">Ajuda</h2>
             <p class="pode-ajudar">Como podemos ajudar? </p>
+
+            <form action="/email-duvida" method="post">
+                <input type="text" name="email_duvidador" id="email-duvidador" placeholder="Email" <%- data.input_values ? `value="${data.input_values.email}"` : "" %>>
+                <textarea name="assunto_duvida" id="assunto-duvida" cols="30" rows="10" placeholder="Escreva sua dúvida"></textarea>
+                <button> Enviar </button>
+            </form>
+
+            <% if (data.email_enviado) { %>
+                <h1>Email enviado</h1>
+            <% } %>
+            
+            <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
+            
             <div class="pesquisa">
                 <input type="text" id="txtBusca" placeholder="Envie sua dúvida..."/>
             </div>
@@ -39,18 +52,6 @@
             <div class="mais-duvidas">
             <button class="duvidas"> Mais dúvidas</button>
             </div>
-
-            <form action="/email-duvida" method="post">
-                <input type="text" name="email_duvidador" id="email-duvidador" placeholder="Email" <%- data.input_values ? `value="${data.input_values.email}"` : "" %>>
-                <textarea name="assunto_duvida" id="assunto-duvida" cols="30" rows="10" placeholder="Escreva sua dúvida"></textarea>
-                <button> Enviar </button>
-            </form>
-
-            <% if (data.email_enviado) { %>
-                <h1>Email enviado</h1>
-            <% } %>
-            
-            <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
 
         </main>
 
