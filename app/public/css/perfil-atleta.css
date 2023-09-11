@@ -99,24 +99,49 @@ main{
     margin: 20px 0;
 }
 
+.meta-icone{
+    display: flex;
+    flex-direction: row;
+}
+
+#target{
+    display: flex;
+    flex-direction: row;
+    font-size: 2.3rem;
+}
+
+
 .ls-animated{
-    width: 95%;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
     height: 8px;
-    border: 1px solid #ff5b00;
+    border: 5px solid #ff5b00;
     background-color: #ff5b00;
     border-radius: 50px;
+    margin: 0;
 }
 
 .info-meta{
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+}
+
+.desc-meta{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 9vh;
-    border-radius: 10px;
-    border: 1px solid #ff5b00;
-    gap: 5px;
+    font-size: 1.2rem;
+}
+
+.valor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .box-meta{
