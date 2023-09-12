@@ -117,7 +117,7 @@ main{
     flex-direction: row;
     position: relative;
     top: 15px;
-    width: 340px;
+    width: 80%;
     height: 8px;
     border: 5px solid #ff5b00;
     background-color: #ff5b00;
