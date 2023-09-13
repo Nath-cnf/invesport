@@ -46,7 +46,7 @@ main{
 .bio{
     width: calc( 100vw - 50px);
     background-color: #ffffff;
-    margin: 0 25px;
+    margin: 0 25px 0 25px;
 }
 
 .text-clube, .text-esporte{
@@ -71,7 +71,7 @@ main{
 .info-bio{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .b-doar {
@@ -117,7 +117,7 @@ main{
     flex-direction: row;
     position: relative;
     top: 15px;
-    width: 80%;
+    width: 85%;
     height: 8px;
     border: 5px solid #ff5b00;
     background-color: #ff5b00;
