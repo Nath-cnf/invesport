@@ -24,21 +24,19 @@ main {
     align-items: left;
 }
 
-#txtBusca{
-    height: 30px;
-    width: calc(100% - 15px);
-    margin-top: 6px;
-    border-radius: 5px;
-    border: none;
-    border-bottom: #14248a;
-    background-color: white;
-}
-
 .duvidas-frequentes{
     color: #14248a;
     text-align: center;
     margin: 5px;
     font-size: 1.8rem;
+}
+
+#txtBusca{
+    height: 30px;
+    width: calc(100% - 15px);
+    margin-top: 6px;
+    border-radius: 5px;
+    background-color: white;
 }
 
 .pergunta-1{

@@ -138,6 +138,8 @@ footer{
         border-bottom: 3px solid #ffffff;
     }
 
+    /* RODAPÉ */
+
     footer {
         display: flex;
         flex-direction: column;
