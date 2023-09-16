@@ -24,6 +24,35 @@ main {
     align-items: left;
 }
 
+#email-duvidador{
+    width: 90%;
+    border-color: #ff5b00;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#assunto-duvida{
+    width: 90%;
+    border-color: #ff5b00;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#duvida-enviar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #ff5b00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+}
+
 .duvidas-frequentes{
     color: #14248a;
     text-align: center;
