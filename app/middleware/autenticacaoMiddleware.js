@@ -1,73 +1,105 @@
 const bcrypt = require('bcrypt');
+const prisma = require('../../server/database/prismaClient')
 const jwt = require("jsonwebtoken");
 
 class Autenticacao {
-        async criptografarSenha(req, res, next) {
-            const { senha } = req.body;
+    async criptografarSenha(req, res, next) {
+        const { senha } = req.body;
 
-            try {
-                const salt = Number(process.env.SALT_ROUNDS);
+        try {
+            const salt = Number(process.env.SALT_ROUNDS);
 
-                const hash = await bcrypt.hash(senha, salt);
+            const hash = await bcrypt.hash(senha, salt);
 
-                req.senhaCriptografada = hash;
+            req.senhaCriptografada = hash;
 
-                return next();
-            } catch (erro) {
-                console.log(erro);
-                return res.render("pages/cadastro-atleta.ejs");
-            }
-        }
-
-        async criptografarRecuperacaoSenha(req, res, next) {
-            const { senha } = req.body;
-            const token = req.params.token;
-
-            try {
-                const salt = Number(process.env.SALT_ROUNDS);
-
-                const hash = await bcrypt.hash(senha, salt);
-
-                req.senhaCriptografada = hash;
-
-                return next();
-            } catch (erro) {
-                console.log(erro);
-                return res.render("pages/redefinir-senha.ejs", {
-                    data: {
-                        token_validation: "valid_token",
-                        token,
-                        input_values: {
-                            senha
-                        },
-                        erros: {
-                            sistema_erro: {
-                                msg: "Erro de sistema, tente novamente mais tarde!"
-                            }
+            return next();
+        } catch (erro) {
+            console.log(erro);
+            const esportes = await prisma.esporte.findMany();
+            const {
+                nome,
+                esporte,
+                cnpj_clube,
+                cidade,
+                estado,
+                email,
+                senha,
+                confirmacao_senha
+            } = req.body;
+            return res.render("pages/cadastro-atleta.ejs", {
+                data: {
+                    esportes,
+                    input_values: {
+                        nome,
+                        esporte,
+                        cnpj_clube,
+                        cidade,
+                        estado,
+                        email,
+                        senha,
+                        confirmacao_senha
+                    },
+                    erros: {
+                        sistema_erro: {
+                            msg: "Erro no sistema"
                         }
                     }
-                });
-            }
+                }
+            });
+        }
+    }
+
+    async criptografarRecuperacaoSenha(req, res, next) {
+        const { senha } = req.body;
+        const token = req.params.token;
+
+        try {
+            const salt = Number(process.env.SALT_ROUNDS);
+
+            const hash = await bcrypt.hash(senha, salt);
+
+            req.senhaCriptografada = hash;
+
+            return next();
+        } catch (erro) {
+            console.log(erro);
+            return res.render("pages/redefinir-senha.ejs", {
+                data: {
+                    token_validation: "valid_token",
+                    token,
+                    input_values: {
+                        senha
+                    },
+                    erros: {
+                        sistema_erro: {
+                            msg: "Erro de sistema, tente novamente mais tarde!"
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    validateToken(req, res, next) {
+        const token = req.session.token;
+
+        if (!token) {
+            return res.redirect("/login-atleta");
         }
 
-        validateToken(req, res, next) {
-            const token = req.session.token;
+        try {
+            jwt.verify(token, process.env.SECRET);
 
-            if (!token) {
-                return res.redirect("/login-atleta");
-            }
+            return next();
+        } catch (erro) {
+            console.log(erro);
 
-            try {
-                jwt.verify(token, process.env.SECRET);
-
-                return next();
-            } catch (erro) {
-                console.log(erro)
-                return res.render("pages/login-atleta.ejs");
-            }
+            return res.render("pages/login-atleta.ejs");
         }
+    }
 }
 
-const autenticacaoMiddleware = new Autenticacao()
+const autenticacaoMiddleware = new Autenticacao();
 
 module.exports = autenticacaoMiddleware

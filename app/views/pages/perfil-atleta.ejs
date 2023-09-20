@@ -3,19 +3,20 @@
 
 <head>
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" href="/css/perfil-atleta.css">
+    <link rel="stylesheet" type="text/css" href="/css/perfil-atleta.css">
     <title><%- data.page_name %></title>
 </head>
 
+
 <body>
-    <%- include('../templates/header.ejs') %>
+    <%- include('../templates/header-perfil.ejs') %>
         <main>
             <section>
                 <div class="pic-perfil">
                     <img src="/assets/perfil/bannerperfil.jpeg" class="capa-perfil">
                     <img src="/assets/perfil/perfil-victor.jpeg" class="foto-perfil">
                 </div>
-                <h2 class="titulo-perfil">Victor Rocha</h2>
+                <h2 class="titulo-perfil" id="logado"></h2>
                 <div class="redes-sociais">
                     <i class='bx bxl-facebook-square' style='color:#ff540b'></i>
                     <i class='bx bxl-instagram' style='color:#ff540b'></i>
@@ -37,9 +38,13 @@
                 </div>
 
                 <div class="info-meta">
-                    <p class="desc-meta">Passagem para o Campeonato </p>
-                    <div class="ls-animated"></div>
-                    <p class="valor">R$694,73 - R$1,000</p>
+                    <p class="desc-meta"> Passagem para o Campeonato </p>
+                    <div class="meta-icone">
+                        <i class='bx bx-target-lock' style='color:#ff6300' id="target"></i>
+                        <hr class="ls-animated">
+                    </div>
+                    
+                    <p class="valor">máx: R$1,000</p>
                 </div>
             </section>
             <hr class="linha-bio">

@@ -5,9 +5,11 @@ class CadastroAtletaControllerRead {
         this.getPage = this.getPage.bind(this)
     }
     async getPage(req, res) {
-        const esportes = await this.getEsportes()
+        const esportes = await this.getEsportes();
+
         res.render("pages/cadastro-atleta.ejs", {
           data: {
+            page_name: "Invesport",
             esportes
           }
         })

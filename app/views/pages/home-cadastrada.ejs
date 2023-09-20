@@ -3,12 +3,12 @@
 
 <head>
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" type="text/css" href="css/home-cadastrada.css">
+    <link rel="stylesheet" type="text/css" href="/css/home-cadastrada.css">
     <title><%- data.page_name %></title>
 </head>
 
 <body>
-    <%- include('../templates/header.ejs') %>
+    <%- include('../templates/header-perfil.ejs') %>
 
         <main>
             <input type="search" placeholder="Pesquise aqui" class="pesquisa">
@@ -17,16 +17,16 @@
                 <span id="text-veja">Veja</span>
                 <div class="icon-veja">
                     <div id="veja-atleta">
-                        <a href="/feed"><img src="/assets/home/perfil.png" class="filtro-atleta"></a>
-                        <span id="text-atltetas">Perfis</span>
+                        <a href="/feed" class="ver"><img src="/assets/home/perfil.png" class="filtro-atleta"></a>
+                        <span class="text-veja">Perfis</span>
                     </div>
                     <div id="veja-clubes">
-                        <a href="/como-doar"><img src="/assets/home/como-doar.png" class="filtro-clube"></a>
-                        <span>Como doar</span>
+                        <a href="/como-doar" class="ver"><img src="/assets/home/como-doar.png" class="filtro-clube"></a>
+                        <span class="text-veja">Como doar</span>
                     </div>
                     <div id="veja-esportes">
-                        <a href="#"><img src="/assets/home/sobre-icon.png" class="filtro-sobre"></a>
-                        <span>Sobre</span>
+                        <a href="/trabalhe-conosco" class="ver"><img src="/assets/home/sobre-icon.png" class="filtro-sobre"></a>
+                        <span class="text-veja">Sobre</span>
                     </div>
                 </div>
             </div>

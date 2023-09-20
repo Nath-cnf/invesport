@@ -11,8 +11,10 @@ const validationMiddlewareRules = {
         body("cnpj_clube")
         .optional({ checkFalsy: true })
         .isString()
-        .isLength({ min: 0, max: 18 })
-        .withMessage("Insira um CNPJ válido, no padrão: XXXXXXXXXXXXXXXXXX"),
+        .isLength({ min: 18, max: 18 })
+        .withMessage("Insira um CNPJ válido, no padrão: XX.XXX.XXX/XXXX-XX")
+        .matches(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/)
+        .withMessage("Insira um CNPJ válido, no padrão: XX.XXX.XXX/XXXX-XX"),
         body("cidade")
         .isString()
         .isLength({min: 3})

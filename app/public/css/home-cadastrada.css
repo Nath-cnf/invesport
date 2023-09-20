@@ -35,10 +35,36 @@ input{
     font-weight: bold;
 }
 
+.filtro-atleta, .filtro-clube{
+    margin-top: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.filtro-sobre{
+    width: 75px;
+    height: 75px;
+}
+
+.text-veja{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
 #veja-atleta, #veja-clubes, #veja-esportes{
     display: flex;
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #14248a;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    padding: 3px;
+    margin-bottom: 5px;
 }
 
 .titulo-times{

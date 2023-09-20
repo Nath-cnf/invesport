@@ -19,7 +19,16 @@ class LoginAtletaController {
             console.log("Usuário não está cadastrado!")
             return res.render("pages/login-atleta.ejs", {
                 data: {
-                    page_name: "Invesport"
+                    page_name: "Invesport",
+                    input_values: {
+                        email,
+                        senha
+                    },
+                    erros: {
+                        email_erro: {
+                            msg: "Usuário não encontrado!"
+                        }
+                    }
                 }
             })
         }
@@ -34,7 +43,20 @@ class LoginAtletaController {
             }
 
             console.log("Senhas não batem")
-            return res.redirect("pages/login-atleta.ejs")
+            return res.render("pages/login-atleta.ejs", {
+                data: {
+                    page_name: "Invesport",
+                    input_values: {
+                        email,
+                        senha
+                    },
+                    erros: {
+                        senha_erro: {
+                            msg: "Senha incorreta!"
+                        }
+                    }
+                }
+            })
         })
     }
 }

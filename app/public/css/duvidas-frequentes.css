@@ -24,14 +24,33 @@ main {
     align-items: left;
 }
 
-#txtBusca{
-    height: 30px;
-    width: calc(100% - 15px);
-    margin-top: 6px;
+#email-duvidador{
+    width: 90%;
+    border-color: #ff5b00;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#assunto-duvida{
+    width: 90%;
+    border-color: #ff5b00;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#duvida-enviar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #ff5b00;
     border: none;
-    border-bottom: #14248a;
-    background-color: white;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
 }
 
 .duvidas-frequentes{
@@ -39,6 +58,14 @@ main {
     text-align: center;
     margin: 5px;
     font-size: 1.8rem;
+}
+
+#txtBusca{
+    height: 30px;
+    width: calc(100% - 15px);
+    margin-top: 6px;
+    border-radius: 5px;
+    background-color: white;
 }
 
 .pergunta-1{
@@ -83,4 +110,9 @@ main {
     height: 30%;
     padding: 10px;
     align-self: center;
+}
+
+.mensagem-erro{
+    color: red;
+    font-size: .9rem;
 }

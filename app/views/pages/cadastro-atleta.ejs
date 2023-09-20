@@ -7,8 +7,6 @@
     <title><%- data.page_name %></title>
 </head>
 
-
-
 <body>
     <%- include('../templates/header.ejs') %>
 
@@ -27,6 +25,7 @@
                     <p class="asteristico">*</p>Campo obrigatório
                 </span>
                 <form class="formulario" method="post" action="cadastro-atleta">
+                    <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
                     <span class="campos-form">
                         <label class="titulo">Nome completo<p class="asteristico">*</p></label>
                         <div class="nome">
@@ -46,12 +45,12 @@
                                         <option value="<%- esporte.id %>"><%- esporte.nome %></option>
                                 <% }) %>
                             </select>
-                            
+                            <%- data.erros && data.erros.esporte_erro ? `<span class="mensagem-erro">${data.erros.esporte_erro.msg}</span>` : "" %>
                         </div>
 
                         <label class="titulo">CNPJ do Clube</label>
                         <div class="cnpj">
-                            <input type="number" placeholder="Insira o CNPJ do Clube" class="campo
+                            <input type="string" placeholder="Insira o CNPJ do Clube" class="campo
                             <%- data.erros && data.erros.cnpj_clube_erro ? `erro` : "" %>" name="cnpj_clube"
                             <%- data.input_values ? `value="${data.input_values.cnpj_clube}"` : "" %>
                             >
@@ -101,10 +100,16 @@
 
                         <label class="titulo">Repita a senha<p class="asteristico">*</p></label>
                         <div class="repita">
-                            <input type="password" placeholder="Insira sua senha" class="campo">
+                            <input type="password" placeholder="Insira sua senha" class="campo
+                            <%- data.erros && data.erros.confirmacao_senha_erro ? `erro` : "" %>" name="confirmacao_senha"
+                            <%- data.input_values ? `value="${data.input_values.confirmacao_senha}"` : "" %>
+                            >
                             
+                            <%- data.erros && data.erros.confirmacao_senha_erro ? `<span class="mensagem-erro">${data.erros.confirmacao_senha_erro.msg}</span>` : "" %>
                         </div>
                     </span>
+
+                    
 
                     <div class="cadastro">
                         <input type="submit" value="CADASTRAR" id="cadastrar">

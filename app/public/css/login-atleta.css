@@ -189,6 +189,11 @@ input {
     outline: 2px solid #ff5b00;
 }
 
+.mensagem-erro{
+    font-size: .9rem;
+    color: red;
+}
+
 .esqueceu-senha {
     display: flex;
     justify-content: center;
