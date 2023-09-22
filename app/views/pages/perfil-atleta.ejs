@@ -4,6 +4,7 @@
 <head>
     <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" type="text/css" href="/css/perfil-atleta.css">
+    <script src="/js/perfil.js" defer></script>
     <title><%- data.page_name %></title>
 </head>
 
@@ -47,14 +48,17 @@
                 </div>
             </section>
             <hr class="linha-bio">
-            <section>
-                <div class="secao-perfil">
-                    <a class="t-publicacoes" href="#">Portfólio</a>
-                    <a class="t-sobre" href="#">Sobre</a>
-                    <a class="t-doacoes" href="#">Doações</a>
-                    <a class="t-metas" href="#">Metas</a>
-                </div>
-                <div>
+
+            
+                <ul class="secao-perfil">
+                    <li data-tab-target="#portfolio" class="t-publicacoes">Portfólio</li>
+                    <li data-tab-target="#sobre" class="t-sobre">Sobre</li>
+                    <li data-tab-target="#doacao" class="t-doacoes">Doações</li>
+                    <li data-tab-target="#meta" class="t-metas">Metas</li>
+                </ul>
+                <div class="tab-content">
+
+                    <section id="portfolio" class="active">
                     <img src="/assets/perfil/feed-victor3.jpeg" alt="" class="feed">
                     <div class="interacao-post">
                         <p class="legenda">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
@@ -74,10 +78,11 @@
                             <img src="/assets/perfil/victor9.jpeg" alt="" class="victor9">
                         </div>
                     </div>
-                </div>
+                    </section>
+                
             </section>
 
-            <section class="sobre">
+            <section id="sobre">
                 <h3 class="titulo-2"><b class="Sobre-usuario">Sobre</b><%- data.usuario.nome %></h3>
 
                 <ul class="itens-sobre">
@@ -89,7 +94,7 @@
                 <textarea name="Descrição" id="Desc-usuario" cols="30" rows="10" placeholder="Fale mais sobre você"></textarea>
             </section> 
             
-            <section class="doacao">
+            <section id="doacao">
                 <span class="titulo-3">Receba doações no <b style="color:#1406a7;">Inve</b><b style="color: #ff540b;">Sport</b>!</span>
 
                 <div id="imagem-qr">
@@ -102,7 +107,7 @@
                 </div>
             </section>
 
-            <section class="meta">
+            <section id="meta">
                 <span class="anda-meta">Metas em andamento:</span>
                 <div class="info-meta">
                     <p class="desc-meta"> Passagem para o Campeonato </p>
@@ -120,8 +125,9 @@
                     <button id="botao-add">Add</button>
                   </div>
 
-            </section>
-
+                </section>
+                </div>
+                
         </main>
 
         <%- include('../templates/rodape.ejs') %>

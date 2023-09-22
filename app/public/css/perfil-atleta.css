@@ -159,6 +159,15 @@ main{
     border: 2px solid #ff5b00
 }
 
+[data-tab-content]{
+    display: none;
+}
+
+.active[data-tab-content]{
+    display: block;
+}
+/* PORTFOLIO */
+
 .secao-perfil{
     width: calc( 100vw - 50px);
     display: flex;
@@ -210,7 +219,7 @@ main{
 
 /* MENU SOBRE */
 
-.sobre{
+#sobre{
     display: flex;
     flex-direction: column;
     margin: 20px;
@@ -233,7 +242,7 @@ main{
 }
 
 /* MENU DOAÇÃO */
-.doacao{
+#doacao{
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -271,7 +280,7 @@ main{
 }
 
 /* MENU METAS*/
-.meta{
+#meta{
     margin: 20px;
 }
 
