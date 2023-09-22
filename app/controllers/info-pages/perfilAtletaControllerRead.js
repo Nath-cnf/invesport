@@ -6,7 +6,7 @@ class perfilAtletaControllerRead {
         const token = req.session.token
         const { userId } = jwt.decode(token, process.env.SECRET)
         const usuario = await prisma.usuario.findUnique({where:{id: userId}})
-        res.render("pages/perfil-atleta.ejs", {
+        res.render("pages/perfil_atleta.ejs", {
             data: {
                 page_name: "Invesport",
                 usuario

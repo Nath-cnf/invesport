@@ -159,16 +159,9 @@ main{
     border: 2px solid #ff5b00
 }
 
-[data-tab-content]{
-    display: none;
-}
-
-.active[data-tab-content]{
-    display: block;
-}
 /* PORTFOLIO */
 
-.secao-perfil{
+.tabs{
     width: calc( 100vw - 50px);
     display: flex;
     justify-content: space-between;
@@ -176,11 +169,12 @@ main{
     margin: 10px 25px;
 }
 
-.t-publicacoes, .t-sobre, .t-doacoes, .t-metas{
+#t-publicacoes, #t-sobre, #t-doacoes, #t-metas{
     text-decoration: none;
     color:#333333;
     font-weight: bold;
     font-size: 17px;
+    cursor: pointer;
 }
 
 .feed{
@@ -326,3 +320,11 @@ main{
     border: none;
     border-radius: 5px;
 }
+
+.tab-content div{
+    display: none;
+}
+
+.tab-content .active{
+    display: block;
+} 
