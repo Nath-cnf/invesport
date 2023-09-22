@@ -43,7 +43,6 @@
                         <i class='bx bx-target-lock' style='color:#ff6300' id="target"></i>
                         <hr class="ls-animated">
                     </div>
-                    
                     <p class="valor">máx: R$1,000</p>
                 </div>
             </section>
@@ -76,6 +75,51 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="sobre">
+                <h3 class="titulo-2"><b class="Sobre-usuario">Sobre</b><%- data.usuario.nome %></h3>
+
+                <ul class="itens-sobre">
+                    <li>Idade:</li>
+                    <li>Estado:</li>
+                    <li>Cidade:</li>
+                    <li>Esporte:</li>
+                </ul>
+                <textarea name="Descrição" id="Desc-usuario" cols="30" rows="10" placeholder="Fale mais sobre você"></textarea>
+            </section> 
+            
+            <section class="doacao">
+                <span class="titulo-3">Receba doações no <b style="color:#1406a7;">Inve</b><b style="color: #ff540b;">Sport</b>!</span>
+
+                <div id="imagem-qr">
+                    <p class="adicione-qr">Adicione aqui o qrcode para sua conta</p>
+                    <input type="file" id="img" name="img" accept="image/*">
+                </div>
+                <div id="cod-qr">
+                    <label for="qrcode" class="cod-qr">Adicione o código do qrcode</label>
+                    <input type="text" class="campo-cod"> <button type="submit" class="enviar-cod">Enviar</button>
+                </div>
+            </section>
+
+            <section class="meta">
+                <span class="anda-meta">Metas em andamento:</span>
+                <div class="info-meta">
+                    <p class="desc-meta"> Passagem para o Campeonato </p>
+                    <div class="meta-icone">
+                        <i class='bx bx-target-lock' style='color:#ff6300' id="target"></i>
+                        <hr class="ls-animated">
+                    </div>
+                    <p class="valor">máx: R$1,000</p>
+                </div>
+                <hr class="linha-meta">
+                <span class="add-meta">Adicione sua meta</span>
+                <div class="row">
+                    <input type="text" id="inputbox" placeholder="Nome da meta">
+                    <input type="number" id="inputbox2" placeholder="Valor máximo da meta"> 
+                    <button id="botao-add">Add</button>
+                  </div>
+
             </section>
 
         </main>
