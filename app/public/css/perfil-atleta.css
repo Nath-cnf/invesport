@@ -159,8 +159,6 @@ main{
     border: 2px solid #ff5b00
 }
 
-/* PORTFOLIO */
-
 .tabs{
     width: calc( 100vw - 50px);
     display: flex;
@@ -175,6 +173,16 @@ main{
     font-weight: bold;
     font-size: 17px;
     cursor: pointer;
+}
+
+/* PORTFOLIO */
+
+#portfolio{
+    display: none;
+}
+
+#portfolio.active{
+    display: block;
 }
 
 .feed{
@@ -214,9 +222,13 @@ main{
 /* MENU SOBRE */
 
 #sobre{
-    display: flex;
+    display: none;
     flex-direction: column;
     margin: 20px;
+}
+
+#sobre.active{
+    display: flex;
 }
 
 .titulo-2{
@@ -238,9 +250,13 @@ main{
 /* MENU DOAÇÃO */
 #doacao{
     margin: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
     position: relative;
+}
+
+#doacao.active{
+    display: flex;
 }
 
 .titulo-3{
@@ -274,8 +290,14 @@ main{
 }
 
 /* MENU METAS*/
+
 #meta{
     margin: 20px;
+    display: none;
+}
+
+#meta.active{
+    display: block;
 }
 
 .anda-meta{
@@ -320,11 +342,3 @@ main{
     border: none;
     border-radius: 5px;
 }
-
-.tab-content div{
-    display: none;
-}
-
-.tab-content .active{
-    display: block;
-} 

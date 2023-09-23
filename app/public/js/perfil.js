@@ -1,15 +1,17 @@
-let tabs = document.querySelectorAll(".tabs h3");
-let tabContents = document.querySelectorAll(".tab-content div");
+let tabs = document.querySelectorAll("[data-perfil-tab-title]");
+let tabContents = document.querySelectorAll("[data-perfil-tab]");
 
-tabs.forEach((tab, perfil_atleta) => {
-    tab.addEventListener("click", () => {
+tabs.forEach((tab) => {
+    tab.addEventListener("click", (e) => {
         tabContents.forEach((content) => {
             content.classList.remove("active");
         });
         tabs.forEach(tab => {
             tab.classList.remove("active");
         });
-        tabContents[perfil_atleta].classList.add("active");
-        tabs [perfil_atleta].classList.add("active");
+        e.target.classList.add("active");
+        let tabselected = e.target.getAttribute("data-perfil-tab-title");
+        let tabcontentselected = document.querySelector(`[data-perfil-tab=${tabselected}]`);
+        tabcontentselected.classList.add("active");
     });
 });
