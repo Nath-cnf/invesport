@@ -15,7 +15,7 @@
 
             <form action="/email-duvida" method="post" class="form-contato">
                 <input type="text" name="email_duvidador" id="email-duvidador" placeholder="E-mail" <%- data.input_values ? `value="${data.input_values.email}"` : "" %>>
-                <textarea name="assunto_duvida" id="assunto-duvida" cols="30" rows="7" placeholder="Escreva sua dúvida"></textarea>
+                <textarea name="assunto_duvida" id="assunto-duvida" cols="30" rows="5" placeholder="Escreva sua dúvida"></textarea>
                 <button id="duvida-enviar"> Enviar </button>
             </form>
 
