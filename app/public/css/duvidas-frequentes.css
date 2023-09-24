@@ -1,5 +1,5 @@
 main {
-    margin: 65px 20px 20px 20px;
+    margin: 65px 50px 20px 50px;
 }
 
 .ajuda{
@@ -20,33 +20,32 @@ main {
     -range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-.pesquisa{
-    align-items: left;
+.form-contato{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #email-duvidador{
-    width: 90%;
+    width: calc(100vw - 100px);
     border: 1px solid #ff5b00;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+    padding-left: 5px;
+    line-height: 2rem;
+    outline: none;
 }
 
 #assunto-duvida{
-    width: 90%;
-    border-color: #ff5b00;
+    width: calc(100vw - 100px);
+    border: 1px solid #ff5b00;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+    padding-left: 5px;
+    outline: none;
 }
 
 #duvida-enviar{
-    display: flex;
-    flex-direction: column;
-    position: relative;
     background-color: #ff5b00;
+    width: 10%;
     border: none;
     border-radius: 5px;
     color: white;
@@ -62,17 +61,22 @@ main {
 
 #txtBusca{
     height: 30px;
-    width: calc(100% - 15px);
+    width: calc(100vw - 100px);
     margin-top: 6px;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid #14248a;
+    outline: none;
     background-color: white;
+    padding-left: 10px;
 }
 
-.pergunta-1{
+.pergunta-1, .pergunta-2, .pergunta-3{
     align-items: left;
-    padding: 2px;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    width: calc(100vw - 100px);
 }
 
 .pergunta{
@@ -83,16 +87,7 @@ main {
     color: #14248a;
 }
 
-.pergunta-2{
-    margin-top: 20px;
-}
-
-.pergunta-3{
-    margin-top: 20px;
-}
-
 .mais-duvidas{
-    margin: 0px;
     padding: 20px;
     margin-top: 15px;
     display: flex;
@@ -100,13 +95,13 @@ main {
     align-items: center;
 }
 
-.duvidas{
+.ver-duvidas{
     background-color: #ff5b00;
     color: white;
-    font-size: 15px;
+    font-size: 1.1rem;
     border-radius: 10px;
     border: none;
-    width: 50%;
+    width: 15%;
     height: 30%;
     padding: 10px;
     align-self: center;

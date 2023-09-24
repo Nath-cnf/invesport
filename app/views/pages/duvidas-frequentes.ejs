@@ -13,9 +13,9 @@
             <h2 class="ajuda">Ajuda</h2>
             <p class="pode-ajudar">Como podemos ajudar? </p>
 
-            <form action="/email-duvida" method="post">
-                <input type="text" name="email_duvidador" id="email-duvidador" placeholder="Email" <%- data.input_values ? `value="${data.input_values.email}"` : "" %>>
-                <textarea name="assunto_duvida" id="assunto-duvida" cols="30" rows="10" placeholder="Escreva sua dúvida"></textarea>
+            <form action="/email-duvida" method="post" class="form-contato">
+                <input type="text" name="email_duvidador" id="email-duvidador" placeholder="E-mail" <%- data.input_values ? `value="${data.input_values.email}"` : "" %>>
+                <textarea name="assunto_duvida" id="assunto-duvida" cols="30" rows="7" placeholder="Escreva sua dúvida"></textarea>
                 <button id="duvida-enviar"> Enviar </button>
             </form>
 
@@ -30,28 +30,32 @@
             <div class="pesquisa">
                 <input type="text" id="txtBusca" placeholder="Pesquise...">
             </div>
-            <div class="pergunta-1">
-                <h4 class="pergunta">Perdi minha senha de login, o que faço? </h4>
-                <p class="resposta">
-                    > Vá para a página de login e clique em "redefinir senha".
-                </p>
-            </div>
-            <div class="pergunta-2">
-                <h4 class="pergunta">Como doar para clubes e atletas? </h4>
-                <p class="resposta">
-                    > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
-                    gravida dolor sit amet lacus accumsan et viverra justo commodo.
-                </p>
-            </div>
-            <div class="pergunta-3">
-                <h4 class="pergunta">Como as metas funcionam? </h4>
-                <p class="resposta">
-                    > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
-                    gravida dolor sit amet lacus accumsan et viverra justo commodo.
-                </p>
-            </div>
+
+            <section class="duvidas">
+                <div class="pergunta-1">
+                    <h4 class="pergunta">Perdi minha senha de login, o que faço? </h4>
+                    <p class="resposta">
+                        > Vá para a página de login e clique em "redefinir senha".
+                    </p>
+                </div>
+                <div class="pergunta-2">
+                    <h4 class="pergunta">Como doar para clubes e atletas? </h4>
+                    <p class="resposta">
+                        > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                        gravida dolor sit amet lacus accumsan et viverra justo commodo.
+                    </p>
+                </div>
+                <div class="pergunta-3">
+                    <h4 class="pergunta">Como as metas funcionam? </h4>
+                    <p class="resposta">
+                        > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                        gravida dolor sit amet lacus accumsan et viverra justo commodo.
+                    </p>
+                </div>
+            </section>
+
             <div class="mais-duvidas">
-            <button class="duvidas"> Mais dúvidas</button>
+                <button class="ver-duvidas">Mais dúvidas</button>
             </div>
 
         </main>
