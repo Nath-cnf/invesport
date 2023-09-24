@@ -185,6 +185,10 @@ main{
     display: block;
 }
 
+#t-publicacoes.active{
+    color: #ff5b00;
+}
+
 .feed{
     width: 100%;
 }
@@ -231,6 +235,10 @@ main{
     display: flex;
 }
 
+#t-sobre.active{
+    color: #ff5b00;
+}
+
 .titulo-2{
     font-size: 1rem;
 }
@@ -257,6 +265,10 @@ main{
 
 #doacao.active{
     display: flex;
+}
+
+#t-doacoes.active{
+    color: #ff5b00;
 }
 
 .titulo-3{
@@ -298,6 +310,10 @@ main{
 
 #meta.active{
     display: block;
+}
+
+#t-metas.active{
+    color: #ff5b00;
 }
 
 .anda-meta{
