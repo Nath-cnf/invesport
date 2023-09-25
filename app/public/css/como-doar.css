@@ -75,3 +75,10 @@ b{
     text-decoration: none;
     box-shadow: none;
 }
+
+
+
+#escanear-qr{
+    width: 130px;
+    height: 130px;
+}
