@@ -215,7 +215,7 @@ input {
     height: 48px;
     margin-bottom: 8px;
     padding-inline: 8px;
-    border: 2px solid #00000033;
+    border: 2px solid #ff5b00;
     border-radius: 8px;
     background: white;
     transition: border-radius 350ms ease;
