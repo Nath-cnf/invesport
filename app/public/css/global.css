@@ -181,6 +181,11 @@ footer{
         align-self: center;
         margin-top: 15px;
     }
+
+    .termos{
+        align-self: center;
+        margin-top: 15px;
+    }
 }
 
 @media screen and (min-width: 1024px){  
@@ -277,6 +282,12 @@ footer{
     }
 
     .politica a{
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+
+    .termos a{
         font-weight: bold;
         text-decoration: none;
         font-size: 1.2em;

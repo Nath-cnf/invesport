@@ -1,34 +1,47 @@
 var express = require("express");
 var router = express.Router();
 
+//*HOME
 const homeControllerRead = require("../controllers/info-pages/homeControllerRead");
 const homeCadastradaControllerRead = require("../controllers/info-pages/homeCadastradaControllerRead");
 
+//*RODAPE
 const trabalheConoscoControllerRead = require("../controllers/info-pages/rodape/trabalheConoscoControllerRead");
-const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
-const feedControllerRead = require("../controllers/info-pages/feedControllerRead");
-const assinaturaControllerRead = require("../controllers/info-pages/assinaturaControllerRead");
+const politicaControllerRead = require("../controllers/info-pages/rodape/politicaControllerRead");
 const duvidasFrequentesControllerRead = require("../controllers/info-pages/rodape/duvidasFrequentes/duvidasFrequentesControllerRead");
 const duvidasFrequentesControllerSendEmail = require("../controllers/info-pages/rodape/duvidasFrequentes/duvidasFrequentesControllerSendEmail");
-const comoDoarControllerRead = require("../controllers/info-pages/comoDoarControllerRead");
-const tarefaControllerRead = require("../controllers/info-pages/tarefaControllerRead");
+const termosControllerRead = require("../controllers/info-pages/rodape/termosControllerRead");
 
+//*MENU
+const assinaturaControllerRead = require("../controllers/info-pages/menu/assinaturaControllerRead");
+const comoDoarControllerRead = require("../controllers/info-pages/menu/comoDoarControllerRead");
+const tarefaControllerRead = require("../controllers/info-pages/menu/tarefaControllerRead");
+const feedControllerRead = require("../controllers/info-pages/menu/feedControllerRead");
+
+
+//*CADASTRO-LOGIN-PERFIL
+const perfilClubeControllerRead = require("../controllers/info-pages/perfilClubeControllerRead");
+const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
 const cadastroAtletaControllerRead = require("../controllers/info-pages/cadastro/cadastroAtletaControllerRead");
 const cadastroClubeControllerRead = require('../controllers/info-pages/cadastro/cadastroClubeControllerRead');
+const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
+const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
 
+
+//*REDEFINIR
 const redefinirSenhaMiddleware = require("../middleware/redefinirSenhaMiddleware");
 const recuperarSenhaControllerRead = require("../controllers/info-pages/redefinir-senha/recuperarSenhaControllerRead");
 const redefinirSenhaControllerRead = require("../controllers/info-pages/redefinir-senha/redefinirSenhaControllerRead");
 const redefinirSenhaControllerUpdate = require("../controllers/info-pages/redefinir-senha/redefinirSenhaControllerUpdate");
 
-const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
-const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
-
+//*AUTENTICACAO
 const autenticacaoMiddleware = require("../middleware/autenticacaoMiddleware");
 const autenticacaoRegrasMiddleware = require("../middleware/autenticacaoRules");
 const autenticacaoFormMiddleware = require("../middleware/autenticacaoFormsMiddleware");
+const politicaController = require("../controllers/info-pages/rodape/politicaControllerRead");
+const termosController = require("../controllers/info-pages/rodape/termosControllerRead");
 
 // * Info pages
 
@@ -41,6 +54,8 @@ router.get("/trabalhe-conosco", trabalheConoscoControllerRead.getPage);
 router.get("/perfil-atleta",
 autenticacaoMiddleware.validateToken,
 perfilAtletaControllerRead.getPage);
+
+router.get("/perfil-clube", perfilClubeControllerRead.getPage);
 
 router.get("/assinatura", assinaturaControllerRead.getPage);
 
@@ -99,5 +114,9 @@ router.get("/cadastro-clube", cadastroClubeControllerRead.getPage);
 router.get("/fale-conosco", duvidasFrequentesControllerRead.getPage);
 
 router.post("/email-duvida", duvidasFrequentesControllerSendEmail.sendEmail);
+
+router.get("/politica", politicaControllerRead.getPage);
+
+router.get("/termos", termosControllerRead.getPage);
 
 module.exports = router;

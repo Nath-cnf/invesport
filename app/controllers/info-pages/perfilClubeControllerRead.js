@@ -1,6 +1,6 @@
 class perfilClubeControllerRead {
     getPage(req, res) {
-        res.render("pages/index.ejs", {
+        res.render("pages/perfil-clube.ejs", {
             data: {
                 page_name: "Invesport"
             }
@@ -8,6 +8,6 @@ class perfilClubeControllerRead {
     }
 }
 
-const HomeController = new HomeControllerRead();
+const perfilClubeController = new perfilClubeControllerRead();
 
-module.exports = HomeController;
+module.exports = perfilClubeController;
