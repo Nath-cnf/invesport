@@ -161,7 +161,7 @@ h2 {
 @media screen and (max-width: 1023px) {
 
     main{
-        margin: 90px 25px 60px 20px;
+        margin: 90px 25px 60px 25px;
     }
 
     #perfis{
@@ -174,7 +174,7 @@ h2 {
     .barra-pesquisa{
         border: none;
         font-size: 1em;
-        width: calc(100vw - 100px);
+        width: calc(100vw - 50px);
         outline: none;
         display: flex;
         justify-content: center;
