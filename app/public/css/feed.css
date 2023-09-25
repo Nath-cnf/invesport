@@ -48,11 +48,10 @@ h2 {
     margin: 10px 0px;
 }
 
-#atletas{
+#perfis{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 15%;
 }
 
 .novos-perfis{
@@ -80,11 +79,18 @@ h2 {
     border-bottom: 3px solid var(--laranja);
 }
 
-.usuario{
-    background-color: #14248a;
+.usuario-clube{
+    background-color: var(--azul);
+}
+
+.usuario-atleta{
+    background-color: var(--laranja);
+}
+
+.usuario-atleta, .usuario-clube{
     border-radius: 15px;
-    width: 160px;
-    height: 250px;
+    width: 38vw;
+    height: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,7 +123,7 @@ h2 {
     text-decoration: none;
 }
 
-.nome-atleta{
+.nome-atleta, .nome-clube{
     margin-bottom: 5px;
     white-space: nowrap; 
     width: 95px; 
@@ -140,9 +146,151 @@ h2 {
     justify-content: center;
 }
 
-.atletas-esquerda{
+.usuario-atleta > .ver-perfil{
+    background-color: #ffffff;
+    color: var(--laranja);
+}
+
+.clubes{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 1023px) {
+
+    main{
+        margin: 90px 25px 60px 25px;
+    }
+
+    #perfis{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: calc(100vw - 50px);
+    }
+
+    .barra-pesquisa{
+        border: none;
+        font-size: 1em;
+        width: calc(100vw - 50px);
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .perfis-clubes, .perfis-atletas{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 45px;
+        grid-row-gap: 15px;
+    }
+
+    .foto-atleta, .foto-clube{
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        margin: 10px 0px;
+    }
+
+    .nome-atleta, .nome-clube{ 
+        width: 95px; 
+        color: #ffffff;
+        font-size: 1rem;
+    }
+
+    .cidade{
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    main{
+        margin: 90px 50px 60px 50px;
+    }
+
+    #perfis{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .barra-pesquisa{
+        border: none;
+        font-size: 1em;
+        width: calc(100vw - 100px);
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .perfis-clubes, .perfis-atletas{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 60px;
+        grid-row-gap: 30px;
+    }
+
+    .usuario-atleta, .usuario-clube{
+        border-radius: 15px;
+        width: 17vw;
+        height: 25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .foto-atleta, .foto-clube{
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        margin: 20px 0px;
+    }
+
+    .nome-atleta, .nome-clube{
+        color: #ffffff;
+        font-size: 1.2rem;
+        text-align: center;
+        width: 150px; 
+        margin-bottom: 5px;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .cidade{
+       font-size: 1rem;
+       font-weight: 500; 
+       margin-bottom: 15px;
+    }
+
+    .ver-perfil{
+        width: 75%;
+        height: 2.5em;
+        background-color: var(--laranja);
+        color: #ffffff;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 10px;
+        margin-top: 10px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ver-perfil:hover{
+        font-weight: 600;
+    }
+
 }
