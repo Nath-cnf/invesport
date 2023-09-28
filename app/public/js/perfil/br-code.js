@@ -1,101 +1,127 @@
-import pkg from 'steplix-emv-qrcps';
-const { Merchant } = pkg;
+const qrCodeImage = document.getElementById("qr-code-image-generated");
 
-import { stripHtml } from "string-strip-html";
+class Pix {
+  constructor(pixKey, description, merchantName, merchantCity, txid, amount) {
+    this.pixKey = pixKey;
+    this.description = description;
+    this.merchantName = merchantName;
+    this.merchantCity = merchantCity;
+    this.txid = txid;
+    this.amount = amount.toFixed(2);
 
-export default class BrCode {
-
-  constructor(key, amount, name, reference, key_type, city) {
-    this.key = this.normalize(key);
-    this.amount = this.normalize(amount);
-    this.name = this.normalize(name);
-    this.reference = this.normalize(reference);
-    this.key_type = this.normalize(key_type);
-    this.city = this.normalize(city);
+    this.ID_PAYLOAD_FORMAT_INDICATOR = "00";
+    this.ID_MERCHANT_ACCOUNT_INFORMATION = "26";
+    this.ID_MERCHANT_ACCOUNT_INFORMATION_GUI = "00";
+    this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY = "01";
+    this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION = "02";
+    this.ID_MERCHANT_CATEGORY_CODE = "52";
+    this.ID_TRANSACTION_CURRENCY = "53";
+    this.ID_TRANSACTION_AMOUNT = "54";
+    this.ID_COUNTRY_CODE = "58";
+    this.ID_MERCHANT_NAME = "59";
+    this.ID_MERCHANT_CITY = "60";
+    this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE = "62";
+    this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID = "05";
+    this.ID_CRC16 = "63";
   }
 
-  static format_text(text) {
-    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim()
+  _getValue(id, value) {
+    const size = String(value.length).padStart(2, "0");
+    return id + size + value;
   }
 
-  normalize(text) {
-    if (text != null) {
-      return stripHtml(text).result
-    }
+  _getMechantAccountInfo() {
+    const gui = this._getValue(
+      this.ID_MERCHANT_ACCOUNT_INFORMATION_GUI,
+      "br.gov.bcb.pix"
+    );
+    const key = this._getValue(
+      this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY,
+      this.pixKey
+    );
+    const description = this._getValue(
+      this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION,
+      this.description
+    );
+
+    return this._getValue(
+      this.ID_MERCHANT_ACCOUNT_INFORMATION,
+      gui + key + description
+    );
   }
 
-  formated_name() {
-    return this.constructor.format_text(this.name);
+  _getAdditionalDataFieldTemplate() {
+    const txid = this._getValue(
+      this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID,
+      this.txid
+    );
+    return this._getValue(this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE, txid);
   }
 
-  formated_city() {
-    return this.constructor.format_text(this.city);
+  getPayload() {
+    const payload =
+      this._getValue(this.ID_PAYLOAD_FORMAT_INDICATOR, "01") +
+      this._getMechantAccountInfo() +
+      this._getValue(this.ID_MERCHANT_CATEGORY_CODE, "0000") +
+      this._getValue(this.ID_TRANSACTION_CURRENCY, "986") +
+      this._getValue(this.ID_TRANSACTION_AMOUNT, this.amount) +
+      this._getValue(this.ID_COUNTRY_CODE, "BR") +
+      this._getValue(this.ID_MERCHANT_NAME, this.merchantName) +
+      this._getValue(this.ID_MERCHANT_CITY, this.merchantCity) +
+      this._getAdditionalDataFieldTemplate();
+
+    return payload + this._getCRC16(payload);
   }
 
-  formated_amount() {
-    if (this.amount) {
-      return this.amount.replace('.','').replace(',','.').replace(' ','').replace("R$", '');
+  _getCRC16(payload) {
+    function ord(str) {
+      return str.charCodeAt(0);
     }
-    else {
-      return ''
+    function dechex(number) {
+      if (number < 0) {
+        number = 0xffffffff + number + 1;
+      }
+      return parseInt(number, 10).toString(16);
     }
+
+    //ADICIONA DADOS GERAIS NO PAYLOAD
+    payload = payload + this.ID_CRC16 + "04";
+
+    //DADOS DEFINIDOS PELO BACEN
+    let polinomio = 0x1021;
+    let resultado = 0xffff;
+    let length;
+
+    //CHECKSUM
+    if ((length = payload.length) > 0) {
+      for (let offset = 0; offset < length; offset++) {
+        resultado ^= ord(payload[offset]) << 8;
+        for (let bitwise = 0; bitwise < 8; bitwise++) {
+          if ((resultado <<= 1) & 0x10000) resultado ^= polinomio;
+          resultado &= 0xffff;
+        }
+      }
+    }
+
+    //RETORNA CÓDIGO CRC16 DE 4 CARACTERES
+    return this.ID_CRC16 + "04" + dechex(resultado).toUpperCase();
   }
+};
 
-  formated_referance() {
-    return this.constructor.format_text(this.reference).replace(' ','');
-  }
+const pix = new Pix(
+  "+5511992063054",
+  "invesport",
+  "vini",
+  "barueri",
+  "***",
+  1
+);
 
-  formated_key() {
-    var rkey = this.key;
-    var ktype = this.key_type.toLowerCase();
+const payload = pix.getPayload();
 
-    if (ktype == 'telefone' || ktype == 'cnpj' || ktype == "cpf") {
-      rkey = rkey.replace(/\D/g,'');
-    }
+// O usuário vai cadastrar a chave pix, o nome e a cidade, depois quem for transferir o dinheiro vai informar
+// a mensagem que quer enviar e selecionar o valor.
+// As informações do usuário devem ser salvas no banco.
 
-    if (ktype == "telefone") {
-      rkey = "+55" + rkey
-    }
-
-    return rkey.trim()
-  }
-
-  generate_qrcp() {
-    var emvqr = Merchant.buildEMVQR();
-
-    emvqr.setPayloadFormatIndicator("01");
-    emvqr.setCountryCode("BR")
-    emvqr.setMerchantCategoryCode("0000");
-    emvqr.setTransactionCurrency("986");
-    const merchantAccountInformation = Merchant.buildMerchantAccountInformation();
-    merchantAccountInformation.setGloballyUniqueIdentifier("BR.GOV.BCB.PIX");
-
-    merchantAccountInformation.addPaymentNetworkSpecific("01", this.formated_key());
-
-    emvqr.addMerchantAccountInformation("26", merchantAccountInformation);
-
-    if (this.name) {
-      emvqr.setMerchantName(this.formated_name());
-    }
-
-    if (this.city) {
-      emvqr.setMerchantCity(this.formated_city());
-    }
-
-    if (this.amount && this.amount != '') {
-      emvqr.setTransactionAmount(this.formated_amount());
-    }
-
-    const additionalDataFieldTemplate = Merchant.buildAdditionalDataFieldTemplate();
-
-    if (this.reference) {
-      additionalDataFieldTemplate.setReferenceLabel(this.formated_referance());
-    }
-    else {
-      additionalDataFieldTemplate.setReferenceLabel("***");
-    }
-
-    emvqr.setAdditionalDataFieldTemplate(additionalDataFieldTemplate);
-    return emvqr.generatePayload();
-  }
-}
+// qrCodeImage.src = `https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=${payload}`
+qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(payload)}`
