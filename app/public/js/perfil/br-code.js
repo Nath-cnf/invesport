@@ -109,9 +109,9 @@ class Pix {
 };
 
 const pix = new Pix(
-  "+5511992063054",
+  "+5511949895761",
   "invesport",
-  "vini",
+  "nath",
   "barueri",
   "***",
   1
