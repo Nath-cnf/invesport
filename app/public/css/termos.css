@@ -9,7 +9,47 @@ body{
 }
 
 @media screen and (max-width: 1023px) {
+    main{
+        margin: 70px 25px 30px 25px;
+    }
+    
+    .titulo{
+        color: var(--laranja);
+        font-size: 1.8rem;
+        text-align: center;
+    }
 
+    .atualizado{
+        color: var(--cinza);
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+    .subtitulo{
+        color: #000000;
+        font-size: 1.1rem;
+        margin: 15px 0px 5px 0px;
+    }
+
+    .legenda{
+        color: var(--cinza);
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .paragrafo, .lista{
+        font-size: 1rem;
+        color: var(--cinza);
+        margin: 15px 0px;
+        text-align: justify;
+    }
+
+    .titulos{
+        color: #000000;
+        font-size: 1.3rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
