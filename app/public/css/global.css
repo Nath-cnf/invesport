@@ -190,8 +190,14 @@ footer{
 
 @media screen and (min-width: 1024px){  
 
-    .btn-menu, .btn-user{
-        display:none;
+    .btn-user{
+        color: #ff5b00;
+        font-size: 32px;
+        background-color: #ffffff;
+    }
+
+    .btn-menu {
+        display: none;
     }
 
     nav{

@@ -1,4 +1,4 @@
-const prisma = require("../../server/database/prismaClient");
+const esporteModel = require("../models/Esporte");
 const { validationResult } = require("express-validator");
 
 class FormValidation {
@@ -13,7 +13,7 @@ class FormValidation {
         this.#confirmacaoSenhaValidation(confirmacao_senha, senha, erros);
 
         if (!erros.isEmpty()) {
-            const esportes = await prisma.esporte.findMany();
+            const esportes = await esporteModel.findAllEsportes();
 
             const {
                 nome,

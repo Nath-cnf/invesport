@@ -123,5 +123,4 @@ const payload = pix.getPayload();
 // a mensagem que quer enviar e selecionar o valor.
 // As informações do usuário devem ser salvas no banco.
 
-// qrCodeImage.src = `https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=${payload}`
 qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(payload)}`

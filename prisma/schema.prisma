@@ -16,6 +16,7 @@ model Usuario {
     estado     String
     email      String  @unique
     senha      String
+    chave_pix  String?
 
     tokens  Token[]
     esporte Esporte @relation(fields: [id_esporte], references: [id])

@@ -5,23 +5,21 @@ const botaoAdd = document.getElementById("botao-add");
 
 console.log("alo");
 
-
-function addTask(){
-  if(txt1.value === ''){
+function addTask() {
+  if (txt1.value === "") {
     alert("Você deve escrever algo!");
-  }else{
+  } else {
     let div = document.createElement("div");
     const prazocontainer = document.createElement("p");
     const txt = document.createElement("span");
     const metatxtcontainer = document.createElement("span");
     const botao = document.createElement("button");
-    const data = new Date (inputbox2.value);
+    const data = new Date(inputbox2.value);
     const ano = data.getFullYear();
-    const mes = String(data.getMonth()+1).padStart(2,"0");
-    const dia = data.getDate()+1;
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const dia = data.getDate() + 1;
     const data_br = `${dia}/${mes}/${ano}`;
-    
-    
+
     txt.innerHTML = "Prazo:";
     botao.innerHTML = "remover";
     metatxtcontainer.innerHTML = inputbox.value;
@@ -32,23 +30,13 @@ function addTask(){
     cardContent.appendChild(div);
     div.appendChild(botao);
     div.classList.add("card");
-    
-    
-    
-    botao.addEventListener("click", (e) =>{
-      e.target.parentElement.remove()
+
+    botao.addEventListener("click", (e) => {
+      e.target.parentElement.remove();
     });
-    
-   
-    
-
-
-
-    
   }
-  
 }
 
-botaoAdd.addEventListener("click", () =>{
-  addTask()
-})
+botaoAdd.addEventListener("click", () => {
+  addTask();
+});

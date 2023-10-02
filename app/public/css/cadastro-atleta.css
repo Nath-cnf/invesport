@@ -178,6 +178,18 @@ input {
         margin: 0px;
     }
 
+    input {
+        width: 23vw;
+        height: 2em;
+        color: #333333;
+        font-size: inherit;
+        font-family: inherit;
+        background-color: #ffffff;
+        border: 2px solid #ff5b00;
+        border-radius: 8px;
+        padding-left: 3px;
+    }
+
     .container-cadastro{
         display: flex;
         flex-direction: column;
@@ -219,7 +231,7 @@ input {
     border-radius: 8px;
     background: white;
     transition: border-radius 350ms ease;
-    z-index: 10000;
+    z-index: 4;
 }
 
 #esporte-campo-pai.erro {
@@ -249,7 +261,6 @@ input {
 
 #esporte-campo {
     display: flex;
-    width: 100%;
     flex-direction: column;
     border: 2px solid #00000033;
     border-radius: 0 0 8px 8px;

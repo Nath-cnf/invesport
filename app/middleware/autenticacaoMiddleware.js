@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const prisma = require('../../server/database/prismaClient')
+const esporteModel = require("../models/Esporte");
 const jwt = require("jsonwebtoken");
 
 class Autenticacao {
@@ -16,7 +16,7 @@ class Autenticacao {
             return next();
         } catch (erro) {
             console.log(erro);
-            const esportes = await prisma.esporte.findMany();
+            const esportes = await esporteModel.findAllEsportes();
             const {
                 nome,
                 esporte,

@@ -1,14 +1,10 @@
-const prisma = require("../../server/database/prismaClient");
+const tokenModel = require("../models/Token");
 
 class RedefinirSenha {
     async validarLink(req, res, next) {
         const token = req.params.token;
 
-        const user_token = await prisma.token.findUnique({
-            where: {
-                id: token
-            }
-        })
+        const user_token = await tokenModel.findTokenById(token);
 
         if (!user_token) {
             return res.render("pages/redefinir-senha.ejs", {

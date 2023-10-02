@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const prisma = require("../../../../server/database/prismaClient");
+const usuarioModel = require("../../../models/Usuario");
 const jwt = require("jsonwebtoken");
 
 class LoginAtletaController {
@@ -9,11 +9,7 @@ class LoginAtletaController {
             senha
         } = req.body;
 
-        const user = await prisma.usuario.findUnique({
-            where: {
-                email
-            }
-        })
+        const user = await usuarioModel.findUserByEmail(email);
 
         if (!user) {
             console.log("Usuário não está cadastrado!")
