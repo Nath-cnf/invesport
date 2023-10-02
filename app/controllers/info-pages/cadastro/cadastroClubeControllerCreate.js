@@ -1,31 +1,64 @@
-const prisma = require("../../../../server/database/prismaClient");
+const esporteModel = require("../../../models/Esporte");
+const clubeModel = require("../../../models/Clube");
 
 class CadastroClubeControllerCreate {
-    async createClube(req, res){
-        const {
-            nome_clube,
-            cnpj_clube,
-            site,
-            cidade,
-            estado,
-            email,
-            senha
-        } = req.body;
+  async createClube(req, res) {
+    const {
+      nome,
+      esportes,
+      cnpj_clube,
+      cidade,
+      estado,
+      email,
+      senha,
+      confirmacao_senha,
+    } = req.body;
 
-        await prisma.user.create({
+    const senhaCriptografada = req.senhaCriptografada;
+
+    try {
+      await clubeModel.createClube({
+        nome,
+        esportes: {
+            connect: esportes.map(esporte => ({id: esporte}))
+        },
+        cnpj_clube,
+        cidade,
+        estado,
+        email,
+        senha: senhaCriptografada
+      })
+
+      res.redirect("/login-atleta");
+    } catch (erro) {
+      switch (erro.code) {
+        case "P2002":
+          const esportesLista = await esporteModel.findAllEsportes();
+
+          return res.render("pages/cadastro-atleta.ejs", {
             data: {
-                nome_clube,
+              esportesLista,
+              page_name: "Invesport",
+              input_values: {
+                nome,
+                esportes,
                 cnpj_clube,
-                site,
                 cidade,
                 estado,
                 email,
-                senha
-            }
-        })
-
-        res.redirect("/login-clube");
+                senha,
+                confirmacao_senha,
+              },
+              erros: {
+                email_erro: {
+                  msg: "Esse e-mail já existe",
+                },
+              },
+            },
+          });
+      }
     }
+  }
 }
 
 const CreateClubeController = new CadastroClubeControllerCreate();

@@ -25,11 +25,8 @@
           <p class="asteristico">*</p>
           Campo obrigatório
         </span>
-        <form class="formulario" method="post" action="cadastro-atleta">
-          <%- data.erros && data.erros.sistema_erro ? `<span
-            class="mensagem-erro"
-            >${data.erros.sistema_erro.msg}</span
-          >` : "" %>
+        <form class="formulario" method="post" action="/cadastro-atleta">
+          <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
           <span class="campos-form">
             <label class="titulo"
               >Nome completo
@@ -62,9 +59,9 @@
                     <% data.esportes.forEach(esporte => { %>
                     <label for="<%- esporte.nome %>" <%- data.input_values && data.input_values.esporte === esporte.nome ? "class='ativo'"  : "" %>>
                       <input type="radio" name="esporte"
-                      id="<%- esporte.nome %>" value="<%- esporte.nome %>"
+                      id="<%- esporte.nome %>" value="<%- esporte.id %>"
                       data-esporte-input <%- data.input_values &&
-                      data.input_values.esporte === esporte.nome ?
+                      data.input_values.esporte === esporte.id ?
                       "checked" : "" %> />
                       <%- esporte.nome %>
                     </label>

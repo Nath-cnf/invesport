@@ -22,10 +22,23 @@ model Usuario {
     esporte Esporte @relation(fields: [id_esporte], references: [id])
 }
 
+model Clube {
+    id         String @id @default(uuid())
+    nome       String
+    cnpj_clube String
+    cidade     String
+    estado     String
+    email      String @unique
+    senha      String
+
+    esportes Esporte[]
+}
+
 model Esporte {
     id       String    @id @default(uuid())
     nome     String    @unique
     usuarios Usuario[]
+    clubes   Clube[]
 }
 
 model Token {

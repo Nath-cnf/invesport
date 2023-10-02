@@ -3,8 +3,6 @@ const txt2 = document.getElementById("inputbox2");
 const cardContent = document.getElementById("slide");
 const botaoAdd = document.getElementById("botao-add");
 
-console.log("alo");
-
 function addTask() {
   if (txt1.value === "") {
     alert("Você deve escrever algo!");

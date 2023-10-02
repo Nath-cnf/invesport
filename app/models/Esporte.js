@@ -1,7 +1,7 @@
 const prisma = require("../../server/database/prismaClient");
 
 class Esporte {
-    async findAllEsportes(tokenId) {
+    async findAllEsportes() {
         return await prisma.esporte.findMany();
     }
 }

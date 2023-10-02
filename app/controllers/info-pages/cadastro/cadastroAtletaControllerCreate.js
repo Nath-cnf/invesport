@@ -17,8 +17,6 @@ class CadastroAtletaControllerCreate {
     const senhaCriptografada = req.senhaCriptografada;
 
     try {
-      console.log("asdsa");
-
       await usuarioModel.createUsuario({
         nome,
         id_esporte: esporte,
@@ -28,8 +26,6 @@ class CadastroAtletaControllerCreate {
         email,
         senha: senhaCriptografada,
       })
-
-      console.log("criando no banco");
 
       res.redirect("/login-atleta");
     } catch (erro) {
@@ -59,8 +55,6 @@ class CadastroAtletaControllerCreate {
             },
           });
       }
-
-      return;
     }
   }
 }

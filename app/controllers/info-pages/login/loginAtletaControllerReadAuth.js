@@ -12,7 +12,6 @@ class LoginAtletaController {
         const user = await usuarioModel.findUserByEmail(email);
 
         if (!user) {
-            console.log("Usuário não está cadastrado!")
             return res.render("pages/login-atleta.ejs", {
                 data: {
                     page_name: "Invesport",
@@ -38,7 +37,6 @@ class LoginAtletaController {
                 return res.redirect("/perfil-atleta")
             }
 
-            console.log("Senhas não batem")
             return res.render("pages/login-atleta.ejs", {
                 data: {
                     page_name: "Invesport",

@@ -26,6 +26,7 @@ const loginAtletaControllerRead = require("../controllers/info-pages/login/login
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
 const cadastroAtletaControllerRead = require("../controllers/info-pages/cadastro/cadastroAtletaControllerRead");
 const cadastroClubeControllerRead = require('../controllers/info-pages/cadastro/cadastroClubeControllerRead');
+const cadastroClubeControllerCreate = require("../controllers/info-pages/cadastro/cadastroClubeControllerCreate")
 const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
 const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
 
@@ -90,14 +91,13 @@ redefinirSenhaMiddleware.validarLink,
 autenticacaoMiddleware.criptografarRecuperacaoSenha,
 redefinirSenhaControllerUpdate.updatePassword);
 
-
 // * Cadastro atleta
 
 router.get("/cadastro-atleta", cadastroAtletaControllerRead.getPage);
 
 router.post("/cadastro-atleta",
-autenticacaoRegrasMiddleware.cadastroValidacao,
-autenticacaoFormMiddleware.validarCadastro,
+autenticacaoRegrasMiddleware.cadastroAtletaValidacao,
+autenticacaoFormMiddleware.validarAtletaCadastro,
 autenticacaoMiddleware.criptografarSenha,
 CadastroAtletaControllerCreate.createAtleta);
 
@@ -105,11 +105,17 @@ CadastroAtletaControllerCreate.createAtleta);
 
 router.get("/login-clube", loginClubeControllerRead.getPage);
 
-//* Cadastro clube
+// * Cadastro clube
 
 router.get("/cadastro-clube", cadastroClubeControllerRead.getPage);
 
-//* Rodape
+router.post("/cadastro-clube",
+autenticacaoRegrasMiddleware.cadastroClubeValidacao,
+autenticacaoFormMiddleware.validarClubeCadastro,
+autenticacaoMiddleware.criptografarSenha,
+cadastroClubeControllerCreate.createClube);
+
+// * Rodape
 
 router.get("/fale-conosco", duvidasFrequentesControllerRead.getPage);
 

@@ -2,10 +2,9 @@ const prisma = require("../../server/database/prismaClient");
 
 class Usuario {
     async createUsuario(data) {
-        console.log("dentro model")
         await prisma.usuario.create({
             data
-        })
+        });
     }
 
     async findUserById(usuarioId) {
