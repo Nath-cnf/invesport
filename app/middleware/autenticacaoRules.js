@@ -83,6 +83,14 @@ const validationMiddlewareRules = {
             minUppercase: 1
         })
         .withMessage("Sua senha deve conter 1 letra maiúscula, 1 letra minúscula, 1 número, 1 caractere especial e no mínimo 8 caracteres no total.")
+    ],
+    criarTarefaValidacao: [
+        body("nome_tarefa")
+        .isLength({min: 1, max: 255})
+        .withMessage("Insira um nome para a sua tarefa!"),
+        body("conclusao_tarefa")
+        .notEmpty()
+        .withMessage("Insira uma data de conclusão!")
     ]
 }
 

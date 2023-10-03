@@ -80,6 +80,21 @@ class FormValidation {
                 email
             } = req.body;
 
+            let esportesResponse = []
+
+            esportesResponse.push(esportes);
+            esportesResponse = esportesResponse.flat();
+
+            const listaNomesEsportesSelecionados = [];
+
+            esportesResponse.forEach(esporteResponse => {
+                let esporteSelecionado = esportesLista.find(esporte => { return esporte.id === esporteResponse });
+
+                if (esporteSelecionado) {
+                    listaNomesEsportesSelecionados.push(esporteSelecionado);
+                }
+            })
+
             const nome_erro = erros.errors.find(erro => erro.path === "nome");
             const esportes_erro = erros.errors.find(erro => erro.path === "esportes");
             const cnpj_clube_erro = erros.errors.find(erro => erro.path === "cnpj_clube");
@@ -94,7 +109,8 @@ class FormValidation {
                     esportes: esportesLista,
                     input_values: {
                         nome,
-                        esportes,
+                        esportes: esportesResponse,
+                        nomes_esportes_selecionados: listaNomesEsportesSelecionados,
                         cnpj_clube,
                         cidade,
                         estado,
@@ -139,6 +155,35 @@ class FormValidation {
                     },
                     erros: {
                         senha_erro
+                    }
+                }
+            })
+        }
+
+        return next();
+    }
+
+    async validarTarefa(req, res, next) {
+        const erros = validationResult(req);
+
+        if (!erros.isEmpty()) {
+            const {
+                nome_tarefa,
+                conclusao_tarefa
+            } = req.body;
+
+            const nome_tarefa_erro = erros.errors.find(erro => erro.path === "nome_tarefa");
+            const conclusao_tarefa_erro = erros.errors.find(erro => erro.path === "conclusao_tarefa");
+
+            return res.render("pages/tarefas.ejs", {
+                data: {
+                    input_values: {
+                        nome_tarefa,
+                        conclusao_tarefa
+                    },
+                    erros: {
+                        nome_tarefa_erro,
+                        conclusao_tarefa_erro
                     }
                 }
             })

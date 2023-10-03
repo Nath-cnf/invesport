@@ -306,3 +306,17 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.senha i,
+.repita i {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.senha i.hide,
+.repita i.hide {
+    display: none;
+}

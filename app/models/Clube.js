@@ -6,6 +6,14 @@ class Clube {
             data
         });
     }
+
+    async findUserByEmail(usuarioEmail) {
+        return await prisma.clube.findUnique({
+            where: {
+                email: usuarioEmail
+            }
+        })
+    }
 }
 
 const clubeModel = new Clube();

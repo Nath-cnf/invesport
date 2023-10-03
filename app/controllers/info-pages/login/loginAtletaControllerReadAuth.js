@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const usuarioModel = require("../../../models/Usuario");
+const clubeModel = require("../../../models/Clube");
 const jwt = require("jsonwebtoken");
 
 class LoginAtletaController {
@@ -9,7 +10,13 @@ class LoginAtletaController {
             senha
         } = req.body;
 
-        const user = await usuarioModel.findUserByEmail(email);
+        let user = await usuarioModel.findUserByEmail(email);
+        let userType = "atleta";
+
+        if (!user) {
+            user = await clubeModel.findUserByEmail(email);
+            userType = "clube";
+        }
 
         if (!user) {
             return res.render("pages/login-atleta.ejs", {
@@ -30,11 +37,15 @@ class LoginAtletaController {
 
         bcrypt.compare(senha, user.senha).then((auth) => {
             if (auth) {
-                const token = jwt.sign({userId: user.id}, process.env.SECRET)
+                const token = jwt.sign({userId: user.id, userType}, process.env.SECRET)
 
                 req.session.token = token;
 
-                return res.redirect("/perfil-atleta")
+                if (userType === "atleta") {
+                    return res.redirect("/perfil-atleta");
+                } else if (userType === "clube") {
+                    return res.redirect("/perfil-clube");
+                }
             }
 
             return res.render("pages/login-atleta.ejs", {

@@ -4,6 +4,7 @@
     <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" type="text/css" href="css/cadastro-atleta.css" />
     <script src="/js/cadastro-atleta.js" defer></script>
+    <script src="/js/login-atleta.js" defer></script>
     <title><%- data.page_name %></title>
   </head>
 
@@ -139,6 +140,9 @@
               data.erros.senha_erro ? `<span class="mensagem-erro"
                 >${data.erros.senha_erro.msg}</span
               >` : "" %>
+
+              <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
+              <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
             </div>
 
             <label class="titulo"
@@ -154,6 +158,9 @@
                 class="mensagem-erro"
                 >${data.erros.confirmacao_senha_erro.msg}</span
               >` : "" %>
+
+              <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
+              <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
             </div>
           </span>
 

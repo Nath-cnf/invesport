@@ -20,6 +20,7 @@ model Usuario {
 
     tokens  Token[]
     esporte Esporte @relation(fields: [id_esporte], references: [id])
+    tarefas TarefaUsuario[]
 }
 
 model Clube {
@@ -32,6 +33,7 @@ model Clube {
     senha      String
 
     esportes Esporte[]
+    tarefas TarefaClube[]
 }
 
 model Esporte {
@@ -47,4 +49,26 @@ model Token {
     created_at DateTime @default(now())
 
     usuario Usuario @relation(fields: [email], references: [email])
+}
+
+model TarefaUsuario {
+    id String @id @default(uuid())
+    owner_id String
+    nome String
+    data_conclusao DateTime
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    usuario Usuario @relation(fields: [owner_id], references: [id])
+}
+
+model TarefaClube {
+    id String @id @default(uuid())
+    owner_id String
+    nome String
+    data_conclusao DateTime
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    clube Clube @relation(fields: [owner_id], references: [id])
 }

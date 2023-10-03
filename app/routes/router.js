@@ -5,6 +5,7 @@ var router = express.Router();
 const homeControllerRead = require("../controllers/info-pages/homeControllerRead");
 const homeCadastradaControllerRead = require("../controllers/info-pages/homeCadastradaControllerRead");
 
+
 //*RODAPE
 const trabalheConoscoControllerRead = require("../controllers/info-pages/rodape/trabalheConoscoControllerRead");
 const politicaControllerRead = require("../controllers/info-pages/rodape/politicaControllerRead");
@@ -15,7 +16,8 @@ const termosControllerRead = require("../controllers/info-pages/rodape/termosCon
 //*MENU
 const assinaturaControllerRead = require("../controllers/info-pages/menu/assinaturaControllerRead");
 const comoDoarControllerRead = require("../controllers/info-pages/menu/comoDoarControllerRead");
-const tarefaControllerRead = require("../controllers/info-pages/menu/tarefaControllerRead");
+const tarefaControllerRead = require("../controllers/info-pages/menu/tarefa/tarefaControllerRead");
+const tarefaControllerCreate = require("../controllers/info-pages/menu/tarefa/tarefaControllerCreate")
 const feedControllerRead = require("../controllers/info-pages/menu/feedControllerRead");
 
 
@@ -43,6 +45,7 @@ const autenticacaoRegrasMiddleware = require("../middleware/autenticacaoRules");
 const autenticacaoFormMiddleware = require("../middleware/autenticacaoFormsMiddleware");
 const politicaController = require("../controllers/info-pages/rodape/politicaControllerRead");
 const termosController = require("../controllers/info-pages/rodape/termosControllerRead");
+const validationMiddlewareRules = require("../middleware/autenticacaoRules");
 
 // * Info pages
 
@@ -64,7 +67,15 @@ router.get("/feed", feedControllerRead.getPage);
 
 router.get("/como-doar", comoDoarControllerRead.getPage);
 
-router.get("/tarefas", tarefaControllerRead.getPage);
+router.get("/tarefas",
+autenticacaoMiddleware.validateToken,
+tarefaControllerRead.getPage);
+
+router.post("/criar-tarefa",
+autenticacaoMiddleware.validateToken,
+validationMiddlewareRules.criarTarefaValidacao,
+autenticacaoFormMiddleware.validarTarefa,
+tarefaControllerCreate.createTarefa);
 
 // * Login atleta
 

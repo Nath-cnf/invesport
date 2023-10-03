@@ -3,7 +3,7 @@
 <head>
     <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" href="/css/tarefas.css">
-    <script src="/js/agenda.js" defer></script>
+    <!-- <script src="/js/agenda.js" defer></script> -->
     <title><%- data.page_name %></title>
 </head>
 <body>
@@ -20,18 +20,32 @@
     <div class="container">
         <div class="todo-app">
           <h2>Tarefas</h2>
+
           <div class="row">
-            <input type="text" id="inputbox" placeholder="Escreva sua tarefa">
-            <input type="date" id="inputbox2" placeholder="Prazo da tarefa"> 
-            
-            <button id="botao-add">Add</button>
+            <form action="/criar-tarefa" method="post">
+              <input type="text" id="inputbox" name="nome_tarefa" placeholder="Escreva sua tarefa" class="<%- data.erros && data.erros.nome_tarefa_erro ? `erro` : "" %>" <%- data.input_values ? `value="${data.input_values.nome_tarefa}"` : "" %>>
+              <input type="date" id="inputbox2" name="conclusao_tarefa" placeholder="Prazo da tarefa" class="<%- data.erros && data.erros.conclusao_tarefa_erro ? `erro` : "" %>" <%- data.input_values ? `value="${data.input_values.conclusao_tarefa}"` : "" %>>
+
+              <button id="botao-add" type="submit">Add</button>
+            </form>
           </div>
+          
+          <%- data.erros && data.erros.nome_tarefa_erro ? `<span class="mensagem-erro">${data.erros.nome_tarefa_erro.msg}</span>` : "" %>
+          <%- data.erros && data.erros.conclusao_tarefa_erro ? `<span class="mensagem-erro">${data.erros.conclusao_tarefa_erro.msg}</span>` : "" %>
+
     <div id="slide">
          <!-- <div class="card" id="card">
                <p class="output1" id="output1"></p>
               <h6>Prazo:</h6>
               <span class="output2" id="output2"></span>
             </div>  -->
+            <% data.tarefas.forEach(tarefa => { %>
+              <div class="card">
+                <p class="output1"><%- tarefa.nome %></p>
+                <h6>Prazo:</h6>
+                <span class="output2"><%- tarefa.data_conclusao %></span>
+              </div>
+            <% }) %>
         </div> 
           </ul>
         </div>
