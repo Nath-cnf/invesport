@@ -11,6 +11,9 @@ class Usuario {
         return await prisma.usuario.findUnique({
             where: {
                 id: usuarioId
+            },
+            include: {
+                esporte: true
             }
         })
     }
@@ -30,6 +33,39 @@ class Usuario {
             },
             data: {
                 senha: novaSenha
+            }
+        })
+    }
+
+    async updateUser(data, userId) {
+        await prisma.usuario.update({
+            where: {
+                id: userId
+            },
+            data
+        })
+    }
+
+    async getUserImage(userId) {
+        return await prisma.usuario.findUnique({
+            where: {
+                id: userId
+            },
+            select: {
+                imagem_perfil,
+                imagem_perfil_type
+            }
+        })
+    }
+
+    async getUserBanner(userId) {
+        return await prisma.usuario.findUnique({
+            where: {
+                id: userId
+            },
+            select: {
+                banner_perfil,
+                banner_image_type
             }
         })
     }

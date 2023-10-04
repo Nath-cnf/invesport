@@ -24,6 +24,8 @@ class FormValidation {
                 email
             } = req.body;
 
+            const nome_esporte = await esporteModel.getEsporteNome(esporte);
+
             const nome_erro = erros.errors.find(erro => erro.path === "nome");
             const esporte_erro = erros.errors.find(erro => erro.path === "esporte");
             const cnpj_clube_erro = erros.errors.find(erro => erro.path === "cnpj_clube");
@@ -35,10 +37,12 @@ class FormValidation {
 
             return res.render("pages/cadastro-atleta.ejs", {
                 data: {
+                    page_name: "Invesport",
                     esportes,
                     input_values: {
                         nome,
                         esporte,
+                        nome_esporte: nome_esporte.nome,
                         cnpj_clube,
                         cidade,
                         estado,

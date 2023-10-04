@@ -51,14 +51,14 @@
               <div id="esporte-campo-pai" data-esporte-dropdown-button
               <%- data.erros && data.erros.esporte_erro ? `class="erro"` : "" %>>
                 <span data-esporte-selected
-                  ><%- data.input_values && data.input_values.esporte ?
-                  data.input_values.esporte : "Escolha o esporte!" %></span
+                  ><%- data.input_values && data.input_values.nome_esporte ?
+                  data.input_values.nome_esporte : "Escolha o esporte!" %></span
                 >
                 <i class="bx bx-chevron-down"></i>
                 <div id="esporte-campo-container">
                 <div id="esporte-campo">
                     <% data.esportes.forEach(esporte => { %>
-                    <label for="<%- esporte.nome %>" <%- data.input_values && data.input_values.esporte === esporte.nome ? "class='ativo'"  : "" %>>
+                    <label for="<%- esporte.nome %>" <%- data.input_values && data.input_values.esporte === esporte.id ? "class='ativo'"  : "" %>>
                       <input type="radio" name="esporte"
                       id="<%- esporte.nome %>" value="<%- esporte.id %>"
                       data-esporte-input <%- data.input_values &&

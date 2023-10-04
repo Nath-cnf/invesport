@@ -1,6 +1,10 @@
 var express = require("express");
 var router = express.Router();
 
+const multer = require("multer");
+const storage = multer.memoryStorage();
+const upload = multer({storage});
+
 //*HOME
 const homeControllerRead = require("../controllers/info-pages/homeControllerRead");
 const homeCadastradaControllerRead = require("../controllers/info-pages/homeCadastradaControllerRead");
@@ -46,6 +50,12 @@ const autenticacaoFormMiddleware = require("../middleware/autenticacaoFormsMiddl
 const politicaController = require("../controllers/info-pages/rodape/politicaControllerRead");
 const termosController = require("../controllers/info-pages/rodape/termosControllerRead");
 const validationMiddlewareRules = require("../middleware/autenticacaoRules");
+
+// * IMAGENS
+
+const imagensBannerControllerRead = require("../controllers/info-pages/imagens/imagensBannerControllerRead");
+const imagensUsuariosControllerRead = require("../controllers/info-pages/imagens/imagensUsuariosControllerRead");
+
 
 // * Info pages
 
@@ -125,6 +135,16 @@ autenticacaoRegrasMiddleware.cadastroClubeValidacao,
 autenticacaoFormMiddleware.validarClubeCadastro,
 autenticacaoMiddleware.criptografarSenha,
 cadastroClubeControllerCreate.createClube);
+
+// * Imagens
+
+router.get("/assets/perfil/banners/:userId",
+autenticacaoMiddleware.validateToken,
+imagensBannerControllerRead.getImage);
+
+router.get("/assets/perfil/imagens_usuarios/:userId",
+autenticacaoMiddleware.validateToken,
+imagensUsuariosControllerRead.getImage);
 
 // * Rodape
 
