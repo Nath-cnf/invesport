@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+const jwt = require("jsonwebtoken");
 
 const multer = require("multer");
 const storage = multer.memoryStorage();
@@ -36,7 +37,6 @@ const cadastroClubeControllerCreate = require("../controllers/info-pages/cadastr
 const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
 const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
 
-
 //*REDEFINIR
 const redefinirSenhaMiddleware = require("../middleware/redefinirSenhaMiddleware");
 const recuperarSenhaControllerRead = require("../controllers/info-pages/redefinir-senha/recuperarSenhaControllerRead");
@@ -52,10 +52,11 @@ const termosController = require("../controllers/info-pages/rodape/termosControl
 const validationMiddlewareRules = require("../middleware/autenticacaoRules");
 
 // * IMAGENS
-
 const imagensBannerControllerRead = require("../controllers/info-pages/imagens/imagensBannerControllerRead");
 const imagensUsuariosControllerRead = require("../controllers/info-pages/imagens/imagensUsuariosControllerRead");
 
+// * EDITAR
+const editarAtletaControllerRead = require("../controllers/perfil/editarAtletaControllerRead");
 
 // * Info pages
 
@@ -145,6 +146,10 @@ imagensBannerControllerRead.getImage);
 router.get("/assets/perfil/imagens_usuarios/:userId",
 autenticacaoMiddleware.validateToken,
 imagensUsuariosControllerRead.getImage);
+
+// * Editar perfil
+
+router.get("/editar-perfil", editarAtletaControllerRead.getPage);
 
 // * Rodape
 
