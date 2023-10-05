@@ -1,16 +1,20 @@
 const usuarioModel = require("../../models/Usuario");
+const esporteModel = require("../../models/Esporte");
+const jwt = require("jsonwebtoken");
 
 class editarAtletaController {
   async getPage(req, res) {
+    const esportes  = await esporteModel.findAllEsportes();
     const token = req.session.token;
     const { userId } = jwt.decode(token, process.env.SECRET);
     const user = await usuarioModel.findUserById(userId);
 
     const nome_esporte = await esporteModel.getEsporteNome(user.esporte);
-
-    return res.render("pages/index.ejs", {
+    console.log(esportes);
+    return res.render("pages/editar-perfil-atleta.ejs", {
       data: {
         page_name: "Invesport",
+        esportes,
         input_values: {
           nome: user.nome,
           esporte: user.esporte,

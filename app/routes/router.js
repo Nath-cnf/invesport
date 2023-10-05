@@ -149,7 +149,9 @@ imagensUsuariosControllerRead.getImage);
 
 // * Editar perfil
 
-router.get("/editar-perfil", editarAtletaControllerRead.getPage);
+router.get("/editar-perfil", 
+autenticacaoMiddleware.validateToken,
+editarAtletaControllerRead.getPage);
 
 // * Rodape
 
