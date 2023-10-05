@@ -61,22 +61,28 @@ b{
     margin-bottom: 5px;
 }
 
-.apoie{
-    width: 60%;
-    height: 6vh;
+.btn-apoiar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+.Apoie{
+    width: 50%;
+    height: 7vh;
     background-color: #ff5b00;
-    border-radius: 30px;
+    border-radius: 15px;
     border: none;
 }
 
-.apoie > a{
+.Apoie > a{
     color: #ffffff;
     font-size: 1rem;
     text-decoration: none;
     box-shadow: none;
 }
-
-
 
 #escanear-qr{
     width: 130px;
