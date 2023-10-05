@@ -19,12 +19,9 @@ esporteDepositoInputs.forEach((input) => {
 
 		parentSelected.classList.add("ativo");
 
-		const valueSelected = e.target.value;
-		const firstLetterCapitalized = valueSelected.charAt(0).toUpperCase();
-		const remaingLetters = valueSelected.slice(1);
-		const capitalizedValue = firstLetterCapitalized + remaingLetters;
+		const valueSelected = e.target.parentNode.innerText;
 
-		esporteDepositoSelected.innerText = capitalizedValue;
+		esporteDepositoSelected.innerText = valueSelected;
 
 		esporteDropdownButton.classList.toggle("ativo");
 	});

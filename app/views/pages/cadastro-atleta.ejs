@@ -4,6 +4,7 @@
     <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" type="text/css" href="css/cadastro-atleta.css" />
     <script src="/js/cadastro-atleta.js" defer></script>
+    <script src="/js/login-atleta.js" defer></script>
     <title><%- data.page_name %></title>
   </head>
 
@@ -25,11 +26,8 @@
           <p class="asteristico">*</p>
           Campo obrigatório
         </span>
-        <form class="formulario" method="post" action="cadastro-atleta">
-          <%- data.erros && data.erros.sistema_erro ? `<span
-            class="mensagem-erro"
-            >${data.erros.sistema_erro.msg}</span
-          >` : "" %>
+        <form class="formulario" method="post" action="/cadastro-atleta">
+          <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
           <span class="campos-form">
             <label class="titulo"
               >Nome completo
@@ -53,18 +51,18 @@
               <div id="esporte-campo-pai" data-esporte-dropdown-button
               <%- data.erros && data.erros.esporte_erro ? `class="erro"` : "" %>>
                 <span data-esporte-selected
-                  ><%- data.input_values && data.input_values.esporte ?
-                  data.input_values.esporte : "Escolha o esporte!" %></span
+                  ><%- data.input_values && data.input_values.nome_esporte ?
+                  data.input_values.nome_esporte : "Escolha o esporte!" %></span
                 >
                 <i class="bx bx-chevron-down"></i>
                 <div id="esporte-campo-container">
                 <div id="esporte-campo">
                     <% data.esportes.forEach(esporte => { %>
-                    <label for="<%- esporte.nome %>" <%- data.input_values && data.input_values.esporte === esporte.nome ? "class='ativo'"  : "" %>>
+                    <label for="<%- esporte.nome %>" <%- data.input_values && data.input_values.esporte === esporte.id ? "class='ativo'"  : "" %>>
                       <input type="radio" name="esporte"
-                      id="<%- esporte.nome %>" value="<%- esporte.nome %>"
+                      id="<%- esporte.nome %>" value="<%- esporte.id %>"
                       data-esporte-input <%- data.input_values &&
-                      data.input_values.esporte === esporte.nome ?
+                      data.input_values.esporte === esporte.id ?
                       "checked" : "" %> />
                       <%- esporte.nome %>
                     </label>
@@ -142,6 +140,9 @@
               data.erros.senha_erro ? `<span class="mensagem-erro"
                 >${data.erros.senha_erro.msg}</span
               >` : "" %>
+
+              <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
+              <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
             </div>
 
             <label class="titulo"
@@ -157,6 +158,9 @@
                 class="mensagem-erro"
                 >${data.erros.confirmacao_senha_erro.msg}</span
               >` : "" %>
+
+              <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
+              <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
             </div>
           </span>
 

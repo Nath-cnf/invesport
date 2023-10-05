@@ -1,4 +1,4 @@
-const prisma = require("../../../../server/database/prismaClient");
+const esporteModel = require("../../../models/Esporte");
 
 class CadastroAtletaControllerRead {
     constructor(){
@@ -15,7 +15,7 @@ class CadastroAtletaControllerRead {
         })
     }
     async getEsportes(){
-      const esportes = await prisma.esporte.findMany()
+      const esportes = await esporteModel.findAllEsportes();
       return esportes
     }
 }

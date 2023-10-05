@@ -272,9 +272,6 @@ main{
 }
 
 .titulo-3{
-    display: flex;
-    flex-direction: row;
-    position: relative;
     font-size: 1rem;
 }
 

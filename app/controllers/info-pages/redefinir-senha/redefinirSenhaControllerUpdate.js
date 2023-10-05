@@ -1,4 +1,5 @@
-const prisma = require("../../../../server/database/prismaClient");
+const tokenModel = require("../../../models/Token");
+const usuarioModel = require("../../../models/Usuario");
 const mailer = require("nodemailer");
 
 class redefinirSenhaControllerUpdate {
@@ -13,22 +14,11 @@ class redefinirSenhaControllerUpdate {
         const token = req.params.token;
 
         try {
-            const user_token = await prisma.token.findUnique({
-                where: {
-                    id: token
-                }
-            })
+            const user_token = await tokenModel.findTokenById(token);
 
             const email = user_token.email;
 
-            await prisma.usuario.update({
-                where: {
-                    email: email
-                },
-                data: {
-                    senha: req.senhaCriptografada
-                }
-            })
+            await usuarioModel.updateUserSenha(req.senhaCriptografada, email)
 
             await this.#sendMail(email);
         } catch (erro) {
