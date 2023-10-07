@@ -7,7 +7,7 @@ class perfilAtletaControllerRead {
     const { userId } = jwt.decode(token, process.env.SECRET);
     const usuario = await usuarioModel.findUserById(userId);
 
-    res.render("pages/perfil-atleta.ejs", {
+    res.render("pages/perfil-atleta-pov.ejs", {
       data: {
         page_name: "Invesport",
         usuario,

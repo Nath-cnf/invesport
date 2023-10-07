@@ -10,7 +10,7 @@
     <meta property="og:image:height" content="511" />
     <meta property="og:image:alt" content="Gerador de QRCode PIX" />
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" type="text/css" href="/css/perfil-atleta.css" />
+    <link rel="stylesheet" type="text/css" href="/css/perfil-atleta-pov.css" />
     <title><%- data.page_name %></title>
     <script src="/js/perfil/tabs.js" defer></script>
     <script src="/js/perfil/br-code.js" defer></script>
@@ -24,29 +24,22 @@
         <div class="pic-perfil">
           <img src="" class="capa-perfil" />
           <img src="/assets/perfil/user.png" class="foto-perfil" />
+          <a href="/editar-perfil" class="edit-perfil">
+            <img src="/assets/perfil/edit-perfil.png" alt="edit-icon">Editar perfil
+          </a>
         </div>
         <h2 class="titulo-perfil" id="logado"><%- data.usuario.nome %></h2>
-        <div class="redes-sociais">
-          <i class="bx bxl-facebook-square" style="color: #ff540b"></i>
-          <i class="bx bxl-instagram" style="color: #ff540b"></i>
-        </div>
-        <div>
-
-        <a href="/editar-perfil" class="edit-perfil">
-          <img src="/assets/perfil/edit-perfil.png" alt="edit-icon">Editar perfil
-        </a>
-        </div>
       </section>
 
       <section class="bio">
         <div class="info-bio">
           <span class="clube">
+            <h3 class="t-clube" style="color: #ff540b;">Estado</h3>
             <h4 class="text-clube"><%- data.usuario.estado %></h4>
-            <h3 class="t-clube">Estado</h3>
           </span>
           <span class="esporte">
+            <h3 class="t-esporte" style="color: #ff540b;">Esporte</h3>
             <h4 class="text-esporte"><%- data.usuario.esporte %></h4>
-            <h3 class="t-esporte">Esporte</h3>
           </span>
         </div>
         <div class="button-bio">
@@ -76,9 +69,10 @@
         <div class="tab-content">
           <div id="portfolio" class="active" data-perfil-tab="portfolio">
             <img src="/assets/perfil/add-photo.png" class="feed"/>
-            <p class="legenda">
+            <a class="add-legenda">
               + Adicione uma legenda
-            </p>
+            </a>
+            <!-- <textarea name="legenda" id="legenda" cols="30" rows="10"></textarea> -->
             <section class="container-momentos">
               <p class="momentos">Momentos</p>
               <section class="grid-portifolio">
@@ -98,12 +92,16 @@
           <!-- SOBRE -->
           <div id="sobre" data-perfil-tab="sobre">
             <span class="titulo-2"
-              ><b class="Sobre-usuario">Sobre</b><%- data.usuario.nome %></span
+              ><b class="Sobre-usuario">Sobre </b> <%- data.usuario.nome %></span
             >
             <form action="" method="get" id="itens-sobre">
-              <input type="text" name="Idade" />
+              <label for="Idade">Idade:</label>
+              <input type="text" name="Idade"/>
+              <label for="Esporte">Esporte:</label>
               <input type="text" name="Esporte" />
+              <label for="Estado">Estado:</label>
               <input type="text" name="Estado" />
+              <label for="Cidade">Cidade:</label>
               <input type="text" name="Cidade" />
             </form>
             <textarea
@@ -122,23 +120,16 @@
               ><b style="color: #ff540b">Sport</b>!</span
             > <br>
             <form class="chave-pix-form" method="POST">
-              <div class="">
-                <div class="">
-                  <div class="">
-                    <label for="input-pix-key" class="label-chave-pix">Chave PIX</label><br>
+                  <div class="form-gerar-pix">
+                    <label for="input-pix-key" class="label-chave-pix">Chave PIX</label>
                     <input type="text">
                   </div>
                 <div class="gerar-qrcode">
-                  <span class="">
                     <button type="submit" class="gerar-btn">Gerar</button>
-                  </span>
                 </div>
-              </div>
             </form>
 
             <div class="qr-code-container">
-              <h2 class="">Plaquinha Pix - QrCode</h2>
-
               <div class="plaquinha-pix">
                 <div class="qrcode-replace">
                   <img src="" alt="" id="qr-code-image-generated">
@@ -153,6 +144,7 @@
 
           <!-- METAS -->
           <div id="meta" data-perfil-tab="meta">
+            <!-- <script src="/js/perfil/metas.js/"></script> -->
             <span class="anda-meta">Metas em andamento:</span>
             <section class="info-meta">
               <p class="desc-meta">Passagem para o Campeonato</p>
@@ -175,6 +167,20 @@
                 id="inputbox2"
                 placeholder="Valor máximo da meta"/>
               <button id="botao-add">Add</button>
+
+              <!-- 
+                <div class="info-meta">
+                  <p class="desc-meta">Passagem para o Campeonato</p>
+                  <div class="meta-icone">
+                    <i
+                      class="bx bx-target-lock"
+                      style="color: #ff6300"
+                      id="target">
+                    </i>
+                    <hr class="ls-animated" />
+                  </div>
+                  <p class="valor">máx: R$1,000</p>
+                </div> -->
             </section>
           </div>
           
