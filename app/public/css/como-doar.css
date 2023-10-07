@@ -53,12 +53,30 @@ b{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #dddddd;
+    padding: 5px;
+    background-color: #f0efef;
     border: none;
     border-radius: 20px;
     width: 340px;
     height: 180px;
     margin-bottom: 5px;
+}
+
+.b-doar{
+    width: 38vw;
+    height: 4rem;
+    border-radius: 10px;
+    border: 1px solid #ff5b00;
+    background-color: #ff5b00;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.apoie-sonhos{
+    position: relative;
+    width: 165px;
+    height: 210px;
 }
 
 .btn-apoiar{
@@ -67,6 +85,21 @@ b{
     justify-content: center;
     align-items: center;
     padding: 2%;
+}
+
+.btn-anexar{
+    width: 38vw;
+    height: 4rem;
+    border-radius: 8px;
+    border: 1px solid #ff5b00;
+    background-color: #ff5b00;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.passo-final{
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .Apoie{

@@ -130,6 +130,11 @@ input {
     margin-bottom: 20px;
 }
 
+.aceite-termos{
+    justify-content: center;
+    text-align: center;
+}
+
 .btn-entrar{
     display: flex;
     justify-content: center;
