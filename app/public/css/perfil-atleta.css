@@ -191,7 +191,13 @@ main{
 }
 
 .feed{
+    max-height: 400px;
     width: 100%;
+    background-color: #ececec;
+}
+
+.fotos-grid{
+    background-color: #ececec;
 }
 
 .momentos{
@@ -259,6 +265,7 @@ main{
 /* MENU DOAÇÃO */
 #doacao{
     margin: 20px;
+    padding: 5px;
     display: none;
     flex-direction: column;
     position: relative;
@@ -273,20 +280,17 @@ main{
 }
 
 .titulo-3{
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .gerar-btn{
-    display: inline-flex;
+    display: flex;
+    padding: 2px;
     justify-content: center;
     border: none;
     border-radius: 4px;
     background-color: #1406a7;
     color: white;
-}
-
-.gerar-btn:focus{
-    outline: none;
 }
 
 #imagem-qr{

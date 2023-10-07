@@ -66,42 +66,36 @@
 
       <div class="container">
         <div class="tabs">
-          <h3
-            id="t-publicacoes"
-            class="active"
-            data-perfil-tab-title="portfolio"
-          >
-            Portfólio
-          </h3>
+          <h3 id="t-publicacoes" class="active" data-perfil-tab-title="portfolio">Portfólio</h3>
           <h3 id="t-sobre" data-perfil-tab-title="sobre">Sobre</h3>
           <h3 id="t-doacoes" data-perfil-tab-title="doacao">Doação</h3>
           <h3 id="t-metas" data-perfil-tab-title="meta">Metas</h3>
         </div>
 
+        <!-- PORTFOLIO -->
         <div class="tab-content">
           <div id="portfolio" class="active" data-perfil-tab="portfolio">
-            <img src="/assets/perfil/feed-victor3.jpeg" alt="" class="feed" />
+            <img src="/assets/perfil/add-photo.png" class="feed"/>
             <p class="legenda">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              euismod bibendum laoreet. Proin gravida dolor sit amet lacus
-              accumsan et viverra justo commodo.
+              + Adicione uma legenda
             </p>
             <section class="container-momentos">
               <p class="momentos">Momentos</p>
               <section class="grid-portifolio">
-                <img src="/assets/perfil/victor1.jpeg" class="fotos-grid" />
-                <img src="/assets/perfil/victor2.jpeg" class="fotos-grid" />
-                <img src="/assets/perfil/victor3.jpeg" class="fotos-grid" />
-                <img src="/assets/perfil/victor4.jpeg" class="fotos-grid" />
-                <img src="/assets/perfil/victor5.jpeg" class="fotos-grid" />
-                <img src="/assets/perfil/victor6.jpeg" class="fotos-grid" />
-                <img src="/assets/perfil/victor7.jpeg" class="fotos-grid" />
-                <img src="/assets/perfil/victor8.jpeg" class="fotos-grid" />
-                <img src="/assets/perfil/victor9.jpeg" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
               </section>
             </section>
           </div>
 
+          <!-- SOBRE -->
           <div id="sobre" data-perfil-tab="sobre">
             <span class="titulo-2"
               ><b class="Sobre-usuario">Sobre</b><%- data.usuario.nome %></span
@@ -121,19 +115,20 @@
             ></textarea>
           </div>
 
+          <!-- DOAÇÃO -->
           <div id="doacao" data-perfil-tab="doacao">
             <span class="titulo-3"
-              >Receba doações no <b style="color: #1406a7">Inve</b
+              >Receba doações no <b style="color: #1406a7"> Inve</b
               ><b style="color: #ff540b">Sport</b>!</span
-            >
+            > <br>
             <form class="chave-pix-form" method="POST">
               <div class="">
                 <div class="">
                   <div class="">
-                    <label for="input-pix-key" class="label-chave-pix">Chave PIX</label>
+                    <label for="input-pix-key" class="label-chave-pix">Chave PIX</label><br>
                     <input type="text">
                   </div>
-                <div class="">
+                <div class="gerar-qrcode">
                   <span class="">
                     <button type="submit" class="gerar-btn">Gerar</button>
                   </span>
@@ -156,6 +151,7 @@
             </div>
           </div>
 
+          <!-- METAS -->
           <div id="meta" data-perfil-tab="meta">
             <span class="anda-meta">Metas em andamento:</span>
             <section class="info-meta">
@@ -181,6 +177,7 @@
               <button id="botao-add">Add</button>
             </section>
           </div>
+          
         </div>
       </div>
     </main>
