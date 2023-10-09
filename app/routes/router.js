@@ -58,6 +58,9 @@ const imagensUsuariosControllerRead = require("../controllers/info-pages/imagens
 // * EDITAR
 const editarAtletaControllerRead = require("../controllers/perfil/editarAtletaControllerRead");
 
+// * ADMIN
+const homeAdminControllerRead = require("../controllers/info-pages/admin/homeAdminControllerRead");
+
 // * Info pages
 
 router.get("/", homeControllerRead.getPage);
@@ -152,6 +155,9 @@ imagensUsuariosControllerRead.getImage);
 router.get("/editar-perfil", 
 autenticacaoMiddleware.validateToken,
 editarAtletaControllerRead.getPage);
+
+// * Admin
+router.get("/admin", homeAdminControllerRead.getPage);
 
 // * Rodape
 
