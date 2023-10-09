@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta property="og:title" content="Gerar Qr Code Pix">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gerarpix.com.br">
+    <meta property="og:image" content="https://www.gerarpix.com.br/android-chrome-512x512.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="511" />
+    <meta property="og:image:alt" content="Gerador de QRCode PIX" />
+    <%- include('../templates/head.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/perfil-atleta-pov.css" />
+    <title><%- data.page_name %></title>
+    <script src="/js/perfil/tabs.js" defer></script>
+    <script src="/js/perfil/br-code.js" defer></script>
+  </head>
+
+  <body>
+    <%- include('../templates/header-perfil.ejs') %>
+
+    <main>
+      <section>
+        <div class="pic-perfil">
+          <img src="" class="capa-perfil" />
+          <img src="/assets/perfil/user.png" class="foto-perfil" />
+          <a href="/editar-perfil" class="edit-perfil">
+            <img src="/assets/perfil/edit-perfil.png" alt="edit-icon">Editar perfil
+          </a>
+        </div>
+        <h2 class="titulo-perfil" id="logado"><%- data.usuario.nome %></h2>
+      </section>
+
+      <section class="bio">
+        <div class="info-bio">
+          <span class="clube">
+            <h3 class="t-clube" style="color: #ff540b;">Estado</h3>
+            <h4 class="text-clube"><%- data.usuario.estado %></h4>
+          </span>
+          <span class="esporte">
+            <h3 class="t-esporte" style="color: #ff540b;">Esporte</h3>
+            <h4 class="text-esporte"><%- data.usuario.esporte %></h4>
+          </span>
+        </div>
+        <div class="button-bio">
+          <button class="b-doar"><a href="#">Doar</a></button>
+        </div>
+
+        <div class="info-meta">
+          <p class="desc-meta">Passagem para o Campeonato</p>
+          <div class="meta-icone">
+            <i class="bx bx-target-lock" style="color: #ff6300" id="target"></i>
+            <hr class="ls-animated" />
+          </div>
+          <p class="valor">máx: R$1,000</p>
+        </div>
+      </section>
+      <hr class="linha-bio" />
+
+      <div class="container">
+        <div class="tabs">
+          <h3 id="t-publicacoes" class="active" data-perfil-tab-title="portfolio">Portfólio</h3>
+          <h3 id="t-sobre" data-perfil-tab-title="sobre">Sobre</h3>
+          <h3 id="t-doacoes" data-perfil-tab-title="doacao">Doação</h3>
+          <h3 id="t-metas" data-perfil-tab-title="meta">Metas</h3>
+        </div>
+
+        <!-- PORTFOLIO -->
+        <div class="tab-content">
+          <div id="portfolio" class="active" data-perfil-tab="portfolio">
+            <img src="/assets/perfil/add-photo.png" class="feed"/>
+            <a class="add-legenda">
+              + Adicione uma legenda
+            </a>
+            <!-- <textarea name="legenda" id="legenda" cols="30" rows="10"></textarea> -->
+            <section class="container-momentos">
+              <p class="momentos">Momentos</p>
+              <section class="grid-portifolio">
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+              </section>
+            </section>
+          </div>
+
+          <!-- SOBRE -->
+          <div id="sobre" data-perfil-tab="sobre">
+            <span class="titulo-2"
+              ><b class="Sobre-usuario">Sobre </b> <%- data.usuario.nome %></span
+            >
+            <form action="" method="get" id="itens-sobre">
+              <label for="Idade">Idade:</label>
+              <input type="text" name="Idade"/>
+              <label for="Esporte">Esporte:</label>
+              <input type="text" name="Esporte" />
+              <label for="Estado">Estado:</label>
+              <input type="text" name="Estado" />
+              <label for="Cidade">Cidade:</label>
+              <input type="text" name="Cidade" />
+            </form>
+            <textarea
+              name="Descrição"
+              id="Desc-usuario"
+              cols="30"
+              rows="10"
+              placeholder="Fale mais sobre você"
+            ></textarea>
+          </div>
+
+          <!-- DOAÇÃO -->
+          <div id="doacao" data-perfil-tab="doacao">
+            <span class="titulo-3"
+              >Receba doações no <b style="color: #1406a7"> Inve</b
+              ><b style="color: #ff540b">Sport</b>!</span
+            > <br>
+            <form class="chave-pix-form" method="POST">
+                  <div class="form-gerar-pix">
+                    <label for="input-pix-key" class="label-chave-pix">Chave PIX</label>
+                    <input type="text">
+                  </div>
+                <div class="gerar-qrcode">
+                    <button type="submit" class="gerar-btn">Gerar</button>
+                </div>
+            </form>
+
+            <div class="qr-code-container">
+              <div class="plaquinha-pix">
+                <div class="qrcode-replace">
+                  <img src="" alt="" id="qr-code-image-generated">
+                </div>
+
+                <div class="">
+                  <div class="js-qr-code-description"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- METAS -->
+          <div id="meta" data-perfil-tab="meta">
+            <!-- <script src="/js/perfil/metas.js/"></script> -->
+            <span class="anda-meta">Metas em andamento:</span>
+            <section class="info-meta">
+              <p class="desc-meta">Passagem para o Campeonato</p>
+              <section class="meta-icone">
+                <i
+                  class="bx bx-target-lock"
+                  style="color: #ff6300"
+                  id="target">
+                </i>
+                <hr class="ls-animated" />
+              </section>
+              <p class="valor">máx: R$1,000</p>
+            </section>
+            <hr class="linha-meta" />
+            <span class="add-meta">Adicione sua meta</span>
+            <section class="row">
+              <input type="text" id="inputbox" placeholder="Nome da meta" />
+              <input
+                type="number"
+                id="inputbox2"
+                placeholder="Valor máximo da meta"/>
+              <button id="botao-add">Add</button>
+
+              <!-- 
+                <div class="info-meta">
+                  <p class="desc-meta">Passagem para o Campeonato</p>
+                  <div class="meta-icone">
+                    <i
+                      class="bx bx-target-lock"
+                      style="color: #ff6300"
+                      id="target">
+                    </i>
+                    <hr class="ls-animated" />
+                  </div>
+                  <p class="valor">máx: R$1,000</p>
+                </div> -->
+            </section>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+
+    <%- include('../templates/rodape.ejs') %>
+  </body>
+</html>

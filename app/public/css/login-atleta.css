@@ -318,6 +318,7 @@ input {
         background-image: url("../assets/home/background2.jpeg"); 
         background-size: 100vw 100vh;
         margin: 0px;
+        margin-top: 3rem;
     }
 
     .container-login{
@@ -326,7 +327,7 @@ input {
         justify-content: center;
         align-items: center;
         width: 35vw;
-        height: 80%;
+        height: 90%;
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 4px -1px 6px -2px rgba(0,0,0,0.45);
@@ -385,4 +386,16 @@ input {
     .cadastrar{
         margin: 0px 0px 20px 0px;
     }
+}
+
+.senha i {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.senha i.hide {
+    display: none;
 }

@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
-const prisma = require("../../../../server/database/prismaClient");
+const usuarioModel = require("../../../models/Usuario");
+const clubeModel = require("../../../models/Clube");
 const jwt = require("jsonwebtoken");
 
 class LoginAtletaController {
@@ -9,14 +10,15 @@ class LoginAtletaController {
             senha
         } = req.body;
 
-        const user = await prisma.usuario.findUnique({
-            where: {
-                email
-            }
-        })
+        let user = await usuarioModel.findUserByEmail(email);
+        let userType = "atleta";
 
         if (!user) {
-            console.log("Usuário não está cadastrado!")
+            user = await clubeModel.findUserByEmail(email);
+            userType = "clube";
+        }
+
+        if (!user) {
             return res.render("pages/login-atleta.ejs", {
                 data: {
                     page_name: "Invesport",
@@ -35,14 +37,17 @@ class LoginAtletaController {
 
         bcrypt.compare(senha, user.senha).then((auth) => {
             if (auth) {
-                const token = jwt.sign({userId: user.id}, process.env.SECRET)
+                const token = jwt.sign({userId: user.id, userType}, process.env.SECRET)
 
                 req.session.token = token;
 
-                return res.redirect("/perfil-atleta")
+                if (userType === "atleta") {
+                    return res.redirect("/perfil-atleta");
+                } else if (userType === "clube") {
+                    return res.redirect("/perfil-clube");
+                }
             }
 
-            console.log("Senhas não batem")
             return res.render("pages/login-atleta.ejs", {
                 data: {
                     page_name: "Invesport",

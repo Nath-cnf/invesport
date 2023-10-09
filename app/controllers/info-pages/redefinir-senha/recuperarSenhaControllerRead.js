@@ -1,4 +1,5 @@
-const prisma = require("../../../../server/database/prismaClient");
+const tokenModel = require("../../../models/Token");
+const usuarioModel = require("../../../models/Usuario");
 const mailer = require("nodemailer");
 
 class CadastroAtletaControllerRead {
@@ -19,11 +20,7 @@ class CadastroAtletaControllerRead {
             email
         } = req.body;
 
-        const user = await prisma.usuario.findUnique({
-            where: {
-                email
-            }
-        })
+        const user = await usuarioModel.findUserByEmail(email);
 
         if (!user) {
             return res.render("pages/recuperar-senha.ejs", {
@@ -88,13 +85,7 @@ class CadastroAtletaControllerRead {
     }
 
     async #createToken(email) {
-        const token = await prisma.token.create({
-            data: {
-                email
-            }
-        })
-
-        return token
+        return await tokenModel.createToken({email})
     }
 }
 

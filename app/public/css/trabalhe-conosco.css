@@ -47,3 +47,10 @@ main {
     flex-direction: row;
     align-self: center;
 }
+
+.boneco-duvida{
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 360px;
+}

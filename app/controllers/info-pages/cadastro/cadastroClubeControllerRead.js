@@ -1,8 +1,13 @@
+const esporteModel = require("../../../models/Esporte");
+
 class CadastroClubeControllerRead {
-    getPage(req, res) {
+    async getPage(req, res) {
+        const esportes = await esporteModel.findAllEsportes();
+
         res.render("pages/cadastro-clube.ejs", {
             data: {
-                page_name: "Invesport"
+                page_name: "Invesport",
+                esportes
             }
         })
     }

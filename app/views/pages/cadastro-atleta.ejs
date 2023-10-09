@@ -1,125 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" type="text/css" href="css/cadastro-atleta.css">
+    <link rel="stylesheet" type="text/css" href="css/cadastro-atleta.css" />
+    <script src="/js/cadastro-atleta.js" defer></script>
+    <script src="/js/login-atleta.js" defer></script>
     <title><%- data.page_name %></title>
-</head>
+  </head>
 
-<body>
+  <body>
     <%- include('../templates/header.ejs') %>
 
-        <main>
-            <div class="container-cadastro">
-                <div class="container">
-                    <img src="assets/cadastro-login/atleta-circulo.png" id="i-atleta">
-                    <h2 id="t-atleta">Atleta</h2>
-                </div>
+    <main>
+      <div class="container-cadastro">
+        <div class="container">
+          <img src="assets/cadastro-login/atleta-circulo.png" id="i-atleta" />
+          <h2 id="t-atleta">Atleta</h2>
+        </div>
 
-                <div class="btn">
-                    <a href="cadastro-clube"><button id="btn-clube">Clube</button></a>
-                    <a href="cadastro-atleta"><button id="btn-atleta">Atleta</button></a>
-                </div>
-                <span class="obrigatorio">
-                    <p class="asteristico">*</p>Campo obrigatório
-                </span>
-                <form class="formulario" method="post" action="cadastro-atleta">
-                    <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
-                    <span class="campos-form">
-                        <label class="titulo">Nome completo<p class="asteristico">*</p></label>
-                        <div class="nome">
-                            <input type="text" placeholder="Insira seu nome" class="campo 
-                            <%- data.erros && data.erros.nome_erro ? `erro` : "" %>" name="nome"
-                            <%- data.input_values ? `value="${data.input_values.nome}"` : "" %>
-                            >
-
-                            <%- data.erros && data.erros.nome_erro ? `<span class="mensagem-erro">${data.erros.nome_erro.msg}</span>` : "" %>
-                        </div>
-
-                        <label class="titulo">Esporte<p class="asteristico">*</p></label>
-                        <div class="esporte">
-                            <select name="esporte" id="esporte" required>
-                                <option selected disabled>Insira seu esporte</option>
-                                <% data.esportes.forEach(esporte => { %>
-                                        <option value="<%- esporte.id %>"><%- esporte.nome %></option>
-                                <% }) %>
-                            </select>
-                            <%- data.erros && data.erros.esporte_erro ? `<span class="mensagem-erro">${data.erros.esporte_erro.msg}</span>` : "" %>
-                        </div>
-
-                        <label class="titulo">CNPJ do Clube</label>
-                        <div class="cnpj">
-                            <input type="string" placeholder="Insira o CNPJ do Clube" class="campo
-                            <%- data.erros && data.erros.cnpj_clube_erro ? `erro` : "" %>" name="cnpj_clube"
-                            <%- data.input_values ? `value="${data.input_values.cnpj_clube}"` : "" %>
-                            >
-                            
-                            <%- data.erros && data.erros.cnpj_clube_erro ? `<span class="mensagem-erro">${data.erros.cnpj_clube_erro.msg}</span>` : "" %>
-                        </div>
-
-                        <label class="titulo">Cidade<p class="asteristico">*</p></label>
-                        <div class="cidade">
-                            <input type="text" placeholder="Insira sua cidade" class="campo
-                            <%- data.erros && data.erros.cidade_erro ? `erro` : "" %>" name="cidade"
-                            <%- data.input_values ? `value="${data.input_values.cidade}"` : "" %>
-                            >
-                        
-                            <%- data.erros && data.erros.cidade_erro ? `<span class="mensagem-erro">${data.erros.cidade_erro.msg}</span>` : "" %>
-                        </div>
-
-                        <label class="titulo">Estado<p class="asteristico">*</p></label>
-                        <div class="estado">
-                            <input type="text" placeholder="Insira seu estado" class="campo
-                            <%- data.erros && data.erros.estado_erro ? `erro` : "" %>" name="estado"
-                            <%- data.input_values ? `value="${data.input_values.estado}"` : "" %>
-                            >
-
-                            <%- data.erros && data.erros.estado_erro ? `<span class="mensagem-erro">${data.erros.estado_erro.msg}</span>` : "" %>
-                        </div>
-
-                        <label class="titulo">E-mail<p class="asteristico">*</p></label>
-                        <div class="email">
-                            <input type="email" placeholder="Insira seu e-mail" class="campo
-                            <%- data.erros && data.erros.email_erro ? `erro` : "" %>" name="email"
-                            <%- data.input_values ? `value="${data.input_values.email}"` : "" %>
-                            >
-                            
-                            <%- data.erros && data.erros.email_erro ? `<span class="mensagem-erro">${data.erros.email_erro.msg}</span>` : "" %>
-                        </div>
-
-                        <label class="titulo">Senha<p class="asteristico">*</p></label>
-                        <div class="senha">
-                            <input type="password" placeholder="Crie sua senha" class="campo
-                            <%- data.erros && data.erros.senha_erro ? `erro` : "" %>" name="senha"
-                            <%- data.input_values ? `value="${data.input_values.senha}"` : "" %>
-                            >
-                            
-                            <%- data.erros && data.erros.senha_erro ? `<span class="mensagem-erro">${data.erros.senha_erro.msg}</span>` : "" %>
-                        </div>
-
-                        <label class="titulo">Repita a senha<p class="asteristico">*</p></label>
-                        <div class="repita">
-                            <input type="password" placeholder="Insira sua senha" class="campo
-                            <%- data.erros && data.erros.confirmacao_senha_erro ? `erro` : "" %>" name="confirmacao_senha"
-                            <%- data.input_values ? `value="${data.input_values.confirmacao_senha}"` : "" %>
-                            >
-                            
-                            <%- data.erros && data.erros.confirmacao_senha_erro ? `<span class="mensagem-erro">${data.erros.confirmacao_senha_erro.msg}</span>` : "" %>
-                        </div>
-                    </span>
-
-                    
-
-                    <div class="cadastro">
-                        <input type="submit" value="CADASTRAR" id="cadastrar">
-                    </div>
-                </form>
-                <span id="cadastrado">Já possui cadastro? <a href="login-atleta" class="entre">Entre aqui</a></span>
+        <div class="btn">
+          <a href="cadastro-clube"><button id="btn-clube">Clube</button></a>
+          <a href="cadastro-atleta"><button id="btn-atleta">Atleta</button></a>
+        </div>
+        <span class="obrigatorio">
+          <p class="asteristico">*</p>
+          Campo obrigatório
+        </span>
+        <form class="formulario" method="post" action="/cadastro-atleta">
+          <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
+          <span class="campos-form">
+            <label class="titulo"
+              >Nome completo
+              <p class="asteristico">*</p></label
+            >
+            <div class="nome">
+              <input type="text" placeholder="Insira seu nome" class="campo <%-
+              data.erros && data.erros.nome_erro ? `erro` : "" %>" name="nome"
+              <%- data.input_values ? `value="${data.input_values.nome}"` : ""
+              %> > <%- data.erros && data.erros.nome_erro ? `<span
+                class="mensagem-erro"
+                >${data.erros.nome_erro.msg}</span
+              >` : "" %>
             </div>
-        </main>
 
-        <%- include('../templates/rodape.ejs') %>
-</body>
+            <label class="titulo"
+              >Esporte
+              <p class="asteristico">*</p></label
+            >
+            <div class="esporte">
+              <div id="esporte-campo-pai" data-esporte-dropdown-button
+              <%- data.erros && data.erros.esporte_erro ? `class="erro"` : "" %>>
+                <span data-esporte-selected
+                  ><%- data.input_values && data.input_values.nome_esporte ?
+                  data.input_values.nome_esporte : "Escolha o esporte!" %></span
+                >
+                <i class="bx bx-chevron-down"></i>
+                <div id="esporte-campo-container">
+                <div id="esporte-campo">
+                    <% data.esportes.forEach(esporte => { %>
+                    <label for="<%- esporte.nome %>" <%- data.input_values && data.input_values.esporte === esporte.id ? "class='ativo'"  : "" %>>
+                      <input type="radio" name="esporte"
+                      id="<%- esporte.nome %>" value="<%- esporte.id %>"
+                      data-esporte-input <%- data.input_values &&
+                      data.input_values.esporte === esporte.id ?
+                      "checked" : "" %> />
+                      <%- esporte.nome %>
+                    </label>
+                    <% }) %>
+                  </div>
+                </div>
+              </div>
+              <%- data.erros && data.erros.esporte_erro ? `<span
+                class="mensagem-erro"
+                >${data.erros.esporte_erro.msg}</span>` : "" %>
+            </div>
 
+            <label class="titulo">CNPJ do Clube</label>
+            <div class="cnpj">
+              <input type="string" placeholder="Insira o CNPJ do Clube"
+              class="campo <%- data.erros && data.erros.cnpj_clube_erro ? `erro`
+              : "" %>" name="cnpj_clube" <%- data.input_values ?
+              `value="${data.input_values.cnpj_clube}"` : "" %> > <%- data.erros
+              && data.erros.cnpj_clube_erro ? `<span class="mensagem-erro"
+                >${data.erros.cnpj_clube_erro.msg}</span
+              >` : "" %>
+            </div>
+
+            <label class="titulo"
+              >Cidade
+              <p class="asteristico">*</p></label
+            >
+            <div class="cidade">
+              <input type="text" placeholder="Insira sua cidade" class="campo
+              <%- data.erros && data.erros.cidade_erro ? `erro` : "" %>"
+              name="cidade" <%- data.input_values ?
+              `value="${data.input_values.cidade}"` : "" %> > <%- data.erros &&
+              data.erros.cidade_erro ? `<span class="mensagem-erro"
+                >${data.erros.cidade_erro.msg}</span
+              >` : "" %>
+            </div>
+
+            <label class="titulo"
+              >Estado
+              <p class="asteristico">*</p></label
+            >
+            <div class="estado">
+              <input type="text" placeholder="Insira seu estado" class="campo
+              <%- data.erros && data.erros.estado_erro ? `erro` : "" %>"
+              name="estado" <%- data.input_values ?
+              `value="${data.input_values.estado}"` : "" %> > <%- data.erros &&
+              data.erros.estado_erro ? `<span class="mensagem-erro"
+                >${data.erros.estado_erro.msg}</span
+              >` : "" %>
+            </div>
+
+            <label class="titulo"
+              >E-mail
+              <p class="asteristico">*</p></label
+            >
+            <div class="email">
+              <input type="email" placeholder="Insira seu e-mail" class="campo
+              <%- data.erros && data.erros.email_erro ? `erro` : "" %>"
+              name="email" <%- data.input_values ?
+              `value="${data.input_values.email}"` : "" %> > <%- data.erros &&
+              data.erros.email_erro ? `<span class="mensagem-erro"
+                >${data.erros.email_erro.msg}</span
+              >` : "" %>
+            </div>
+
+            <label class="titulo"
+              >Senha
+              <p class="asteristico">*</p></label
+            >
+            <div class="senha">
+              <input type="password" placeholder="Crie sua senha" class="campo
+              <%- data.erros && data.erros.senha_erro ? `erro` : "" %>"
+              name="senha" <%- data.input_values ?
+              `value="${data.input_values.senha}"` : "" %> > <%- data.erros &&
+              data.erros.senha_erro ? `<span class="mensagem-erro"
+                >${data.erros.senha_erro.msg}</span
+              >` : "" %>
+
+              <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
+              <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
+            </div>
+
+            <label class="titulo"
+              >Repita a senha
+              <p class="asteristico">*</p></label
+            >
+            <div class="repita">
+              <input type="password" placeholder="Insira sua senha" class="campo
+              <%- data.erros && data.erros.confirmacao_senha_erro ? `erro` : ""
+              %>" name="confirmacao_senha" <%- data.input_values ?
+              `value="${data.input_values.confirmacao_senha}"` : "" %> > <%-
+              data.erros && data.erros.confirmacao_senha_erro ? `<span
+                class="mensagem-erro"
+                >${data.erros.confirmacao_senha_erro.msg}</span
+              >` : "" %>
+
+              <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
+              <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
+            </div>
+          </span>
+
+          <div class="cadastro">
+            <input type="submit" value="CADASTRAR" id="cadastrar" />
+            <span class="aceite-termos">
+              Ao se cadastrar, você aceita os 
+              <a href="/termos" style="color: #1406a7;">termos e condições</a> 
+              e a nossa <a href="/politica" style="color: #1406a7;">política de privacidade</a>
+            </span>
+          </div>
+        </form>
+        <span id="cadastrado"
+          >Já possui cadastro?
+          <a href="login-atleta" class="entre">Entre aqui</a></span
+        >
+      </div>
+    </main>
+
+    <%- include('../templates/rodape.ejs') %>
+  </body>
 </html>

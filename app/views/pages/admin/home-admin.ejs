@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <%- include('../../templates/head-admin.ejs') %>
+    <title><%- data.page_name %></title>
+    <link rel="stylesheet" href="/css/home-admin.css">
+  </head>
+  <body>
+    <header>
+      <nav class="cabecalho">
+        <button class="btn-menu" data-menu-btn>
+          <i class="bx bx-menu" id="i-menu"></i>
+        </button>
+        <div class="mobile-menu" data-menu>
+          <ul>
+            <div class="itens">
+              <li class="nav-item"><a href="" class="nav-link">Usuários</a></li>
+            </div>
+            <hr />
+            <div class="itens">
+              <li class="nav-item">
+                <a href="" class="nav-link">Assinatura</a>
+              </li>
+            </div>
+            <hr />
+            <div class="itens">
+              <li class="nav-item">
+                <a href="" class="nav-link">Tabela de tokens</a>
+              </li>
+            </div>
+            <hr />
+          </ul>
+        </div>
+        <a href="/home"
+          ><img src="assets/logo/logo-horizontal.png" class="logo-invesport"
+        /></a>
+        <a href="/perfil-atleta" class="btn-user"
+          ><i class="bx bx-user-circle" id="i-user"></i
+        ></a>
+      </nav>
+    </header>
+
+    <!-- VIEW USERS -->
+
+    <h2 class="titulo-admin">Área Administrativa</h2>
+
+    <div id="container-contador">
+        <div id="caixa-contador">
+            <span class="t-contador">Cadastros</span>
+            <p class="n-contador">39</p>
+        </div>
+        <div id="caixa-contador">
+            <span class="t-contador">Assinantes</span>
+            <p class="n-contador">18</p>
+        </div>
+    </div>
+
+    <div id="container-user">
+        <div id="caixa-user">
+            <li class="info-user">User:<p> nome_user</p></li>
+            <li class="info-user">Id:<p> id_user</p></li>
+            <li class="info-user">E-mail:<p> email_user</p></li>
+
+            <img src="/assets/admin/setting.png" class="config-user">
+        </div>
+    </div>
+
+    <footer>
+      <div class="footer-card">
+        <img src="/assets/logo/128px.png"/>
+      </div>
+    </footer>
+  </body>
+</html>

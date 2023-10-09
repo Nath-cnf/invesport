@@ -1,118 +1,236 @@
-main {
-    margin: 65px 20px 20px 20px;
+
+
+@media screen and (max-width: 1023px) {
+    main {
+        margin: 75px 25px 20px 25px;
+    }
+    
+    .ajuda{
+        font-size: 2rem;
+        text-align: center;
+        color: #ff5b00;
+    }
+    
+    .pode-ajudar{
+        margin: 10px 0px;
+        color: #14248a;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
+        -range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    
+    .form-contato{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #email-duvidador{
+        width: calc(100vw - 50px);
+        border: 1px solid #ff5b00;
+        border-radius: 5px;
+        padding-left: 5px;
+        line-height: 2rem;
+        outline: none;
+    }
+    
+    #assunto-duvida{
+        width: calc(100vw - 50px);
+        border: 1px solid #ff5b00;
+        border-radius: 5px;
+        padding-left: 5px;
+        outline: none;
+    }
+    
+    #duvida-enviar{
+        background-color: #ff5b00;
+        width: 20%;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 8px;
+    }
+    
+    .duvidas-frequentes{
+        color: #14248a;
+        text-align: center;
+        margin: 5px;
+        font-size: 1.5rem;
+        margin-top: 25px;
+    }
+    
+    #txtBusca{
+        height: 30px;
+        width: calc(100vw - 50px);
+        margin-top: 6px;
+        border: none;
+        border-bottom: 1px solid #14248a;
+        outline: none;
+        background-color: white;
+        padding-left: 10px;
+    }
+    
+    .pergunta-1, .pergunta-2, .pergunta-3{
+        align-items: left;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #ffffff;
+        width: calc(100vw - 50px);
+        padding: 3px 0px;
+    }
+    
+    .pergunta{
+        color: #ff5b00;
+        margin: 15px;
+    }
+    
+    .resposta{
+        color: #14248a;
+        margin: 15px;
+    }
+    
+    .mais-duvidas{
+        padding: 20px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ver-duvidas{
+        background-color: #ff5b00;
+        color: white;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        border: none;
+        width: 50%;
+        height: 30%;
+        padding: 10px;
+        align-self: center;
+    }
+    
+    .mensagem-erro{
+        color: red;
+        font-size: 1.9rem;
+    }
 }
 
-.ajuda{
-    font-size: 2.5rem;
-    text-align: center;
-    color: #ff5b00;
-}
-
-.pode-ajudar{
-    margin-top: 8px;
-    color: #14248a;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-size: 1.3rem;
-    font-weight: 600;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
-    -range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-.pesquisa{
-    align-items: left;
-}
-
-#email-duvidador{
-    width: 90%;
-    border-color: #ff5b00;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-}
-
-#assunto-duvida{
-    width: 90%;
-    border-color: #ff5b00;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-}
-
-#duvida-enviar{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background-color: #ff5b00;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 8px;
-}
-
-.duvidas-frequentes{
-    color: #14248a;
-    text-align: center;
-    margin: 5px;
-    font-size: 1.8rem;
-}
-
-#txtBusca{
-    height: 30px;
-    width: calc(100% - 15px);
-    margin-top: 6px;
-    border-radius: 5px;
-    background-color: white;
-}
-
-.pergunta-1{
-    align-items: left;
-    padding: 2px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.pergunta{
-    color: #ff5b00;
-}
-
-.resposta{
-    color: #14248a;
-}
-
-.pergunta-2{
-    margin-top: 20px;
-}
-
-.pergunta-3{
-    margin-top: 20px;
-}
-
-.mais-duvidas{
-    margin: 0px;
-    padding: 20px;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.duvidas{
-    background-color: #ff5b00;
-    color: white;
-    font-size: 15px;
-    border-radius: 10px;
-    border: none;
-    width: 50%;
-    height: 30%;
-    padding: 10px;
-    align-self: center;
-}
-
-.mensagem-erro{
-    color: red;
-    font-size: .9rem;
+@media screen and (min-width: 1024px) {
+    main {
+        margin: 65px 50px 20px 50px;
+    }
+    
+    .ajuda{
+        font-size: 2.5rem;
+        text-align: center;
+        color: #ff5b00;
+    }
+    
+    .pode-ajudar{
+        margin-top: 8px;
+        color: #14248a;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-size: 1.3rem;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
+        -range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    
+    .form-contato{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #email-duvidador{
+        width: calc(100vw - 100px);
+        border: 1px solid #ff5b00;
+        border-radius: 5px;
+        padding-left: 5px;
+        line-height: 2rem;
+        outline: none;
+    }
+    
+    #assunto-duvida{
+        width: calc(100vw - 100px);
+        border: 1px solid #ff5b00;
+        border-radius: 5px;
+        padding-left: 5px;
+        outline: none;
+    }
+    
+    #duvida-enviar{
+        background-color: #ff5b00;
+        width: 10%;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 8px;
+    }
+    
+    .duvidas-frequentes{
+        color: #14248a;
+        text-align: center;
+        margin: 5px;
+        font-size: 1.8rem;
+    }
+    
+    #txtBusca{
+        height: 30px;
+        width: calc(100vw - 100px);
+        margin-top: 6px;
+        border: none;
+        border-bottom: 1px solid #14248a;
+        outline: none;
+        background-color: white;
+        padding-left: 10px;
+    }
+    
+    .pergunta-1, .pergunta-2, .pergunta-3{
+        align-items: left;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #ffffff;
+        padding: 10px;
+        width: calc(100vw - 100px);
+    }
+    
+    .pergunta{
+        color: #ff5b00;
+    }
+    
+    .resposta{
+        color: #14248a;
+    }
+    
+    .mais-duvidas{
+        padding: 20px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ver-duvidas{
+        background-color: #ff5b00;
+        color: white;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        border: none;
+        width: 15%;
+        height: 30%;
+        padding: 10px;
+        align-self: center;
+    }
+    
+    .mensagem-erro{
+        color: red;
+        font-size: 1.9rem;
+    }
 }

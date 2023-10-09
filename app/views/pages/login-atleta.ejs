@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="/css/login-atleta.css">
+    <script src="/js/login-atleta.js" defer></script>
     <title><%- data.page_name %></title>
 </head>
 <%- include('../templates/head.ejs') %>
@@ -23,10 +24,6 @@
                             <label class="titulo-cpf">E-mail<p class="asteristico">*</p></label>
                             <div class="cpf">
                                 <input type="cpf" placeholder="Insira seu e-mail" name="email" class="campo-cpf <%- data.erros && data.erros.email_erro ? `erro` : "" %>" <%- data.input_values ? `value="${data.input_values.email}"` : "" %>>
-                                <span class="bottom"></span>
-                                <span class="right"></span>
-                                <span class="top"></span>
-                                <span class="left"></span>
                             </div>
 
                             <%- data.erros && data.erros.email_erro ? `<span class="mensagem-erro">${data.erros.email_erro.msg}</span>` : "" %>
@@ -34,10 +31,9 @@
                             <label class="titulo-senha">Senha<p class="asteristico">*</p></label>
                             <div class="senha">
                                 <input type="password" placeholder="Insira sua senha" name="senha" class="campo-senha <%- data.erros && data.erros.senha_erro ? `erro` : "" %>" <%- data.input_values ? `value="${data.input_values.senha}"` : "" %>>
-                                <span class="bottom"></span>
-                                <span class="right"></span>
-                                <span class="top"></span>
-                                <span class="left"></span>
+
+                                <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
+                                <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
                             </div>
 
                             <%- data.erros && data.erros.senha_erro ? `<span class="mensagem-erro">${data.erros.senha_erro.msg}</span>` : "" %>

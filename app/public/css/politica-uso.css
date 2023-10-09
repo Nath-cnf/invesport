@@ -1,0 +1,79 @@
+:root{
+  --laranja: #ff5b00;
+  --azul: #14248a;
+  --cinza: #333333;
+}
+
+body{
+  background-color: #f8f8f8;
+}
+
+@media screen and (max-width: 1023px) {
+  main{
+    margin: 70px 25px 30px 25px;
+  }
+
+  .lgpd, #politica{
+    color: var(--laranja);
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  #politica{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .legenda{
+    color: var(--cinza);
+    font-size: 0.95rem;
+    margin: 15px 0px;
+  }
+
+  .paragrafo, .lista{
+    font-size: 0.95rem;
+    color: var(--cinza);
+    margin: 15px 0px;
+    text-align: justify;
+  }
+
+  .titulos{
+    color: #000000;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  main{
+    margin: 100px 50px 30px 50px;
+  }
+  
+  .lgpd, #politica{
+    color: var(--laranja);
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  #politica{
+    font-size: 2rem;
+  }
+
+  .legenda{
+    color: var(--cinza);
+    font-size: 1rem;
+    margin: 15px 0px;
+  }
+
+  .paragrafo, .lista{
+    font-size: 1rem;
+    color: var(--cinza);
+    margin: 15px 0px;
+    text-align: justify;
+  }
+
+  .titulos{
+    color: #000000;
+    font-size: 1.3rem;
+  }
+}

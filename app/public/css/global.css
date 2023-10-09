@@ -1,5 +1,5 @@
 html , body {
-    background-color: #f9f9f9;
+    background-color: #f8f8f8;
     font-family: "Poppins", sans-serif;
 }
 
@@ -181,12 +181,21 @@ footer{
         align-self: center;
         margin-top: 15px;
     }
+
+    .termos{
+        align-self: center;
+        margin-top: 15px;
+    }
 }
 
 @media screen and (min-width: 1024px){  
 
-    .btn-menu, .btn-user{
-        display:none;
+    .btn-user{
+        display: none;
+    }
+
+    .btn-menu {
+        display: none;
     }
 
     nav{
@@ -257,7 +266,7 @@ footer{
 
     footer{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         align-items: center;
         height: 20vh;
     }
@@ -277,6 +286,12 @@ footer{
     }
 
     .politica a{
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+
+    .termos a{
         font-weight: bold;
         text-decoration: none;
         font-size: 1.2em;
