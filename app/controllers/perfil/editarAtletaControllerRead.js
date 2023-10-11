@@ -4,27 +4,37 @@ const jwt = require("jsonwebtoken");
 
 class editarAtletaController {
   async getPage(req, res) {
-    const esportes  = await esporteModel.findAllEsportes();
+    const esportes = await esporteModel.findAllEsportes();
     const token = req.session.token;
     const { userId } = jwt.decode(token, process.env.SECRET);
     const user = await usuarioModel.findUserById(userId);
+    let userImagemPerfil = false;
+    let userBannerPerfil = false;
 
-    const nome_esporte = await esporteModel.getEsporteNome(user.esporte);
-    console.log(esportes);
+    if (user.imagem_perfil) {
+      userImagemPerfil = true;
+    }
+
+    if (user.banner_perfil) {
+      userBannerPerfil = true;
+    }
+
+    const nome_esporte = await esporteModel.getEsporteNome(user.esporte.id);
+
     return res.render("pages/editar-perfil-atleta.ejs", {
       data: {
         page_name: "Invesport",
         esportes,
         input_values: {
           nome: user.nome,
+          userImagemPerfil,
+          userBannerPerfil,
           esporte: user.esporte,
           nome_esporte: nome_esporte,
           cnpj_clube: user.cnpj_clube,
           cidade: user.cidade,
           estado: user.estado,
           email: user.email,
-          senha: user.senha,
-          confirmacao_senha: user.senha,
         },
       },
     });

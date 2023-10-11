@@ -26,6 +26,16 @@ class Usuario {
         })
     }
 
+    async findAllUsers(userId) {
+        return await prisma.usuario.findMany({
+            where: {
+                NOT: {
+                    id: userId
+                }
+            }
+        });
+    }
+
     async updateUserSenha(novaSenha, email) {
         await prisma.usuario.update({
             where: {

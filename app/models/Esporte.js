@@ -7,10 +7,9 @@ class Esporte {
 
     async getEsporteNome(esporteId) {
         if (esporteId) {
-            console.log(esporteId)
             return await prisma.esporte.findUnique({
                 where: {
-                    id: esporteId.id
+                    id: esporteId
                 },
                 select: {
                     nome: true

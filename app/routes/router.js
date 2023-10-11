@@ -57,6 +57,7 @@ const imagensUsuariosControllerRead = require("../controllers/info-pages/imagens
 
 // * EDITAR
 const editarAtletaControllerRead = require("../controllers/perfil/editarAtletaControllerRead");
+const editarAtletaControllerIUpdate = require("../controllers/perfil/editarAtletaControllerUpdate");
 
 // * ADMIN
 const homeAdminControllerRead = require("../controllers/info-pages/admin/homeAdminControllerRead");
@@ -152,9 +153,16 @@ imagensUsuariosControllerRead.getImage);
 
 // * Editar perfil
 
-router.get("/editar-perfil", 
+router.get("/editar-perfil-atleta", 
 autenticacaoMiddleware.validateToken,
 editarAtletaControllerRead.getPage);
+
+router.post("/editar-perfil-atleta",
+autenticacaoMiddleware.validateToken,
+upload.single("imagem_perfil"),
+autenticacaoRegrasMiddleware.editarCadastroAtletaValidacao,
+autenticacaoFormMiddleware.validarEditarAtletaCadastro,
+editarAtletaControllerIUpdate.editarUser);
 
 // * Admin
 router.get("/admin", homeAdminControllerRead.getPage);
