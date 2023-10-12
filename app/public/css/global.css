@@ -304,8 +304,6 @@ footer{
         text-align: center;
     }
 
-
-
     .header-footer-card i {
         display: none;
     }
@@ -314,7 +312,7 @@ footer{
         margin-top: 20px;
     }
 
-    .politica a, .termos a{
+    #politica a, .termos a{
         text-decoration: none;
         font-size: 1em;
         border-bottom: 1px solid #f2f2f2;
