@@ -1,3 +1,11 @@
+:root{
+    --laranja: #ff5b00;
+    --azul: #14248a;
+    --cinza: #333333;
+    --branco: #ffffff;
+    --preto: #000000;
+}
+
 html , body {
     background-color: #f8f8f8;
     font-family: "Poppins", sans-serif;
