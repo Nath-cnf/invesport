@@ -1,16 +1,16 @@
-:root{
+:root {
     --laranja: #ff5b00;
     --azul: #14248a;
     --cinza: #333333;
     --branco: #ffffff;
     --preto: #000000;
-  }
+}
 
-main{
+main {
     background-color: #ffffff;
 }
 
-.pic-perfil{   
+.pic-perfil {
     padding-top: 60px;
     position: relative;
     width: 100vw;
@@ -18,12 +18,12 @@ main{
     background-color: #ffffff;
 }
 
-.capa-perfil{
+.capa-perfil {
     width: 100vw;
     height: 140px;
 }
 
-.foto-perfil{
+.foto-perfil {
     z-index: 4;
     position: absolute;
     top: 7em;
@@ -36,12 +36,12 @@ main{
     height: 9em;
 }
 
-.titulo-perfil{
+.titulo-perfil {
     text-align: center;
     color: #333333;
-} 
+}
 
-.redes-sociais{
+.redes-sociais {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -51,31 +51,34 @@ main{
     gap: 10px;
 }
 
-.bio{
+.bio {
     width: 100vw;
     background-color: #ffffff;
 }
 
-.text-clube, .text-esporte{
+.text-clube,
+.text-esporte {
     font-size: 16px;
     font-weight: normal;
     color: #333333;
 }
 
-.t-clube, .t-esporte{
+.t-clube,
+.t-esporte {
     font-size: 18px;
     color: #333333;
     font-family: "Popins SemiBold", "Popins", sans-serif;
 }
 
-.clube, .esporte{
+.clube,
+.esporte {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
 }
 
-.info-bio{
+.info-bio {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -92,26 +95,26 @@ main{
     letter-spacing: 1px;
 }
 
-.b-doar>a{
+.b-doar>a {
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
     letter-spacing: 1px;
 }
 
-.button-bio{
+.button-bio {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     margin: 20px 0;
 }
 
-.meta-icone{
+.meta-icone {
     display: flex;
     flex-direction: row;
 }
 
-#target{
+#target {
     display: flex;
     flex-direction: row;
     position: relative;
@@ -119,7 +122,7 @@ main{
     font-size: 2.8rem;
 }
 
-.ls-animated{
+.ls-animated {
     display: flex;
     flex-direction: row;
     position: relative;
@@ -132,12 +135,12 @@ main{
     margin: 0;
 }
 
-.info-meta{
+.info-meta {
     display: flex;
     flex-direction: column;
 }
 
-.desc-meta{
+.desc-meta {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,7 +149,7 @@ main{
     font-size: 1.2rem;
 }
 
-.valor{
+.valor {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,19 +157,20 @@ main{
     text-align: center;
 }
 
-.box-meta{
-    width: calc( 100vw - 50px);
+.box-meta {
+    width: 100vw;
+    padding: 0px 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.linha-bio{
+.linha-bio {
     margin-top: 30px;
     border: 2px solid #ff5b00
 }
 
-.tabs{
+.tabs {
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -174,9 +178,12 @@ main{
     background-color: #ffffff;
 }
 
-#t-publicacoes, #t-sobre, #t-doacoes, #t-metas{
+#t-publicacoes,
+#t-sobre,
+#t-doacoes,
+#t-metas {
     text-decoration: none;
-    color:#333333;
+    color: #333333;
     font-weight: bold;
     font-size: 17px;
     cursor: pointer;
@@ -184,78 +191,78 @@ main{
 
 /* PORTFOLIO */
 
-#portfolio{
+#portfolio {
     display: none;
 }
 
-#portfolio.active{
+#portfolio.active {
     display: block;
 }
 
-#t-publicacoes.active{
+#t-publicacoes.active {
     color: #ff5b00;
 }
 
-.feed{
+.feed {
     width: 100%;
 }
 
-.momentos{
+.momentos {
     color: var(--laranja);
     font-size: 1rem;
     font-weight: 500;
 }
 
-.legenda{
+.legenda {
     font-size: 1rem;
     color: var(--cinza);
     text-align: justify;
     margin: 5px 25px 15px 25px;
 }
 
-.container-momentos{
+.container-momentos {
     margin: 15px 25px;
     width: calc(100vw - 50px);
 }
 
-.grid-portifolio{
+.grid-portifolio {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
 }
 
-.grid-portifolio img{
+.grid-portifolio img {
     width: 110px;
     height: 110px;
 }
 
 /* MENU SOBRE */
 
-#sobre{
+#sobre {
     display: none;
     flex-direction: column;
     margin: 20px;
 }
 
-#sobre.active{
+#sobre.active {
     display: flex;
 }
 
-#t-sobre.active{
+#t-sobre.active {
     color: var(--laranja);
 }
 
-.titulo-2{
+.titulo-2 {
     font-size: 1rem;
 }
 
-.Sobre-usuario{
+.Sobre-usuario {
     color: var(--laranja);
     font-size: 1rem;
 }
 
-.Desc-usuario{
+.Desc-usuario {
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -263,29 +270,29 @@ main{
 }
 
 /* MENU DOAÇÃO */
-#doacao{
+#doacao {
     margin: 20px;
     display: none;
     flex-direction: column;
     position: relative;
 }
 
-#doacao.active{
+#doacao.active {
     display: flex;
 }
 
-#t-doacoes.active{
+#t-doacoes.active {
     color: var(--laranja);
 }
 
-.titulo-3{
+.titulo-3 {
     display: flex;
     flex-direction: row;
     position: relative;
     font-size: 1rem;
 }
 
-.gerar-btn{
+.gerar-btn {
     display: inline-flex;
     justify-content: center;
     border: none;
@@ -294,11 +301,11 @@ main{
     color: white;
 }
 
-.gerar-btn:focus{
+.gerar-btn:focus {
     outline: none;
 }
 
-#imagem-qr{
+#imagem-qr {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -306,55 +313,55 @@ main{
     justify-content: center;
 }
 
-#cod-qr{
+#cod-qr {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.campo-cod{
+.campo-cod {
     width: 80%;
 }
 
-.enviar-cod{
+.enviar-cod {
     width: 80px;
 }
 
 /* MENU METAS*/
 
-#meta{
+#meta {
     margin: 20px;
     display: none;
 }
 
-#meta.active{
+#meta.active {
     display: block;
 }
 
-#t-metas.active{
+#t-metas.active {
     color: #ff5b00;
 }
 
-.anda-meta{
+.anda-meta {
     font-size: 1rem;
 }
 
-.add-meta{
+.add-meta {
     font-family: "Poppins SemiBold", "Poppins", "Poppins", sans-serif;
 }
 
-.linha-meta{
+.linha-meta {
     border: 1px solid #ff9257;
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: column;
     align-items: left;
 }
 
-#inputbox{
+#inputbox {
     padding: 2px;
     width: 70%;
     border-radius: 5px;
@@ -363,7 +370,7 @@ main{
     border: 1px solid var(--azul);
 }
 
-#inputbox2{
+#inputbox2 {
     padding: 2px;
     width: 70%;
     border-radius: 5px;
@@ -371,55 +378,96 @@ main{
     border: 1px solid var(--azul);
 }
 
-#botao-add{
+#botao-add {
     width: 80px;
     color: var(--branco);
-    background-color:var(--laranja);
+    background-color: var(--laranja);
     border: none;
     border-radius: 5px;
 }
 
 
-@media screen and (max-width: 1023px) {
-
-}
+@media screen and (max-width: 1023px) {}
 
 @media screen and (min-width: 1024px) {
 
-   main{
+    main {
         background-color: #f1f1f1;
-    } 
+    }
 
-    .tabs{
+    .tabs {
         width: 100vw;
         padding: 10px 50px;
     }
 
-    .bio{
+    .bio {
         width: 100vw;
-        padding: 10px 50px;
         background-color: #ffffff;
     }
 
-    .feed{
+    .info-bio{
+        width: calc(100vw - 100px);
+    }
+
+    .button-bio {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .b-doar{
+        width: 30vw;
+    }
+
+    .container{
+        width: 100vw;
+    }
+
+    .tabs{
+        width: calc(100vw - 100px);
+    }
+
+    .feed {
         width: 35vw;
     }
 
-    .legenda{
+    .tab-content{
+        display: flex;
+        width: 100vw;
+    }    
+
+    .legenda {
         font-size: 1.3rem;
+        margin: 5px 0px 15px 25px;
     }
 
-    .destaque{
+    .destaque {
+        width: calc(100vw - 100px);
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         margin: 0px 50px;
     }
 
-    .container-momentos{
-        width: 100vw;
-        padding: 10px 50px;
+    .container-momentos {
+        width: calc(100vw - 100px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .grid-portifolio img{
+    .momentos{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .grid-portifolio{
+        margin: 15px 25px;
+        row-gap: 20px;
+        column-gap: 15vw;
+    }
+
+    .grid-portifolio img {
         width: 300px;
         height: 300px;
     }
