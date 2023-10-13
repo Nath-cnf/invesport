@@ -1,29 +1,29 @@
-:root{
+:root {
     --laranja: #ff5b00;
     --azul: #14248a;
     --cinza: #333333;
     --branco: #ffffff;
     --preto: #000000;
-  }
-
-main{
-    background-color: #ffffff;
 }
 
-.pic-perfil{   
+main {
+    background-color: var(--branco);
+}
+
+.pic-perfil {
     padding-top: 60px;
     position: relative;
     width: 100vw;
     height: 210px;
-    background-color: #ffffff;
+    background-color: var(--branco);
 }
 
-.capa-perfil{
+.capa-perfil {
     width: 100vw;
     height: 140px;
 }
 
-.foto-perfil{
+.foto-perfil {
     z-index: 4;
     position: absolute;
     top: 7em;
@@ -36,46 +36,49 @@ main{
     height: 9em;
 }
 
-.titulo-perfil{
+.titulo-perfil {
     text-align: center;
-    color: #333333;
-} 
+    color: var(--cinza);
+}
 
-.redes-sociais{
+.redes-sociais {
     width: 100vw;
     display: flex;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: var(--branco);
     font-size: 2rem;
     padding-bottom: 15px;
     gap: 10px;
 }
 
-.bio{
+.bio {
     width: 100vw;
-    background-color: #ffffff;
+    background-color: var(--branco)
 }
 
-.text-clube, .text-esporte{
+.text-clube,
+.text-esporte {
     font-size: 16px;
     font-weight: normal;
-    color: #333333;
+    color: var(--cinza);
 }
 
-.t-clube, .t-esporte{
+.t-clube,
+.t-esporte {
     font-size: 18px;
-    color: #333333;
+    color: var(--cinza);
     font-family: "Popins SemiBold", "Popins", sans-serif;
 }
 
-.clube, .esporte{
+.clube,
+.esporte {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
 }
 
-.info-bio{
+.info-bio {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -85,33 +88,33 @@ main{
     width: 38vw;
     height: 2.3rem;
     border-radius: 10px;
-    border: 1px solid #ff5b00;
-    background-color: #ff5b00;
-    color: #ffffff;
+    border: 1px solid var(--laranja);
+    background-color: var(--laranja);
+    color: var(--branco);
     font-size: 16px;
     letter-spacing: 1px;
 }
 
-.b-doar>a{
+.b-doar>a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--branco);
     font-size: 16px;
     letter-spacing: 1px;
 }
 
-.button-bio{
+.button-bio {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     margin: 20px 0;
 }
 
-.meta-icone{
+.meta-icone {
     display: flex;
     flex-direction: row;
 }
 
-#target{
+#target {
     display: flex;
     flex-direction: row;
     position: relative;
@@ -119,25 +122,25 @@ main{
     font-size: 2.8rem;
 }
 
-.ls-animated{
+.ls-animated {
     display: flex;
     flex-direction: row;
     position: relative;
     top: 15px;
     width: 85%;
     height: 8px;
-    border: 5px solid #ff5b00;
-    background-color: #ff5b00;
+    border: 5px solid var(--laranja);
+    background-color: var(--laranja);
     border-radius: 50px;
     margin: 0;
 }
 
-.info-meta{
+.info-meta {
     display: flex;
     flex-direction: column;
 }
 
-.desc-meta{
+.desc-meta {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,7 +149,7 @@ main{
     font-size: 1.2rem;
 }
 
-.valor{
+.valor {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,29 +157,33 @@ main{
     text-align: center;
 }
 
-.box-meta{
-    width: calc( 100vw - 50px);
+.box-meta {
+    width: 100vw;
+    padding: 0px 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.linha-bio{
+.linha-bio {
     margin-top: 30px;
-    border: 2px solid #ff5b00
+    border: 2px solid var(--laranja);
 }
 
-.tabs{
+.tabs {
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: var(--branco);
 }
 
-#t-publicacoes, #t-sobre, #t-doacoes, #t-metas{
+#t-publicacoes,
+#t-sobre,
+#t-doacoes,
+#t-metas {
     text-decoration: none;
-    color:#333333;
+    color: var(--cinza);
     font-weight: bold;
     font-size: 17px;
     cursor: pointer;
@@ -184,78 +191,77 @@ main{
 
 /* PORTFOLIO */
 
-#portfolio{
+#portfolio {
     display: none;
 }
 
-#portfolio.active{
+#portfolio.active {
     display: block;
 }
 
-#t-publicacoes.active{
-    color: #ff5b00;
+#t-publicacoes.active {
+    color: var(--laranja);
 }
 
-.feed{
+.feed {
     width: 100%;
 }
 
-.momentos{
+.momentos {
     color: var(--laranja);
     font-size: 1rem;
     font-weight: 500;
 }
 
-.legenda{
+.legenda {
     font-size: 1rem;
     color: var(--cinza);
     text-align: justify;
     margin: 5px 25px 15px 25px;
 }
 
-.container-momentos{
+.container-momentos {
     margin: 15px 25px;
     width: calc(100vw - 50px);
 }
 
-.grid-portifolio{
+.grid-portifolio {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
 }
 
-.grid-portifolio img{
+.grid-portifolio img {
     width: 110px;
     height: 110px;
 }
 
 /* MENU SOBRE */
 
-#sobre{
+#sobre {
     display: none;
     flex-direction: column;
-    margin: 20px;
 }
 
-#sobre.active{
+#sobre.active {
     display: flex;
 }
 
-#t-sobre.active{
+#t-sobre.active {
     color: var(--laranja);
 }
 
-.titulo-2{
+.titulo-2 {
     font-size: 1rem;
 }
 
-.Sobre-usuario{
+.Sobre-usuario {
     color: var(--laranja);
     font-size: 1rem;
 }
 
-.Desc-usuario{
+.Desc-usuario {
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -263,42 +269,41 @@ main{
 }
 
 /* MENU DOAÇÃO */
-#doacao{
-    margin: 20px;
+#doacao {
     display: none;
     flex-direction: column;
     position: relative;
 }
 
-#doacao.active{
+#doacao.active {
     display: flex;
 }
 
-#t-doacoes.active{
+#t-doacoes.active {
     color: var(--laranja);
 }
 
-.titulo-3{
+.titulo-3 {
     display: flex;
     flex-direction: row;
     position: relative;
     font-size: 1rem;
 }
 
-.gerar-btn{
+.gerar-btn {
     display: inline-flex;
     justify-content: center;
     border: none;
     border-radius: 4px;
-    background-color: #1406a7;
-    color: white;
+    background-color: var(--azul);
+    color: var(--branco);
 }
 
-.gerar-btn:focus{
+.gerar-btn:focus {
     outline: none;
 }
 
-#imagem-qr{
+#imagem-qr {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -306,55 +311,54 @@ main{
     justify-content: center;
 }
 
-#cod-qr{
+#cod-qr {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.campo-cod{
+.campo-cod {
     width: 80%;
 }
 
-.enviar-cod{
+.enviar-cod {
     width: 80px;
 }
 
 /* MENU METAS*/
 
-#meta{
-    margin: 20px;
+#meta {
     display: none;
 }
 
-#meta.active{
+#meta.active {
     display: block;
 }
 
-#t-metas.active{
-    color: #ff5b00;
+#t-metas.active {
+    color: var(--laranja);
 }
 
-.anda-meta{
+.anda-meta {
     font-size: 1rem;
 }
 
-.add-meta{
+.add-meta {
     font-family: "Poppins SemiBold", "Poppins", "Poppins", sans-serif;
 }
 
-.linha-meta{
-    border: 1px solid #ff9257;
+.linha-meta {
+    border: 1px solid var(--laranja);
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: column;
     align-items: left;
 }
 
-#inputbox{
+#inputbox {
     padding: 2px;
     width: 70%;
     border-radius: 5px;
@@ -363,7 +367,7 @@ main{
     border: 1px solid var(--azul);
 }
 
-#inputbox2{
+#inputbox2 {
     padding: 2px;
     width: 70%;
     border-radius: 5px;
@@ -371,10 +375,10 @@ main{
     border: 1px solid var(--azul);
 }
 
-#botao-add{
+#botao-add {
     width: 80px;
     color: var(--branco);
-    background-color:var(--laranja);
+    background-color: var(--laranja);
     border: none;
     border-radius: 5px;
 }
@@ -382,46 +386,250 @@ main{
 
 @media screen and (max-width: 1023px) {
 
+    /* MENU SOBRE */
+
+    #sobre {
+        margin: 20px;
+    }
+
+    /* MENU DOAÇÃO */
+
+    #doacao {
+        margin: 20px;
+    }
+
+    /* MENU METAS*/
+
+    #meta {
+        margin: 20px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
 
-   main{
+    main {
         background-color: #f1f1f1;
-    } 
+    }
 
-    .tabs{
+    .tabs {
         width: 100vw;
         padding: 10px 50px;
     }
 
-    .bio{
+    .bio {
         width: 100vw;
-        padding: 10px 50px;
         background-color: #ffffff;
     }
 
-    .feed{
+    .info-bio {
+        width: calc(100vw - 100px);
+    }
+
+    .button-bio {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .b-doar {
+        width: 30vw;
+    }
+
+    .info-meta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ls-animated {
+        width: 60vw;
+    }
+
+    .container {
+        width: 100vw;
+    }
+
+    .tabs {
+        width: calc(100vw - 100px);
+    }
+
+    #t-publicacoes:hover,
+    #t-sobre:hover,
+    #t-doacoes:hover,
+    #t-metas:hover {
+        color: var(--laranja);
+    }
+
+    .feed {
         width: 35vw;
     }
 
-    .legenda{
-        font-size: 1.3rem;
+    .tab-content {
+        display: flex;
+        width: 100vw;
     }
 
-    .destaque{
+    .legenda {
+        font-size: 1.3rem;
+        margin: 5px 0px 15px 25px;
+    }
+
+    .destaque {
+        width: calc(100vw - 100px);
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         margin: 0px 50px;
     }
 
-    .container-momentos{
-        width: 100vw;
-        padding: 10px 50px;
+    .container-momentos {
+        width: calc(100vw - 100px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .grid-portifolio img{
+    .momentos {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .grid-portifolio {
+        margin: 15px 25px;
+        row-gap: 20px;
+        column-gap: 15vw;
+    }
+
+    .grid-portifolio img {
         width: 300px;
         height: 300px;
+    }
+
+    /* MENU SOBRE */
+
+    #sobre {
+        width: 100vw;
+        padding: 15px 50px;
+    }
+
+    .titulo-2 {
+        font-size: 1rem;
+    }
+
+    .Sobre-usuario {
+        color: var(--laranja);
+        font-size: 1rem;
+    }
+
+    .Desc-usuario {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    /* MENU DOAÇÃO */
+
+    #doacao {
+        display: none;
+        position: relative;
+        width: 100vw;
+        padding: 15px 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo-3 {
+        font-size: 1.2rem;
+    }
+
+    .label-chave-pix {
+        text-align: center;
+    }
+
+    .gerar-btn {
+        width: 15rem;
+        height: 2.5rem;
+        border-radius: 4px;
+        background-color: var(--azul);
+        font-size: 1.2rem;
+        color: var(--branco);
+        align-items: center;
+        margin: 15px 0px;
+    }
+
+    .gerar-btn:focus {
+        outline: none;
+    }
+
+    #input-name,
+    #input-city,
+    #input-amount,
+    #input-reference {
+        width: 50vw;
+        height: 1.8rem;
+        background-color: var(--branco);
+        font-size: 1rem;
+        padding-left: 5px;
+        border: none;
+        border-bottom: 1px solid var(--laranja);
+        outline: none;
+        margin: 5px 0px 15px 0px;
+    }
+
+    #container-gerar,
+    .qr-code-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* MENU METAS*/
+
+    #meta {
+        width: 100vw;
+        padding: 15px 50px;
+    }
+
+    .anda-meta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        margin: 10px 0px 20px 0px;
+    }
+
+    .container-add-meta, .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+    }
+
+    #inputbox, #inputbox2 {
+        padding: 5px;
+        width: 50vw;
+        height: 1.5rem;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        margin-top: 5px;
+        border-radius: 0px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid var(--azul);
+    }
+
+    #botao-add {
+        width: 10vw;
+        height: 2rem;
+        font-size: 1.2rem;
+        color: var(--branco);
+        background-color: var(--laranja);
+        border: none;
+        border-radius: 5px;
     }
 
 }
