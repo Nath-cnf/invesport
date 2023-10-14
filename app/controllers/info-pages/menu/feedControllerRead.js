@@ -5,10 +5,14 @@ const jwt = require("jsonwebtoken");
 class feedControllerRead {
     async getPage(req, res) {
         const token = req.session.token;
+        let tokenInfo = "";
         let userId = "";
+        let usuario_logado = false;
 
         if (token) {
-            userId = jwt.decode(token, process.env.SECRET);
+            usuario_logado = true;
+            tokenInfo = jwt.decode(token, process.env.SECRET);
+            userId = tokenInfo.userId;
         }
 
         const clubes = await clubeModel.findAllClubes(userId);
@@ -18,7 +22,8 @@ class feedControllerRead {
             data: {
                 page_name: "Invesport",
                 clubes,
-                usuarios
+                usuarios,
+                usuario_logado
             }
         })
     }

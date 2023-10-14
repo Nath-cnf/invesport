@@ -1,6 +1,6 @@
 class perfilClubeControllerRead {
     getPage(req, res) {
-        res.render("pages/perfil-clube-pov.ejs", {
+        res.render("pages/perfil-clube.ejs", {
             data: {
                 page_name: "Invesport"
             }

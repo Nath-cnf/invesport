@@ -14,8 +14,6 @@ class tarefaControllerRead {
             tarefas = await tarefaClubeModel.getAllTarefasFromClube(userId);
         }
 
-        console.log(tarefas)
-
         res.render("pages/tarefas.ejs", {
             data: {
                 page_name: "Invesport",

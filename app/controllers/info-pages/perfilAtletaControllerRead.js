@@ -1,21 +1,27 @@
 const usuarioModel = require("../../models/Usuario");
 const jwt = require("jsonwebtoken");
 
-class perfilAtletaControllerRead {
+class PerfilAtletaControllerRead {
   async getPage(req, res) {
-    const token = req.session.token;
-    const { userId } = jwt.decode(token, process.env.SECRET);
+    const userId = req.params.idAtleta;
     const usuario = await usuarioModel.findUserById(userId);
+    const token = req.session.token;
+    let usuario_logado = false;
 
-    res.render("pages/perfil-atleta-pov.ejs", {
+    if (token) {
+      usuario_logado = true;
+    }
+
+    res.render("pages/perfil-atleta.ejs", {
       data: {
         page_name: "Invesport",
         usuario,
+        usuario_logado
       },
     });
   }
 }
 
-const perfilAtletaController = new perfilAtletaControllerRead();
+const perfilAtletaPovController = new PerfilAtletaControllerRead();
 
-module.exports = perfilAtletaController;
+module.exports = perfilAtletaPovController;

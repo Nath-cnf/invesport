@@ -29,6 +29,8 @@ const feedControllerRead = require("../controllers/info-pages/menu/feedControlle
 //*CADASTRO-LOGIN-PERFIL
 const perfilClubeControllerRead = require("../controllers/info-pages/perfilClubeControllerRead");
 const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
+const perfilAtletaPovControllerRead = require("../controllers/info-pages/perfilAtletaPovControllerRead");
+const perfilClubePovControllerRead = require("../controllers/info-pages/perfilClubePovControllerRead");
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
 const cadastroAtletaControllerRead = require("../controllers/info-pages/cadastro/cadastroAtletaControllerRead");
@@ -36,6 +38,9 @@ const cadastroClubeControllerRead = require('../controllers/info-pages/cadastro/
 const cadastroClubeControllerCreate = require("../controllers/info-pages/cadastro/cadastroClubeControllerCreate")
 const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
 const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
+
+const atualizarChavePixControllerUpdate = require("../controllers/perfil/atualizarChavePixControllerUpdate");
+const gerarQrCodeAtletaControllerRead = require("../controllers/perfil/gerarQrCodeControlleRead");
 
 //*REDEFINIR
 const redefinirSenhaMiddleware = require("../middleware/redefinirSenhaMiddleware");
@@ -72,9 +77,26 @@ router.get("/trabalhe-conosco", trabalheConoscoControllerRead.getPage);
 
 router.get("/perfil-atleta",
 autenticacaoMiddleware.validateToken,
+perfilAtletaPovControllerRead.getPage);
+
+router.get("/perfil-clube",
+autenticacaoMiddleware.validateToken,
+perfilClubePovControllerRead.getPage);
+
+router.get("/perfil-clube/:idClube",
+perfilClubeControllerRead.getPage);
+
+router.get("/perfil-atleta/:idAtleta",
 perfilAtletaControllerRead.getPage);
 
-router.get("/perfil-clube", perfilClubeControllerRead.getPage);
+router.post("/atualizar-chave-pix",
+autenticacaoMiddleware.validateToken,
+validationMiddlewareRules.adicionarChavePixValidacao,
+autenticacaoFormMiddleware.validarAdicionarChavePix,
+atualizarChavePixControllerUpdate.updateChavePix);
+
+router.post("/gerar-qr-code-atleta/:userId",
+gerarQrCodeAtletaControllerRead.gerarQrCode);
 
 router.get("/assinatura", assinaturaControllerRead.getPage);
 
@@ -153,7 +175,7 @@ imagensUsuariosControllerRead.getImage);
 
 // * Editar perfil
 
-router.get("/editar-perfil-atleta", 
+router.get("/editar-perfil-atleta",
 autenticacaoMiddleware.validateToken,
 editarAtletaControllerRead.getPage);
 

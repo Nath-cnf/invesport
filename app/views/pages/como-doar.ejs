@@ -6,8 +6,8 @@
     <title><%- data.page_name %></title>
 </head>
 <body>
-    <%- include('../templates/header.ejs') %>
-
+    
+<%- data.usuario_logado ? include('../templates/header-perfil.ejs') : include('../templates/header.ejs') %>
     <main>
         <div class="topo">
         <h2 class="como-doar">

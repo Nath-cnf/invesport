@@ -7,6 +7,10 @@ class FormValidation {
   constructor() {
     this.validarAtletaCadastro = this.validarAtletaCadastro.bind(this);
     this.validarClubeCadastro = this.validarClubeCadastro.bind(this);
+    this.validarEditarAtletaCadastro = this.validarEditarAtletaCadastro.bind(this);
+    this.validarRedefinirSenha = this.validarRedefinirSenha.bind(this);
+    this.validarTarefa = this.validarTarefa.bind(this);
+    this.validarAdicionarChavePix = this.validarAdicionarChavePix.bind(this);
   }
 
   async validarAtletaCadastro(req, res, next) {
@@ -286,6 +290,41 @@ class FormValidation {
           },
         },
       });
+    }
+
+    return next();
+  }
+
+  async validarAdicionarChavePix(req, res, next) {
+    const erros = validationResult(req);
+
+    if (!erros.isEmpty()) {
+      const token = req.session.token;
+      const {userType, userId} = jwt.decode(token, process.env.SECRET);
+      const { chave_pix } = req.body;
+      let usuario;
+
+      if (userType === "atleta") {
+        usuario = await usuarioModel.findUserById(userId);
+      }
+
+      const chave_pix_erro = erros.errors.find(
+        (erro) => erro.path === "chave_pix"
+      );
+
+      if (userType === "atleta") {
+        return res.render("pages/perfil-atleta-pov.ejs", {
+          data: {
+            input_values: {
+              chave_pix,
+            },
+            erros: {
+              chave_pix_erro,
+            },
+            usuario
+          },
+        });
+      }
     }
 
     return next();

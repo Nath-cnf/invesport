@@ -1,4 +1,5 @@
 const qrCodeImage = document.getElementById("qr-code-image-generated");
+const valorPixInput = document.getElementById("valor-pix");
 
 class Pix {
   constructor(pixKey, description, merchantName, merchantCity, txid, amount) {
@@ -108,19 +109,32 @@ class Pix {
   }
 };
 
-const pix = new Pix(
-  "+5511949895761",
-  "invesport",
-  "nath",
-  "barueri",
-  "***",
-  1
-);
+fetch("/gerar-qr-code-atleta", {
+  method: "POST",
+  headers: new Headers(),
+  mode: "cors",
+  cache: "default",
+  body: {
+    valor_doado: valorPixInput.value
+  }
+})
+.then(function (response) {
+  const pix = new Pix(
+    response.chave_pix,
+    "Doação pelo Invesport",
+    response.nome,
+    response.cidade,
+    "***",
+    Number(response.valor_doado)
+  );
 
-const payload = pix.getPayload();
+  const payload = pix.getPayload();
+
+  qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(payload)}`
+})
+
+
 
 // O usuário vai cadastrar a chave pix, o nome e a cidade, depois quem for transferir o dinheiro vai informar
 // a mensagem que quer enviar e selecionar o valor.
 // As informações do usuário devem ser salvas no banco.
-
-qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(payload)}`

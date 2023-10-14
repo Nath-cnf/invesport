@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <%- include('../templates/header.ejs') %>
+    <%- data.usuario_logado ? include('../templates/header-perfil.ejs') : include('../templates/header.ejs') %>
 
         <main>
             <div class="barra-pesquisa">
@@ -34,7 +34,7 @@
                                     <img src="/assets/selo_invesport.png" class="selo">
                                 </span>
                                 <h4 class="cidade"><%- usuario.cidade %>-<%- usuario.estado %></h4>
-                                <a href="/perfil-atleta" class="ver-perfil">Ver perfil</a>
+                                <a href="/perfil-atleta/<%- usuario.id %>" class="ver-perfil">Ver perfil</a>
                             </div>
                         <% }) %>
                     </div>
@@ -42,7 +42,7 @@
 
                 <div class="clubes">
                     <a href="/feed-clube" class="btn-clubes">
-                        <img src="/assets/home/time-circulo.png" class="icone-clubes">
+                        <img src="/assets/cadastro-login/time-circulo.png" class="icone-clubes">
                         <h3 class="titulo">Clubes</h3>
                     </a>
                     

@@ -1,2 +1,2 @@
 -- AlterTable
-ALTER TABLE `usuario` MODIFY `cnpj_clube` VARCHAR(191) NULL;
+ALTER TABLE `Usuario` MODIFY `cnpj_clube` VARCHAR(191) NULL;

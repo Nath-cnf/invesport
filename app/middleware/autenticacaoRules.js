@@ -120,6 +120,12 @@ const validationMiddlewareRules = {
         .isEmail()
         .withMessage("Escreva seu email")
     ],
+    adicionarChavePixValidacao: [
+        body("chave_pix")
+        .trim()
+        .notEmpty()
+        .withMessage("Adicione a sua chave PIX!")
+    ]
 }
 
 module.exports = validationMiddlewareRules;

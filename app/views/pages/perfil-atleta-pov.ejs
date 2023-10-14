@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta property="og:title" content="Gerar Qr Code Pix">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.gerarpix.com.br">
-    <meta property="og:image" content="https://www.gerarpix.com.br/android-chrome-512x512.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="511" />
-    <meta property="og:image:alt" content="Gerador de QRCode PIX" />
     <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" type="text/css" href="/css/perfil-atleta-pov.css" />
     <title><%- data.page_name %></title>
     <script src="/js/perfil/tabs.js" defer></script>
-    <script src="/js/perfil/br-code.js" defer></script>
   </head>
 
   <body>
@@ -119,13 +110,21 @@
               >Receba doações no <b style="color: #1406a7"> Inve</b
               ><b style="color: #ff540b">Sport</b>!</span
             > <br>
-            <form class="chave-pix-form" method="POST">
+            <form class="chave-pix-form" method="POST" action="/atualizar-chave-pix">
+              <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
                   <div class="form-gerar-pix">
                     <label for="input-pix-key" class="label-chave-pix">Chave PIX</label>
-                    <input type="text">
+                    <input type="text" name="chave_pix" id="input-pix-key" <%-
+                    data.erros && data.erros.nome_erro ? `erro` : "" %>" name="nome"
+                    <%- data.input_values ? `value="${data.input_values.nome}"` : ""
+                    %>>
+                    <%- data.erros && data.erros.nome_erro ? `<span
+                class="mensagem-erro"
+                >${data.erros.nome_erro.msg}</span
+              >` : "" %>
                   </div>
                 <div class="gerar-qrcode">
-                    <button type="submit" class="gerar-btn">Gerar</button>
+                    <button type="submit" class="gerar-btn">Adicionar chave PIX</button>
                 </div>
             </form>
 

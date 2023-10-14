@@ -18,6 +18,17 @@ class Usuario {
         })
     }
 
+    async addChavePix(chavePix, userId) {
+        return await prisma.usuario.update({
+            where: {
+                id: userId
+            },
+            data: {
+                chave_pix: chavePix
+            }
+        })
+    }
+
     async findUserByEmail(usuarioEmail) {
         return await prisma.usuario.findUnique({
             where: {

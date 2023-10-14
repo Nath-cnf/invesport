@@ -68,13 +68,7 @@
             <section class="destaque">
               <img src="/assets/perfil/feed-victor3.jpeg" alt="" class="feed" />
               <p class="legenda">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Aenean euismod bibendum laoreet.
-                Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
-                Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur
-                ridiculus mus.
-                Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc
-                accuan eget.
+               + Adicione uma legenda
               </p>
             </section>
 
@@ -110,84 +104,28 @@
             <span class="titulo-3">Receba doações no <b style="color: #1406a7"> Inve</b><b
                 style="color: #ff540b">Sport</b>!</span>
             <form class="chave-pix-form" method="POST">
-              <div class="">
-                <div class="">
-                  <div class="">
-                    <label for="input-pix-key" class="label-chave-pix">Chave PIX</label>
-                    <div class="">
-                      <div class="">
-                        <label for="key_type" class="label-tipo-pix">Tipo Chave Pix</label>
-                        <select id="key_type" name="key_type" aria-label="Tipo Chave Pix" class="">
-                          <option>Telefone</option>
-                          <option>Email</option>
-                          <option>CPF</option>
-                          <option>CNPJ</option>
-                          <option>Outro</option>
-                        </select>
-                      </div>
-                      <input name="key" id="input-pix-key" class="" maxlength="60" inputmode="tel"
-                        placeholder="(11) 95555-5555" required="true"
-                        aria-label="Telefone Cadastrado no PIX, Somente números" type="tel" />
+                    <div class="form-gerar-pix">
+                      <label for="input-pix-key" class="label-chave-pix">Valor a ser doado</label>
+                      <input type="text">
                     </div>
+                  <div class="gerar-qrcode">
+                      <button type="submit" class="gerar-btn">Gerar</button>
                   </div>
-
-                  <div class="">
-                    <label for="input-name" class="">Nome do beneficiário (até 25 letras)</label>
-                    <div class="">
-                      <input inputmode="text" id="input-name" name="name" placeholder="" required="true" maxlength="25"
-                        aria-label="Nome do beneficiário Até 25 letras" />
-                    </div>
-                  </div>
-
-                  <div class="">
-                    <label for="input-city" class="">Cidade do beneficiário ou da transação (até 15 letras)</label>
-                    <div class="">
-                      <input inputmode="text" id="input-city" name="city" required="true" maxlength="15"
-                        aria-label="Cidade do beneficiário Até 15 letras" />
-                    </div>
-                  </div>
-
-                  <div class="">
-                    <label for="input-amount" class="">Valor para transferência (opcional)</label>
-                    <div class="">
-                      <input inputmode="numeric" id="input-amount" name="amount" placeholder="0,00"
-                        aria-label="Valor padrão para transferência" />
-                    </div>
-                  </div>
-
-                  <div class="">
-                    <label for="input-reference" class="">Código da transferência - Sem espaço (opcional - até 20
-                      Letras e/ou Números)</label>
-                    <div class="">
-                      <input inputmode="text" id="input-reference" name="reference" class="" placeholder="PAGAMENTO123D"
-                        maxlength="20"
-                        aria-label="Texto de renferencia para tansferencia, o usuário vai ver esse texto e deve aparecer em seu extrato" />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="" id="container-gerar">
-                  <span class="">
-                    <button type="submit" class="gerar-btn">Gerar</button>
-                  </span>
-                </div>
-              </div>
             </form>
-
-            <div class="qr-code-container">
-              <h2 class="">Plaquinha Pix - QrCode</h2>
-
-              <div class="plaquinha-pix">
-                <div class="qrcode-replace">
-                  <img src="" alt="" id="qr-code-image-generated">
-                </div>
-
-                <div class="">
-                  <div class="js-qr-code-description"></div>
+  
+              <div class="qr-code-container">
+                <div class="plaquinha-pix">
+                  <div class="qrcode-replace">
+                    <img src="" alt="" id="qr-code-image-generated">
+                  </div>
+  
+                  <div class="">
+                    <div class="js-qr-code-description"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+        
 
           <div id="meta" data-perfil-tab="meta">
             <span class="anda-meta">Metas em andamento:</span>
@@ -201,14 +139,7 @@
               <p class="valor">máx: R$1,000</p>
             </section>
             <hr class="linha-meta" />
-            <div class="container-add-meta">
-              <span class="add-meta">Adicione sua meta</span>
-              <section class="row">
-                <input type="text" id="inputbox" placeholder="Nome da meta" />
-                <input type="number" id="inputbox2" placeholder="Valor máximo da meta" />
-                <button id="botao-add">Adicionar</button>
-              </section>
-            </div>
+        
           </div>
         </div>
       </div>
