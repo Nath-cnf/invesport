@@ -92,8 +92,6 @@ class FormValidation {
         userBannerPerfil = true;
       }
 
-      console.log("Esporte body", esporte);
-
       try {
         const nome_esporte = await esporteModel.getEsporteNome(esporte);
 
