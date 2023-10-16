@@ -27,7 +27,7 @@ class FormValidation {
       let nome_esporte = "";
 
       if (esporte) {
-        nome_esporte = await esporteMode.getEsporteNome(esporte);
+        nome_esporte = await esporteModel.getEsporteNome(esporte);
       }
 
       const nome_erro = erros.errors.find((erro) => erro.path === "nome");
