@@ -6,10 +6,10 @@
 
 */
 -- AlterTable
-ALTER TABLE `clube` ADD COLUMN `customer_id` VARCHAR(191) NULL;
+ALTER TABLE `Clube` ADD COLUMN `customer_id` VARCHAR(191) NULL;
 
 -- AlterTable
-ALTER TABLE `usuario` ADD COLUMN `customer_id` VARCHAR(191) NULL;
+ALTER TABLE `Usuario` ADD COLUMN `customer_id` VARCHAR(191) NULL;
 
 -- CreateIndex
 CREATE UNIQUE INDEX `Clube_customer_id_key` ON `Clube`(`customer_id`);

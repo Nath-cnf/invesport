@@ -21,7 +21,8 @@ model Usuario {
     email              String  @unique
     senha              String
     chave_pix          String?
-    customer_id         String? @unique
+    customer_id        String? @unique
+    premium            Int     @default(0) @db.TinyInt
 
     tokens  Token[]
     esporte Esporte         @relation(fields: [id_esporte], references: [id])
@@ -40,7 +41,7 @@ model Clube {
     estado             String
     email              String  @unique
     senha              String
-    customer_id         String? @unique
+    customer_id        String? @unique
 
     esportes Esporte[]
     tarefas  TarefaClube[]

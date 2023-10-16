@@ -78,6 +78,17 @@ class Usuario {
         })
     }
 
+    async addUserPremiumByCustomerId(customerId) {
+        await prisma.usuario.update({
+            where: {
+                customer_id: customerId
+            },
+            data: {
+                
+            }
+        })
+    }
+
     async getUserImage(userId) {
         return await prisma.usuario.findUnique({
             where: {
