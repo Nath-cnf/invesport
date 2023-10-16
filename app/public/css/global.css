@@ -46,6 +46,18 @@ footer{
     color: #f2f2f2;
 }
 
+.btn-sair{
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #ff5b00;
+    border-radius: 15px;
+    color: #f2f2f2;
+}
+
 /* Mobile e Tablet*/
 @media screen and (max-width: 1023px){
     
@@ -324,6 +336,18 @@ footer{
         text-decoration: none;
         font-size: 1em;
         border-bottom: 1px solid #f2f2f2;
+    }
+
+    .btn-sair{
+        font-weight: 600;
+        font-size: 17px;
+        margin-top: 20px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        background-color: #ff5b00;
+        border-radius: 15px;
+        color: #f2f2f2;
     }
 
 }

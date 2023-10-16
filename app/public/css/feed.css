@@ -15,11 +15,12 @@ main{
     height: 2em;
     background-color: #ffffff;
     padding: 0px;
-    border-bottom: 1px solid var(--azul);
+    
 }
 
 .pesquisa{
     border: none;
+    border-bottom: 2px solid var(--azul);
     font-size: 1em;
     width: 100%;
     line-height: 100%;
@@ -29,7 +30,7 @@ main{
 
 .link-lupa{
     width: 2em;
-    height: 2em;
+    height: 2.4em;
     background-color: var(--azul);
     display: flex;
     align-items: center;

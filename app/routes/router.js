@@ -66,6 +66,7 @@ const editarAtletaControllerIUpdate = require("../controllers/perfil/editarAtlet
 
 // * ADMIN
 const homeAdminControllerRead = require("../controllers/info-pages/admin/homeAdminControllerRead");
+const tabelaTokensControllerRead = require("../controllers/info-pages/admin/tabelaTokensControllerRead");
 
 // * Info pages
 
@@ -188,6 +189,7 @@ editarAtletaControllerIUpdate.editarUser);
 
 // * Admin
 router.get("/admin", homeAdminControllerRead.getPage);
+router.get("/tabela-tokens", tabelaTokensControllerRead.getPage);
 
 // * Rodape
 

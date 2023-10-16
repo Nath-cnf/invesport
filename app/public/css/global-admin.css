@@ -24,6 +24,18 @@ header {
     object-fit: cover;
 }
 
+.btn-sair{
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #ff5b00;
+    border-radius: 15px;
+    color: #f2f2f2;
+}
+
 .itens a{
     text-decoration: none;
 }
@@ -33,7 +45,7 @@ li{
 }
 
 footer{
-    background-color: #dadada;
+    background-color: #e0e0e0;
     padding: 20px 50px;
     color: #14248a;
     align-items: center;
@@ -254,37 +266,27 @@ footer{
         align-items: center;
     }
 
-    footer{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        align-items: center;
-        height: 20vh;
+    footer {
+        display: flex;
+        flex-direction: column;
     }
 
-    .header-footer-card i {
-        display: none;
+    .footer-card {
+        padding: 10px 0;
+        border-bottom: 2px solid #f2f2f2;
     }
 
-    .accordion div{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-
-    .accordion{
-        margin-top: 10px;
-    }
-
-    .politica a{
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 1.2em;
-    }
-
-    .termos a{
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 1.2em;
+    .btn-sair{
+        font-weight: 600;
+        font-size: 17px;
+        margin-top: 20px;
+        width: 100px;
+        height: 40px;
+        margin-bottom: 20px;
+        border: none;
+        background-color: #ff5b00;
+        border-radius: 15px;
+        color: #f2f2f2;
     }
 
 }
