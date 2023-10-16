@@ -42,6 +42,8 @@ const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadast
 const atualizarChavePixControllerUpdate = require("../controllers/perfil/atualizarChavePixControllerUpdate");
 const gerarQrCodeAtletaControllerRead = require("../controllers/perfil/gerarQrCodeControlleRead");
 
+const logouControllerRead = require("../controllers/perfil/logoutControllerRead");
+
 //*REDEFINIR
 const redefinirSenhaMiddleware = require("../middleware/redefinirSenhaMiddleware");
 const recuperarSenhaControllerRead = require("../controllers/info-pages/redefinir-senha/recuperarSenhaControllerRead");
@@ -56,6 +58,14 @@ const politicaController = require("../controllers/info-pages/rodape/politicaCon
 const termosController = require("../controllers/info-pages/rodape/termosControllerRead");
 const validationMiddlewareRules = require("../middleware/autenticacaoRules");
 
+//*ASSINATURA
+const assinaturaPortalControllerCreate = require("../controllers/perfil/assinatura/assinaturaPortalControllerCreate");
+const cancelamentoControllerRead = require("../controllers/perfil/assinatura/cancelamentoControllerRead");
+const pagamentoAssinaturaControllerCreate = require("../controllers/perfil/assinatura/pagamentoAssinaturaControllerCreate");
+const pagamentoAssinaturaControllerRead = require("../controllers/perfil/assinatura/pagamentoAssinaturaControllerRead");
+const sucessoControllerRead = require("../controllers/perfil/assinatura/sucessoControllerRead");
+
+
 // * IMAGENS
 const imagensBannerControllerRead = require("../controllers/info-pages/imagens/imagensBannerControllerRead");
 const imagensUsuariosControllerRead = require("../controllers/info-pages/imagens/imagensUsuariosControllerRead");
@@ -67,6 +77,9 @@ const editarAtletaControllerIUpdate = require("../controllers/perfil/editarAtlet
 // * ADMIN
 const homeAdminControllerRead = require("../controllers/info-pages/admin/homeAdminControllerRead");
 const tabelaTokensControllerRead = require("../controllers/info-pages/admin/tabelaTokensControllerRead");
+
+//* WEBHOOK
+const stripeWebhookController = require("../controllers/webhook/stripeWebhook");
 
 // * Info pages
 
@@ -114,6 +127,10 @@ autenticacaoMiddleware.validateToken,
 validationMiddlewareRules.criarTarefaValidacao,
 autenticacaoFormMiddleware.validarTarefa,
 tarefaControllerCreate.createTarefa);
+
+router.get("/logout",
+autenticacaoMiddleware.validateToken,
+logouControllerRead.logout);
 
 // * Login atleta
 
@@ -200,5 +217,30 @@ router.post("/email-duvida", duvidasFrequentesControllerSendEmail.sendEmail);
 router.get("/politica", politicaControllerRead.getPage);
 
 router.get("/termos", termosControllerRead.getPage);
+
+// * Assinatura
+
+router.get("/pagamento-assinatura",
+autenticacaoMiddleware.validateToken,
+pagamentoAssinaturaControllerRead.getPage);
+
+router.post("/pagamento-assinatura",
+autenticacaoMiddleware.validateToken,
+pagamentoAssinaturaControllerCreate.createCustomerSubscription);
+
+router.post("/criar-portal-assinatura",
+autenticacaoMiddleware.validateToken,
+assinaturaPortalControllerCreate.criarPortalAssinatura);
+
+router.post("/webhook",
+stripeWebhookController.realTimeUpdate);
+
+router.get("/compra-efetuada",
+autenticacaoMiddleware.validateToken,
+sucessoControllerRead.getPage);
+
+router.get("/compra-cancelada",
+autenticacaoMiddleware.validateToken,
+cancelamentoControllerRead.getPage);
 
 module.exports = router;

@@ -20,7 +20,7 @@ app.use(session({
 app.set("view engine", "ejs");
 app.set("views", "./app/views");
 
-app.use(express.json());
+app.use(express.raw());
 app.use(express.urlencoded({extended: true}));
 
 var rotas = require("./app/routes/router");

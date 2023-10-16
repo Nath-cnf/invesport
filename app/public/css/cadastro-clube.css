@@ -79,7 +79,6 @@ input {
     background-color: #ffffff;
     border: 2px solid #ff5b00;
     border-radius: 8px;
-    padding-left: 3px;
 }
   
 .campo:focus {
@@ -198,7 +197,6 @@ select{
         background-color: #ffffff;
         border: 2px solid #ff5b00;
         border-radius: 8px;
-        padding-left: 3px;
     }
 
     .container-cadastro{
@@ -250,7 +248,7 @@ select{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 48px;
+    height: 2em;
     margin-bottom: 8px;
     padding-inline: 8px;
     border: 2px solid #ff5b00;
@@ -345,4 +343,9 @@ input[type=number] {
 .senha i.hide,
 .repita i.hide {
     display: none;
+}
+
+.formulario {
+    max-width: 480px;
+    margin-inline: auto;
 }

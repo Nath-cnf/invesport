@@ -58,6 +58,17 @@ class Usuario {
         })
     }
 
+    async updateUserCustomerId(userId, customerId) {
+        return await prisma.usuario.update({
+            where: {
+                id: userId
+            },
+            data: {
+                customer_id: customerId        
+            }
+        })
+    }
+
     async updateUser(data, userId) {
         await prisma.usuario.update({
             where: {
