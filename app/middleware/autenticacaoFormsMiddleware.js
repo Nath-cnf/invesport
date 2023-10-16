@@ -7,7 +7,8 @@ class FormValidation {
   constructor() {
     this.validarAtletaCadastro = this.validarAtletaCadastro.bind(this);
     this.validarClubeCadastro = this.validarClubeCadastro.bind(this);
-    this.validarEditarAtletaCadastro = this.validarEditarAtletaCadastro.bind(this);
+    this.validarEditarAtletaCadastro =
+      this.validarEditarAtletaCadastro.bind(this);
     this.validarRedefinirSenha = this.validarRedefinirSenha.bind(this);
     this.validarTarefa = this.validarTarefa.bind(this);
     this.validarAdicionarChavePix = this.validarAdicionarChavePix.bind(this);
@@ -23,7 +24,11 @@ class FormValidation {
 
       const { nome, esporte, cnpj_clube, cidade, estado, email } = req.body;
 
-      const nome_esporte = await esporteModel.getEsporteNome(esporte);
+      let nome_esporte = "";
+
+      if (esporte) {
+        nome_esporte = await esporteMode.getEsporteNome(esporte);
+      }
 
       const nome_erro = erros.errors.find((erro) => erro.path === "nome");
       const esporte_erro = erros.errors.find((erro) => erro.path === "esporte");
@@ -114,7 +119,7 @@ class FormValidation {
               nome,
               userImagemPerfil,
               userBannerPerfil,
-              esporte: {id: esporte},
+              esporte: { id: esporte },
               nome_esporte: nome_esporte,
               cnpj_clube: cnpj_clube,
               cidade: cidade,
@@ -144,7 +149,7 @@ class FormValidation {
               nome,
               userImagemPerfil,
               userBannerPerfil,
-              esporte: {id: esporte},
+              esporte: { id: esporte },
               nome_esporte: nome_esporte,
               cnpj_clube: cnpj_clube,
               cidade: cidade,
@@ -298,7 +303,7 @@ class FormValidation {
 
     if (!erros.isEmpty()) {
       const token = req.session.token;
-      const {userType, userId} = jwt.decode(token, process.env.SECRET);
+      const { userType, userId } = jwt.decode(token, process.env.SECRET);
       const { chave_pix } = req.body;
       let usuario;
 
@@ -319,7 +324,7 @@ class FormValidation {
             erros: {
               chave_pix_erro,
             },
-            usuario
+            usuario,
           },
         });
       }

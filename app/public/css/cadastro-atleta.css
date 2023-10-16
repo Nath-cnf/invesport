@@ -81,6 +81,11 @@ input {
     border: 2px solid #ff5b00;
     border-radius: 8px;
     padding-left: 3px;
+    max-width: 400px;
+}
+
+#esporte-campo-pai{
+    max-width: 388px;
 }
 
 .erro {
@@ -88,6 +93,7 @@ input {
 }
 
 .mensagem-erro {
+    justify-self: unset;
     font-size: .9rem;
     color: red;
 }
@@ -133,6 +139,7 @@ input {
 .aceite-termos{
     justify-content: center;
     text-align: center;
+    max-width: 400px;
 }
 
 .btn-entrar{
@@ -184,7 +191,7 @@ input {
     }
 
     input {
-        width: 23vw;
+        width: 26vw;
         height: 2em;
         color: #333333;
         font-size: inherit;
@@ -193,6 +200,10 @@ input {
         border: 2px solid #ff5b00;
         border-radius: 8px;
         padding-left: 3px;
+    }
+
+    #esporte-campo-pai{
+        max-width: 342px;
     }
 
     .container-cadastro{
@@ -240,6 +251,7 @@ input {
 }
 
 #esporte-campo-pai.erro {
+    justify-self: unset;
     border-color: red;
 }
 

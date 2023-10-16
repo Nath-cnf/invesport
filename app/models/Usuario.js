@@ -84,10 +84,10 @@ class Usuario {
             where: {
                 id: userId
             },
-            /*select: {
+            select: {
                 banner_perfil,
                 banner_image_type
-            }*/
+            }
         })
     }
 }
