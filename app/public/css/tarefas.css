@@ -1,3 +1,11 @@
+:root {
+  --laranja: #ff5b00;
+  --azul: #14248a;
+  --cinza: #333333;
+  --branco: #ffffff;
+  --preto: #000000;
+}
+
 main {
   margin: 75px 25px 15px 0px;
   background-color: #ffffff;
