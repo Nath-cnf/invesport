@@ -47,6 +47,13 @@ model Clube {
     tarefas  TarefaClube[]
 }
 
+model Admin {
+    id    String @id @default(uuid())
+    nome  String
+    email String @unique
+    senha String
+}
+
 model Esporte {
     id       String    @id @default(uuid())
     nome     String    @unique

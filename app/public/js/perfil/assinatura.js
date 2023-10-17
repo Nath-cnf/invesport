@@ -7,20 +7,18 @@ function setMessage(message) {
 	messageDiv.innerHTML = message;
 }
 
-const url = new URL(window.location.href);
-const searchParams = new URLSearchParams(url.search);
-const product = searchParams.get("product");
-
 fetch("/pagamento-assinatura", {
 	method: "POST",
 	headers: {
 		"Content-Type": "application/json",
 	},
 	body: JSON.stringify({
-		product
+		product: "price_1O1wg1G905OAea9EenTxXXcP"
 	}),
 }).then(async (res) => {
 	const jsonRes = await res.json();
+
+    console.log(jsonRes)
 
 	if (jsonRes.erro) {
 		setMessage(`Erro de sistema. Por favor tente novamente mais tarde!`);

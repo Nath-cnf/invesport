@@ -27,13 +27,13 @@ class PagamentoAssinaturaController {
 					},
 				],
 				payment_behavior: "default_incomplete",
-				expand: ["pending_setup_intent"],
+				expand: ["latest_invoice.payment_intent"]
 			});
 
 			await usuarioModel.updateUserCustomerId(userId, customer.id);
 
 			return res.send({
-			    clientSecret: subscription.client_secret
+			    clientSecret: subscription.latest_invoice.payment_intent.client_secret
 			});
 		} catch (erro) {
 			console.log(erro);
