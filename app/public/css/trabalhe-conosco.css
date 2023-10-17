@@ -1,8 +1,16 @@
+:root {
+    --laranja: #ff5b00;
+    --azul: #14248a;
+    --cinza: #333333;
+    --branco: #ffffff;
+    --preto: #000000;
+}
+
 main {
     margin: 90px 0px 0px 0px;
 }
 
-.topo{
+.topo {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -10,22 +18,22 @@ main {
     justify-content: center;
 }
 
-.sobre{
+.sobre {
     font-size: 1.8rem;
     display: inline;
     flex-direction: row;
     align-self: center;
 }
 
-.inve{
+.inve {
     color: #1422a7;
 }
 
-.sport{
+.sport {
     color: #ff6600;
 }
 
-.apresenta{
+.apresenta {
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -33,7 +41,7 @@ main {
     width: 100%;
 }
 
-.ajudar{
+.ajudar {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -41,16 +49,49 @@ main {
     justify-content: center;
 }
 
-.como{
+.como {
     font-size: 1.8rem;
     display: inline;
     flex-direction: row;
     align-self: center;
 }
 
-.boneco-duvida{
+.boneco-duvida {
     display: flex;
     flex-direction: column;
     width: 360px;
     height: 360px;
+}
+
+@media screen and (max-width: 1023px) {
+    main {
+        margin: 70px 25px 30px 25px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        margin: 100px 50px 30px 50px;
+    }
+
+    .sobre, .como {
+        font-size: 2.5rem;
+    }
+
+    .apresenta {
+        font-size: 1.1rem;
+    }
+
+    .como{
+        margin: 25px 0px;
+    }
+
+    .container-como{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        font-size: 1.1rem;
+    }
+
 }
