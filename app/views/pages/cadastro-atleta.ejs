@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" type="text/css" href="css/cadastro-atleta.css" />
+    <link rel="stylesheet" type="text/css" href="/css/cadastro-atleta.css" />
     <script src="/js/cadastro-atleta.js" defer></script>
     <script src="/js/login-atleta.js" defer></script>
     <title><%- data.page_name %></title>
@@ -14,13 +14,13 @@
     <main>
       <div class="container-cadastro">
         <div class="container">
-          <img src="assets/cadastro-login/atleta-circulo.png" id="i-atleta" />
+          <img src="/assets/cadastro-login/atleta-circulo.png" id="i-atleta" />
           <h2 id="t-atleta">Atleta</h2>
         </div>
 
         <div class="btn">
-          <a href="cadastro-clube"><button id="btn-clube">Clube</button></a>
-          <a href="cadastro-atleta"><button id="btn-atleta">Atleta</button></a>
+          <a href="/cadastro-clube"><button id="btn-clube">Clube</button></a>
+          <a href="/cadastro-atleta"><button id="btn-atleta">Atleta</button></a>
         </div>
         <span class="obrigatorio">
           <p class="asteristico">*</p>
@@ -136,14 +136,16 @@
               <input type="password" placeholder="Crie sua senha" class="campo
               <%- data.erros && data.erros.senha_erro ? `erro` : "" %>"
               name="senha" <%- data.input_values ?
-              `value="${data.input_values.senha}"` : "" %> > <%- data.erros &&
-              data.erros.senha_erro ? `<span class="mensagem-erro"
-                >${data.erros.senha_erro.msg}</span
-              >` : "" %>
+              `value="${data.input_values.senha}"` : "" %> > 
 
               <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
               <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
             </div>
+
+            <%- data.erros &&
+              data.erros.senha_erro ? `<span class="mensagem-erro"
+                >${data.erros.senha_erro.msg}</span
+              >` : "" %>
 
             <label class="titulo"
               >Repita a senha
@@ -153,24 +155,31 @@
               <input type="password" placeholder="Insira sua senha" class="campo
               <%- data.erros && data.erros.confirmacao_senha_erro ? `erro` : ""
               %>" name="confirmacao_senha" <%- data.input_values ?
-              `value="${data.input_values.confirmacao_senha}"` : "" %> > <%-
-              data.erros && data.erros.confirmacao_senha_erro ? `<span
-                class="mensagem-erro"
-                >${data.erros.confirmacao_senha_erro.msg}</span
-              >` : "" %>
+              `value="${data.input_values.confirmacao_senha}"` : "" %> > 
 
               <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
               <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
             </div>
+
+            <%-
+              data.erros && data.erros.confirmacao_senha_erro ? `<span
+                class="mensagem-erro"
+                >${data.erros.confirmacao_senha_erro.msg}</span
+              >` : "" %>
           </span>
 
           <div class="cadastro">
             <input type="submit" value="CADASTRAR" id="cadastrar" />
+            <span class="aceite-termos">
+              Ao se cadastrar, você aceita os 
+              <a href="/termos" style="color: #1406a7;">termos e condições</a> 
+              e a nossa <a href="/politica" style="color: #1406a7;">política de privacidade</a>
+            </span>
           </div>
         </form>
         <span id="cadastrado"
           >Já possui cadastro?
-          <a href="login-atleta" class="entre">Entre aqui</a></span
+          <a href="/login-atleta" class="entre">Entre aqui</a></span
         >
       </div>
     </main>

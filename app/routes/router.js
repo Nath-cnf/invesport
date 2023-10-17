@@ -29,6 +29,8 @@ const feedControllerRead = require("../controllers/info-pages/menu/feedControlle
 //*CADASTRO-LOGIN-PERFIL
 const perfilClubeControllerRead = require("../controllers/info-pages/perfilClubeControllerRead");
 const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
+const perfilAtletaPovControllerRead = require("../controllers/info-pages/perfilAtletaPovControllerRead");
+const perfilClubePovControllerRead = require("../controllers/info-pages/perfilClubePovControllerRead");
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
 const cadastroAtletaControllerRead = require("../controllers/info-pages/cadastro/cadastroAtletaControllerRead");
@@ -36,6 +38,11 @@ const cadastroClubeControllerRead = require('../controllers/info-pages/cadastro/
 const cadastroClubeControllerCreate = require("../controllers/info-pages/cadastro/cadastroClubeControllerCreate")
 const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
 const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
+
+const atualizarChavePixControllerUpdate = require("../controllers/perfil/atualizarChavePixControllerUpdate");
+const gerarQrCodeAtletaControllerRead = require("../controllers/perfil/gerarQrCodeControlleRead");
+
+const logouControllerRead = require("../controllers/perfil/logoutControllerRead");
 
 //*REDEFINIR
 const redefinirSenhaMiddleware = require("../middleware/redefinirSenhaMiddleware");
@@ -51,12 +58,28 @@ const politicaController = require("../controllers/info-pages/rodape/politicaCon
 const termosController = require("../controllers/info-pages/rodape/termosControllerRead");
 const validationMiddlewareRules = require("../middleware/autenticacaoRules");
 
+//*ASSINATURA
+const assinaturaPortalControllerCreate = require("../controllers/perfil/assinatura/assinaturaPortalControllerCreate");
+const cancelamentoControllerRead = require("../controllers/perfil/assinatura/cancelamentoControllerRead");
+const pagamentoAssinaturaControllerCreate = require("../controllers/perfil/assinatura/pagamentoAssinaturaControllerCreate");
+const pagamentoAssinaturaControllerRead = require("../controllers/perfil/assinatura/pagamentoAssinaturaControllerRead");
+const sucessoControllerRead = require("../controllers/perfil/assinatura/sucessoControllerRead");
+
+
 // * IMAGENS
 const imagensBannerControllerRead = require("../controllers/info-pages/imagens/imagensBannerControllerRead");
 const imagensUsuariosControllerRead = require("../controllers/info-pages/imagens/imagensUsuariosControllerRead");
 
 // * EDITAR
 const editarAtletaControllerRead = require("../controllers/perfil/editarAtletaControllerRead");
+const editarAtletaControllerIUpdate = require("../controllers/perfil/editarAtletaControllerUpdate");
+
+// * ADMIN
+const homeAdminControllerRead = require("../controllers/info-pages/admin/homeAdminControllerRead");
+const tabelaTokensControllerRead = require("../controllers/info-pages/admin/tabelaTokensControllerRead");
+
+//* WEBHOOK
+const stripeWebhookController = require("../controllers/webhook/stripeWebhook");
 
 // * Info pages
 
@@ -68,9 +91,26 @@ router.get("/trabalhe-conosco", trabalheConoscoControllerRead.getPage);
 
 router.get("/perfil-atleta",
 autenticacaoMiddleware.validateToken,
+perfilAtletaPovControllerRead.getPage);
+
+router.get("/perfil-clube",
+autenticacaoMiddleware.validateToken,
+perfilClubePovControllerRead.getPage);
+
+router.get("/perfil-clube/:idClube",
+perfilClubeControllerRead.getPage);
+
+router.get("/perfil-atleta/:idAtleta",
 perfilAtletaControllerRead.getPage);
 
-router.get("/perfil-clube", perfilClubeControllerRead.getPage);
+router.post("/atualizar-chave-pix",
+autenticacaoMiddleware.validateToken,
+validationMiddlewareRules.adicionarChavePixValidacao,
+autenticacaoFormMiddleware.validarAdicionarChavePix,
+atualizarChavePixControllerUpdate.updateChavePix);
+
+router.post("/gerar-qr-code-atleta/:userId",
+gerarQrCodeAtletaControllerRead.gerarQrCode);
 
 router.get("/assinatura", assinaturaControllerRead.getPage);
 
@@ -87,6 +127,10 @@ autenticacaoMiddleware.validateToken,
 validationMiddlewareRules.criarTarefaValidacao,
 autenticacaoFormMiddleware.validarTarefa,
 tarefaControllerCreate.createTarefa);
+
+router.get("/logout",
+autenticacaoMiddleware.validateToken,
+logouControllerRead.logout);
 
 // * Login atleta
 
@@ -149,7 +193,20 @@ imagensUsuariosControllerRead.getImage);
 
 // * Editar perfil
 
-router.get("/editar-perfil", editarAtletaControllerRead.getPage);
+router.get("/editar-perfil-atleta",
+autenticacaoMiddleware.validateToken,
+editarAtletaControllerRead.getPage);
+
+router.post("/editar-perfil-atleta",
+autenticacaoMiddleware.validateToken,
+upload.single("imagem_perfil"),
+autenticacaoRegrasMiddleware.editarCadastroAtletaValidacao,
+autenticacaoFormMiddleware.validarEditarAtletaCadastro,
+editarAtletaControllerIUpdate.editarUser);
+
+// * Admin
+router.get("/admin", homeAdminControllerRead.getPage);
+router.get("/tabela-tokens", tabelaTokensControllerRead.getPage);
 
 // * Rodape
 
@@ -160,5 +217,30 @@ router.post("/email-duvida", duvidasFrequentesControllerSendEmail.sendEmail);
 router.get("/politica", politicaControllerRead.getPage);
 
 router.get("/termos", termosControllerRead.getPage);
+
+// * Assinatura
+
+router.get("/pagamento-assinatura",
+autenticacaoMiddleware.validateToken,
+pagamentoAssinaturaControllerRead.getPage);
+
+router.post("/pagamento-assinatura",
+autenticacaoMiddleware.validateToken,
+pagamentoAssinaturaControllerCreate.createCustomerSubscription);
+
+router.post("/criar-portal-assinatura",
+autenticacaoMiddleware.validateToken,
+assinaturaPortalControllerCreate.criarPortalAssinatura);
+
+router.post("/webhook",
+stripeWebhookController.realTimeUpdate);
+
+router.get("/compra-efetuada",
+autenticacaoMiddleware.validateToken,
+sucessoControllerRead.getPage);
+
+router.get("/compra-cancelada",
+autenticacaoMiddleware.validateToken,
+cancelamentoControllerRead.getPage);
 
 module.exports = router;

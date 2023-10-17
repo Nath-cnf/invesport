@@ -3,19 +3,21 @@
 <head>
     <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" href="/css/tarefas.css">
-    <!-- <script src="/js/agenda.js" defer></script> -->
+    <script src="/js/agenda.js" defer></script>
     <title><%- data.page_name %></title>
 </head>
 <body>
   <main>
     <%- include('../templates/header-perfil.ejs') %>
 
-    <div class="titulo">
-      <img src="/assets/assinatura/fundo-laranja-assinatura.jpeg" class="fundo">
-      <span class="t-principal">
-      <h1 class="ola">Bem vindo(a)!</h1>
-      <h5 class= span>Adicione uma tarefa para organizar sua agenda</h5>
+    <div class="fundo">
+      <img src="/assets/topo-tarefas.jpg" class="fundo">
+      <div class="titulo">
+        <span class="t-principal">
+        <h1 class="ola">Bem vindo(a)!</h1>
+        <h5 class= span>Adicione uma tarefa para organizar sua agenda</h5>
       </span>
+    </div>
     </div>
     <div class="container">
         <div class="todo-app">
@@ -41,6 +43,7 @@
             </div>  -->
             <% data.tarefas.forEach(tarefa => { %>
               <div class="card">
+                <button value="remover" class="btn-remover">Remover</button>
                 <p class="output1"><%- tarefa.nome %></p>
                 <h6>Prazo:</h6>
                 <span class="output2"><%- tarefa.data_conclusao %></span>

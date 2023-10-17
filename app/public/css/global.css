@@ -1,3 +1,11 @@
+:root{
+    --laranja: #ff5b00;
+    --azul: #14248a;
+    --cinza: #333333;
+    --branco: #ffffff;
+    --preto: #000000;
+}
+
 html , body {
     background-color: #f8f8f8;
     font-family: "Poppins", sans-serif;
@@ -36,6 +44,22 @@ footer{
     background-color: #14248a;
     padding: 20px 50px;
     color: #f2f2f2;
+}
+
+.btn-sair{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #ff5b00;
+    border-radius: 15px;
+    color: #f2f2f2;
+    text-decoration: none;
 }
 
 /* Mobile e Tablet*/
@@ -264,37 +288,74 @@ footer{
         align-items: center;
     }
 
+    #invesport{
+        grid-area: invesport;
+        align-self: self-end;
+    }
+
+    #fale-conosco{
+        grid-area: fale-conosco;
+        align-self: self-end;
+    }
+
+    #trabalhe-conosco{
+        grid-area: trabalhe-conosco;
+        align-self: self-end;
+    }
+
+    #politica{
+        grid-area: politica;
+        align-self: self-end;
+    }
+
     footer{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        align-items: center;
-        height: 20vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        'invesport fale-conosco trabalhe-conosco politica'
+        'invesport fale-conosco trabalhe-conosco politica';
+        height: 15vh;
+        align-content: center;
+        grid-template-rows: 50px 30px;
+    }
+
+    aside{
+        width: 100vw;
+        height: 15vh;
+        background-color: #ff5b00;
+        color: #ffffff;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     .header-footer-card i {
         display: none;
     }
 
-    .accordion div{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+    .accordion, #termos{
+        margin-top: 20px;
     }
 
-    .accordion{
-        margin-top: 10px;
-    }
-
-    .politica a{
-        font-weight: bold;
+    #politica a, .termos a{
         text-decoration: none;
-        font-size: 1.2em;
+        font-size: 1em;
+        border-bottom: 1px solid #f2f2f2;
     }
 
-    .termos a{
-        font-weight: bold;
+    .btn-sair{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: 17px;
+        margin: auto 0;
+        width: 100px;
+        height: 40px;
+        border: none;
+        background-color: #ff5b00;
+        border-radius: 15px;
+        color: #f2f2f2;
         text-decoration: none;
-        font-size: 1.2em;
     }
 
 }

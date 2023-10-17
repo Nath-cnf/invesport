@@ -3,7 +3,7 @@ const usuarioModel = require("../../../models/Usuario");
 
 class EditarAtletaController {
     async editarUser(req, res) {
-
+        
     }
 }
 

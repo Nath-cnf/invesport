@@ -2,15 +2,8 @@
 <html lang="pt-br">
 
 <head>
-  <meta property="og:title" content="Gerar Qr Code Pix">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.gerarpix.com.br">
-  <meta property="og:image" content="https://www.gerarpix.com.br/android-chrome-512x512.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="511" />
-  <meta property="og:image:alt" content="Gerador de QRCode PIX" />
   <%- include('../templates/head.ejs') %>
+  <link rel="stylesheet" href="/css/editar-perfil.css">
   <title><%- data.page_name %></title>
 </head>
 
@@ -18,25 +11,25 @@
   <%- include('../templates/header-perfil.ejs') %>
 
   <main>
-    <section>
+    <section class="container">
+      <div>
+      <h3 class="t-editar">Edite seu perfil</h3>
+    </div>
       <form action="/editar-perfil-atleta" method="post" enctype="multipart/form-data">
         <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
 
-        <span>
+        <span class="imagens-perfil">
             <label for="banner_perfil">Banner perfil</label>
             <input type="file" name="banner_perfil" id="banner_perfil">
-            <img src="/assets/perfil/banners/bannerperfil.jpeg" alt="Banner perfil" id="banner_perfil_image">
-        </span>
-
-        <span>
+            <img src="<%- data.userBannerPerfil ? "/assets/perfil/imagens_usuarios/banner-perfil.jpg" : "/assets/perfil/banner-perfil.jpg" %>" alt="Banner perfil" id="banner_perfil_image">
+        
             <label for="imagem-perfil">Imagem perfil</label>
             <input type="file" name="imagem_perfil" id="imagem_perfil">
-            <img src="/assets/perfil/imagens_usuarios/perfil-victor.jpeg" alt="Imagem perfil" id="imagem_perfil_image">
+            <img src="<%- data.userImagemPerfil ? "/assets/perfil/imagens_usuarios/perfil-victor.jpeg" : "/assets/perfil/user.png" %>" alt="Imagem perfil" id="imagem_perfil_image">
         </span>
 
         <span class="campos-form">
           <label class="titulo">Nome completo
-            <p class="asteristico">*</p>
           </label>
           <div class="nome">
             <input type="text" placeholder="Insira seu nome" class="campo <%-
@@ -48,20 +41,18 @@
           </div>
 
           <label class="titulo">Esporte
-            <p class="asteristico">*</p>
           </label>
           <div class="esporte">
             <div id="esporte-campo-pai" data-esporte-dropdown-button <%- data.erros && data.erros.esporte_erro ? `class="erro"` : "" %>>
               <span data-esporte-selected><%- data.input_values && data.input_values.esporte ?
-                  data.input_values.esporte : "Escolha o esporte!" %></span>
-              <i class="bx bx-chevron-down"></i>
+                  data.input_values.esporte.nome : "Escolha o esporte!" %></span>
               <div id="esporte-campo-container">
                 <div id="esporte-campo">
                   <% data.esportes.forEach(esporte => { %>
                   <label for="<%- esporte.nome %>" <%- data.input_values && data.input_values.esporte === esporte.id ? "class='ativo'"  : "" %>>
                     <input type="radio" name="esporte" id="<%- esporte.nome %>" value="<%- esporte.id %>" data-esporte-input <%- data.input_values &&
-                      data.input_values.esporte === esporte.id ?
-                      "checked" : "" %> />
+                      data.input_values.esporte.id === esporte.id ?
+                      "checked" : "" %>>
                     <%- esporte.nome %>
                   </label>
                   <% }) %>
@@ -84,7 +75,6 @@
           </div>
 
           <label class="titulo">Cidade
-            <p class="asteristico">*</p>
           </label>
           <div class="cidade">
             <input type="text" placeholder="Insira sua cidade" class="campo
@@ -96,7 +86,6 @@
           </div>
 
           <label class="titulo">Estado
-            <p class="asteristico">*</p>
           </label>
           <div class="estado">
             <input type="text" placeholder="Insira seu estado" class="campo
@@ -108,7 +97,6 @@
           </div>
 
           <label class="titulo">E-mail
-            <p class="asteristico">*</p>
           </label>
           <div class="email">
             <input type="email" placeholder="Insira seu e-mail" class="campo
@@ -118,42 +106,10 @@
                 >${data.erros.email_erro.msg}</span
               >` : "" %>
           </div>
-
-          <label class="titulo">Senha
-            <p class="asteristico">*</p>
-          </label>
-          <div class="senha">
-            <input type="password" placeholder="Crie sua senha" class="campo
-              <%- data.erros && data.erros.senha_erro ? `erro` : "" %>" name="senha" <%- data.input_values ?
-              `value="${data.input_values.senha}"` : "" %>> <%- data.erros &&
-              data.erros.senha_erro ? `<span class="mensagem-erro"
-                >${data.erros.senha_erro.msg}</span
-              >` : "" %>
-
-            <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
-            <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
-          </div>
-
-          <label class="titulo">Repita a senha
-            <p class="asteristico">*</p>
-          </label>
-          <div class="repita">
-            <input type="password" placeholder="Insira sua senha" class="campo
-              <%- data.erros && data.erros.confirmacao_senha_erro ? `erro` : ""
-              %>" name="confirmacao_senha" <%- data.input_values ?
-              `value="${data.input_values.confirmacao_senha}"` : "" %>> <%-
-              data.erros && data.erros.confirmacao_senha_erro ? `<span
-                class="mensagem-erro"
-                >${data.erros.confirmacao_senha_erro.msg}</span
-              >` : "" %>
-
-            <i class='bx bx-show' style='color:#1961c9' data-show-password></i>
-            <i class='bx bx-hide hide' style='color:#1961c9' data-hide-password></i>
-          </div>
         </span>
 
         <div class="cadastro">
-          <input type="submit" value="CADASTRAR" id="cadastrar" />
+          <input type="submit" value="Editar" id="cadastrar"/>
         </div>
       </form>
     </section>

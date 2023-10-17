@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <%- include('../templates/header.ejs') %>
+    <%- data.usuario_logado ? include('../templates/header-perfil.ejs') : include('../templates/header.ejs') %>
 
         <main>
             <div class="barra-pesquisa">
@@ -26,88 +26,38 @@
                     </a>
 
                     <div class="perfis-atletas">
-                        <div class="usuario-atleta">
-                            <img src="/assets/atletas/atleta_1.jpg" class="foto-atleta">
-                            <span class="linha-nome">
-                                <h4 class="nome-atleta">João Victor</h4>
-                                <img src="/assets/selo_invesport.png" class="selo">
-                            </span>
-                            <h4 class="cidade">Barueri-SP</h4>
-                            <a href="/perfil-atleta" class="ver-perfil">Ver perfil</a>
-                        </div>
-
-                        <div class="usuario-atleta">
-                            <img src="assets/atletas/atleta_2.jpg" class="foto-atleta">
-                            <span class="linha-nome">
-                                <h4 class="nome-atleta">Fabricio Santos</h4>
-                                <img src="assets/selo_invesport.png" class="selo">
-                            </span>
-                            <h4 class="cidade">Osasco-SP</h4>
-                            <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
-                        </div>
-
-                        <div class="usuario-atleta">
-                            <img src="assets/atletas/atleta_1.jpg" class="foto-atleta">
-                            <span class="linha-nome">
-                                <h4 class="nome-atleta">João Victor</h4>
-                                <img src="assets/selo_invesport.png" class="selo">
-                            </span>
-                            <h4 class="cidade">Rio de Janeiro-RJ</h4>
-                            <a href="/perfil-atleta" class="ver-perfil">Ver perfil</a>
-                        </div>
-
-                        <div class="usuario-atleta">
-                            <img src="assets/atletas/atleta_2.jpg" class="foto-atleta">
-                            <h4 class="nome-atleta">João Henrique</h4>
-                            <h4 class="cidade">Barueri-SP</h4>
-                            <a href="/perfil-atleta" class="ver-perfil">Ver perfil</a>
-                        </div>
+                        <% data.usuarios.forEach(usuario => { %>
+                            <div class="usuario-atleta">
+                                <img src="/assets/perfil/user.png" class="foto-atleta">
+                                <span class="linha-nome">
+                                    <h4 class="nome-atleta"><%- usuario.nome %></h4>
+                                    <img src="/assets/selo_invesport.png" class="selo">
+                                </span>
+                                <h4 class="cidade"><%- usuario.cidade %>-<%- usuario.estado %></h4>
+                                <a href="/perfil-atleta/<%- usuario.id %>" class="ver-perfil">Ver perfil</a>
+                            </div>
+                        <% }) %>
                     </div>
                 </div>
 
                 <div class="clubes">
                     <a href="/feed-clube" class="btn-clubes">
-                        <img src="/assets/home/time-circulo.png" class="icone-clubes">
+                        <img src="/assets/cadastro-login/time-circulo.png" class="icone-clubes">
                         <h3 class="titulo">Clubes</h3>
                     </a>
                     
                     <div class="perfis-clubes">
-                        <div class="usuario-clube">
-                            <img src="/assets/times/Fluminense.jpg" class="foto-clube">
-                            <span class="linha-nome">
-                                <h4 class="nome-clube">Fluminense F.C.</h4>
-                                <img src="assets/selo_invesport.png" class="selo">
-                            </span>
-                            <h4 class="cidade">Laranjeiras-RJ</h4>
-                            <a href="/perfil-atleta" class="ver-perfil">Ver perfil</a>
-                        </div>
-
-                        <div class="usuario-clube">
-                            <img src="/assets/times/EC-BAHIA.png" class="foto-clube">
-                            <span class="linha-nome">
-                                <h4 class="nome-clube">Esporte Clube Bahia</h4>
-                                <img src="assets/selo_invesport.png" class="selo">
-                            </span>
-                            <h4 class="cidade">Salvador-BA</h4>
-                            <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
-                        </div>
-
-                        <div class="usuario-clube">
-                            <img src="assets/times/Fluminense.jpg" class="foto-clube">
-                            <span class="linha-nome">
-                                <h4 class="nome-clube">Fluminense F.C.</h4>
-                                <img src="assets/selo_invesport.png" class="selo">
-                            </span>
-                            <h4 class="cidade">Laranjeiras-RJ</h4>
-                            <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
-                        </div>
-
-                        <div class="usuario-clube">
-                            <img src="assets/times/EC-BAHIA.png" class="foto-clube">
-                            <h4 class="nome-clube">Esporte Clube Bahia</h4>
-                            <h4 class="cidade">Salvador-BA</h4>
-                            <a href="perfil-atleta" class="ver-perfil">Ver perfil</a>
-                        </div>
+                        <% data.clubes.forEach(clube => { %>
+                            <div class="usuario-atleta">
+                                <img src="/assets/atletas/atleta_1.jpg" class="foto-atleta">
+                                <span class="linha-nome">
+                                    <h4 class="nome-atleta"><%- clube.nome %></h4>
+                                    <img src="/assets/selo_invesport.png" class="selo">
+                                </span>
+                                <h4 class="cidade"><%- clube.cidade %>-<%- clube.estado %></h4>
+                                <a href="/perfil-atleta" class="ver-perfil">Ver perfil</a>
+                            </div>
+                        <% }) %>
                     </div>
                 </div>
             </section>

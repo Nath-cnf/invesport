@@ -184,6 +184,9 @@ main{
 }
 
 .assinar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 13rem;
     height: 2.5rem;
     background-color: var(--azul);
@@ -191,6 +194,7 @@ main{
     color: #ffffff;
     border-radius: 28px;
     font-size: 1.1rem;
+    text-decoration: none;
 }
 
 

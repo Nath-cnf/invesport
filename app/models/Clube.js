@@ -23,6 +23,16 @@ class Clube {
         })
     }
 
+    async findAllClubes(clubeId) {
+        return await prisma.clube.findMany({
+            where: {
+                NOT: {
+                    id: clubeId
+                }
+            }
+        });
+    }
+
     async updateUserSenha(novaSenha, email) {
         await prisma.clube.update({
             where: {

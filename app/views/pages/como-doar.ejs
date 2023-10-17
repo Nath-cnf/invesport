@@ -6,21 +6,21 @@
     <title><%- data.page_name %></title>
 </head>
 <body>
-    <%- include('../templates/header.ejs') %>
-
+    
+<%- data.usuario_logado ? include('../templates/header-perfil.ejs') : include('../templates/header.ejs') %>
     <main>
         <div class="topo">
         <h2 class="como-doar">
             Como posso <b> doar</b>?
         </h2>
-        <img src="/assets/doubt.png" alt="duvida" class="boneco-duvida">
+        <img src="/assets/como-doar/doubt.png" alt="duvida" class="boneco-duvida">
         </div>
 
         <div class="branca">
             <h3 class="passo">1-Passo</h3> <br>
             <p class="descricao">No menu, clique em "Clubes e Atletas"</p> <br>
             <div class="imagem">
-                <img src="" alt="">
+                <img src="/assets/como-doar/clubes-atletas-prints.jpg" alt="clubes-atletas">
             </div>
         </div>
 
@@ -28,7 +28,7 @@
             <h3>2-Passo</h3> <br>
             <p>Ache o perfil desejado</p> <br>
             <div class="imagem">
-                <img src="" alt="">
+                <img src="/assets/como-doar/perfil-escolhido-prints.jpeg">
             </div>
         </div>
 
@@ -36,7 +36,7 @@
             <h3>3-Passo</h3> <br>
             <p>Clique no botão "DOAR", no perfil escolhido</p> <br>
             <div class="imagem">
-                <img src="" alt="">
+                <button class="b-doar">Doar</button>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
             <h3>5-Passo</h3> <br>
             <p>Escaneie o QR code</p> <br>
             <div class="imagem">
-                <img src="../assets/como-doar/qr-scan.png" id="escanear-qr">
+                <img src="/assets/como-doar/qr-scan.png" id="escanear-qr">
             </div>
         </div>
 
@@ -60,7 +60,7 @@
             <h3>6-Passo</h3> <br>
             <p>Efetue o pagamento do valor desejado</p> <br>
             <div class="imagem">
-                <img src="" alt="">
+                <img src="/assets/como-doar/valor-prints.jpg" alt="">
             </div>
         </div>
 
@@ -68,19 +68,23 @@
             <h3>7-Passo</h3> <br>
             <p>Anexe o compravante no perfil escolhido</p> <br>
             <div class="imagem">
-                <img src="" alt="">
+                <button class="btn-anexar">
+                    Anexar
+                </button>
             </div>
         </div>
 
         <div class="laranja">
             <h3>8-Passo</h3> <br>
             <p>Apoie mais sonhos</p> <br>
-            <div class="imagem">
-                <img src="" alt="">
+            <div class="passo-final">
+                <img src="/assets/como-doar/Awards.png" alt="awards-sonhos" class="apoie-sonhos">
             </div>
         </div>
 
+        <div class="btn-apoiar">
         <button class="Apoie"><a href="/feed">Apoiar</a></button>
+        </div>
     </main>
 
     <%- include('../templates/rodape.ejs') %>

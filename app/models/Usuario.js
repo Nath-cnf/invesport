@@ -18,12 +18,33 @@ class Usuario {
         })
     }
 
+    async addChavePix(chavePix, userId) {
+        return await prisma.usuario.update({
+            where: {
+                id: userId
+            },
+            data: {
+                chave_pix: chavePix
+            }
+        })
+    }
+
     async findUserByEmail(usuarioEmail) {
         return await prisma.usuario.findUnique({
             where: {
                 email: usuarioEmail
             }
         })
+    }
+
+    async findAllUsers(userId) {
+        return await prisma.usuario.findMany({
+            where: {
+                NOT: {
+                    id: userId
+                }
+            }
+        });
     }
 
     async updateUserSenha(novaSenha, email) {
@@ -37,12 +58,34 @@ class Usuario {
         })
     }
 
+    async updateUserCustomerId(userId, customerId) {
+        return await prisma.usuario.update({
+            where: {
+                id: userId
+            },
+            data: {
+                customer_id: customerId        
+            }
+        })
+    }
+
     async updateUser(data, userId) {
         await prisma.usuario.update({
             where: {
                 id: userId
             },
             data
+        })
+    }
+
+    async addUserPremiumByCustomerId(customerId) {
+        await prisma.usuario.update({
+            where: {
+                customer_id: customerId
+            },
+            data: {
+                
+            }
         })
     }
 
