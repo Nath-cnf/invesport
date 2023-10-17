@@ -98,6 +98,30 @@ class Autenticacao {
             return res.render("pages/login-atleta.ejs");
         }
     }
+
+    validateTokenAdmin(req, res, next) {
+        const token = req.session.token;
+
+        if (!token) {
+            return res.redirect("/login-atleta");
+        }
+
+        const {userType} = jwt.decode(token, process.env.SECRET);
+
+        if (userType !== "admin") {
+            return res.redirect("/login-atleta");
+        }
+
+        try {
+            jwt.verify(token, process.env.SECRET);
+
+            return next();
+        } catch (erro) {
+            console.log(erro);
+
+            return res.render("pages/login-atleta.ejs");
+        }
+    }
 }
 
 const autenticacaoMiddleware = new Autenticacao();
