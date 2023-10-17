@@ -169,6 +169,7 @@ h2 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
         width: calc(100vw - 50px);
     }
 
@@ -220,6 +221,7 @@ h2 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
     }
 
     .barra-pesquisa{

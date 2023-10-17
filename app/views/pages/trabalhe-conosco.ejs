@@ -3,38 +3,47 @@
 
 <head>
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" href="/css/trabalhe-conosco.css">
-    <title><%- data.page_name %></title>
+        <link rel="stylesheet" href="/css/trabalhe-conosco.css">
+        <title><%- data.page_name %></title>
 </head>
 
 <body>
     <%- include('../templates/header.ejs') %>
         <main>
             <div class="topo">
-            <h1 class="sobre">Sobre o <b class="inve">Inve</b><b class="sport">Sport</b></h1>
+                <h1 class="sobre">Sobre o <b class="inve">Inve</b><b class="sport">Sport</b></h1>
             </div>
             <div class="apresenta">
-            <p>
-                O InveSport é um website desenvolvido como trabalho de conclusão de curso do ensino médio técnico para o
-                curso de Informática para a Internet na Fundação Instituto de Educação de Barueri (FIEB). Desde o
-                início, o foco do projeto é social, sendo direcionado ao esporte brasileiro e a falta de investimento
-                que esse tema enfrenta.
-                Sabemos que o esporte brasileiro é, em grande parte, o que mais exportamos em relação à nossa cultura.
-                Apesar disso, o cenário desportivo no Brasil carece de financiamento por parte do governo, o que resulta
-                em condições precárias de treinamento e pouca chance de retorno dos esforços de atletas e clubes.
-                O objetivo principal do InveSport é mudar essa situação e ajudar o esporte brasileiro a conquistar
-                maiores possibilidades com apoio do povo.
-            </p>
+                <p>
+                    O InveSport é um website desenvolvido como trabalho de conclusão de curso do ensino médio técnico
+                    para o
+                    curso de Informática para a Internet na Fundação Instituto de Educação de Barueri (FIEB). Desde o
+                    início, o foco do projeto é social, sendo direcionado ao esporte brasileiro e a falta de
+                    investimento
+                    que esse tema enfrenta.
+                    Sabemos que o esporte brasileiro é, em grande parte, o que mais exportamos em relação à nossa
+                    cultura.
+                    Apesar disso, o cenário desportivo no Brasil carece de financiamento por parte do governo, o que
+                    resulta
+                    em condições precárias de treinamento e pouca chance de retorno dos esforços de atletas e clubes.
+                    O objetivo principal do InveSport é mudar essa situação e ajudar o esporte brasileiro a conquistar
+                    maiores possibilidades com apoio do povo.
+                </p>
             </div>
-            <div class="ajudar">
-            <h2 class="como">Como nos ajudar</h2>
-            </div>
-            <img src="/assets/trabalhe-conosco/trabalhe_conosco.png" alt="boneco-duvida" class="boneco-duvida">
-            <p>
-                Apoie nossos atletas e clubes cadastrados doando direto na conta deles pelos qr codes adicionados em
-                seus perfis. Ou, se for atleta/clube interessado em nosso site, cadastre-se, mantenha seu perfil
-                atualizado com um qr code anexado e se puder, ajude os outros usuários a conquistarem seus sonhos.
-            </p>
+            
+            <section class="ajudar">
+                <h2 class="como">Como nos ajudar</h2>
+                <div class="container-como">
+                    <img src="/assets/trabalhe-conosco/trabalhe_conosco.png" alt="boneco-duvida" class="boneco-duvida">
+                    <p>
+                        Apoie nossos atletas e clubes cadastrados doando direto na conta deles pelos qr codes
+                        adicionados em
+                        seus perfis. Ou, se for atleta/clube interessado em nosso site, cadastre-se, mantenha seu perfil
+                        atualizado com um qr code anexado e se puder, ajude os outros usuários a conquistarem seus
+                        sonhos.
+                    </p>
+                </div>
+            </section>
         </main>
 
         <%- include('../templates/rodape.ejs') %>
