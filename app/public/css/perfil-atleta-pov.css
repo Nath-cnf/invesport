@@ -35,9 +35,7 @@ main{
 }
 
 .bio{
-    width: calc( 100vw - 50px);
     background-color: #ffffff;
-    margin: 0 25px 0 25px;
 }
 
 .edit-perfil{
@@ -434,6 +432,11 @@ main{
 
 @media screen and (max-width: 1023px) {
 
+    .bio{
+        width: calc( 100vw - 50px);
+        margin: 0px 25px 0px 25px;
+    }
+
     /* MENU SOBRE */
 
     #sobre {
@@ -460,13 +463,11 @@ main{
     }
 
     .tabs {
-        width: 100vw;
         padding: 10px 50px;
     }
 
     .bio {
         width: 100vw;
-        background-color: #ffffff;
     }
 
     .info-bio {
@@ -543,6 +544,7 @@ main{
     }
 
     .grid-portifolio {
+        width: 100%;
         margin: 15px 25px;
         row-gap: 20px;
         column-gap: 15vw;
