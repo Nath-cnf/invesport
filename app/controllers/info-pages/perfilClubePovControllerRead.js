@@ -1,9 +1,17 @@
+const clubeModel = require("../../models/Clube");
+const jwt = require("jsonwebtoken");
+
 class perfilClubePovControllerRead {
    async getPage(req, res) {
-        const userId = req.params.idClube
-        res.render("pages/perfil-clube-pov.ejs", {
+        const token = req.session.token;
+        const {userId, userType} = jwt.decode(token, process.env.SECRET);
+
+        const clube = await clubeModel.findUserById(userId);
+
+        return res.render("pages/perfil-clube-pov.ejs", {
             data: {
-                page_name: "Invesport"
+                page_name: "Invesport",
+                clube
             }
         })
     }

@@ -25,6 +25,10 @@ header {
 }
 
 .btn-sair{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     font-weight: 600;
     font-size: 17px;
     margin-top: 20px;
@@ -277,6 +281,10 @@ footer{
     }
 
     .btn-sair{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
         font-weight: 600;
         font-size: 17px;
         margin-top: 20px;

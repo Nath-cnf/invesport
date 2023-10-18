@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <%- include('../templates/head.ejs') %>
+    <%- include('../../templates/head-admin.ejs') %>
+    <link rel="stylesheet" href="/css/tokens.css">
     <title><%- data.page_name %></title>
 </head>
-<body>
-    <%- include('../templates/header.ejs') %>
 
-    <!-- VIEW SUBSCRIPTION PLAN -->
-    
-    <%- include('../templates/rodape.ejs') %>
+<body>
+    <%- include('../../templates/header-admin.ejs') %>
+
+    <main>
+        <h2 class="t-tokens">Tabela de benefícios da assinatura</h2>
+
+        <a href="/cadastrar-beneficio-assinatura">Cadastrar benefício para assinatura</a>
+
+        <div class="tabela-token">
+            <table>
+                <tr>
+                    <th>Beneficio</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+                </tr>
+
+                <% data.beneficiosAssinatura.forEach(beneficioAssinatura => { %>
+                <tr>
+                    <td><%- beneficioAssinatura.beneficios %></td>
+                    <td><a href="/editar-beneficio-assinatura/<%- beneficioAssinatura.id %>">Editar</a></td>
+                    <td><a href="/deletar-beneficio-assinatura/<%- beneficioAssinatura.id %>">Deletar</a></td>
+                </tr>
+                <% }) %>
+            </table>
+        </div>
+    </main>
+
+    <%- include('../../templates/footer-admin.ejs') %>
 </body>
+
 </html>

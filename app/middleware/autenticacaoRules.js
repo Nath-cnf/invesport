@@ -125,7 +125,13 @@ const validationMiddlewareRules = {
         .trim()
         .notEmpty()
         .withMessage("Adicione a sua chave PIX!")
-    ]
+    ],
+    cadastrarBeneficioAssinaturaValidacao: [
+        body("beneficio_assinatura")
+        .trim()
+        .isLength({min: 3})
+        .withMessage("O benefício deve ter no mínimo 3 caracteres!")
+    ],
 }
 
 module.exports = validationMiddlewareRules;

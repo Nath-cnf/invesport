@@ -64,7 +64,7 @@ class Usuario {
                 id: userId
             },
             data: {
-                customer_id: customerId        
+                customer_id: customerId
             }
         })
     }
@@ -84,7 +84,18 @@ class Usuario {
                 customer_id: customerId
             },
             data: {
-                
+                premium: 1
+            }
+        })
+    }
+
+    async removeUserPremiumByCustomerId(customerId) {
+        await prisma.usuario.update({
+            where: {
+                customer_id: customerId
+            },
+            data: {
+                premium: 0
             }
         })
     }
@@ -95,8 +106,8 @@ class Usuario {
                 id: userId
             },
             select: {
-                imagem_perfil,
-                imagem_perfil_type
+                imagem_perfil: true,
+                imagem_perfil_type: true
             }
         })
     }
@@ -107,8 +118,48 @@ class Usuario {
                 id: userId
             },
             select: {
-                banner_perfil,
-                banner_image_type
+                banner_perfil: true,
+                banner_image_type: true
+            }
+        })
+    }
+
+    async countUserPremium() {
+        return await prisma.usuario.count({
+            where: {
+                premium: 1
+            }
+        })
+    }
+
+    async findAllUsersPesquisa(filtroPesquisa) {
+        return await prisma.usuario.findMany({
+            where: {
+                OR: [
+                    {
+                        email: {
+                            contains: filtroPesquisa
+                        }
+                    },
+                    {
+                        nome: {
+                            contains: filtroPesquisa
+                        }
+                    },
+                    {
+                        id: {
+                            contains: filtroPesquisa
+                        }
+                    }
+                ]
+            }
+        })
+    }
+
+    async deleteUser(userId) {
+        return await prisma.usuario.delete({
+            where: {
+                id: userId
             }
         })
     }

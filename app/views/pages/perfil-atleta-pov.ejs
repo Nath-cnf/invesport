@@ -13,8 +13,8 @@
     <main>
       <section>
         <div class="pic-perfil">
-          <img src="/assets/perfil/banner-perfil.jpg" class="capa-perfil" />
-          <img src="/assets/perfil/user.png" class="foto-perfil" />
+          <img src="<%- data.usuario.banner_perfil ? `/assets/atleta/banner/${data.usuario.id}` : "/assets/perfil/banner-perfil.jpg" %>" class="capa-perfil" />
+          <img src="<%- data.usuario.imagem_perfil ? `/assets/atleta/perfil/${data.usuario.id}` : "/assets/perfil/user.png" %>" class="foto-perfil" />
           <a href="/editar-perfil-atleta" class="edit-perfil">
             <img src="/assets/perfil/edit-perfil.png" alt="edit-icon">Editar perfil
           </a>

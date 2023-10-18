@@ -35,9 +35,9 @@ class CadastroClubeControllerCreate {
         case "P2002":
           const esportesLista = await esporteModel.findAllEsportes();
 
-          return res.render("pages/cadastro-atleta.ejs", {
+          return res.render("pages/cadastro-clube.ejs", {
             data: {
-              esportesLista,
+              esportes: esportesLista,
               page_name: "Invesport",
               input_values: {
                 nome,

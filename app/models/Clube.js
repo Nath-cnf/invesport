@@ -59,8 +59,8 @@ class Clube {
                 id: userId
             },
             select: {
-                imagem_perfil,
-                imagem_perfil_type
+                imagem_perfil: true,
+                imagem_perfil_type: true
             }
         })
     }
@@ -71,8 +71,8 @@ class Clube {
                 id: userId
             },
             select: {
-                banner_perfil,
-                banner_image_type
+                banner_perfil: true,
+                banner_image_type: true
             }
         })
     }

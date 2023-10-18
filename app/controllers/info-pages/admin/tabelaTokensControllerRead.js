@@ -1,8 +1,13 @@
+const tokenModel = require("../../../models/Token");
+
 class tabelaTokensControllerRead {
-    getPage(req, res) {
-        res.render("pages/admin/tabela-tokens.ejs", {
+    async getPage(req, res) {
+        const tokens = await tokenModel.findAllTokens();
+
+        return res.render("pages/admin/tabela-tokens.ejs", {
             data: {
-                page_name: "Invesport"
+                page_name: "Invesport",
+                tokens
             }
         })
     }

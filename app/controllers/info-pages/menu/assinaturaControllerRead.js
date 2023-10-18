@@ -1,5 +1,7 @@
+const beneficioAssinaturaModel = require("../../../models/BeneficiosAssinatura");
+
 class assinaturaControllerRead {
-    getPage(req, res) {
+    async getPage(req, res) {
         const token = req.session.token;
         let usuario_logado = false;
 
@@ -7,10 +9,13 @@ class assinaturaControllerRead {
             usuario_logado = true;
         }
 
+        const beneficiosAssinatura = await beneficioAssinaturaModel.findAllBeneficiosAssinatura();
+
         res.render("pages/assinatura.ejs", {
             data: {
                 page_name: "Invesport",
-                usuario_logado
+                usuario_logado,
+                beneficiosAssinatura
             }
         })
     }
