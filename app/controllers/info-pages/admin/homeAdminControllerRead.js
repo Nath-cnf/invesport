@@ -1,8 +1,18 @@
+const usuarioModel = require("../../../models/Usuario");
+const clubeModel = require("../../../models/Clube");
+
 class homeAdminControllerRead {
-    getPage(req, res) {
+    async getPage(req, res) {
+        const usuarios = await usuarioModel.findAllUsers("");
+        const clubes = await clubeModel.findAllClubes("");
+        const quantidadeUsuariosPremium = await usuarioModel.countUserPremium();
+
         res.render("pages/admin/home-admin.ejs", {
             data: {
-                page_name: "Invesport"
+                page_name: "Invesport",
+                usuarios,
+                clubes,
+                quantidadeUsuariosPremium
             }
         })
     }

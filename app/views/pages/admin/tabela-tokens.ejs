@@ -1,46 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <%- include('../../templates/head-admin.ejs') %>
     <link rel="stylesheet" href="/css/tokens.css">
     <title><%- data.page_name %></title>
 </head>
+
 <body>
-    <header>
-        <nav class="cabecalho">
-          <button class="btn-menu" data-menu-btn>
-            <i class="bx bx-menu" id="i-menu"></i>
-          </button>
-          <div class="mobile-menu" data-menu>
-            <ul>
-              <div class="itens">
-                <li class="nav-item"><a href="/admin" class="nav-link">Usuários</a></li>
-              </div>
-              <hr />
-              <div class="itens">
-                <li class="nav-item">
-                  <a href="/assinatura-admin" class="nav-link">Assinatura</a>
-                </li>
-              </div>
-              <hr />
-              <div class="itens">
-                <li class="nav-item">
-                  <a href="/tabela-tokens" class="nav-link">Tokens</a>
-                </li>
-              </div>
-              <hr/>
-              <button class="btn-sair">Sair</button>
-            </ul>
-  
-          </div>
-          <a href="/home"
-            ><img src="assets/logo/logo-horizontal.png" class="logo-invesport"
-          /></a>
-          <a href="/perfil-atleta" class="btn-user"
-            ><i class="bx bx-user-circle" id="i-user"></i
-          ></a>
-        </nav>
-    </header>
+    <%- include('../../templates/header-admin.ejs') %>
 
     <main>
         <h2 class="t-tokens">Tabela de Tokens</h2>
@@ -54,7 +22,7 @@
                 </tr>
 
                 <% data.tokens.forEach(token => { %>
-                  <tr>
+                <tr>
                     <td><%- token.email %></td>
                     <td><%- token.id %></td>
                     <td><%- token.created_at.getDate() %>/<%- String(token.created_at.getMonth() + 1).padStart(2, "0") %>/<%- token.created_at.getFullYear() %></td>
@@ -63,11 +31,8 @@
             </table>
         </div>
     </main>
-    
-    <footer>
-        <div class="footer-card">
-          <img src="/assets/logo/240px.png"/>
-        </div>
-      </footer>
+
+    <%- include('../../templates/footer-admin.ejs') %>
 </body>
+
 </html>

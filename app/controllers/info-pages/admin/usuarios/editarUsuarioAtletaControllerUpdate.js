@@ -1,15 +1,13 @@
-const esporteModel = require("../../models/Esporte");
-const usuarioModel = require("../../models/Usuario");
-const jwt = require("jsonwebtoken");
+const esporteModel = require("../../../../models/Esporte");
+const usuarioModel = require("../../../../models/Usuario");
 
-class EditarAtletaController {
+class EditarUsuarioAtletaController {
 	async editarUser(req, res) {
-		const token = req.session.token;
 		const esportes = await esporteModel.findAllEsportes();
-		const { userId } = jwt.decode(token, process.env.SECRET);
+		const usuarioId = req.params.usuarioId;
 
 		const { nome, esporte, cnpj_clube, cidade, estado, email } = req.body;
-		const user = await usuarioModel.findUserById(userId);
+		const user = await usuarioModel.findUserById(usuarioId);
 		const files = req.files;
 
 		let banner_perfil = files.find((file) => file.fieldname === "banner_perfil");
@@ -35,10 +33,10 @@ class EditarAtletaController {
 					estado,
 					email,
 				},
-				userId
+				usuarioId
 			);
 
-			res.redirect("/perfil-atleta");
+			res.redirect(`/admin#usuario-${usuarioId}`);
 		} catch (erro) {
 			console.log(erro);
 
@@ -53,7 +51,7 @@ class EditarAtletaController {
 				userBannerPerfil = true;
 			}
 
-			return res.render("pages/editar-perfil-atleta.ejs", {
+			return res.render("pages/admin/editar-usuario-atleta.ejs", {
 				data: {
 					esportes,
 					page_name: "Invesport",
@@ -79,6 +77,6 @@ class EditarAtletaController {
 	}
 }
 
-const editarAtletaControllerUpdate = new EditarAtletaController();
+const editarUsuarioAtletaControllerUpdate = new EditarUsuarioAtletaController();
 
-module.exports = editarAtletaControllerUpdate;
+module.exports = editarUsuarioAtletaControllerUpdate;

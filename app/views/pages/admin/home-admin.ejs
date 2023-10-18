@@ -1,46 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <%- include('../../templates/head-admin.ejs') %>
     <title><%- data.page_name %></title>
     <link rel="stylesheet" href="/css/home-admin.css">
-  </head>
-  <body>
-    <header>
-      <nav class="cabecalho">
-        <button class="btn-menu" data-menu-btn>
-          <i class="bx bx-menu" id="i-menu"></i>
-        </button>
-        <div class="mobile-menu" data-menu>
-          <ul>
-            <div class="itens">
-              <li class="nav-item"><a href="/admin" class="nav-link">Usuários</a></li>
-            </div>
-            <hr />
-            <div class="itens">
-              <li class="nav-item">
-                <a href="/assinatura-admin" class="nav-link">Assinatura</a>
-              </li>
-            </div>
-            <hr />
-            <div class="itens">
-              <li class="nav-item">
-                <a href="tabela-tokens" class="nav-link">Tokens</a>
-              </li>
-            </div>
-            <hr/>
-            <button class="btn-sair">Sair</button>
-          </ul>
+    <script src="/js/admin/home-admin.js" defer></script>
+</head>
 
-        </div>
-        <a href="/admin"
-          ><img src="assets/logo/logo-horizontal.png" class="logo-invesport"
-        /></a>
-        <a href="/perfil-atleta" class="btn-user"
-          ><i class="bx bx-user-circle" id="i-user"></i
-        ></a>
-      </nav>
-    </header>
+<body>
+    <%- include('../../templates/header-admin.ejs') %>
 
     <!-- VIEW USERS -->
 
@@ -49,51 +18,72 @@
     <div id="container-contador">
         <div id="caixa-contador">
             <span class="t-contador">Cadastros</span>
-            <p class="n-contador">39</p>
+            <p class="n-contador"><%- data.usuarios.length + data.clubes.length %></p>
         </div>
         <div id="caixa-contador">
             <span class="t-contador">Assinantes</span>
-            <p class="n-contador">18</p>
+            <p class="n-contador"><%- data.quantidadeUsuariosPremium %></p>
         </div>
     </div>
 
     <div class="container-pesquisa">
-      <div class="container-lupa">
-        <img src="/assets/admin/search.png">
-      </div>
-      <input type="search" name="pesquisar-usuarios" id="pesquisar" placeholder=" Search">
+        <div class="container-lupa">
+            <img src="/assets/admin/search.png">
+        </div>
+        <form action="/pesquisar-usuarios" method="get" id="pesquisar-form">
+            <input type="search" name="pesquisar_usuarios" id="pesquisar" placeholder=" Search" <%- data.filtroPesquisa ? `value="${data.filtroPesquisa}"` : "" %>>
+        </form>
     </div>
 
-    <div id="container-user">
-        <div id="caixa-user">
-          <div class="info-user">
-            <li>User: nome_user</li>
-            <li>Id: id_user</li>
-            <li>E-mail: email_user</li>
-          </div>
-            <div class="config-user">
-              <img src="/assets/admin/setting.png">
+    <h2>Atletas</h2>
+
+    <% data.usuarios.forEach(usuario => { %>
+    <div class="container-user" id="usuario-<%- usuario.id %>">
+        <div class="caixa-user">
+            <div class="info-user">
+                <li>User: <%- usuario.nome %></li>
+                <li>Id: <%- usuario.id %></li>
+                <li>E-mail: <%- usuario.email %></li>
+            </div>
+            <div class="config-user" data-config-user>
+                <img src="/assets/admin/setting.png">
             </div>
         </div>
+        <div class="container-links-user">
+            <div class="links-user">
+                <a href="/editar-usuario/<%- usuario.id %>">Editar</a>
 
-        <div id="container-user">
-          <div id="caixa-user">
-            <div class="info-user">
-              <li>User: nome_user</li>
-              <li>Id: id_user</li>
-              <li>E-mail: email_user</li>
+                <a href="/deletar-usuario/<%- usuario.id %>">Deletar</a>
             </div>
-              <div class="config-user">
-                <img src="/assets/admin/setting.png">
-              </div>
-          </div>
-        
+        </div>
     </div>
+    <% }) %>
 
-    <footer>
-      <div class="footer-card">
-        <img src="/assets/logo/240px.png"/>
-      </div>
-    </footer>
-  </body>
+    <h2>Clubes</h2>
+
+    <% data.clubes.forEach(clube => { %>
+    <div class="container-user" id="clube-<%- clube.id %>">
+        <div class="caixa-user">
+            <div class="info-user">
+                <li>User: <%- clube.nome %></li>
+                <li>Id: <%- clube.id %></li>
+                <li>E-mail: <%- clube.email %></li>
+            </div>
+            <div class="config-user" data-config-user>
+                <img src="/assets/admin/setting.png">
+            </div>
+        </div>
+        <div class="container-links-user">
+            <div class="links-user">
+                <a href="/editar-usuario/<%- clube.id %>">Editar</a>
+
+                <a href="/deletar-usuario/<%- clube.id %>">Deletar</a>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+
+    <%- include('../../templates/footer-admin.ejs') %>
+</body>
+
 </html>

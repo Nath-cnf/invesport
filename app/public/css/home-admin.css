@@ -1,104 +1,123 @@
-body{
-    margin: 75px 0px 25px 0px;
+body {
+	margin: 75px 0px 25px 0px;
 }
 
-.titulo-admin{
-    color: #14248a;
-    font-size: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.titulo-admin {
+	color: #14248a;
+	font-size: 1.5rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
-#container-contador{
+#container-contador {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+#caixa-contador {
+	display: flex;
+	flex-direction: column;
+	background-color: #ff5b00;
+	border-radius: 15px;
+	width: 160px;
+	height: 160px;
+	color: #ffff;
+	justify-content: center;
+	align-items: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.t-contador {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.n-contador {
+	font-weight: 400;
+}
+
+.container-pesquisa {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.container-lupa {
+	width: 2em;
+	height: 2.5em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: #14248a;
+}
+
+#pesquisar-form {
+	width: 85%;
+}
+
+#pesquisar {
+	height: 40px;
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid #14248a;
+}
+
+#pesquisar::placeholder {
+	color: #14248a;
+	font-weight: 400;
+}
+
+.container-links-user {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 350ms ease;
+}
+
+.container-links-user.ativo {
+	grid-template-rows: 1fr;
+}
+
+.caixa-user {
+	display: flex;
+	justify-content: space-between;
+	background-color: #eeeeee;
+	padding: 8px;
+	margin: 15px;
+	border-radius: 15px;
+	box-shadow: 5px 5px 2px 3px #c0c0c0aa;
+}
+
+.info-user {
+	display: flex;
+	flex-direction: column;
+}
+
+.config-user {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.config-user > img {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.links-user {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+	overflow: hidden;
 }
 
-#caixa-contador{
-    display: flex;
-    flex-direction: column;
-    background-color: #ff5b00;
-    border-radius: 15px;
-    width: 160px;
-    height: 160px;
-    color: #ffff;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.t-contador{
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.n-contador{
-    font-weight: 400;
-}
-
-.container-pesquisa{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.container-lupa{
-    width: 2em;
-    height: 2.5em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #14248a;
-}
-
-#pesquisar{
-    height: 40px;
-    width: 85%;
-    border: none;
-    border-bottom: 2px solid #14248a;
-}
-
-#pesquisar::placeholder{
-    color: #14248a;
-    font-weight: 400;
-}
-
-#container-user{
-    display: flex;
-    flex-direction: column;
-
-}
-
-#caixa-user{
-    display: flex;
-    justify-content: space-between;
-    background-color: #eeeeee;
-    padding: 8px;
-    margin: 15px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 2px 3px  #c0c0c0aa;
-}
-
-.info-user{
-    display: flex;
-    flex-direction: column;
-}
-
-.config-user{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.config-user > img{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    flex-direction: column-reverse;
+.links-user a {
+    display: block;
+    margin: 10px 0 10px 20px;
 }

@@ -19,13 +19,19 @@
         <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
 
         <span class="imagens-perfil">
-            <label for="banner_perfil">Banner perfil</label>
+            <label for="banner_perfil" <%-
+            data.erros && data.erros.banner_perfil_erro ? `class="erro"` : "" %>>Banner perfil</label>
             <input type="file" name="banner_perfil" id="banner_perfil">
-            <img src="<%- data.userBannerPerfil ? "/assets/perfil/imagens_usuarios/banner-perfil.jpg" : "/assets/perfil/banner-perfil.jpg" %>" alt="Banner perfil" id="banner_perfil_image">
-        
-            <label for="imagem-perfil">Imagem perfil</label>
+            <img src="<%- data.input_values.userBannerPerfil ? `/assets/atleta/banner/${data.input_values.id}` : "/assets/perfil/banner-perfil.jpg" %>" alt="Banner perfil" id="banner_perfil_image">
+
+            <%- data.erros && data.erros.banner_perfil_erro ? `<span class="mensagem-erro">${data.erros.banner_perfil_erro.msg}</span>` : "" %>
+
+            <label for="imagem-perfil" <%-
+            data.erros && data.erros.imagem_perfil_erro ? `class="erro"` : "" %>>Imagem perfil</label>
             <input type="file" name="imagem_perfil" id="imagem_perfil">
-            <img src="<%- data.userImagemPerfil ? "/assets/perfil/imagens_usuarios/perfil-victor.jpeg" : "/assets/perfil/user.png" %>" alt="Imagem perfil" id="imagem_perfil_image">
+            <img src="<%- data.input_values.userImagemPerfil ? `/assets/atleta/perfil/${data.input_values.id}` : "/assets/perfil/user.png" %>" alt="Imagem perfil" id="imagem_perfil_image">
+
+            <%- data.erros && data.erros.imagem_perfil_erro ? `<span class="mensagem-erro">${data.erros.imagem_perfil_erro.msg}</span>` : "" %>
         </span>
 
         <span class="campos-form">

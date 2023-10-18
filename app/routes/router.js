@@ -67,8 +67,11 @@ const sucessoControllerRead = require("../controllers/perfil/assinatura/sucessoC
 
 
 // * IMAGENS
-const imagensBannerControllerRead = require("../controllers/info-pages/imagens/imagensBannerControllerRead");
-const imagensUsuariosControllerRead = require("../controllers/info-pages/imagens/imagensUsuariosControllerRead");
+
+const imagemPerfilAtletaControllerRead = require("../controllers/info-pages/imagens/imagemUsuarioAtletaControllerRead");
+const imagemPerfilClubeControllerRead = require("../controllers/info-pages/imagens/imagemUsuarioClubeControllerRead");
+const imagemBannerAtletaControllerRead = require("../controllers/info-pages/imagens/imagemBannerAtletaControllerRead");
+const imagemBannerClubeControllerRead = require("../controllers/info-pages/imagens/imagemBannerClubeControllerRead");
 
 // * EDITAR
 const editarAtletaControllerRead = require("../controllers/perfil/editarAtletaControllerRead");
@@ -76,7 +79,25 @@ const editarAtletaControllerIUpdate = require("../controllers/perfil/editarAtlet
 
 // * ADMIN
 const homeAdminControllerRead = require("../controllers/info-pages/admin/homeAdminControllerRead");
+
 const tabelaTokensControllerRead = require("../controllers/info-pages/admin/tabelaTokensControllerRead");
+
+const pesquisarUsuarioControllerRead = require("../controllers/info-pages/admin/pesquisarUsuarioControllerRead");
+
+const editarUsuarioControllerRead = require("../controllers/info-pages/admin/usuarios/editarUsuarioControllerRead");
+const editarUsuarioAtletaControllerUpdate = require("../controllers/info-pages/admin/usuarios/editarUsuarioAtletaControllerUpdate");
+
+const assinaturaAdminControllerRead = require("../controllers/info-pages/admin/beneficiosAssinatura/beneficioAssinaturaAdminControllerRead");
+
+const cadastrarBeneficioAssinaturaAdminControllerRead = require("../controllers/info-pages/admin/beneficiosAssinatura/cadastrarBeneficioAssinaturaAdminControllerRead");
+const cadastrarBeneficioAssinaturaAdminControllerCreate = require("../controllers/info-pages/admin/beneficiosAssinatura/cadastrarBeneficioAssinaturaControllerCreate");
+
+const deletarBeneficiosAssinaturaAdminControllerDelete = require("../controllers/info-pages/admin/beneficiosAssinatura/deletarBeneficioAssinaturaControllerDelete");
+
+const editarBeneficiosAssinaturaControllerRead = require("../controllers/info-pages/admin/beneficiosAssinatura/editarBeneficioAssinaturaControllerRead");
+const editarBeneficiosAssinaturaControllerUpdate = require("../controllers/info-pages/admin/beneficiosAssinatura/editarBeneficioAssinaturaControllerUpdate");
+
+const deletarUsuarioAdminControllerRead = require("../controllers/info-pages/admin/usuarios/deletarUsuarioControllerDelete");
 
 //* WEBHOOK
 const stripeWebhookController = require("../controllers/webhook/stripeWebhook");
@@ -183,13 +204,17 @@ cadastroClubeControllerCreate.createClube);
 
 // * Imagens
 
-router.get("/assets/perfil/banners/:userId",
-autenticacaoMiddleware.validateToken,
-imagensBannerControllerRead.getImage);
+router.get("/assets/atleta/banner/:userId",
+imagemBannerAtletaControllerRead.getImage);
 
-router.get("/assets/perfil/imagens_usuarios/:userId",
-autenticacaoMiddleware.validateToken,
-imagensUsuariosControllerRead.getImage);
+router.get("/assets/atleta/perfil/:userId",
+imagemPerfilAtletaControllerRead.getImage);
+
+router.get("/assets/clube/banner/:userId",
+imagemBannerClubeControllerRead.getImage);
+
+router.get("/assets/clube/banner/:userId",
+imagemPerfilClubeControllerRead.getImage);
 
 // * Editar perfil
 
@@ -199,14 +224,56 @@ editarAtletaControllerRead.getPage);
 
 router.post("/editar-perfil-atleta",
 autenticacaoMiddleware.validateToken,
-upload.single("imagem_perfil"),
+upload.any(),
 autenticacaoRegrasMiddleware.editarCadastroAtletaValidacao,
 autenticacaoFormMiddleware.validarEditarAtletaCadastro,
 editarAtletaControllerIUpdate.editarUser);
 
 // * Admin
-router.get("/admin", homeAdminControllerRead.getPage);
-router.get("/tabela-tokens", tabelaTokensControllerRead.getPage);
+router.get("/admin",
+autenticacaoMiddleware.validateTokenAdmin,
+homeAdminControllerRead.getPage);
+router.get("/tabela-tokens",
+autenticacaoMiddleware.validateTokenAdmin,
+tabelaTokensControllerRead.getPage);
+router.get("/pesquisar-usuarios",
+autenticacaoMiddleware.validateTokenAdmin,
+pesquisarUsuarioControllerRead.getPage);
+router.get("/editar-usuario/:usuarioId",
+autenticacaoMiddleware.validateTokenAdmin,
+editarUsuarioControllerRead.getPage);
+router.post("/editar-usuario-atleta/:usuarioId",
+autenticacaoMiddleware.validateTokenAdmin,
+upload.any(),
+autenticacaoRegrasMiddleware.editarCadastroAtletaValidacao,
+autenticacaoFormMiddleware.validarEditarAtletaAdminCadastro,
+editarUsuarioAtletaControllerUpdate.editarUser);
+router.get("/beneficios-assinatura",
+autenticacaoMiddleware.validateTokenAdmin,
+assinaturaAdminControllerRead.getPage);
+router.get("/cadastrar-beneficio-assinatura",
+autenticacaoMiddleware.validateTokenAdmin,
+cadastrarBeneficioAssinaturaAdminControllerRead.getPage);
+router.post("/cadastrar-beneficio-assinatura",
+autenticacaoMiddleware.validateTokenAdmin,
+autenticacaoRegrasMiddleware.cadastrarBeneficioAssinaturaValidacao,
+autenticacaoFormMiddleware.validarBeneficioAssinatura,
+cadastrarBeneficioAssinaturaAdminControllerCreate.createBeneficioAssinatura);
+router.get("/deletar-beneficio-assinatura/:beneficioAssinaturaId",
+autenticacaoMiddleware.validateTokenAdmin,
+deletarBeneficiosAssinaturaAdminControllerDelete.deleteBeneficioAssinatura);
+router.get("/editar-beneficio-assinatura/:beneficioAssinaturaId",
+autenticacaoMiddleware.validateTokenAdmin,
+editarBeneficiosAssinaturaControllerRead.getPage);
+router.post("/editar-beneficio-assinatura/:beneficioAssinaturaId",
+autenticacaoMiddleware.validateTokenAdmin,
+autenticacaoRegrasMiddleware.cadastrarBeneficioAssinaturaValidacao,
+autenticacaoFormMiddleware.validarEditarBeneficioAssinatura,
+editarBeneficiosAssinaturaControllerUpdate.editarBeneficioAssinatura);
+
+router.get("/deletar-usuario/:usuarioId",
+autenticacaoMiddleware.validateTokenAdmin,
+deletarUsuarioAdminControllerRead.deleteUsuario);
 
 // * Rodape
 

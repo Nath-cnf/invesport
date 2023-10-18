@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../../templates/head-admin.ejs') %>
+    <title><%- data.page_name %></title>
+</head>
+
+<body>
+    <%- include('../../templates/header-admin.ejs') %>
+
+    <main>
+        <h1>Editar um benefício para assinatura</h1>
+
+        <form action="/editar-beneficio-assinatura/<%- data.beneficioAssinaturaId %>" method="post">
+            <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
+
+            <label for="beneficio-assinatura">Benefício assinatura</label>
+            <textarea name="beneficio_assinatura" id="beneficio-assinatura" class="beneficio-assinatura-input <%-
+            data.erros && data.erros.beneficio_assinatura_erro ? `erro` : "" %>" rows="4"><%- data.input_values ? data.input_values.beneficio_assinatura : ""
+              %></textarea>
+
+            <%- data.erros && data.erros.beneficio_assinatura_erro ? `<span
+                class="mensagem-erro"
+                >${data.erros.beneficio_assinatura_erro.msg}</span
+              >` : "" %>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+
+    <%- include('../../templates/footer-admin.ejs') %>
+</body>
+
+</html>
