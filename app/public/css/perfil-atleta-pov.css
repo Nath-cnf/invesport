@@ -269,8 +269,8 @@ main{
 
 /* MENU DOAÇÃO */
 #doacao{
-    margin: 20px;
-    padding: 5px;
+    margin: 20px 12px 0px 12px;
+    padding: 8px 16px 8px 16px;
     display: none;
     flex-direction: column;
     position: relative;
@@ -285,18 +285,52 @@ main{
 }
 
 .titulo-3{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 4px 0px 0px 0px;
+}
+
+.container-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    margin: 16px 16px 0px 16px;
+}
+
+.form-gerar-pix{
+    display: flex;
+    flex-direction: column;
+}
+
+.label-chave-pix{
+    font: 2rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.tipos-chave{
+    margin-bottom: 4px;
 }
 
 .gerar-btn{
-    padding: 2px;
+    padding: 6px;
     justify-content: center;
     border: none;
     border-radius: 4px;
     background-color: #1406a7;
     color: white;
+    margin-top: 8px;
+    max-width: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2)
+}
+
+#input-pix-key{
+    max-width: 100%;
+    border: 1px solid #1406a7;
+    border-radius: 8px;
+    padding: 2px;
     margin-top: 5px;
-    max-width: 80px;
 }
 
 .chave-pix-form{
@@ -318,6 +352,11 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.coins-png{
+    width: 150px;
+    height: 150px;
 }
 
 #cod-qr{
