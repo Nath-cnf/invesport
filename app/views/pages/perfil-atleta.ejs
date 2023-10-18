@@ -271,6 +271,7 @@
         };
 
         gerarQrCodeButton.addEventListener("click", () => {
+          console.log(valorPixInput.value)
           fetch("/gerar-qr-code-atleta/<%- data.usuario.id %>", {
           method: "POST",
           headers: {
