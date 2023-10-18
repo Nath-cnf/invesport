@@ -288,15 +288,29 @@ main{
     font-size: 1.2rem;
 }
 
+.form-gerar-pix{
+    display: flex;
+    flex-direction: column;
+}
+
+.label-chave-pix{
+    font: 1rem;
+    font-weight: 600;
+}
+
+.tipos-chave{
+    margin-bottom: 5px;
+}
+
 .gerar-btn{
-    padding: 2px;
+    padding: 4px;
     justify-content: center;
     border: none;
     border-radius: 4px;
     background-color: #1406a7;
     color: white;
     margin-top: 5px;
-    max-width: 80px;
+    max-width: 100px;
 }
 
 .chave-pix-form{
