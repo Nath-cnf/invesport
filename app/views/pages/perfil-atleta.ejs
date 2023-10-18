@@ -283,7 +283,7 @@
         .then(async function (response) {
           const responseJson = await response.json();
 
-          console.log(Number(responseJson.valor_doado))
+          console.log(responseJson.valor_doado)
           
           const chavePix = responseJson.chave_pix;
           const nome = responseJson.nome.trim().split(" ").join("");
