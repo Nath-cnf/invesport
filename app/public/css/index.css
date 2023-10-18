@@ -100,7 +100,6 @@
     margin-right: 5px;
 }
 
-
 .ancora{
     text-decoration: none;
 }
@@ -201,15 +200,6 @@
     margin-bottom: 5px;
 }
 
-.anuncio-mondiad{
-    width: calc(100vw-25px);
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ff5b00;
-}
-
 .box-plano{
     background-color: #ffffff;
     border-radius: 25px;
@@ -272,7 +262,7 @@
     .veja{
         background-color: #FF5B00;
         border-radius: 15px;
-        width: calc(100vw-25px);
+        width: calc(100vw - 25px);
         height: 180px;
         color: #ffffff;   
         padding-top: 15px; 
@@ -351,7 +341,6 @@
         display: none;
     }
 }
-
 
 @media screen and (min-width: 1024px) {
     

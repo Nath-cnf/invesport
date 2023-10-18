@@ -3,125 +3,81 @@
 
 <head>
     <%- include('../templates/head.ejs') %>
-    <link rel="stylesheet" type="text/css" href="/css/home-cadastrada.css">
-    <title><%- data.page_name %></title>
+        <link rel="stylesheet" type="text/css" href="/css/home-cadastrada.css">
+        <title><%- data.page_name %></title>
 </head>
 
 <body>
     <%- include('../templates/header-perfil.ejs') %>
 
         <main>
-            <input type="search" placeholder="Pesquise aqui" class="pesquisa">
-
             <div class="veja">
                 <span id="text-veja">Veja</span>
                 <div class="icon-veja">
                     <div id="veja-atleta">
-                        <a href="/feed" class="ver"><img src="/assets/home/perfil.png" class="filtro-atleta"></a>
-                        <span class="text-veja">Perfis</span>
+                        <a class="ver-perfil"><img src="/assets/home/perfil.png" class="filtro-atleta"></a>
+                        <span id="text-atletas">Perfis</span>
+                        <button id="btn-ver"><a href="/feed">Ver mais</a></button>
                     </div>
                     <div id="veja-clubes">
-                        <a href="/como-doar" class="ver"><img src="/assets/home/como-doar.png" class="filtro-clube"></a>
-                        <span class="text-veja">Como doar</span>
+                        <a class="ver-doacao"><img src="/assets/home/como-doar.png" class="filtro-clube"></a>
+                        <span id="text-clubes">Como doar</span>
+                        <button id="btn-ver"><a href="/como-doar">Ver mais</a></button>
                     </div>
-                    <div id="veja-esportes">
-                        <a href="/trabalhe-conosco" class="ver"><img src="/assets/home/sobre-icon.png" class="filtro-sobre"></a>
-                        <span class="text-veja">Sobre</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="times">
-                <div class="titulo-times">
-                    <h6>Clubes</h6>
-                    <a><i class='bx bx-chevron-right' id="seta-left"></i></a>
-                </div>
-                <div class="box-clube1">
-                    <img src="/assets/home/oeste barueri.jfif" class="oeste">
-                    <div class="text-clube1">
-                        <h4 id="text-oeste">Oeste Barueri</h4>
-                        <h4 id="cidade-barueri">Barueri - SP</h4>
-                        <div class="linha-sports1">
-                            <img src="/assets/home/bola-futebol-48px.png" id="i-bolafut1">
-                        </div>
-                    </div>
-                </div>
-                <div class="box-clube2">
-                    <img src="/assets/home/osasco voleibol .jfif" class="osasco">
-                    <div class="text-clube2">
-                        <h4 id="text-osasco">Osasco</h4>
-                        <h4 id="cidade-osasco">Osasco - SP</h4>
-                        <div class="linha-sports2">
-                            <img src="/assets/home/bola-de-volei-48px.png" id="i-bolavolei2">
-                        </div>
-                    </div>
-
-                </div>
-                <div class="box-clube3">
-                    <img src="/assets/pinheiros.jfif" class="pinheiros">
-                    <div class="text-clube3">
-                        <h4 id="text-pinheiros">Pinheiros</h4>
-                        <h4 id="cidade-pinheiros">Pinheiros - SP</h4>
-                        <div class="linha-sports3">
-                            <img src="/assets/bola-de-volei-48px.png" id="i-bolavolei3">
-                            <img src="/assets/bola-futebol-48px.png" id="i-bolafut3">
-                            <img src="/assets/bola-basquete-48px.png" id="i-bolabasq3">
-                            <img src="/assets/bola-rugbi-48px.png" id="i-bolarugbi3">
-                            <img src="/assets/mais.png" id="i-mais3">
-                        </div>
+                    <div id="veja-sobre">
+                        <a class="ver-sobre"><img src="/assets/home/sobre-icon.png" class="filtro-sobre"></a>
+                        <span id="text-sobre">Sobre</span>
+                        <button id="btn-ver"><a href="/#">Ver mais</a></button>
                     </div>
                 </div>
             </div>
 
-            <div class="atletas">
-                <div class="titulo-atletas">
-                    <h6>Atletas</h6>
-                    <a><i class='bx bx-chevron-right' id="seta-left"></i></a>
-                </div>
-                <div class="box-atleta1">
-                    <img src="assets/38919-atleta-profissiona.jpg" class="joao">
-                    <div class="text-atleta1">
-                        <h4 id="text-joao">João Victor</h4>
-                        <h4 id="cidade-barueri">Barueri - SP</h4>
-                        <div class="linha1">
-                            <img src="assets/atletismo-48px.png" id="i-atletismo">
-                            <h4>SUB-21</h4>
-                        </div>
+            <section>
+                <div class="doacao">
+                    <img src="/assets/home/dinheiro-doacao.png" class="i-doacao">
+                    <div class="text-doacao">
+                        <h4 class="title-doacao">Ajude os clubes e atletas, faça uma doação!</h4>
+                        <button class="btn-doar"><a href="/feed.ejs">Doar</a></button>
                     </div>
                 </div>
-                <div class="box-atleta2">
-                    <img src="assets/osasco voleibol .jfif" class="victor">
-                    <div class="text-atleta2">
-                        <h4 id="text-victor">Victor da Graça</h4>
-                        <h4 id="cidade-osasco">Osasco - SP</h4>
-                        <div class="linha2">
-                            <img src="/assets/bola-de-volei-48px.png" id="i-bolavolei2">
-                        </div>
-                    </div>
 
-                </div>
-                <div class="box-atleta3">
-                    <img src="/assets/juliana.jpg" class="juliana">
-                    <div class="text-atleta3">
-                        <h4 id="text-juliana">Juliana Barbosa</h4>
-                        <h4 id="cidade-pinheiros">Pinheiros - SP</h4>
-                        <div class="linha3">
-                            <img src="/assets/bola-futebol-48px.png" id="i-bolafut3">
-                        </div>
+                <div class="tarefas">
+                    <img src="/assets/home/agenda.png" class="i-calendario-user">
+                    <div class="text-tarefas">
+                        <h4 class="title-tarefas">Muitas atividades para fazer? O InveSport te ajuda, com o nosso gerenciador de tarefas</h4>
+                        <button class="btn-tarefas"><a href="/tarefas.ejs">Tarefas</a></button>
                     </div>
                 </div>
-            </div>
+
+                <div class="perfis">
+                    <img src="/assets/home/feed.png" class="i-foto">
+                    <div class="text-perfis">
+                        <h4 class="title-perfis">Conheça os atletas e clubes do InveSport</h4>
+                        <button class="btn-perfis"><a href="/feed.ejs">Doar</a></button>
+                    </div>
+                </div>
+
+            </section>
 
             <div class="box-plano">
                 <img src="/assets/home/plano-256px.png" id="i-plano">
                 <h3 id="ass-destaque">Assinatura Destaque</h3>
                 <ul id="topicos">
-                    <li>Selo destaque</li>
-                    <li>Maior visibilidade</li>
-                    <li>Publicações com até 10 fotos</li>
+                    <div class="ass-selo">
+                        <img src="/assets/home/medalha.png" alt="" class="img-selo">
+                        <li class="t-selo">Selo destaque</li>
+                    </div>
+                    <div class="ass-metas">
+                        <img src="/assets/home/subindo-metas.png" alt="" class="img-metas">
+                        <li class="t-metas">Adicionar mais de uma meta</li>
+                    </div>
+                    <div class="ass-doacoes">
+                        <img src="/assets/home/maiores-doacoes.png" alt="" class="img-doacoes">
+                        <li class="t-doacoes">Maiores chances de receber doações</li>
+                    </div>
                 </ul>
                 <span id="preco-plano">R$9,90<h6 id="mes">/mês</h6></span>
-                <button href="/#" id="btn-assinar">ASSINAR</button>
+                <button href="/assinatura" id="btn-assinar"><a href="/assinatura"> ASSINAR </a></button>
             </div>
         </main>
 
