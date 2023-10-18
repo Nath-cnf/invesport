@@ -1,9 +1,17 @@
-main{
+:root {
+  --laranja: #ff5b00;
+  --azul: #14248a;
+  --cinza: #333333;
+  --branco: #ffffff;
+  --preto: #000000;
+}
+
+main {
   margin: 75px 25px 15px 0px;
   background-color: #ffffff;
 }
 
-.fundo{
+.fundo {
   display: grid;
   position: absolute;
   top: 0;
@@ -14,12 +22,12 @@ main{
   height: 300px;
 }
 
-.titulo{
+.titulo {
   position: relative;
   height: 350px;
 }
 
-.t-principal{
+.t-principal {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -28,130 +36,129 @@ main{
   padding-top: 55px;
 }
 
-.ola{
+.ola {
   margin-top: 0%;
   text-align: center;
   font-size: 3rem;
 }
 
-  .span{
-   padding-top: 40px;
-   text-align: center;
-   font-size: 1.4rem;
-  }
+.span {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 1.4rem;
+}
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
 
-  .todo-app{
-    width: 100%;
-    max-width: 540px;
-    background: #ffffff;
-    margin: 10px auto 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
-  }
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: #ffffff;
+  margin: 10px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
 
-  .todo-app h2{
-    color: black;
-    display: flex;
-    align-items:center;
-    margin-bottom:20px;
-    text-decoration: underline 3px #ff5b00;
-  }
-  
-  #botao-add{
-    border:none;
-    outline:none;
-    padding:16px 40px;
-    background:#ff5b00;
-    color: #fff;
-    font-size: 16px;
-    cursor:pointer;
-    border-radius:40px;
-  }
+.todo-app h2 {
+  color: black;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  text-decoration: underline 3px #ff5b00;
+}
 
-  .row{
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    background: #ffffff;
-    border-radius: 30px;
-    padding-left: 15px;
-    margin-bottom: 25px
-  }
+#botao-add {
+  border: none;
+  outline: none;
+  padding: 16px 40px;
+  background: #ff5b00;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
 
-  #inputbox{
-    display: flex;
-    border: none;
-    outline:none;
-    background: transparent;
-    padding: 8px;
-    font-weight:14px;
-  }
-  
-  #inputbox2{
-    display: flex;
-    right: 20px;
-    border: none;
-    outline:none;
-    background: transparent;
-    padding: 1px;
-    font-weight:14px;
-  }
-  
-  #slide{
-      display: flex;
-      gap: 20px;
-      max-width: 100%;
-      overflow-x: scroll;
-      width: 100%;
-  }
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 30px;
+  padding-left: 15px;
+  margin-bottom: 25px
+}
 
-  #slide::-webkit-scrollbar-button{
-      height: 20px;
-  }
+#inputbox {
+  display: flex;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px;
+  font-weight: 14px;
+}
 
-  #slide::-webkit-scrollbar-thumb{
-    height: 20px;
-  }
+#inputbox2 {
+  display: flex;
+  right: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 1px;
+  font-weight: 14px;
+}
 
-  #slide::-webkit-scrollbar-track {
-    height: 20px;
-  }
+#slide {
+  display: flex;
+  gap: 20px;
+  max-width: 100%;
+  overflow-x: scroll;
+  width: 100%;
+}
 
-  .card{
-      display: flex;
-      min-width: 190px;
-      flex-direction: column;
-      background: #ff5b00;
-      border-radius: 14px;
-      color: #ffffff;
-      padding: 15px 15px;
-      user-select: none;
-      cursor: pointer;
-      position:relative;
-      gap: 10px;
-  }
+#slide::-webkit-scrollbar-button {
+  height: 20px;
+}
 
-  .card button{
-      background: none;
-      color: #ffffff;
-      border: 2px solid white;
-      border-radius: 500px;
-      padding: 6px;
-      align-self: flex-end;
-      font-size:12px;
-      top: 10; 
-  
-  }
-  
-  .card button:hover{
-    color: lightgrey;
-  }
-  
+#slide::-webkit-scrollbar-thumb {
+  height: 20px;
+}
+
+#slide::-webkit-scrollbar-track {
+  height: 20px;
+}
+
+.card {
+  display: flex;
+  min-width: 190px;
+  flex-direction: column;
+  background: #ff5b00;
+  border-radius: 14px;
+  color: #ffffff;
+  padding: 15px 15px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  gap: 10px;
+}
+
+.card button {
+  background: none;
+  color: #ffffff;
+  border: 2px solid white;
+  border-radius: 500px;
+  padding: 6px;
+  align-self: flex-end;
+  font-size: 12px;
+  top: 10;
+
+}
+
+.card button:hover {
+  color: lightgrey;
+}

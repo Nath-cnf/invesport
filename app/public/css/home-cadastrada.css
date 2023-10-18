@@ -1,289 +1,213 @@
-main{
-    margin: 0px 25px 0px 25px;
+:root {
+    --laranja: #ff5b00;
+    --azul: #14248a;
+    --cinza: #333333;
+    --branco: #ffffff;
+    --preto: #000000;
 }
 
-
-input{
-    width: 100%;
-    height: 42px;
-    border: none;
-    border-bottom: 1px solid #14248a;
-    padding-left: 10px;
-}
-
-.veja{
-    background-color: #FF5B00;
-    border-radius: 15px;
-    width: 100%;
-    height: 160px;
-    color: #ffffff;   
-    padding-top: 15px; 
-    margin: 40px 0px;
-}
-
-.veja>#text-veja{
-    display: flex;
-    justify-content: flex-start;
-    font-size: 20px;
-    margin-left: 15px;
-}
-
-.icon-veja{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-items: center;
-    align-content: space-between;
-    text-align: center;
-    margin: 15px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.filtro-atleta, .filtro-clube{
-    margin-top: 10px;
-    width: 60px;
-    height: 60px;
-}
-
-.filtro-sobre{
-    width: 75px;
-    height: 75px;
-}
-
-.text-veja{
-    display: flex;
-    justify-content: flex-start;
-    font-size: 20px;
-    margin-left: 15px;
-}
-
-#veja-atleta, #veja-clubes, #veja-esportes{
-    display: flex;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #14248a;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    padding: 3px;
-    margin-bottom: 5px;
-}
-
-.titulo-times{
-    font-size: 30px;
-    color: #14248a;
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    justify-content: space-between;
-}
-
-.titulo-times>h6{
-    font-weight: 300;
-}
-
-.box-clube1, .box-clube2, .box-clube3{
-    width: 100%;
-    height: 110px;
-    border-radius: 15px;
-    background-color: #FF5B00;
-    margin-bottom: 20px;
-    padding: 12px;
-}
-
-.oeste, .osasco, .pinheiros{
-    width: 99px;
-    margin-right: 15px;
-    border-radius:10px;
-}
-
-#text-oeste, #text-osasco, #text-pinheiros{
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 550;
-}
-
-#cidade-barueri, #cidade-osasco, #cidade-pinheiros{
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-#i-bolafut1, #i-bolavolei2, #i-bolavolei3, #i-bolafut3, #i-bolabasq3, #i-bolarugbi3{
-    width: 28px;
-}
-
-#i-mais3{
-    width: 20px;
-}
-
-.linha1, .linha2, .linha3 {
-    width: fit-content;
-    padding-right: 2px;
-}
-
-.linha3{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    row-gap: 5px;
-}
-
-.linha-sports1, .linha-sports2, .linha-sports3 {
-    display: flex;
-    column-gap: 5px;
-    width: fit-content;
-    align-items: center;
-    padding-right: 2px;
-    border-radius: 10px;
-    background-color: white;
-}
-
-.text-clube1, .text-clube2, .text-clube3{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: 18px;
-}
-
-.box-clube3, .box-clube2, .box-clube1{
-    width: calc(100% - 25px);
-    display: flex;
-    flex-direction: row;
-}
-
-
-
-.titulo-atletas{
-    font-size: 30px;
-    color: #14248a;
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    justify-content: space-between;
-}
-
-.titulo-atletas>h6{
-    font-weight: 300;
-}
-
-.box-atleta1, .box-atleta2, .box-atleta3{
-    width: 100%;
-    height: 110px;
-    border-radius: 15px;
-    background-color: #FF5B00;
-    margin-bottom: 20px;
-    padding: 12px;
-}
-
-.joao, .victor, .juliana{
-    width: 99px;
-    margin-right: 15px;
-    border-radius:10px;
-}
-
-#text-joao, #text-victor, #text-juliana{
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 550;
-}
-
-#cidade-barueri, #cidade-osasco, #cidade-pinheiros{
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-#i-atletismo, #i-bolavolei2, #i-bolafut3{
-    width: 28px;
-}
-
-.linha3, .linha2, .linha1{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    row-gap: 5px;
-    color: #14248a;
-    background-color: #ffffff;
-    border-radius: 30px;
-}
-
-.text-atleta1, .text-atleta2, .text-atleta3{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: 18px;
-}
-
-.box-atleta3, .box-atleta2, .box-atleta1{
-    width: calc(100% - 25px);
-    display: flex;
-    flex-direction: row;
-}
-
-aside{
-    width: 100%;
-    height: 371px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    margin: 30px 0px;
-}
 
 .box-plano{
+    width: calc(100vw - 100px);
     background-color: #ffffff;
     border-radius: 25px;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 25px;
 }
 
-#i-plano{
-    width: 180px;
-    margin-bottom: 20px;
+
+@media screen and (max-width: 1023px) {
+    main {
+        margin: 70px 25px 30px 25px;
+    }
 }
 
-#ass-destaque{
-    color: #ff5b00;
-    font-size: 27px;
-    margin-bottom: 22px;
-}
+@media screen and (min-width: 1024px) {
 
-#topicos{
-    color: #333333;
-    font-size: 16px;
-    text-align: left;
-    margin-bottom: 22px;
-}
+    main {
+        margin: 100px 50px 30px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-#preco-plano{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    color: #ff5b00;
-    font-size: 35px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
+    .veja{
+        width: calc(100vw - 100px);
+        height: 500px;
+    }
 
-#mes{
-    font-size: 12px;
-}
+    #text-veja{
+        color: #ff5b00;
+        font-size: 32px;
+    }
 
-#btn-assinar{
-    width: 70%;
-    height: 40px;
-    border-radius: 30px;
-    border: none;
-    background-color: #14248a;
-    color: #ffffff;
-    font-size: 15px;
-    margin-bottom: 10px;
+    .icon-veja{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 20px 0px;
+    }
+    
+    #veja-atleta, #veja-clubes, #veja-sobre{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 375px;
+        background-color: #14248a;
+        border-radius: 15px;
+    }
+
+    .filtro-atleta, .filtro-clube, .filtro-sobre{
+        width: 160px;
+        height: 160px;
+    }
+
+    #text-atletas, #text-clubes, #text-sobre{
+        color: #ffffff;
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    #btn-ver{
+        width: 255px;
+        height: 60px;
+        background-color: #ff5b00;
+        color: #ffffff;
+        text-align: center;
+        font-size: 22px;
+        border-radius: 10px;
+        margin-top: 30px;
+        border: none;
+    }
+
+    #btn-ver>a{
+        text-decoration: none;
+    }
+
+    .doacao, .perfis{
+        background-color: var(--laranja);
+        width: calc(100vw - 100px);
+        height: 320px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .tarefas{
+        background-color: var(--branco);
+        width: calc(100vw - 100px);
+        height: 320px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .i-doacao, .i-calendario-user, .i-foto{
+        margin: 0px 50px 0px 30px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .text-doacao, .text-tarefas, .text-perfis{
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-doacao, .title-perfis{
+        margin: 20px 0px 80px 0px;
+        color: var(--branco);
+        font-size: 2rem;
+    }
+
+    .btn-doar, .btn-perfis{
+        background-color: var(--branco);
+        color: var(--laranja);
+        border: none;
+        width: 10rem;
+        height: 3rem;
+        border-radius: 20px;
+        font-size: 1.8rem;
+    }
+
+    #ass-destaque{
+        margin-top: 15px;
+    }
+    
+    #i-plano{
+        display: none;
+    }
+    
+    .img-metas, .img-doacoes{
+        width: 290px;
+        height: 280px;
+    }
+
+    .img-selo{
+        width: 330px;
+        height: 300px;
+    }
+
+    .ass-selo, .ass-metas, .ass-doacoes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 300px;
+    }
+
+    .t-selo, .t-metas, .t-doacoes{
+        color: #333333;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    #preco-plano{
+        font-size: 38px;
+        font-weight: 600;
+    }
+
+    #topicos{
+        color: #333333;
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 22px;
+    }
+    
+    #preco-plano{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        color: #ff5b00;
+        font-size: 35px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    #mes{
+        font-size: 12px;
+    }
+    
+    #btn-assinar{
+        width: 265px;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 30px;
+        border: none;
+        background-color: #14248a;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+    
+    #btn-assinar > a{
+        text-decoration: none;
+    }
 }
