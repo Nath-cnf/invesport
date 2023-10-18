@@ -77,7 +77,7 @@
 
             <label class="titulo">CNPJ do Clube</label>
             <div class="cnpj">
-              <input type="string" placeholder="Insira o CNPJ do Clube"
+              <input type="string" placeholder="Ex: XX.XXX.XXX/0001-XX"
               class="campo <%- data.erros && data.erros.cnpj_clube_erro ? `erro`
               : "" %>" name="cnpj_clube" <%- data.input_values ?
               `value="${data.input_values.cnpj_clube}"` : "" %> > <%- data.erros
@@ -105,7 +105,7 @@
               <p class="asteristico">*</p></label
             >
             <div class="estado">
-              <input type="text" placeholder="Insira seu estado" class="campo
+              <input type="text" placeholder="Ex: SP, BH, PR..." class="campo
               <%- data.erros && data.erros.estado_erro ? `erro` : "" %>"
               name="estado" <%- data.input_values ?
               `value="${data.input_values.estado}"` : "" %> > <%- data.erros &&
