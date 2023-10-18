@@ -352,8 +352,8 @@ main{
 }
 
 .coins-png{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
 
 #cod-qr{
@@ -638,6 +638,10 @@ main{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .coins-png{
+        margin-left: 50px;
     }
 
     /* MENU METAS*/
