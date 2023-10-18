@@ -30,6 +30,7 @@ main{
 }
 
 .titulo-perfil{
+    background-color: var(--branco);
     text-align: center;
     color: #333333;
 }
@@ -160,7 +161,6 @@ main{
     display: flex;
     justify-content: space-between;
     background-color: #ffffff;
-    margin: 10px 25px;
 }
 
 #t-publicacoes, #t-sobre, #t-doacoes, #t-metas{
@@ -437,6 +437,10 @@ main{
         margin: 0px 25px 0px 25px;
     }
 
+    .tabs{
+        margin: 10px 25px;
+    }
+
     /* MENU SOBRE */
 
     #sobre {
@@ -498,10 +502,6 @@ main{
         width: 100vw;
     }
 
-    .tabs {
-        width: calc(100vw - 100px);
-    }
-
     #t-publicacoes:hover,
     #t-sobre:hover,
     #t-doacoes:hover,
@@ -543,6 +543,10 @@ main{
         text-align: center;
     }
 
+    #portifolio{
+        width: 100%;
+    }
+
     .grid-portifolio {
         width: 100%;
         margin: 15px 25px;
@@ -551,8 +555,8 @@ main{
     }
 
     .grid-portifolio img {
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
     }
 
     /* MENU SOBRE */
