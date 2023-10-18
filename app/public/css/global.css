@@ -319,15 +319,6 @@ footer{
         grid-template-rows: 50px 30px;
     }
 
-    aside{
-        width: 100vw;
-        height: 15vh;
-        background-color: #ff5b00;
-        color: #ffffff;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
     .header-footer-card i {
         display: none;
     }

@@ -506,6 +506,38 @@
         text-decoration: none;
     }
 
+    aside{
+        width: 100vw;
+        height: 50vh;
+        background-color: var(--branco);
+        color: var(--laranja);
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.17);
+    }
+
+    .ads{
+        text-decoration: none;
+    }
+
+    .container-img-ads{
+        display: flex;
+        gap: 10rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .ads1, .ads2, .ads3{
+        width: 250px;
+        height: 250px;
+    }
+
     .box-plano{
         margin: 50px;
         padding: 10px 70px;

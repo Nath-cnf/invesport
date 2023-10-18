@@ -5,11 +5,11 @@
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <meta name="monetag" content="7ded18a3307aaecb301407244c1a497b">
     <%- include('../templates/head.ejs') %>
-    <title><%- data.page_name %></title>
+        <title><%- data.page_name %></title>
 </head>
 
-    <body>
-        <%- include('../templates/header.ejs') %>
+<body>
+    <%- include('../templates/header.ejs') %>
         <main>
             <section id="banner-home">
                 <div class="banner">
@@ -89,8 +89,21 @@
                 </div>
             </div>
 
-            <aside id="publicidade" href="//vasteeds.net/4/6455332">
-                <a class="ads" href="//vasteeds.net/4/6455332"> Anuncios </a>
+            <aside id="publicidade">
+                <a class="ads" href="//vasteeds.net/4/6455332"> ANÚNCIOS </a>
+                <div class="container-img-ads">
+                    <div class="container-ads1">
+                        <a href="//vasteeds.net/4/6455332"><img src="/assets/ads/ads1.png" class="ads1"></a>
+                    </div>
+
+                    <div class="container-ads2">
+                        <a href="//vasteeds.net/4/6455332"><img src="/assets/ads/ads2.png" class="ads2"></a>
+                    </div>
+
+                    <div class="container-ads3">
+                        <a href="//vasteeds.net/4/6455332"><img src="/assets/ads/ads3.png" class="ads3"></a>
+                    </div>
+                </div>
             </aside>
 
             <div class="box-plano">
@@ -116,6 +129,6 @@
         </main>
 
         <%- include('../templates/rodape.ejs') %>
-    </body>
+</body>
 
 </html>
