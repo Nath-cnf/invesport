@@ -48,7 +48,7 @@ fetch("/pagamento-assinatura", {
 			.confirmPayment({
 				elements,
 				confirmParams: {
-					return_url: `${process.env.DOMAIN}compra-efetuada`,
+					return_url: `https://invesport.up.railway.app/compra-efetuada`,
 				},
 			})
 			.then(function (result) {
