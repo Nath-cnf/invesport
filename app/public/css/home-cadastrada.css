@@ -134,7 +134,7 @@
     }
 
     .title-tarefas{
-        margin: 20px 40px 100px 0px;
+        margin: 20px 20px 100px 0px;
         color: var(--laranja);
         font-size: 2rem;
     }
@@ -160,7 +160,9 @@
     }
 
     #ass-destaque{
-        margin-top: 15px;
+        color: var(--laranja);
+        font-size: 1.8rem;
+        margin: 30px 0px;
     }
     
     #i-plano{
@@ -184,6 +186,14 @@
         align-items: center;
         text-align: center;
         width: 300px;
+    }
+
+    .ass-selo{
+        margin-left: 30px;
+    }
+
+    .ass-doacoes{
+        margin-right: 30px;
     }
 
     .t-selo, .t-metas, .t-doacoes{
@@ -211,7 +221,7 @@
         color: #ff5b00;
         font-size: 35px;
         font-weight: 600;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
     }
     
     #mes{
@@ -226,7 +236,7 @@
         border: none;
         background-color: #14248a;
         color: #ffffff;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
     
     #btn-assinar > a{
