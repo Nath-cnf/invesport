@@ -453,6 +453,13 @@ main{
         margin: 20px;
     }
 
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
     /* MENU METAS*/
 
     #meta {
