@@ -318,7 +318,7 @@ main{
     background-color: #1406a7;
     color: white;
     margin-top: 8px;
-    max-width: 300px;
+    width: 100%;
     box-shadow: 0 0 5px rgba(0, 0, 0, .2)
 }
 
@@ -459,7 +459,11 @@ main{
         align-items: center;
         justify-content: center;
     }
-    
+
+    .coins-png{
+        margin-top:30px;
+    }
+
     /* MENU METAS*/
 
     #meta {
