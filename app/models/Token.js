@@ -14,6 +14,10 @@ class Token {
             }
         })
     }
+
+    async findAllTokens() {
+        return await prisma.token.findMany()
+    }
 }
 
 const tokenModel = new Token();
