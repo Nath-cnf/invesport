@@ -109,34 +109,38 @@
             <span class="titulo-3"
               >Receba doações no <b style="color: #1406a7"> Inve</b
               ><b style="color: #ff540b">Sport</b>!</span
-            > <br>
-            <form class="chave-pix-form" method="POST" action="/atualizar-chave-pix">
-              <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
-                  <div class="form-gerar-pix">
-                    <label for="input-pix-key" class="label-chave-pix">Chave PIX</label>
-                    <span class="tipos-chave">
-                      Telefone: +5511999999999
-                    </span>
-                    <span class="tipos-chave">
-                      CPF: 99999999999
-                    </span>
-                    <span class="tipos-chave">
-                      Email: email@gmail.com
-                    </span>
-                    <input type="text" name="chave_pix" id="input-pix-key" <%-
-                    data.erros && data.erros.nome_erro ? `erro` : "" %>" name="nome"
-                    <%- data.input_values ? `value="${data.input_values.nome}"` : ""
-                    %>>
-                    <%- data.erros && data.erros.nome_erro ? `<span
-                class="mensagem-erro"
-                >${data.erros.nome_erro.msg}</span
-              >` : "" %>
+            > 
+            <div class="container-form">
+              <form class="chave-pix-form" method="POST" action="/atualizar-chave-pix">
+                <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
+                    <div class="form-gerar-pix">
+                      <label for="input-pix-key" class="label-chave-pix">Chave PIX</label>
+                      <span class="tipos-chave">
+                        Telefone: +5511999999999
+                      </span>
+                      <span class="tipos-chave">
+                        CPF: 99999999999
+                      </span>
+                      <span class="tipos-chave">
+                        Email: email@gmail.com
+                      </span>
+                      <input type="text" name="chave_pix" id="input-pix-key" <%-
+                      data.erros && data.erros.nome_erro ? `erro` : "" %>" name="nome"
+                      <%- data.input_values ? `value="${data.input_values.nome}"` : ""
+                      %>>
+                      <%- data.erros && data.erros.nome_erro ? `<span
+                  class="mensagem-erro"
+                  >${data.erros.nome_erro.msg}</span
+                >` : "" %>
+                    </div>
+                  <div class="gerar-qrcode">
+                      <button type="submit" class="gerar-btn">Adicionar chave PIX</button>
                   </div>
-                <div class="gerar-qrcode">
-                    <button type="submit" class="gerar-btn">Adicionar chave PIX</button>
-                </div>
-            </form>
+              </form>
 
+              <img src="/assets/perfil/coins.png" class="coins-png">
+            </div>
+            
             <div class="qr-code-container">
               <div class="plaquinha-pix">
                 <div class="qrcode-replace">
