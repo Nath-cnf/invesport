@@ -474,6 +474,10 @@ main{
         margin: 10px 25px;
     }
 
+    .button-bio{
+        padding: 20px 0;
+    }
+
     /* MENU SOBRE */
 
     #sobre {
