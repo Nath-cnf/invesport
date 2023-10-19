@@ -8,44 +8,9 @@ main{
     margin: 90px 25px 0px 25px;
 }
 
-.barra-pesquisa{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 2em;
-    background-color: #ffffff;
-    padding: 0px;
-    
-}
-
-.pesquisa{
-    border: none;
-    border-bottom: 2px solid var(--azul);
-    font-size: 1em;
-    width: 100%;
-    line-height: 100%;
-    outline: none;
-    padding: 5px;
-}
-
-.link-lupa{
-    width: 2em;
-    height: 2.4em;
-    background-color: var(--azul);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-#lupa{
-    color: #ffffff;
-    font-size: 1.5em;
-}
-
 h2 {
     text-align: center;
-    color: var(--cinza);
+    color: var(--laranja);
     margin: 10px 0px;
 }
 

@@ -46,6 +46,10 @@ body {
 	justify-content: center;
 }
 
+.container-pesquisa :focus{
+	border: none;
+}
+
 .container-lupa {
 	width: 2em;
 	height: 2.5em;
