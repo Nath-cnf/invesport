@@ -127,8 +127,9 @@ h2 {
 .nome-atleta, .nome-clube{
     margin-bottom: 5px;
     white-space: nowrap; 
-    width: 95px; 
+    width: 96px; 
     overflow: hidden;
+    text-align: center;
     text-overflow: ellipsis;
 }
 

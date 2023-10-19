@@ -163,6 +163,40 @@
     margin: 25px;
 }
 
+aside{
+    width: 100%;
+    height: 50vh;
+    color: var(--laranja);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ads{
+    text-decoration: none;
+}
+
+.container-img-ads{
+    display: flex;
+    gap: 10rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ads2{
+    width: 250px;
+    height: 250px;
+}
+
+.ads1, .ads3{
+    display: none;
+}
+
 #faca-parte{
     color: #333333;
     font-size: 22px;
