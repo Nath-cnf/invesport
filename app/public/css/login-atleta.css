@@ -34,16 +34,6 @@ main {
     border: none;
 }
 
-#btn-clube{
-    width: 110px;
-    height: 37px;
-    background-color: #ff5b00;
-    color: #ffffff;
-    font-size: 19px;
-    border-radius: 8px;
-    border: none;
-}
-
 .cpf, 
 .senha {
     position:relative;
@@ -352,12 +342,6 @@ input {
     .t-user{
         font-size: 2em;
     }
-
-    /* #btn-atleta, #btn-clube{
-        width: 150px;
-        height: 40px;
-        font-size: 1.4em;
-    } */
 
     .campo-cpf, .campo-senha{
         border-bottom: 1px solid #ff5b00;

@@ -1,5 +1,4 @@
 const usuarioModel = require("../../../../models/Usuario");
-const clubeModel = require("../../../../models/Clube");
 const esporteModel = require("../../../../models/Esporte");
 
 class editarUsuarioAdminController {
@@ -42,8 +41,6 @@ class editarUsuarioAdminController {
 				},
 			});
 		}
-
-        user = clubeModel.findUserById(usuarioId);
 
         if (user) {
             

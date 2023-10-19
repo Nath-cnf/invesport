@@ -1,4 +1,3 @@
-const clubeModel = require("../../../models/Clube");
 const usuarioModel = require("../../../models/Usuario");
 const jwt = require("jsonwebtoken");
 
@@ -15,13 +14,11 @@ class feedControllerRead {
             userId = tokenInfo.userId;
         }
 
-        const clubes = await clubeModel.findAllClubes(userId);
         const usuarios = await usuarioModel.findAllUsers(userId);
 
         res.render("pages/feed.ejs", {
             data: {
                 page_name: "Invesport",
-                clubes,
                 usuarios,
                 usuario_logado
             }

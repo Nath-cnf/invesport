@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt');
 const usuarioModel = require("../../../models/Usuario");
-const clubeModel = require("../../../models/Clube");
 const adminModel = require("../../../models/Admin");
 const jwt = require("jsonwebtoken");
 
@@ -13,11 +12,6 @@ class LoginAtletaController {
 
         let user = await usuarioModel.findUserByEmail(email);
         let userType = "atleta";
-
-        if (!user) {
-            user = await clubeModel.findUserByEmail(email);
-            userType = "clube";
-        }
 
         if (!user) {
             user = await adminModel.findUserByEmail(email);
@@ -49,8 +43,6 @@ class LoginAtletaController {
 
                 if (userType === "atleta") {
                     return res.redirect("/perfil-atleta");
-                } else if (userType === "clube") {
-                    return res.redirect("/perfil-clube");
                 } else if (userType === "admin") {
                     return res.redirect("/admin");
                 }

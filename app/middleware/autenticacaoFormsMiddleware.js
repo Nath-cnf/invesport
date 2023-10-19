@@ -2,13 +2,11 @@ const esporteModel = require("../models/Esporte");
 const usuarioModel = require("../models/Usuario");
 const { validationResult } = require("express-validator");
 const tarefaAtletaModel = require("../models/TarefaAtleta");
-const tarefaClubeModel = require("..//models/tarefaClube");
 const jwt = require("jsonwebtoken");
 
 class FormValidation {
   constructor() {
     this.validarAtletaCadastro = this.validarAtletaCadastro.bind(this);
-    this.validarClubeCadastro = this.validarClubeCadastro.bind(this);
     this.validarEditarAtletaCadastro = this.validarEditarAtletaCadastro.bind(this);
 	this.validarSobreAtletaCadastro = this.validarSobreAtletaCadastro.bind(this);
     this.validarEditarAtletaAdminCadastro = this.validarEditarAtletaAdminCadastro.bind(this);
@@ -351,79 +349,6 @@ class FormValidation {
     return next();
   }
 
-  async validarClubeCadastro(req, res, next) {
-    const { senha, confirmacao_senha } = req.body;
-    const erros = validationResult(req);
-    this.#confirmacaoSenhaValidation(confirmacao_senha, senha, erros);
-
-    if (!erros.isEmpty()) {
-      const esportesLista = await esporteModel.findAllEsportes();
-
-      const { nome, esportes, cnpj_clube, cidade, estado, email } = req.body;
-
-      let esportesResponse = [];
-
-      esportesResponse.push(esportes);
-      esportesResponse = esportesResponse.flat();
-
-      const listaNomesEsportesSelecionados = [];
-
-      esportesResponse.forEach((esporteResponse) => {
-        let esporteSelecionado = esportesLista.find((esporte) => {
-          return esporte.id === esporteResponse;
-        });
-
-        if (esporteSelecionado) {
-          listaNomesEsportesSelecionados.push(esporteSelecionado);
-        }
-      });
-
-      const nome_erro = erros.errors.find((erro) => erro.path === "nome");
-      const esportes_erro = erros.errors.find(
-        (erro) => erro.path === "esportes"
-      );
-      const cnpj_clube_erro = erros.errors.find(
-        (erro) => erro.path === "cnpj_clube"
-      );
-      const cidade_erro = erros.errors.find((erro) => erro.path === "cidade");
-      const estado_erro = erros.errors.find((erro) => erro.path === "estado");
-      const email_erro = erros.errors.find((erro) => erro.path === "email");
-      const senha_erro = erros.errors.find((erro) => erro.path === "senha");
-      const confirmacao_senha_erro = erros.errors.find(
-        (erro) => erro.path === "confirmacao_senha"
-      );
-
-      return res.render("pages/cadastro-clube.ejs", {
-        data: {
-          esportes: esportesLista,
-          input_values: {
-            nome,
-            esportes: esportesResponse,
-            nomes_esportes_selecionados: listaNomesEsportesSelecionados,
-            cnpj_clube,
-            cidade,
-            estado,
-            email,
-            senha,
-            confirmacao_senha,
-          },
-          erros: {
-            nome_erro,
-            esportes_erro,
-            cnpj_clube_erro,
-            cidade_erro,
-            estado_erro,
-            email_erro,
-            senha_erro,
-            confirmacao_senha_erro,
-          },
-        },
-      });
-    }
-
-    return next();
-  }
-
   async validarRedefinirSenha(req, res, next) {
     const erros = validationResult(req);
 
@@ -469,8 +394,6 @@ class FormValidation {
 
       if (userType === "atleta") {
         tarefas = await tarefaAtletaModel.getAllTarefasFromUser(userId);
-      } else if (userType === "clube") {
-        tarefas = await tarefaClubeModel.getAllTarefasFromClube(userId);
       }
 
       return res.render("pages/tarefas.ejs", {

@@ -30,7 +30,7 @@ h2 {
     font-weight: normal;
 }
 
-.btn-atletas, .btn-clubes{
+.btn-atletas{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,15 +45,11 @@ h2 {
     border-bottom: 3px solid var(--laranja);
 }
 
-.usuario-clube{
-    background-color: var(--azul);
-}
-
 .usuario-atleta{
     background-color: var(--laranja);
 }
 
-.usuario-atleta, .usuario-clube{
+.usuario-atleta{
     border-radius: 15px;
     width: 38vw;
     height: 15rem;
@@ -89,7 +85,7 @@ h2 {
     text-decoration: none;
 }
 
-.nome-atleta, .nome-clube{
+.nome-atleta{
     margin-bottom: 5px;
     white-space: nowrap; 
     width: 96px; 
@@ -118,13 +114,6 @@ h2 {
     color: var(--laranja);
 }
 
-.clubes{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 @media screen and (max-width: 1023px) {
 
     main{
@@ -149,7 +138,7 @@ h2 {
         align-items: center;
     }
 
-    .perfis-clubes, .perfis-atletas{
+    .perfis-atletas{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
@@ -157,14 +146,14 @@ h2 {
         grid-row-gap: 15px;
     }
 
-    .foto-atleta, .foto-clube{
+    .foto-atleta{
         width: 6em;
         height: 6em;
         border-radius: 50%;
         margin: 10px 0px;
     }
 
-    .nome-atleta, .nome-clube{ 
+    .nome-atleta{ 
         width: 95px; 
         color: #ffffff;
         font-size: 1rem;
@@ -200,7 +189,7 @@ h2 {
         align-items: center;
     }
 
-    .perfis-clubes, .perfis-atletas{
+    .perfis-atletas{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -208,7 +197,7 @@ h2 {
         grid-row-gap: 30px;
     }
 
-    .usuario-atleta, .usuario-clube{
+    .usuario-atleta{
         border-radius: 15px;
         width: 17vw;
         height: 25rem;
@@ -219,14 +208,14 @@ h2 {
         margin-bottom: 20px;
     }
 
-    .foto-atleta, .foto-clube{
+    .foto-atleta{
         width: 10em;
         height: 10em;
         border-radius: 50%;
         margin: 20px 0px;
     }
 
-    .nome-atleta, .nome-clube{
+    .nome-atleta{
         color: #ffffff;
         font-size: 1.2rem;
         text-align: center;

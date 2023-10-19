@@ -1,5 +1,4 @@
 const tarefaAtletaModel = require("../../../../models/TarefaAtleta");
-const tarefaClubeModel = require("../../../../models/tarefaClube");
 const jwt = require("jsonwebtoken")
 
 class tarefaControllerRead {
@@ -10,9 +9,7 @@ class tarefaControllerRead {
 
         if (userType === "atleta") {
             tarefas = await tarefaAtletaModel.getAllTarefasFromUser(userId);
-        } else if (userType === "clube") {
-            tarefas = await tarefaClubeModel.getAllTarefasFromClube(userId);
-        }
+        } 
 
         res.render("pages/tarefas.ejs", {
             data: {

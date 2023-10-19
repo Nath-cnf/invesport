@@ -1,5 +1,4 @@
 const tarefaAtletaModel = require("../../../../models/TarefaAtleta");
-const tarefaClubeModel = require("../../../../models/tarefaClube");
 const jwt = require("jsonwebtoken")
 
 class tarefaController {
@@ -13,12 +12,6 @@ class tarefaController {
 
             if (tarefa) {
                 await tarefaAtletaModel.deleteTarefa(tagId);
-            }
-        } else if (userType === "clube") {
-            const tarefa = await tarefaClubeModel.findTarefaById(tagId);
-
-            if (tarefa) {
-                await tarefaClubeModel.findTarefaById(tagId);
             }
         }
 

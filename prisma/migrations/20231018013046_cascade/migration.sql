@@ -1,7 +1,4 @@
 -- DropForeignKey
-ALTER TABLE `Tarefaclube` DROP FOREIGN KEY `TarefaClube_owner_id_fkey`;
-
--- DropForeignKey
 ALTER TABLE `Tarefausuario` DROP FOREIGN KEY `TarefaUsuario_owner_id_fkey`;
 
 -- DropForeignKey
@@ -18,6 +15,3 @@ ALTER TABLE `Token` ADD CONSTRAINT `Token_email_fkey` FOREIGN KEY (`email`) REFE
 
 -- AddForeignKey
 ALTER TABLE `TarefaUsuario` ADD CONSTRAINT `TarefaUsuario_owner_id_fkey` FOREIGN KEY (`owner_id`) REFERENCES `Usuario`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE `TarefaClube` ADD CONSTRAINT `TarefaClube_owner_id_fkey` FOREIGN KEY (`owner_id`) REFERENCES `Clube`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;

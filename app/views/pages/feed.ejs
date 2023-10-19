@@ -35,27 +35,6 @@
                         <% }) %>
                     </div>
                 </div>
-
-                <div class="clubes">
-                    <a href="/feed-clube" class="btn-clubes">
-                        <img src="/assets/cadastro-login/time-circulo.png" class="icone-clubes">
-                        <h3 class="titulo">Clubes</h3>
-                    </a>
-                    
-                    <div class="perfis-clubes">
-                        <% data.clubes.forEach(clube => { %>
-                            <div class="usuario-clube">
-                                <img src="/assets/perfil/user.png" class="foto-clube">
-                                <span class="linha-nome">
-                                    <h4 class="nome-clube"><%- clube.nome %></h4>
-                                    <img src="/assets/selo_invesport.png" class="selo">
-                                </span>
-                                <h4 class="cidade"><%- clube.cidade %>-<%- clube.estado %></h4>
-                                <a href="/perfil-clube/<%- clube.id %>" class="ver-perfil">Ver perfil</a>
-                            </div>
-                        <% }) %>
-                    </div>
-                </div>
             </section>
 
         </main>

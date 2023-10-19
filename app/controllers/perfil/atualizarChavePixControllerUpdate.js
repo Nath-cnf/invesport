@@ -19,9 +19,6 @@ class AtualizarChavePixController {
                 return res.redirect("/perfil-atleta");
             }
 
-            if (userType === "clube") {
-
-            }
         } catch (erro) {
             console.log(erro);
 

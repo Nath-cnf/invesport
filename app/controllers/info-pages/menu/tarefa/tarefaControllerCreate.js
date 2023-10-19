@@ -1,5 +1,4 @@
 const tarefaAtletaModel = require("../../../../models/TarefaAtleta");
-const tarefaClubeModel = require("../../../../models/tarefaClube");
 const jwt = require("jsonwebtoken");
 
 class tarefaControllerRead {
@@ -12,12 +11,6 @@ class tarefaControllerRead {
     try {
       if (userType === "atleta") {
         tarefaAtletaModel.createTarefa({
-          owner_id: userId,
-          nome: nome_tarefa,
-          data_conclusao: new Date(conclusao_tarefa),
-        });
-      } else if (userType === "clube") {
-        tarefaClubeModel.createTarefa({
           owner_id: userId,
           nome: nome_tarefa,
           data_conclusao: new Date(conclusao_tarefa),

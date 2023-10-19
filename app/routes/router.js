@@ -29,16 +29,11 @@ const feedControllerRead = require("../controllers/info-pages/menu/feedControlle
 
 
 //*CADASTRO-LOGIN-PERFIL
-const perfilClubeControllerRead = require("../controllers/info-pages/perfilClubeControllerRead");
 const perfilAtletaControllerRead = require("../controllers/info-pages/perfilAtletaControllerRead");
 const perfilAtletaPovControllerRead = require("../controllers/info-pages/perfilAtletaPovControllerRead");
-const perfilClubePovControllerRead = require("../controllers/info-pages/perfilClubePovControllerRead");
 const loginAtletaControllerRead = require("../controllers/info-pages/login/loginAtletaControllerRead");
 const loginAtletaControllerReadAuth = require("../controllers/info-pages/login/loginAtletaControllerReadAuth");
 const cadastroAtletaControllerRead = require("../controllers/info-pages/cadastro/cadastroAtletaControllerRead");
-const cadastroClubeControllerRead = require('../controllers/info-pages/cadastro/cadastroClubeControllerRead');
-const cadastroClubeControllerCreate = require("../controllers/info-pages/cadastro/cadastroClubeControllerCreate")
-const loginClubeControllerRead = require("../controllers/info-pages/login/loginClubeControllerRead");
 const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadastro/cadastroAtletaControllerCreate");
 
 const atualizarChavePixControllerUpdate = require("../controllers/perfil/atualizarChavePixControllerUpdate");
@@ -73,9 +68,7 @@ const sucessoControllerRead = require("../controllers/perfil/assinatura/sucessoC
 // * IMAGENS
 
 const imagemPerfilAtletaControllerRead = require("../controllers/info-pages/imagens/imagemUsuarioAtletaControllerRead");
-const imagemPerfilClubeControllerRead = require("../controllers/info-pages/imagens/imagemUsuarioClubeControllerRead");
 const imagemBannerAtletaControllerRead = require("../controllers/info-pages/imagens/imagemBannerAtletaControllerRead");
-const imagemBannerClubeControllerRead = require("../controllers/info-pages/imagens/imagemBannerClubeControllerRead");
 const adicionarImagemAtletaControllerCreate = require("../controllers/perfil/adicionarImagemAtletaControllerCreate");
 
 // * EDITAR
@@ -118,13 +111,6 @@ router.get("/trabalhe-conosco", trabalheConoscoControllerRead.getPage);
 router.get("/perfil-atleta",
 autenticacaoMiddleware.validateToken,
 perfilAtletaPovControllerRead.getPage);
-
-router.get("/perfil-clube",
-autenticacaoMiddleware.validateToken,
-perfilClubePovControllerRead.getPage);
-
-router.get("/perfil-clube/:idClube",
-perfilClubeControllerRead.getPage);
 
 router.get("/perfil-atleta/:idAtleta",
 perfilAtletaControllerRead.getPage);
@@ -208,20 +194,6 @@ autenticacaoFormMiddleware.validarAtletaCadastro,
 autenticacaoMiddleware.criptografarSenha,
 CadastroAtletaControllerCreate.createAtleta);
 
-// * Login clube
-
-router.get("/login-clube", loginClubeControllerRead.getPage);
-
-// * Cadastro clube
-
-router.get("/cadastro-clube", cadastroClubeControllerRead.getPage);
-
-router.post("/cadastro-clube",
-autenticacaoRegrasMiddleware.cadastroClubeValidacao,
-autenticacaoFormMiddleware.validarClubeCadastro,
-autenticacaoMiddleware.criptografarSenha,
-cadastroClubeControllerCreate.createClube);
-
 // * Imagens
 
 router.get("/assets/atleta/banner/:userId",
@@ -229,12 +201,6 @@ imagemBannerAtletaControllerRead.getImage);
 
 router.get("/assets/atleta/perfil/:userId",
 imagemPerfilAtletaControllerRead.getImage);
-
-router.get("/assets/clube/banner/:userId",
-imagemBannerClubeControllerRead.getImage);
-
-router.get("/assets/clube/banner/:userId",
-imagemPerfilClubeControllerRead.getImage);
 
 // * Editar perfil
 

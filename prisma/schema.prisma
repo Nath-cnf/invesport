@@ -32,28 +32,6 @@ model Usuario {
     imagens_portfolio PortfolioAtleta[]
 }
 
-model Clube {
-    id                 String    @id @default(uuid())
-    banner_perfil      Bytes?
-    banner_image_type  String?
-    imagem_perfil      Bytes?
-    imagem_perfil_type String?
-    nome               String
-    cnpj_clube         String
-    cidade             String
-    estado             String
-    email              String    @unique
-    senha              String
-    customer_id        String?   @unique
-    premium            Int       @default(0) @db.TinyInt
-    descricao          String?   @db.VarChar(255)
-    data_inauguracao   DateTime?
-
-    esportes          Esporte[]
-    tarefas           TarefaClube[]
-    imagens_portfolio PortfolioClube[]
-}
-
 model Admin {
     id    String @id @default(uuid())
     nome  String
@@ -65,7 +43,6 @@ model Esporte {
     id       String    @id @default(uuid())
     nome     String    @unique
     usuarios Usuario[]
-    clubes   Clube[]
 }
 
 model Token {
@@ -87,17 +64,6 @@ model TarefaUsuario {
     usuario Usuario @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
-model TarefaClube {
-    id             String   @id @default(uuid())
-    owner_id       String
-    nome           String
-    data_conclusao DateTime
-    created_at     DateTime @default(now())
-    updated_at     DateTime @updatedAt
-
-    clube Clube @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
-}
-
 model BeneficiosAssinatura {
     id         String   @id @default(uuid())
     beneficios String   @db.LongText
@@ -112,13 +78,4 @@ model PortfolioAtleta {
     user_id              String
 
     usuario Usuario @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
-}
-
-model PortfolioClube {
-    id                    String @id @default(uuid())
-    imagem_portfolio      Bytes
-    tipo_imagem_portfolio String
-    clube_id              String
-
-    clube Clube @relation(fields: [clube_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }

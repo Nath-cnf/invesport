@@ -18,7 +18,7 @@
     <div id="container-contador">
         <div id="caixa-contador">
             <span class="t-contador">Cadastros</span>
-            <p class="n-contador"><%- data.usuarios.length + data.clubes.length %></p>
+            <p class="n-contador"><%- data.usuarios.length%></p>
         </div>
         <div id="caixa-contador">
             <span class="t-contador">Assinantes</span>
@@ -54,30 +54,6 @@
                 <a href="/editar-usuario/<%- usuario.id %>">Editar</a>
 
                 <a href="/deletar-usuario/<%- usuario.id %>">Deletar</a>
-            </div>
-        </div>
-    </div>
-    <% }) %>
-
-    <h2 class="titulo-admin">Clubes</h2>
-
-    <% data.clubes.forEach(clube => { %>
-    <div class="container-user" id="clube-<%- clube.id %>">
-        <div class="caixa-user">
-            <div class="info-user">
-                <li>User: <%- clube.nome %></li>
-                <li>Id: <%- clube.id %></li>
-                <li>E-mail: <%- clube.email %></li>
-            </div>
-            <div class="config-user" data-config-user>
-                <img src="/assets/admin/setting.png">
-            </div>
-        </div>
-        <div class="container-links-user">
-            <div class="links-user">
-                <a href="/editar-usuario/<%- clube.id %>">Editar</a>
-
-                <a href="/deletar-usuario/<%- clube.id %>">Deletar</a>
             </div>
         </div>
     </div>
