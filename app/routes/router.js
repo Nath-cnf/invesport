@@ -133,7 +133,8 @@ gerarQrCodeAtletaControllerRead.gerarQrCode);
 
 router.get("/assinatura", assinaturaControllerRead.getPage);
 
-router.get("/feed", feedControllerRead.getPage);
+router.get("/feed", 
+feedControllerRead.getPage);
 
 router.get("/como-doar", comoDoarControllerRead.getPage);
 
