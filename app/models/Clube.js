@@ -33,6 +33,30 @@ class Clube {
         });
     }
 
+    async findAllClubesPesquisa(filtroPesquisa) {
+        return await prisma.usuario.findMany({
+            where: {
+                OR: [
+                    {
+                        email: {
+                            contains: filtroPesquisa
+                        }
+                    },
+                    {
+                        nome: {
+                            contains: filtroPesquisa
+                        }
+                    },
+                    {
+                        id: {
+                            contains: filtroPesquisa
+                        }
+                    }
+                ]
+            }
+        })
+    }
+
     async updateUserSenha(novaSenha, email) {
         await prisma.clube.update({
             where: {

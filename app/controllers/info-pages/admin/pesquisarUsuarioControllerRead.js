@@ -6,7 +6,7 @@ class pesquisaUsuarioController {
         const filtroPesquisa = req.query.pesquisar_usuarios;
 
         const usuarios = await usuarioModel.findAllUsersPesquisa(filtroPesquisa);
-        const clubes = await clubeModel.findAllClubes("");
+        const clubes = await clubeModel.findAllClubesPesquisa(filtroPesquisa);
         const quantidadeUsuariosPremium = await usuarioModel.countUserPremium();
 
         res.render("pages/admin/home-admin.ejs", {
