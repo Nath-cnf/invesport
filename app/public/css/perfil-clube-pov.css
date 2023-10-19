@@ -241,6 +241,9 @@ main {
 #sobre {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
 }
 
 #sobre.active {
@@ -251,8 +254,16 @@ main {
     color: var(--laranja);
 }
 
-.titulo-2 {
-    font-size: 1rem;
+.titulo-2{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.titulo-2 b{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 8px;
 }
 
 .Sobre-usuario {
@@ -260,49 +271,131 @@ main {
     font-size: 1rem;
 }
 
-.Desc-usuario {
-    width: 80%;
+#itens-sobre{
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
+    width: 350px;
+}
+
+#itens-sobre label{
+    font-size: 1.2rem;
+}
+
+#itens-sobre p{
+    border: 1px solid #ff5b00;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+#itens-sobre input{
+    border: 1px solid #ff5b00;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+#Desc-usuario{
+    width: 350px;
+    display: flex;
+    resize: none;
+    flex-direction: column;
     align-self: center;
+    margin: 8px 2px 8px 2px;
+    border: 1px solid #ff5b00;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.att-sobre{
+    border: none;
+    background-color:#ff5b00;
+    padding: 8px;
+    border-radius: 16px;
+    color: #ffffff;
+    align-self: flex-end;
 }
 
 /* MENU DOAÇÃO */
-#doacao {
+#doacao{
+    margin: 20px 12px 0px 12px;
+    padding: 8px 24px 8px 24px;
     display: none;
     flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
-#doacao.active {
+#doacao.active{
     display: flex;
 }
 
-#t-doacoes.active {
-    color: var(--laranja);
+#t-doacoes.active{
+    color: #ff5b00;
 }
 
-.titulo-3 {
+.titulo-3{
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 4px 0px 0px 0px;
+}
+
+.container-form{
     display: flex;
     flex-direction: row;
     position: relative;
-    font-size: 1rem;
+    margin-top: 16px;
 }
 
-.gerar-btn {
-    display: inline-flex;
+.form-gerar-pix{
+    display: flex;
+    flex-direction: column;
+}
+
+.label-chave-pix{
+    font: 2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.tipos-chave{
+    margin-bottom: 4px;
+}
+
+.gerar-btn{
+    padding: 6px;
     justify-content: center;
     border: none;
     border-radius: 4px;
-    background-color: var(--azul);
-    color: var(--branco);
+    background-color: #1406a7;
+    color: white;
+    margin-top: 8px;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2)
 }
 
-.gerar-btn:focus {
-    outline: none;
+#input-pix-key{
+    max-width: 100%;
+    border: 1px solid #1406a7;
+    border-radius: 8px;
+    padding: 2px;
+    margin-top: 5px;
 }
 
-#imagem-qr {
+.chave-pix-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+.qr-code-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#imagem-qr{
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -310,18 +403,18 @@ main {
     justify-content: center;
 }
 
-#cod-qr {
+#cod-qr{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.campo-cod {
+.campo-cod{
     width: 80%;
 }
 
-.enviar-cod {
+.enviar-cod{
     width: 80px;
 }
 
