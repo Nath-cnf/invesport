@@ -11,6 +11,13 @@ class PerfilAtletaPovControllerRead {
       data: {
         page_name: "Invesport",
         usuario,
+        input_values: {
+          idade: usuario.idade,
+          cidade: usuario.cidade,
+          estado: usuario.estado,
+          descricao: usuario.descricao,
+          chave_pix: usuario.chave_pix
+        }
       },
     });
   }

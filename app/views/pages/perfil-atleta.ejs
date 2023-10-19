@@ -8,7 +8,8 @@
   </head>
 
   <body>
-    <%- data.usuario_logado ? include('../templates/header-perfil.ejs') : include('../templates/header.ejs') %>
+    <%- data.usuario_logado ? include('../templates/header-perfil.ejs') :
+    include('../templates/header.ejs') %>
 
     <main>
       <section>
@@ -22,11 +23,11 @@
       <section class="bio">
         <div class="info-bio">
           <span class="clube">
-            <h3 class="t-clube" style="color: #ff540b;">Estado</h3>
+            <h3 class="t-clube" style="color: #ff540b">Estado</h3>
             <h4 class="text-clube"><%- data.usuario.estado %></h4>
           </span>
           <span class="esporte">
-            <h3 class="t-esporte" style="color: #ff540b;">Esporte</h3>
+            <h3 class="t-esporte" style="color: #ff540b">Esporte</h3>
             <h4 class="text-esporte"><%- data.usuario.esporte.nome %></h4>
           </span>
         </div>
@@ -47,7 +48,13 @@
 
       <div class="container">
         <div class="tabs">
-          <h3 id="t-publicacoes" class="active" data-perfil-tab-title="portfolio">Portfólio</h3>
+          <h3
+            id="t-publicacoes"
+            class="active"
+            data-perfil-tab-title="portfolio"
+          >
+            Portfólio
+          </h3>
           <h3 id="t-sobre" data-perfil-tab-title="sobre">Sobre</h3>
           <h3 id="t-doacoes" data-perfil-tab-title="doacao">Doação</h3>
           <h3 id="t-metas" data-perfil-tab-title="meta">Metas</h3>
@@ -56,23 +63,48 @@
         <!-- PORTFOLIO -->
         <div class="tab-content">
           <div id="portfolio" class="active" data-perfil-tab="portfolio">
-            <img src="/assets/perfil/add-photo.png" class="feed"/>
-            <a class="add-legenda">
-              + Adicione uma legenda
-            </a>
+            <img src="/assets/perfil/add-photo.png" class="feed" />
+            <a class="add-legenda"> + Adicione uma legenda </a>
             <!-- <textarea name="legenda" id="legenda" cols="30" rows="10"></textarea> -->
             <section class="container-momentos">
               <p class="momentos">Momentos</p>
               <section class="grid-portifolio">
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
-                <img src="/assets/perfil/add-photo-grid.png" class="fotos-grid" />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
+                <img
+                  src="/assets/perfil/add-photo-grid.png"
+                  class="fotos-grid"
+                />
               </section>
             </section>
           </div>
@@ -80,25 +112,25 @@
           <!-- SOBRE -->
           <div id="sobre" data-perfil-tab="sobre">
             <span class="titulo-2"
-              ><b class="Sobre-usuario">Sobre </b> <%- data.usuario.nome %></span
+              ><b class="Sobre-usuario">Sobre </b> <%- data.usuario.nome
+              %></span
             >
-            <form action="" method="get" id="itens-sobre">
-              <label for="Idade">Idade:</label>
-              <input type="text" name="Idade"/>
-              <label for="Esporte">Esporte:</label>
-              <input type="text" name="Esporte" />
-              <label for="Estado">Estado:</label>
-              <input type="text" name="Estado" />
-              <label for="Cidade">Cidade:</label>
-              <input type="text" name="Cidade" />
-            </form>
-            <textarea
-              name="Descrição"
-              id="Desc-usuario"
-              cols="30"
-              rows="10"
-              placeholder="Fale mais sobre você"
-            ></textarea>
+
+            <% if (data.usuario.idade) { %>
+            <label>Idade:</label>
+            <p><%- data.usuario.idade %></p>
+            <% } %>
+            <label>Esporte:</label>
+            <p><%- data.usuario.esporte.nome %></p>
+            <label>Estado:</label>
+            <p><%- data.usuario.estado %></p>
+            <label>Cidade:</label>
+            <p><%- data.usuario.cidade %></p>
+
+            <% if (data.usuario.descricao) { %>
+              <label>Descrição</label>
+              <p><%- data.usuario.descricao %></p>
+            <% } %>
           </div>
 
           <!-- DOAÇÃO -->
@@ -106,24 +138,29 @@
             <span class="titulo-3"
               >Doe com o<b style="color: #1406a7"> Inve</b
               ><b style="color: #ff540b">Sport</b>!</span
-            > <br>
+            >
+            <br />
 
             <% if (data.usuario.chave_pix) { %>
-                <div class="form-gerar-pix">
-                  <label for="input-pix-key" class="label-chave-pix">Valor a ser doado</label>
-                  <input type="number" id="valor-pix" name="valor_doado">
-                </div>
-              <div class="gerar-qrcode">
-                  <button type="submit" class="gerar-btn" id="gerar-qr-code">Gerar</button>
-              </div>
+            <div class="form-gerar-pix">
+              <label for="input-pix-key" class="label-chave-pix"
+                >Valor a ser doado</label
+              >
+              <input type="number" id="valor-pix" name="valor_doado" />
+            </div>
+            <div class="gerar-qrcode">
+              <button type="submit" class="gerar-btn" id="gerar-qr-code">
+                Gerar
+              </button>
+            </div>
             <% } else { %>
-              <h2>Esse usuário não tem a chave pix cadastrada</h2>
+            <h2>Esse usuário não tem a chave pix cadastrada</h2>
             <% } %>
 
             <div class="qr-code-container">
               <div class="plaquinha-pix">
                 <div class="qrcode-replace">
-                  <img src="" alt="" id="qr-code-image-generated">
+                  <img src="" alt="" id="qr-code-image-generated" />
                 </div>
 
                 <div class="">
@@ -140,17 +177,13 @@
             <section class="info-meta">
               <p class="desc-meta">Passagem para o Campeonato</p>
               <section class="meta-icone">
-                <i
-                  class="bx bx-target-lock"
-                  style="color: #ff6300"
-                  id="target">
+                <i class="bx bx-target-lock" style="color: #ff6300" id="target">
                 </i>
                 <hr class="ls-animated" />
               </section>
               <p class="valor">máx: R$1,000</p>
             </section>
           </div>
-          
         </div>
       </div>
     </main>
@@ -159,133 +192,134 @@
 
     <script>
       const qrCodeImage = document.getElementById("qr-code-image-generated");
-        const valorPixInput = document.getElementById("valor-pix");
-        const gerarQrCodeButton = document.getElementById("gerar-qr-code");
+      const valorPixInput = document.getElementById("valor-pix");
+      const gerarQrCodeButton = document.getElementById("gerar-qr-code");
 
-        class Pix {
-            constructor(pixKey, description, merchantName, merchantCity, txid, amount) {
-              this.pixKey = pixKey;
-              this.description = description;
-              this.merchantName = merchantName;
-              this.merchantCity = merchantCity;
-              this.txid = txid;
-              this.amount = amount.toFixed(2);
+      class Pix {
+        constructor(
+          pixKey,
+          description,
+          merchantName,
+          merchantCity,
+          txid,
+          amount
+        ) {
+          this.pixKey = pixKey;
+          this.description = description;
+          this.merchantName = merchantName;
+          this.merchantCity = merchantCity;
+          this.txid = txid;
+          this.amount = amount.toFixed(2);
 
-              this.ID_PAYLOAD_FORMAT_INDICATOR = "00";
-              this.ID_MERCHANT_ACCOUNT_INFORMATION = "26";
-              this.ID_MERCHANT_ACCOUNT_INFORMATION_GUI = "00";
-              this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY = "01";
-              this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION = "02";
-              this.ID_MERCHANT_CATEGORY_CODE = "52";
-              this.ID_TRANSACTION_CURRENCY = "53";
-              this.ID_TRANSACTION_AMOUNT = "54";
-              this.ID_COUNTRY_CODE = "58";
-              this.ID_MERCHANT_NAME = "59";
-              this.ID_MERCHANT_CITY = "60";
-              this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE = "62";
-              this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID = "05";
-              this.ID_CRC16 = "63";
+          this.ID_PAYLOAD_FORMAT_INDICATOR = "00";
+          this.ID_MERCHANT_ACCOUNT_INFORMATION = "26";
+          this.ID_MERCHANT_ACCOUNT_INFORMATION_GUI = "00";
+          this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY = "01";
+          this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION = "02";
+          this.ID_MERCHANT_CATEGORY_CODE = "52";
+          this.ID_TRANSACTION_CURRENCY = "53";
+          this.ID_TRANSACTION_AMOUNT = "54";
+          this.ID_COUNTRY_CODE = "58";
+          this.ID_MERCHANT_NAME = "59";
+          this.ID_MERCHANT_CITY = "60";
+          this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE = "62";
+          this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID = "05";
+          this.ID_CRC16 = "63";
+        }
+
+        _getValue(id, value) {
+          const size = String(value.length).padStart(2, "0");
+          return id + size + value;
+        }
+
+        _getMechantAccountInfo() {
+          const gui = this._getValue(
+            this.ID_MERCHANT_ACCOUNT_INFORMATION_GUI,
+            "br.gov.bcb.pix"
+          );
+          const key = this._getValue(
+            this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY,
+            this.pixKey
+          );
+          const description = this._getValue(
+            this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION,
+            this.description
+          );
+
+          return this._getValue(
+            this.ID_MERCHANT_ACCOUNT_INFORMATION,
+            gui + key + description
+          );
+        }
+
+        _getAdditionalDataFieldTemplate() {
+          const txid = this._getValue(
+            this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID,
+            this.txid
+          );
+          return this._getValue(this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE, txid);
+        }
+
+        getPayload() {
+          const payload =
+            this._getValue(this.ID_PAYLOAD_FORMAT_INDICATOR, "01") +
+            this._getMechantAccountInfo() +
+            this._getValue(this.ID_MERCHANT_CATEGORY_CODE, "0000") +
+            this._getValue(this.ID_TRANSACTION_CURRENCY, "986") +
+            this._getValue(this.ID_TRANSACTION_AMOUNT, this.amount) +
+            this._getValue(this.ID_COUNTRY_CODE, "BR") +
+            this._getValue(this.ID_MERCHANT_NAME, this.merchantName) +
+            this._getValue(this.ID_MERCHANT_CITY, this.merchantCity) +
+            this._getAdditionalDataFieldTemplate();
+
+          return payload + this._getCRC16(payload);
+        }
+
+        _getCRC16(payload) {
+          function ord(str) {
+            return str.charCodeAt(0);
+          }
+          function dechex(number) {
+            if (number < 0) {
+              number = 0xffffffff + number + 1;
             }
+            return parseInt(number, 10).toString(16);
+          }
 
-            _getValue(id, value) {
-              const size = String(value.length).padStart(2, "0");
-              return id + size + value;
-            }
+          //ADICIONA DADOS GERAIS NO PAYLOAD
+          payload = payload + this.ID_CRC16 + "04";
 
-            _getMechantAccountInfo() {
-              const gui = this._getValue(
-                this.ID_MERCHANT_ACCOUNT_INFORMATION_GUI,
-                "br.gov.bcb.pix"
-              );
-              const key = this._getValue(
-                this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY,
-                this.pixKey
-              );
-              const description = this._getValue(
-                this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION,
-                this.description
-              );
+          //DADOS DEFINIDOS PELO BACEN
+          let polinomio = 0x1021;
+          let resultado = 0xffff;
+          let length;
 
-              return this._getValue(
-                this.ID_MERCHANT_ACCOUNT_INFORMATION,
-                gui + key + description
-              );
-            }
-
-            _getAdditionalDataFieldTemplate() {
-              const txid = this._getValue(
-                this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID,
-                this.txid
-              );
-              return this._getValue(this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE, txid);
-            }
-
-            getPayload() {
-              const payload =
-                this._getValue(this.ID_PAYLOAD_FORMAT_INDICATOR, "01") +
-                this._getMechantAccountInfo() +
-                this._getValue(this.ID_MERCHANT_CATEGORY_CODE, "0000") +
-                this._getValue(this.ID_TRANSACTION_CURRENCY, "986") +
-                this._getValue(this.ID_TRANSACTION_AMOUNT, this.amount) +
-                this._getValue(this.ID_COUNTRY_CODE, "BR") +
-                this._getValue(this.ID_MERCHANT_NAME, this.merchantName) +
-                this._getValue(this.ID_MERCHANT_CITY, this.merchantCity) +
-                this._getAdditionalDataFieldTemplate();
-
-              return payload + this._getCRC16(payload);
-            }
-
-            _getCRC16(payload) {
-              function ord(str) {
-                return str.charCodeAt(0);
+          //CHECKSUM
+          if ((length = payload.length) > 0) {
+            for (let offset = 0; offset < length; offset++) {
+              resultado ^= ord(payload[offset]) << 8;
+              for (let bitwise = 0; bitwise < 8; bitwise++) {
+                if ((resultado <<= 1) & 0x10000) resultado ^= polinomio;
+                resultado &= 0xffff;
               }
-              function dechex(number) {
-                if (number < 0) {
-                  number = 0xffffffff + number + 1;
-                }
-                return parseInt(number, 10).toString(16);
-              }
-
-              //ADICIONA DADOS GERAIS NO PAYLOAD
-              payload = payload + this.ID_CRC16 + "04";
-
-              //DADOS DEFINIDOS PELO BACEN
-              let polinomio = 0x1021;
-              let resultado = 0xffff;
-              let length;
-
-              //CHECKSUM
-              if ((length = payload.length) > 0) {
-                for (let offset = 0; offset < length; offset++) {
-                  resultado ^= ord(payload[offset]) << 8;
-                  for (let bitwise = 0; bitwise < 8; bitwise++) {
-                    if ((resultado <<= 1) & 0x10000) resultado ^= polinomio;
-                    resultado &= 0xffff;
-                  }
-                }
-              }
-
-              //RETORNA CÓDIGO CRC16 DE 4 CARACTERES
-              return this.ID_CRC16 + "04" + dechex(resultado).toUpperCase();
             }
-        };
+          }
 
-        gerarQrCodeButton.addEventListener("click", () => {
-          console.log(valorPixInput.value)
-          fetch("/gerar-qr-code-atleta/<%- data.usuario.id %>", {
+          //RETORNA CÓDIGO CRC16 DE 4 CARACTERES
+          return this.ID_CRC16 + "04" + dechex(resultado).toUpperCase();
+        }
+      }
+
+      gerarQrCodeButton.addEventListener("click", () => {
+        fetch("/gerar-qr-code-atleta/<%- data.usuario.id %>", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          mode: "cors",
-          cache: "default",
-          body: JSON.stringify({valor_doado: valorPixInput.value})
-        })
-        .then(async function (response) {
+          body: JSON.stringify({valor_doado: valorPixInput.value}),
+        }).then(async function (response) {
           const responseJson = await response.json();
 
-          console.log(responseJson.valor_doado)
-          
           const chavePix = responseJson.chave_pix;
           const nome = responseJson.nome.trim().split(" ").join("");
           const cidade = responseJson.cidade.trim().split(" ").join("");
@@ -301,13 +335,14 @@
 
           const payload = pix.getPayload();
 
-          qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(payload)}`
-        })
-
-        })
-        // O usuário vai cadastrar a chave pix, o nome e a cidade, depois quem for transferir o dinheiro vai informar
-        // a mensagem que quer enviar e selecionar o valor.
-        // As informações do usuário devem ser salvas no banco.
+          qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
+            payload
+          )}`;
+        });
+      });
+      // O usuário vai cadastrar a chave pix, o nome e a cidade, depois quem for transferir o dinheiro vai informar
+      // a mensagem que quer enviar e selecionar o valor.
+      // As informações do usuário devem ser salvas no banco.
     </script>
   </body>
 </html>

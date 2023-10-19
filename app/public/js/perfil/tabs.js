@@ -15,3 +15,4 @@ tabs.forEach((tab) => {
         tabcontentselected.classList.add("active");
     });
 });
+

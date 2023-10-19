@@ -1,4 +1,5 @@
 var express = require("express");
+const app = express()
 var router = express.Router();
 const jwt = require("jsonwebtoken");
 
@@ -22,7 +23,8 @@ const termosControllerRead = require("../controllers/info-pages/rodape/termosCon
 const assinaturaControllerRead = require("../controllers/info-pages/menu/assinaturaControllerRead");
 const comoDoarControllerRead = require("../controllers/info-pages/menu/comoDoarControllerRead");
 const tarefaControllerRead = require("../controllers/info-pages/menu/tarefa/tarefaControllerRead");
-const tarefaControllerCreate = require("../controllers/info-pages/menu/tarefa/tarefaControllerCreate")
+const tarefaControllerCreate = require("../controllers/info-pages/menu/tarefa/tarefaControllerCreate");
+const tarefaControllerDelete = require("../controllers/info-pages/menu/tarefa/tarefaControllerDelete");
 const feedControllerRead = require("../controllers/info-pages/menu/feedControllerRead");
 
 
@@ -41,6 +43,8 @@ const CadastroAtletaControllerCreate = require("../controllers/info-pages/cadast
 
 const atualizarChavePixControllerUpdate = require("../controllers/perfil/atualizarChavePixControllerUpdate");
 const gerarQrCodeAtletaControllerRead = require("../controllers/perfil/gerarQrCodeControlleRead");
+
+const editarSobreAtletaControllerUpdate = require("../controllers/perfil/editarSobreAtletaControllerUpdate");
 
 const logouControllerRead = require("../controllers/perfil/logoutControllerRead");
 
@@ -72,6 +76,7 @@ const imagemPerfilAtletaControllerRead = require("../controllers/info-pages/imag
 const imagemPerfilClubeControllerRead = require("../controllers/info-pages/imagens/imagemUsuarioClubeControllerRead");
 const imagemBannerAtletaControllerRead = require("../controllers/info-pages/imagens/imagemBannerAtletaControllerRead");
 const imagemBannerClubeControllerRead = require("../controllers/info-pages/imagens/imagemBannerClubeControllerRead");
+const adicionarImagemAtletaControllerCreate = require("../controllers/perfil/adicionarImagemAtletaControllerCreate");
 
 // * EDITAR
 const editarAtletaControllerRead = require("../controllers/perfil/editarAtletaControllerRead");
@@ -130,7 +135,14 @@ validationMiddlewareRules.adicionarChavePixValidacao,
 autenticacaoFormMiddleware.validarAdicionarChavePix,
 atualizarChavePixControllerUpdate.updateChavePix);
 
+router.post("/editar-sobre-atleta",
+autenticacaoMiddleware.validateToken,
+validationMiddlewareRules.editarSobreAtleta,
+autenticacaoFormMiddleware.validarSobreAtletaCadastro,
+editarSobreAtletaControllerUpdate.editarUser);
+
 router.post("/gerar-qr-code-atleta/:userId",
+app.use(express.json()),
 gerarQrCodeAtletaControllerRead.gerarQrCode);
 
 router.get("/assinatura", assinaturaControllerRead.getPage);
@@ -148,6 +160,14 @@ autenticacaoMiddleware.validateToken,
 validationMiddlewareRules.criarTarefaValidacao,
 autenticacaoFormMiddleware.validarTarefa,
 tarefaControllerCreate.createTarefa);
+
+router.post("/adicionar-imagem",
+autenticacaoMiddleware.validateToken,
+adicionarImagemAtletaControllerCreate.adicionarImagem);
+
+router.get("/deletar-tarefa/:tagId",
+autenticacaoMiddleware.validateToken,
+tarefaControllerDelete.deletarTarefa);
 
 router.get("/logout",
 autenticacaoMiddleware.validateToken,

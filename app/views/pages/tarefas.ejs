@@ -36,17 +36,12 @@
           <%- data.erros && data.erros.conclusao_tarefa_erro ? `<span class="mensagem-erro">${data.erros.conclusao_tarefa_erro.msg}</span>` : "" %>
 
     <div id="slide">
-         <!-- <div class="card" id="card">
-               <p class="output1" id="output1"></p>
-              <h6>Prazo:</h6>
-              <span class="output2" id="output2"></span>
-            </div>  -->
             <% data.tarefas.forEach(tarefa => { %>
               <div class="card">
-                <button value="remover" class="btn-remover">Remover</button>
+                <button value="remover" class="btn-remover"><a href="/deletar-tarefa/<%- tarefa.id %>">Remover</a></button>
                 <p class="output1"><%- tarefa.nome %></p>
                 <h6>Prazo:</h6>
-                <span class="output2"><%- tarefa.data_conclusao %></span>
+                <span class="output2"><%- `${String(tarefa.data_conclusao.getDate()).padStart(2, "0")}/${String(tarefa.data_conclusao.getMonth() + 1).padStart(2, "0")}/${tarefa.data_conclusao.getFullYear()}` %></span>
               </div>
             <% }) %>
         </div> 

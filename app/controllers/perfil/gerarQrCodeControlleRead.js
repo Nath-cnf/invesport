@@ -4,6 +4,7 @@ class GerarQrCodeAtletaController {
     async gerarQrCode(req, res) {
         const userId = req.params.userId;
         const {valor_doado} = req.body;
+        console.log(req.body)
         console.log(valor_doado);
         const usuario = await usuarioModel.findUserById(userId);
 

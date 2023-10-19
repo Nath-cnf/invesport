@@ -19,6 +19,14 @@ class Esporte {
 
         return undefined;
     }
+
+    async findEsporteByName(esporteNome) {
+        return await prisma.esporte.findUnique({
+            where: {
+                nome: esporteNome
+            }
+        })
+    }
 }
 
 const esporteModel = new Esporte();

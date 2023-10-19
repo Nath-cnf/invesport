@@ -37,33 +37,22 @@
           <button class="b-doar"><a href="/#">Doar</a></button>
         </div>
 
-        <div class="info-meta">
-          <p class="desc-meta">Passagem para o Campeonato</p>
-          <div class="meta-icone">
-            <i class="bx bx-target-lock" style="color: #ff6300" id="target"></i>
-            <hr class="ls-animated" />
-          </div>
-          <p class="valor">máx: R$1,000</p>
-        </div>
       </section>
       <hr class="linha-bio" />
 
       <div class="container">
         <div class="tabs">
           <h3 id="t-publicacoes" class="active" data-perfil-tab-title="portfolio">Portfólio</h3>
-          <h3 id="t-sobre" data-perfil-tab-title="sobre">Sobre</h3>
           <h3 id="t-doacoes" data-perfil-tab-title="doacao">Doação</h3>
+          <h3 id="t-sobre" data-perfil-tab-title="sobre">Sobre</h3>
           <h3 id="t-metas" data-perfil-tab-title="meta">Metas</h3>
         </div>
 
         <!-- PORTFOLIO -->
         <div class="tab-content">
           <div id="portfolio" class="active" data-perfil-tab="portfolio">
-            <img src="/assets/perfil/add-photo.png" class="feed"/>
-            <a class="add-legenda">
-              + Adicione uma legenda
-            </a>
-            <!-- <textarea name="legenda" id="legenda" cols="30" rows="10"></textarea> -->
+            <input type="file" name="portfolio_imagem" id="add-imagem">
+            <label for="add-imagem"><img src="/assets/perfil/add-photo.png" class="feed"/></label>
             <section class="container-momentos">
               <p class="momentos">Momentos</p>
               <section class="grid-portifolio">
@@ -85,23 +74,43 @@
             <span class="titulo-2"
               ><b class="Sobre-usuario">Sobre </b> <%- data.usuario.nome %></span
             >
-            <form action="" method="get" id="itens-sobre">
-              <label for="Idade">Idade:</label>
-              <input type="text" name="Idade"/>
-              <label for="Esporte">Esporte:</label>
-              <input type="text" name="Esporte" />
-              <label for="Estado">Estado:</label>
-              <input type="text" name="Estado" />
-              <label for="Cidade">Cidade:</label>
-              <input type="text" name="Cidade" />
-            </form>
-            <textarea
-              name="Descrição"
+            <form action="/editar-sobre-atleta" method="post" id="itens-sobre">
+              <%- data.erros && data.erros.sistema_erro ? `<span class="mensagem-erro">${data.erros.sistema_erro.msg}</span>` : "" %>
+
+              <label for="idade">Idade:</label>
+              <input type="text" name="idade" id="idade" value="<%- data.input_values && data.input_values.idade ? data.input_values.idade : "" %>" />
+              <%- data.erros &&
+              data.erros.idade_erro ? `<span class="mensagem-erro"
+                >${data.erros.idade_erro.msg}</span
+              >` : "" %>
+              <label for="esporte">Esporte:</label>
+              <p><%- data.usuario.esporte.nome %></p>
+              <label for="estado">Estado:</label>
+              <input type="text" name="estado" id="estado" value="<%- data.input_values && data.input_values.estado ? data.input_values.estado : "" %>" />
+              <%- data.erros &&
+              data.erros.estado_erro ? `<span class="mensagem-erro"
+                >${data.erros.estado_erro.msg}</span
+              >` : "" %>
+              <label for="cidade">Cidade:</label>
+              <input type="text" name="cidade" id="cidade" value="<%- data.input_values && data.input_values.cidade ? data.input_values.cidade : "" %>" />
+              <%- data.erros &&
+              data.erros.cidade_erro ? `<span class="mensagem-erro"
+                >${data.erros.cidade_erro.msg}</span
+              >` : "" %>
+              <textarea
+              name="descricao"
               id="Desc-usuario"
-              cols="30"
-              rows="10"
+              rows="4"
               placeholder="Fale mais sobre você"
-            ></textarea>
+            ><%- data.input_values && data.input_values.descricao ? data.input_values.descricao : "" %></textarea>
+            <%- data.erros &&
+              data.erros.descricao_erro ? `<span class="mensagem-erro"
+                >${data.erros.descricao_erro.msg}</span
+              >` : "" %>
+
+            <button type="submit" class="att-sobre">Atualizar sobre</button>
+            </form>
+
           </div>
 
           <!-- DOAÇÃO -->
@@ -125,22 +134,20 @@
                         Email: email@gmail.com
                       </span>
                       <input type="text" name="chave_pix" id="input-pix-key" <%-
-                      data.erros && data.erros.nome_erro ? `erro` : "" %>" name="nome"
-                      <%- data.input_values ? `value="${data.input_values.nome}"` : ""
+                      data.erros && data.erros.chave_pix_erro ? `erro` : "" %>
+                      <%- data.input_values && data.input_values.chave_pix ? `value="${data.input_values.chave_pix}"` : ""
                       %>>
-                      <%- data.erros && data.erros.nome_erro ? `<span
+                      <%- data.erros && data.erros.chave_pix_erro ? `<span
                   class="mensagem-erro"
-                  >${data.erros.nome_erro.msg}</span
+                  >${data.erros.chave_pix_erro.msg}</span
                 >` : "" %>
                     </div>
                   <div class="gerar-qrcode">
                       <button type="submit" class="gerar-btn">Adicionar chave PIX</button>
                   </div>
               </form>
-
-              <img src="/assets/perfil/coins.png" class="coins-png">
             </div>
-            
+
             <div class="qr-code-container">
               <div class="plaquinha-pix">
                 <div class="qrcode-replace">

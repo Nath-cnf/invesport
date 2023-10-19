@@ -14,6 +14,22 @@ class TarefaClube {
             }
         })
     }
+
+    async findTarefaById(tagId) {
+        return await prisma.tarefaClube.findUnique({
+            where: {
+                id: tagId
+            }
+        })
+    }
+
+    async deleteTarefa(tagId) {
+        return await prisma.tarefaClube.findUnique({
+            where: {
+                id: tagId
+            }
+        })
+    }
 }
 
 const tarefaClubeModel = new TarefaClube();

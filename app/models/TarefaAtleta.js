@@ -14,6 +14,22 @@ class TarefaAtleta {
             }
         });
     }
+
+    async findTarefaById(tagId) {
+        return await prisma.tarefaUsuario.findUnique({
+            where: {
+                id: tagId
+            }
+        })
+    }
+
+    async deleteTarefa(tagId) {
+        return await prisma.tarefaUsuario.delete({
+            where: {
+                id: tagId
+            }
+        })
+    }
 }
 
 const tarefaAtletaModel = new TarefaAtleta();

@@ -23,14 +23,17 @@ model Usuario {
     chave_pix          String?
     customer_id        String? @unique
     premium            Int     @default(0) @db.TinyInt
+    idade              Int?
+    descricao          String? @db.VarChar(255)
 
-    tokens  Token[]
-    esporte Esporte         @relation(fields: [id_esporte], references: [id], onDelete: Cascade, onUpdate: Cascade)
-    tarefas TarefaUsuario[]
+    tokens            Token[]
+    esporte           Esporte         @relation(fields: [id_esporte], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    tarefas           TarefaUsuario[]
+    imagens_portfolio PortfolioAtleta[]
 }
 
 model Clube {
-    id                 String  @id @default(uuid())
+    id                 String    @id @default(uuid())
     banner_perfil      Bytes?
     banner_image_type  String?
     imagem_perfil      Bytes?
@@ -39,12 +42,16 @@ model Clube {
     cnpj_clube         String
     cidade             String
     estado             String
-    email              String  @unique
+    email              String    @unique
     senha              String
-    customer_id        String? @unique
+    customer_id        String?   @unique
+    premium            Int       @default(0) @db.TinyInt
+    descricao          String?   @db.VarChar(255)
+    data_inauguracao   DateTime?
 
-    esportes Esporte[]
-    tarefas  TarefaClube[]
+    esportes          Esporte[]
+    tarefas           TarefaClube[]
+    imagens_portfolio PortfolioClube[]
 }
 
 model Admin {
@@ -92,8 +99,26 @@ model TarefaClube {
 }
 
 model BeneficiosAssinatura {
-    id String @id @default(uuid())
-    beneficios String @db.LongText
+    id         String   @id @default(uuid())
+    beneficios String   @db.LongText
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
+}
+
+model PortfolioAtleta {
+    id                   String @id @default(uuid())
+    imagem_portfolio     Bytes
+    tipo_image_portfolio String
+    user_id              String
+
+    usuario Usuario @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model PortfolioClube {
+    id                    String @id @default(uuid())
+    imagem_portfolio      Bytes
+    tipo_imagem_portfolio String
+    clube_id              String
+
+    clube Clube @relation(fields: [clube_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }

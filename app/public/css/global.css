@@ -112,6 +112,10 @@ footer{
     .itens a {
         color: #ffffff;
     }
+
+    .btn-user-desktop {
+        display: none;
+    }
     
     #i-menu, #i-user{
         color: #ff5b00;
@@ -214,7 +218,13 @@ footer{
 
 @media screen and (min-width: 1024px){  
 
-    .btn-user{
+    #i-user-desktop {
+        color: #ff5b00;
+        font-size: 32px;
+        background-color: #ffffff;
+    }
+
+    .btn-user {
         display: none;
     }
 

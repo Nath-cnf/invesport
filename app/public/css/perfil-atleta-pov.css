@@ -232,6 +232,8 @@ main{
 #sobre{
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 20px;
 }
 
@@ -244,7 +246,13 @@ main{
 }
 
 .titulo-2{
-    font-size: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.titulo-2 b{
+    font-size: 1.2rem;
 }
 
 .Sobre-usuario{
@@ -255,24 +263,54 @@ main{
 #itens-sobre{
     display: flex;
     flex-direction: column;
-    align-items: left;
-    max-width: 200px;
     margin-bottom: 15px;
+    width: 350px;
 }
 
-.Desc-usuario{
-    width: 80%;
+#itens-sobre label{
+    font-size: 1.2rem;
+}
+
+#itens-sobre p{
+    border: 1px solid #ff5b00;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+#itens-sobre input{
+    border: 1px solid #ff5b00;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+#Desc-usuario{
+    width: 350px;
     display: flex;
+    resize: none;
     flex-direction: column;
     align-self: center;
+    margin: 8px 2px 8px 2px;
+    border: 1px solid #ff5b00;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.att-sobre{
+    border: none;
+    background-color:#ff5b00;
+    padding: 8px;
+    border-radius: 16px;
+    color: #ffffff;
+    align-self: flex-end;
 }
 
 /* MENU DOAÇÃO */
 #doacao{
     margin: 20px 12px 0px 12px;
-    padding: 8px 16px 8px 16px;
+    padding: 8px 24px 8px 24px;
     display: none;
     flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
@@ -293,9 +331,8 @@ main{
 .container-form{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     position: relative;
-    margin: 16px 16px 0px 16px;
+    margin-top: 16px;
 }
 
 .form-gerar-pix{
@@ -306,7 +343,8 @@ main{
 .label-chave-pix{
     font: 2rem;
     font-weight: 600;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    text-align: center;
 }
 
 .tipos-chave{
@@ -352,11 +390,6 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.coins-png{
-    width: 150px;
-    height: 150px;
 }
 
 #cod-qr{

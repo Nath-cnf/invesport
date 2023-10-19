@@ -47,6 +47,15 @@ class Usuario {
         });
     }
 
+    async updateUserSobre(data, userId) {
+        return await prisma.usuario.update({
+            where: {
+                id: userId
+            },
+            data
+        })
+    }
+
     async updateUserSenha(novaSenha, email) {
         await prisma.usuario.update({
             where: {
