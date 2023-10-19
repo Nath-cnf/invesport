@@ -11,8 +11,6 @@
     <%- data.usuario_logado ? include('../templates/header-perfil.ejs') : include('../templates/header.ejs') %>
 
         <main>
-            <h2 class="novos-perfis">Conheça novos perfis</h2>
-            <h4 class="apoie">Apoie o esporte brasileiro!</h4>
 
             <section id="perfis">
                 <div class="atletas">
@@ -32,6 +30,7 @@
                                 <h4 class="cidade"><%- usuario.cidade %>-<%- usuario.estado %></h4>
                                 <a href="/perfil-atleta/<%- usuario.id %>" class="ver-perfil">Ver perfil</a>
                             </div>
+
                         <% }) %>
                     </div>
                 </div>

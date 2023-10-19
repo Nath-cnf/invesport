@@ -20,16 +20,6 @@ h2 {
     justify-content: center;
 }
 
-.novos-perfis{
-    font-size: 24px;
-}
-
-.apoie{
-    text-align: center;
-    color: var(--cinza);
-    font-weight: normal;
-}
-
 .btn-atletas{
     display: flex;
     flex-direction: column;
@@ -189,9 +179,13 @@ h2 {
         align-items: center;
     }
 
+    .atletas{
+        width: 100%
+    }
+
     .perfis-atletas{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-column-gap: 60px;
         grid-row-gap: 30px;
