@@ -180,7 +180,11 @@ h2 {
     .perfis-atletas{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+<<<<<<< HEAD
+        grid-template-rows: repeat(4, 1fr);
+=======
         grid-template-rows: repeat(2, 1fr);
+>>>>>>> b4566e495d8b41c7a4b92d677f14b572f75459f0
         grid-column-gap: 60px;
         grid-row-gap: 30px;
     }
