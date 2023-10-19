@@ -30,14 +30,13 @@ main{
 }
 
 .titulo-perfil{
+    background-color: var(--branco);
     text-align: center;
     color: #333333;
 }
 
 .bio{
-    width: calc( 100vw - 50px);
     background-color: #ffffff;
-    margin: 0 25px 0 25px;
 }
 
 .edit-perfil{
@@ -158,11 +157,9 @@ main{
 }
 
 .tabs{
-    width: calc( 100vw - 50px);
     display: flex;
     justify-content: space-between;
     background-color: #ffffff;
-    margin: 10px 25px;
 }
 
 #t-publicacoes, #t-sobre, #t-doacoes, #t-metas{
@@ -359,7 +356,7 @@ main{
     background-color: #1406a7;
     color: white;
     margin-top: 8px;
-    max-width: 300px;
+    width: 100%;
     box-shadow: 0 0 5px rgba(0, 0, 0, .2)
 }
 
@@ -463,4 +460,278 @@ main{
     background-color: #ff5b00;
     border: none;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 1023px) {
+
+    .bio{
+        width: calc( 100vw - 50px);
+        margin: 0px 25px 0px 25px;
+    }
+
+    .tabs{
+        width: calc( 100vw - 50px);
+        margin: 10px 25px;
+    }
+
+    /* MENU SOBRE */
+
+    #sobre {
+        margin: 20px;
+    }
+
+    /* MENU DOAÇÃO */
+
+    #doacao {
+        margin: 20px;
+    }
+
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .coins-png{
+        margin-top: 30px;
+    }
+
+    /* MENU METAS*/
+
+    #meta {
+        margin: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        background-color: #f1f1f1;
+    }
+
+    .tabs {
+        padding: 10px 50px;
+    }
+
+    .bio {
+        width: 100vw;
+    }
+
+    .info-bio {
+        width: calc(100vw - 100px);
+    }
+
+    .button-bio {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .b-doar {
+        width: 30vw;
+    }
+
+    .info-meta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ls-animated {
+        width: 60vw;
+    }
+
+    .container {
+        width: 100vw;
+    }
+
+    #t-publicacoes:hover,
+    #t-sobre:hover,
+    #t-doacoes:hover,
+    #t-metas:hover {
+        color: var(--laranja);
+    }
+
+    .feed {
+        width: 35vw;
+    }
+
+    .tab-content {
+        display: flex;
+        width: 100vw;
+    }
+
+    .legenda {
+        font-size: 1.3rem;
+        margin: 5px 0px 15px 25px;
+    }
+
+    .destaque {
+        width: calc(100vw - 100px);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0px 50px;
+    }
+
+    .container-momentos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .momentos {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #portifolio{
+        width: 100%;
+    }
+
+    .grid-portifolio {
+        width: 100%;
+        margin: 15px 0px;
+        row-gap: 20px;
+        column-gap: 15vw;
+    }
+
+    .grid-portifolio img {
+        width: 200px;
+        height: 200px;
+        justify-self: center;
+    }
+
+    /* MENU SOBRE */
+
+    #sobre {
+        width: 100vw;
+        padding: 15px 50px;
+    }
+
+    .titulo-2 {
+        font-size: 1rem;
+    }
+
+    .Sobre-usuario {
+        color: var(--laranja);
+        font-size: 1rem;
+    }
+
+    .Desc-usuario {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    /* MENU DOAÇÃO */
+
+    #doacao {
+        display: none;
+        position: relative;
+        width: 100vw;
+        padding: 15px 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo-3 {
+        font-size: 1.2rem;
+    }
+
+    .label-chave-pix {
+        text-align: center;
+    }
+
+    .gerar-btn {
+        width: 15rem;
+        height: 2.5rem;
+        border-radius: 4px;
+        background-color: var(--azul);
+        font-size: 1.2rem;
+        color: var(--branco);
+        align-items: center;
+        margin: 15px 0px;
+    }
+
+    .gerar-btn:focus {
+        outline: none;
+    }
+
+    #input-name,
+    #input-city,
+    #input-amount,
+    #input-reference {
+        width: 50vw;
+        height: 1.8rem;
+        background-color: var(--branco);
+        font-size: 1rem;
+        padding-left: 5px;
+        border: none;
+        border-bottom: 1px solid var(--laranja);
+        outline: none;
+        margin: 5px 0px 15px 0px;
+    }
+
+    #container-gerar,
+    .qr-code-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .coins-png{
+        margin-left: 50px;
+    }
+
+    /* MENU METAS*/
+
+    #meta {
+        width: 100vw;
+        padding: 15px 50px;
+    }
+
+    .anda-meta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        margin: 10px 0px 20px 0px;
+    }
+
+    .container-add-meta, .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+    }
+
+    #inputbox, #inputbox2 {
+        padding: 5px;
+        width: 50vw;
+        height: 1.5rem;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        margin-top: 5px;
+        border-radius: 0px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid var(--azul);
+    }
+
+    #botao-add {
+        width: 10vw;
+        height: 2rem;
+        font-size: 1.2rem;
+        color: var(--branco);
+        background-color: var(--laranja);
+        border: none;
+        border-radius: 5px;
+    }
 }

@@ -222,7 +222,6 @@ main {
 
 .container-momentos {
     margin: 15px 25px;
-    width: calc(100vw - 50px);
 }
 
 .grid-portifolio {
@@ -483,7 +482,6 @@ main {
     }
 
     .container-momentos {
-        width: calc(100vw - 100px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -497,7 +495,7 @@ main {
     .grid-portifolio {
         margin: 15px 25px;
         row-gap: 20px;
-        column-gap: 15vw;
+        column-gap: 28vw;
     }
 
     .grid-portifolio img {
