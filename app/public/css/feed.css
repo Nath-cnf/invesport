@@ -41,8 +41,8 @@ h2 {
 
 .usuario-atleta{
     border-radius: 15px;
-    width: 38vw;
-    height: 15rem;
+    width: 50vw;
+    height: 17rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,11 +62,6 @@ h2 {
     flex-direction: row;
     gap: 5px;
     text-decoration: none;
-}
-
-.selo{
-    width: 15px;
-    height: 15px;
 }
 
 .cidade, .nome-atleta{
@@ -192,7 +187,7 @@ h2 {
 
     .usuario-atleta{
         border-radius: 15px;
-        width: 17vw;
+        width: 20vw;
         height: 25rem;
         display: flex;
         flex-direction: column;
