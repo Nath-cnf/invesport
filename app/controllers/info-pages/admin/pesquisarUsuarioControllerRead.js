@@ -13,6 +13,7 @@ class pesquisaUsuarioController {
             data: {
                 page_name: "Invesport",
                 usuarios,
+                clubes,
                 quantidadeUsuariosPremium,
                 filtroPesquisa
             }
